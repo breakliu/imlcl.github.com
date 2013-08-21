@@ -1,0 +1,24 @@
+---
+layout: post
+title: Git和.gitignore
+categories:
+- opensource
+tags:
+- git
+- gitignore
+published: true
+comments: true
+---
+{% img /images/blog/bg20120705011.png %}
+
+<p>阮一峰的<a href="http://www.ruanyifeng.com/blog/2012/07/git.html">《Git分支管理策略》</a>可以先看看，很不错</p>
+
+<p>那里这里说到一个.gitignore的文件，就是拿来声明哪些文件或文件夹不需要用Git来跟踪的。<br />
+不过刚开始使用Git时，会遇到的即使加入.gitignore的文件，但Git依然会进行跟踪，那么这里得分两种情况来看了：<br />
+1、如果该文件（夹）已git add进库，那么此时即使你在.gitignore声明，该文件依旧会进行跟踪，需要通过命令将其删除：
+<strong>git rm --cached -r &lt;path&gt;</strong>
+2、如果该文件（夹）没有git add进库，那么此时你可以提前在.gitignore进行声名，这样就可以不让Git不跟踪了</p>
+
+<p>当备个忘吧，因为平时都没有用GUI工具，都是命令行来得快捷一些，不知有什么好GUI可以用。</p>
+
+<p><a href="http://book.douban.com/subject/3420144/">《Pro Git》</a>也是一本很不错的书，推荐一看</p>

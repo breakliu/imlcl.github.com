@@ -1,0 +1,42 @@
+---
+layout: post
+title: Shell脚本也能用函数别名
+categories:
+- geek
+tags:
+- Linux
+- Shell
+- 函数
+- 别名
+- 脚本
+published: true
+comments: true
+---
+<p>实际看来，应该叫函数别名比函数指针恰当吧，但我之前还不知道可以这么弄。<br />
+只是今天看回自己一年前写的一个脚本程序，发现很多冗余代码，于是就重写了。<br />
+重写后发现只要50%的代码，很简洁，得益于这个函数别名了。
+<pre>fun1( )
+{
+    echo "I am fun1!"
+}</pre></p>
+
+<p>fun2( )<br />
+{
+    echo "I am fun2!"<br />
+}</p>
+
+<p>fun1<br />
+fun2<br />
+fun3=fun1<br />
+$fun3
+结果是：
+<pre>I am fun1!
+I am fun2!
+I am fun1!</pre>
+其实就这么回事了</p>
+
+<p>然后，你还可以这样
+<pre>idx=1
+fun$idx</pre>
+结果是：
+<pre>I am fun1!</pre></p>

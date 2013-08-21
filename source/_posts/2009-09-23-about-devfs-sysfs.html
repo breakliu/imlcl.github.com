@@ -1,0 +1,25 @@
+---
+layout: post
+title: 关于devfs和sysfs
+categories:
+- opensource
+tags:
+- d00m3d
+- devfs
+- lfs
+- Linux
+- sysfs
+- udev
+published: true
+comments: true
+---
+<p>扫盲了，5900上插了两块160G的硬盘，只能找到一块，最后lijian拷了一个sdb设备文件过去搞定了……<br />
+d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这里</a>：
+<code>
+因为 2.4 内核使用 devfs<br />
+2.6.13.x 内核开始废除 devfs，全面采用 udev 的结果<br />
+不能 copy，但能用 mknod 来创建
+</code></p>
+
+<p>可以参考LFS文档啊的<a href="http://lamp.linux.gov.cn/Linux/LFS-6.2/chapter07/udev.html">这里</a>，把相关的问题说明得比较清楚
+</p>

@@ -1,0 +1,22 @@
+---
+layout: post
+title: genkernel支持自动修改menu.lst
+categories:
+- opensource
+tags:
+- eselect
+- genkernel
+- gentoo
+- grub
+- kernel
+published: true
+comments: true
+---
+<p>如果你使用Gentoo发行版，并且也使用genkernel来编译自己的内核，那么只要修改/etc/genkernel.conf，打开
+<pre>BOOTLOADER="grub"
+</pre>
+这样当genkernel编译内核完成时，就会把最新的内核加入到grub的menu.lst启动菜单，当然将最新的内核设为default<br />
+这样就能进一步偷懒了（我都是genkernel all）<br />
+事实上自己修改menu.lst的工作量也不大，不过如果用新版的genkernel的话，就比从前省事了</p>
+
+<p>PS：编译内核时别忘了使用eselect kernel来选取你想编译的内核版本</p>

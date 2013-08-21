@@ -1,0 +1,37 @@
+---
+layout: post
+title: 惯C使用PHP的fwrite
+categories:
+- web
+tags:
+- C
+- fwrite
+- php
+- popen
+published: true
+comments: true
+---
+<p><pre lang="php">
+function fwrite_stream($fp, $string)
+{
+    $strLen  = strlen($string);
+    for ( $written = 0; $written < $strLen; $written += $len )
+    {
+        $len = fwrite($fp, substr($string, $written));
+        if ( ! $len )
+        {
+            return $len;
+        }
+    }
+    return $written;
+}
+</pre>
+我们可能有时需要popen一个程序，通过管理传送数据给此程序<br />
+这时我们用fwrite来写入，事实上此时写入最大长度为4096，从strace跟踪就可以得知<br />
+所以我们一次fwrite写不完，就需要一次次地去写，上面的fwrite_stream是PHP Manual提供的，当遇到此种情况时可以用<br />
+其实就是惯C用法了，不过我平时总是因为PHP是脚本语言而忽略一些细节，平时也没有遇到要写这么大的数据量，这次遇到问题总结一下</p>
+
+<p>事实上写文件时也可以用这个函数，不过PHP好像比较推荐用file_put_contents来写入一大坨数据<br />
+同样想一次读入整个文件内容，用file_get_contents也是比较好的，因为
+<pre>file_get_contents() is the preferred way to read the contents of a file into a string.
+It will use memory mapping techniques if supported by your OS to enhance performance.﻿</pre></p>

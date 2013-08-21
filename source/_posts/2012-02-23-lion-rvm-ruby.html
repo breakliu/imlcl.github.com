@@ -1,0 +1,22 @@
+---
+layout: post
+title: Lion使用RVM安装ruby
+categories:
+- geek
+tags:
+- gcc
+- lion
+- mac
+- ruby
+- rvm
+published: true
+comments: true
+---
+<p>ruby最新p125有些重要的安全升级，我发现升级到Lion 10.7.3后发现rvm install ruby-1.9.3-p125不能使用，后来通过以下方法解决（可参考rvm requirements）：</p>
+
+<p>1、安装最新XCode环境或osx-gcc-installer，我选择的是前者，到官网下载Command Line Tool For Xcode - February 2012，只要这个就好，这就提供了最基本的编译环境工具链了；<br />
+2、rvm install ruby-1.9.3-p125 --with-gcc=clang，没有clang是不能编译通过的，因为苹果的gcc是自己定制过的。之后就是rvm upgrade ruby-x.x.x-pxxx ruby-1.9.3-p125什么的，看着搞就行；<br />
+3、还有后续工作是要重新编译一下gem里的一些native extension，特别是DB Driver，rvm requirements最后那里也有提示。不过我干脆就将gem全册再重装，可以用rvm gemdir来看gem的目录，把相关目录里的东东rm掉即可<br />
+4、之后就是常规的操作啦，一切OK</p>
+
+<p>不过程序都布置到Debian下的，估计就不用考虑这些东西了:)</p>

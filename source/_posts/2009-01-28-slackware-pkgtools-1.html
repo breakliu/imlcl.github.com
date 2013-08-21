@@ -1,0 +1,36 @@
+---
+layout: post
+title: 剖析slackware pkgtools之概述篇
+categories:
+- geek
+tags:
+- Linux
+- pkgtool
+- slackware
+- 包
+- 发行版
+- 管理
+- 系统
+published: true
+comments: true
+---
+<p>作者: slackcode<br />
+pkgtools版本: pkgtools-12.1.0-noarch-7.tgz<br />
+我并不是什么高手牛人，我只是路过，觉得好玩，所以拿出来看看，希望与大家分享，共同学习<br />
+如有转载，请注明出处:)<br />
+----------------------------------------------------------</p>
+
+<p>Linux发布版众多，我想应该很多人都知道，到这里可以从图片上看Linux发行版的历史<a href="http://picasaweb.google.com/slackcode/SlackcodeCn">http://picasaweb.google.com/slackcode/SlackcodeCn</a>。发行版多如牛毛，但关键是选择自己喜欢的。<br />
+判断发行版的归属，一般先从该发行版的包管理机制开始，我想这个准则很多人都认同。而我认识很多朋友，喜欢一个发行版与否，大多数都是挑它们的“包管理机制”。常用包管理系统，可以参考这里：<a href="http://linuxtoy.org/docs/guide/ch16s03.html">http://linuxtoy.org/docs/guide/ch16s03.html</a></p>
+
+<p>而包管理系统，从广义上可以分为两种：源码级和二进制级。源码级的代表是Ports(FreeBSD)、Portage(Gentoo)、LFS的手动式源码级应该也算，二进制级的代表是Deb(Debian、Ubuntu)、RPM(RedHat、Fedora、CentOS)、Pkgtools(slackware)等。</p>
+
+<p>slackware的包管理机制很简洁，而且整个系统构建符合KISS原则，以至于我认为其没有包管理系统。<br />
+为什么这么说？现代的包管理系统为了保证系统的健壮性，所以加入了包依赖机制，这是非常方便的一种设计。但这样也有不好的地方，首先依赖性提高了包系统复杂度；另外从一定程度上降低了系统的可定制性。slackware的pkgtools包管理很古老，从出世到现在基本没有大的变化，不对包与包之间作出依赖性检测，即用户可以随意对系统中的软件包进行独立的增删，事实上这个依赖性检测已交由用户来把关，用户会潜移默化地关注软件包之间的关系。如果你喜欢上面所述的style，而又不想从source构建，那么slackware将非常合你口味。<br />
+另外，之所以说其“没有”包系统的原因，就是pkgtools事实上是把软件从源码级make install到一个地方，然后gzip一下，安装时就是解压到对应该路径，删除时就是对应路径删除，非常的slack。我想当时没有包系统时，也会有人这样来备份系统的，只是pkgtools把这个过程自己化了。</p>
+
+<p>说了这么久，没有说出pkgtools是什么东西。它很简单，就是由七个shell脚本构成的，这七个东西是：explodepkg、installpkg、makebootdisk、makepkg、pkgtool、removepkg、upgradepkg，后续文章都围绕这些脚本进行说明。</p>
+
+<p>从前，我听说，学习slackware会有个陡峭的曲线，之后便是康庄大道。事实上的确如此，这个我是有体会的，而slackware的保守，让我静下心来学习Linux，我的入门从这个发行版开始。</p>
+
+<p>下一篇是《<span class="content">剖析slackware pkgtools之installpkg篇》</span></p>

@@ -1,0 +1,31 @@
+---
+layout: post
+title: 解决wordpress提示输入FTP帐号问题
+categories:
+- web
+tags:
+- ftp
+- nginx
+- php
+- spawn-fcgi
+- whoami
+- wordpress
+- 解决
+- 问题
+published: true
+comments: true
+---
+<p>今天想把一些插件删之，发现提示信息形如
+<pre>执行请求动作，连接信息必需提供
+主机名
+用户名
+密码
+连接类型</pre>
+这个问题，我以前用虚拟主机时，遇到个，输入FTP帐号信息就可以解决了<br />
+问题是现在我用VPS，环境都是自己架的，没有什么FTP服务器，哪来这东西？<br />
+于是我就检查一下文件权限，发现完全没有问题<br />
+后来通过
+<pre lang="php"><?php echo(exec("whoami")); ?></pre>
+结果得到PHP解析时的用户是root，我晕倒！<br />
+于是我检查一下spawn-fcgi里的执行用户和用户组，发现没有设，统一设为服务器执行者权限就可以了，我这个统一为nginx<br />
+之后重启fcgi问题解决</p>

@@ -1,0 +1,37 @@
+---
+layout: post
+title: 关于proftpd开启anonymous访问权限
+categories:
+- opensource
+tags:
+- anonymous
+- ftp
+- Linux
+- proftp
+- proftpd
+- slackware
+- 匿名
+- 访问
+published: true
+comments: true
+---
+<p>proftpd是Linux下很常用的一个Ftp服务器，slackware自带vsftpd和proftpd两个ftp服务器。<br />
+vsftpd小巧快速，proftpd在定制性和安全性比vsftpd好。</p>
+
+<p>我打算把proftpd开anonymous（匿名）访问权限，slackware 12.2安装时，proftpd已把/etc/proftpd.conf配置好支持anonymous的，但登录时老出现:<br />
+220 ProFTPD 1.3.1 Server (ProFTPD Default Installation) [::ffff:127.0.0.1]<br />
+Name (localhost:root): anonymous<br />
+331 Anonymous login ok, send your complete email address as your password<br />
+Password:<br />
+530 Login incorrect.<br />
+Login failed.<br />
+从而失败。上网查了很多资料，但没找到解决方法。后来发现是自己没有认真阅读proftpd.conf，人家里面就有一句:
+<pre lang="bash"># To enable this, remove the user ftp from /etc/ftpusers.</pre>
+打开/etc/ftpusers，人家里面又有一句:
+<pre lang="bash"># To enable anonymous FTP, remove the "ftp" user:</pre>
+我晕，那只要在ftp前加个#后，<pre lang="bash">/etc/rc.d/rc.inetd restart</pre>就行啦。</p>
+
+<p>总结一下：<br />
+1、我想不明白为什么网上没有这个帮助资料，可能我比较菜，也比较粗心；<br />
+2、网上提到开anonymous高频help是加入<pre lang="bash">RequireValidShell off</pre>slackware默认安装已有这个参数；<br />
+3、借此分享给大家</p>

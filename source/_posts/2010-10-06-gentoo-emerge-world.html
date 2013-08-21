@@ -1,0 +1,29 @@
+---
+layout: post
+title: Gentoo Emerge World
+categories:
+- geek
+- opensource
+tags:
+- emerge
+- gentoo
+- Linux
+- world
+published: true
+comments: true
+---
+<p>很久没有进服务器里，emerge --sync了一下发现有100多个软件包可以更新，想想有大半年啦，于是决定emerge world一下。<br />
+这里就记下我emerge world的过程和之后的工作，其实一般来说风险是非常小的，只有一步步走就行：<br />
+1、一般来说，如果我发现有最新版的GCC，我会先emerge -uDNpv gcc，没有问题就emerge -uDNv gcc，把GCC更新到最新先，之后可以用gcc-config来选定新的gcc版本；</p>
+
+<p>2、优先更新GCC的好处是，这样后面的重编译都可以选择最新的编译器，这样最新编译器会给系统带来或多或少的好处（这是我的见解)。</p>
+
+<p>3、接着是更新world了，这里，我有个准则是：如果整个系统的软件改动较大，我就用emerge -ev world来更新，否则我就用emerge -uDNv world来更新。至于怎么叫改动大，就看个人了，一般来说，没必要就不要emerge -ev world，优先考虑emerge -uDNv world。因为前者是不管软件的版本是什么都强制重编译的。</p>
+
+<p>4、更新完了之后，我做的第一件事是先看看更新之后的提示信息，看看有没有要注意的。接着来个emerge --depclean和revdep-rebuild，前一个命令能自己查找软件间的关联，把没有用的卸载掉，后一个是修复一些软件间的依赖性，切记要revdep-rebuild，否则系统可能就启动不了</p>
+
+<p>5、接着是内核了，我个人一向都用genkernel all来解决问题，这步看个人喜好啦。事实上我用linode服务器是不需要更新内核的，因为VPS里已选定好内核，所以内核不需要更新，只要重启即载入最新内核。</p>
+
+<p>6、eclean-dist清理旧包</p>
+
+<p>再想想，大概是这样了，暂时想到也是这样……有空时再补充。其实我个人认为最关键是更新world后，要留意系统提示的信息，这个我基本上一条不漏地读，反正和自己有关的就要留意了。</p>

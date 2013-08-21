@@ -1,0 +1,16 @@
+---
+layout: post
+title: 今天发现数据库损坏了
+categories:
+- web
+tags:
+- mysql
+- 损坏
+- 数据库
+published: true
+comments: true
+---
+<p>如题，一进blog发现没有任何文章，于是登录到后台，发现文章数为0<br />
+因为当时第一反映是怀疑受到攻击，于是又打开linode主页看看是否有受到攻击的新闻，发现没有相关新闻。<br />
+立马ssh到vps，看日志，查了很久，没发现有什么非法进入系统的记录<br />
+之后再看mysql的日志，提示wp_post损坏，需要执行mysql_upgrade和修复，晕死……</p>

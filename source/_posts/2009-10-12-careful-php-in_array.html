@@ -1,0 +1,21 @@
+---
+layout: post
+title: 慎用PHP的in_array
+categories:
+- web
+tags:
+- array
+- hash
+- in_array
+- php
+published: true
+comments: true
+---
+<p>从使用经验得知，in_array是线性查找，当数据量多一些时，就会巨慢<br />
+如果要提速，请使用hash数组进行保存，以协助查找
+<pre> # 这样太慢了
+in_array("item", $tmpArr);   </pre></p>
+
+<p># 构造一个$tmpArr的hash数组$hashTmp<br />
+# 查找时就可以<br />
+if ( isset( $hashTmp["item"] ) )</p>

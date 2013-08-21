@@ -1,0 +1,44 @@
+---
+layout: post
+title: 函数参数小议
+categories:
+- geek
+tags:
+- C
+- pointer
+- 函数
+- 指针
+- 经验
+published: true
+comments: true
+---
+<p>学过C++的人都知道，有如下的写法：
+<pre lang="c">int fun(int &i)
+{
+    i = 0;
+    return 0;
+}</pre>
+这可不是C的东东，C里面没有引用这个东东，就是你得改写成指针参数：
+<pre lang="c">int fun(int *i)
+{
+    *i = 0;
+    return 0;
+}</pre>
+好了，再看一个example:
+<pre lang="c">void myfree1(char *p)
+{
+    free(p);
+}</pre></p>
+
+<p>void myfree2(char **p)<br />
+{
+    free(*p);<br />
+}</p>
+
+<p>char *p = (char *)malloc(100);<br />
+myfree1(p);    // 失败<br />
+myfree2(&p);  // 成功
+记得哦，C函数所有参数均以“传值调用”，你直接对传进来的东东进行修改，只修改其拷贝。myfree1之所以失败，是因为函数中的p是一分copy，地址和申请内存空间的地址已经不一样了，你free的肯定不是申请的空间地址，至于这样会不会引起段错误，还没有考证过（理论上有这样的机率）；myfree2里的p也是一份copy，但*p就是申请空间的地址，这里free当然如我们所愿了。更深地的，你可以直接把各个p值打印出来看看。<br />
+传数组有点不一样，数组名本身就是一个指针，在函数里我们都是以数组下标或指针反引用的形式对数组指针进行操作，所以这是正确的，再想想，和上面所说的一点也不矛盾。</p>
+
+<p>个人小经验分享，如有错误，请指出。</p>

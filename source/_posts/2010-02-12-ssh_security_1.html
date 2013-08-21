@@ -1,0 +1,52 @@
+---
+layout: post
+title: 提高SSH的安全性
+categories:
+- geek
+tags:
+- attack
+- debian
+- gentoo
+- linode
+- server
+- ssh
+- sshd
+- xshell
+- 安全
+- 密码
+- 认证
+- 证书
+published: true
+comments: true
+---
+<p>VPS首发Linux操作系统是Debian 5 Lenny，配置的确非常顺手，系统恢复上线的速度也非常快<br />
+但是我发现Debian太保守了，软件包的版本过于陈旧，于是还是决定选取一个上进一点的发行版<br />
+综合考虑自身情况，决定选取Gentoo，VPS分配了四个CPU，编译速度还是非常快的，没什么后顾之忧</p>
+
+<p>但昨晚在配置VPS时，用netstat发现一个奇怪的IP在连22端口，马上tail -f看看，发现是每隔两秒的SSH暴力密码破解，可能看到对方是从用户名字典里一个个地匹配。不过还好，我的密码是九位数字加字母组合，要算出来还是要比较长的时间<br />
+我看了看那个IP，那也是一个Linux系统，开着Apache服务器的</p>
+
+<p>至此为止吧，最重要是如果解决问题：<br />
+1、我先修改/etc/ssh/sshd_config，把SSH默认端口改了<br />
+2、我决定使用SSH的公钥认证，关掉密码认证，这里有好几步要做<br />
+第一步，修改/etc/ssh/sshd_config
+<pre><span style="color: #008000;"># 禁止root登录</span>
+PermitRootLogin no
+<span style="color: #008000;"># 开启公钥认证</span>
+RSAAuthentication yes
+PubkeyAuthentication yes
+AuthorizedKeysFile      .ssh/authorized_keys
+<span style="color: #008000;"># 关闭密码认证</span>
+PasswordAuthentication no</pre>
+第二步，生成认证公钥和私钥
+<pre>ssh-keygen -t rsa
+</pre>
+这一步你可以再指定一个密码，进一步提高安全性<br />
+执行完成后，会生在~/.ssh/目录下生成id_rsa和id_rsa.pub<br />
+执行
+<pre>cat ~/.ssh/id_rsa.pub &gt; ~/.ssh/authorized_keys</pre>
+指定sshd认证公钥</p>
+
+<p>第三步，刚才生成的id_rsa就是你的认证私钥要，要好好保存。<br />
+我用的是xshell，把id_rsa导入，OK，之后就可以用证书认证来登陆<br />
+之前把密码认证的登陆方式关了，也是保证安全性的做法，如果你不设证书密码短语，那么拥有这个证书的客户端都可以登陆。</p>

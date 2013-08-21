@@ -1,0 +1,21 @@
+---
+layout: post
+title: 2.4内核支持ICH7
+categories:
+- opensource
+tags:
+- '2.4'
+- dma
+- ich 7
+- intel
+- kernel
+- Linux
+- 内核
+published: true
+comments: true
+---
+<p><a href="http://git.kernel.org/?p=linux/kernel/git/stable/linux-2.4.37.y.git;a=commit;h=2cc1ccfe21712ed0c38260fb1cb15274f1873937">[PATCH] IDE: enable PATA UDMA support for ICH7</a></p>
+
+<p>公司用Redhat9作为编译环境，用的是2.4.32内核<br />
+发现有一部使用经典945主板的磁盘DMA打不开，查了一下2.4内核支持情况，发现要到2.4.36之后才支持……<br />
+直接升最新2.4内核好了</p>

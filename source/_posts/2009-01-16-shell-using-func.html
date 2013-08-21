@@ -1,0 +1,42 @@
+---
+layout: post
+title: 在shell脚本里使用函数
+categories:
+- geek
+tags:
+- function
+- Linux
+- script
+- Shell
+- 函数
+- 脚本
+published: true
+comments: true
+---
+<p>之所以要在shell里使用函数，大多数因为脚本中有大量重复的代码，这些代码可以整理封装为函数使用，使脚本更加易读，维护性也更好，下面就来说说如何在Linux shell脚本里使用函数。</p>
+
+<p>在shell脚本里，定义函数有两种格式：
+<pre lang="bash">function d2u()
+{
+    dos2unix $1;
+    chmod 0777 $1;
+    return;
+}
+# 或
+d2u()
+{
+    dos2unix $1;
+    chmod 0777 $1;
+    return;
+}</pre></p>
+
+<p># 下面是函数调用方法，其实与shell命令执行基本是一样的<br />
+d2u /home/lcl/test.sh</p>
+
+<p># 那么传进这个函数里，$1即为/home/lcl/test.sh，所以函数展开为<br />
+dos2unix /home/lcl/test.sh;<br />
+chmod 0777 /home/lcl/test.sh;
+这个不就等于把这个函数另存为另一个可执行脚本调用吗？<br />
+是的，我自己是这样记Shell脚本里函数的用法。</p>
+
+<p>脚本保存后别忘了chmod a+x一下，变为可执行哦</p>

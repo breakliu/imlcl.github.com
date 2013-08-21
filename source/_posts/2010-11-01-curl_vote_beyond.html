@@ -1,0 +1,25 @@
+---
+layout: post
+title: 使用curl实现刷票功能要点
+categories:
+- geek
+- web
+tags:
+- curl
+- 刷票
+published: true
+comments: true
+---
+<p>因为别人在刷票，所以为了保证公平性，我也来刷。外界不断变化，唯独理解原理，把握要点才能应对，所以我这次不说如何来实现，只来说要点，你只要有一定Web编程的基础得了。为什么拿curl来开刀？嗯……想了很久，只能说：这东东是个好东西-_-!!!</p>
+
+<p>无论你用shell命令行，还是用PHP的curl模块，抑或是C/C++来调用相关的接口等，都可实现之，不过可能要看相关的接口文档<br />
+curl的Man Page在这里<a href="http://curl.haxx.se/docs/manpage.html">http://curl.haxx.se/docs/manpage.html</a></p>
+
+<p>原于刷票功能，我们一般关注下面的参数：
+<strong>-d/--data &lt;data&gt;</strong> 不用多说，这东西后面就填我们的数据，如"userid=1&amp;num=32"，直接使用此选项发送数据，数据将以POST方式发送，你要刷票当然要刷对人啦
+<strong>-G/--get</strong> 如果想用Get方式，就得接这个
+<strong>-c/--cookie-jar和-b/--cookie</strong> 前者是将每次访问地址后cookie保存到一个文件，后者就可调用这个文件，读取cookie参数继续访问，这不就等于模拟了浏览器的行为了吗？没错，用这个就能实现用curl登录功能，并且保留每次操作的cookie。呃……我用这个实现了自动签到的功能……
+<strong>-H/--header &lt;header&gt;</strong> 这个是好东西，能修改使用curl发送的HTTP请求header，恶邪的你一定想到用这个来改user-agent了（用--user-agent也行），对啦，想换什么浏览器都行，还可以加个<a href="http://en.wikipedia.org/wiki/X-Forwarded-For">X-Forwarded-For</a>字段来骗骗人呢，总之这个参数是伪装必用利器啊
+<strong>-e/--referer &lt;URL&gt;</strong> 这个可能也会用的，但我一般都不加这个</p>
+
+<p>好吧，使用了curl冰山一角的功能，不过足矣</p>

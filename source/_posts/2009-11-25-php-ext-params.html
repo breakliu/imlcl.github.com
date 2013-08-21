@@ -1,0 +1,66 @@
+---
+layout: post
+title: PHP扩展模块的引用参数实现
+categories:
+- web
+tags:
+- ext
+- php
+- ref
+- 参数
+- 引用
+- 扩展
+- 模块
+published: true
+comments: true
+---
+<p>如果一个函数叫
+<pre>
+function test( & $retCode )
+{
+    $retCode = 1;
+}
+</pre>
+那么test($ret)后，$ret的值就为1，这个和C/C++里的指针、引用参数是一样的</p>
+
+<p>在PHP扩展模块里，我们也可以实现这种写法
+<pre>
+PHP_FUNCTION(php_test)
+{
+    zval *out = NULL;
+    zval *Rg  = NULL;
+    
+    if( zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC,"z", &out) == FAILURE )
+    {
+        RETURN_NULL();
+    }
+    
+    zval_dtor(out);
+    ALLOC_INIT_ZVAL(Rg);
+    array_init(Rg);</pre></p>
+
+<p>    add_assoc_string(Rg, "name", "slackcode", sizeof("slackcode")-1, 1);<br />
+    add_assoc_long(Rg, "age", -1);<br />
+    add_assoc_long(Rg, "luckyNum", 11);<br />
+    <br />
+    ZVAL_ZVAL(out, Rg, 1, 1);<br />
+    <br />
+    RETURN_LONG(0);<br />
+}
+
+这样子，我们调用
+<pre>
+$person = NULL;
+php_test($person);
+</pre>
+将返回
+<pre>
+Array
+(
+    [name] => slackcode
+    [age] => -1
+    [luckyNum] => 11
+)
+</pre>
+这就实现了引用参数咯<br />
+可以到<a href="http://talks.somabo.de/">这里</a>看看相关资料</p>

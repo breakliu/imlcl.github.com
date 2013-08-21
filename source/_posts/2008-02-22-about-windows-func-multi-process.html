@@ -1,0 +1,18 @@
+---
+layout: post
+title: 关于Windows平台下多线程创建函数
+categories:
+- geek
+tags:
+- CloseHandle
+- CreateThread
+- Windows
+- _beginthread
+- _beginthreadex
+- 多线程
+- 核心编程
+published: true
+comments: true
+---
+<p><p>在Windows下面，比较常见的多线程创建函数是CreateThread(Windows自带的)和_beginthread、_beginthreadex（C运行库的）。<br /><br />强烈推荐只用_beginthreadex，参数上面与CreateThread基本一样，比CreateThread好的就是，它给每个线程维护一个tiddata数据块，这对于多线程环境非常重要。《Windows核心编程》里也是这么说的。</p>
+<p>用_beginthreadex还有个好处是，线程结束后，不会自己执行CloseHandle函数，这样的话，对于WaitFor系列函数的调用就比较方便了。_beginthread在线程结束的时候是会自己CloseHandle。</p></p>

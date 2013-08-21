@@ -1,0 +1,40 @@
+---
+layout: post
+title: 关于find技巧一则
+categories:
+- geek
+tags:
+- exec
+- find
+- Linux
+- maxdepth
+- mmin
+- php
+- Shell
+- tip
+- 命令
+- 技巧
+published: true
+comments: true
+---
+<p>今天改一个bug的时候，遇到一个问题卡住了，想了很久，最后用比较简洁的方法解决了</p>
+
+<p>之后做数据中心，需要删除一些临时文件的，这些临时文件只能是生成1分钟后才能删除<br />
+当时解决方法是递归这个目录，并用mtime来判断时间，再删之</p>
+
+<p>这次遇到的问题是在linux下的，很自然会想用shell命令行来代替PHP解决之了，先把解决方解贴出来
+<pre lang="bash">find /tmp/ -name "*.php_tmp" -maxdepth 1 -mmin +5 | xargs rm -f
+</pre>
+这就把过去5分钟或更久的、文件名后缀为.php_tmp的、是/tmp/当前目录的文件强制删除了<br />
+之后用PHP调用popen就完事啦，看来挺简洁的</p>
+
+<p>其实还可以
+<pre lang="bash">find /tmp/ -name "*.php_tmp" -maxdepth 1 -mmin +5 -exec rm -f {} +
+# 或
+find /tmp/ -name "*.php_tmp" -maxdepth 1 -mmin +5 -exec rm -f {} \;
+</pre>
+我是建议使用-exec来执行，不建议多一个管道来调用xargs，不过该环境好像只能用xargs……<br />
+如果想用小时，就可以用-mtime +5，就是5小时了<br />
+其实-maxdepth是很重要的，1表示只搜索当前目录，这样大大挺高搜索效率，因为find默认是递归所有子目录的</p>
+
+<p>写于此，备忘</p>

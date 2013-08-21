@@ -1,0 +1,23 @@
+---
+layout: post
+title: 小识SCGI
+categories:
+- web
+tags:
+- apache
+- http
+- scgi
+- slackware
+published: true
+comments: true
+---
+<p>今天slackpkg升级slackware时，发现httpd.conf.new多了一行：
+<strong>LoadModule proxy_scgi_module lib/httpd/modules/mod_proxy_scgi.so</strong></p>
+
+<p>然后就上网查了一下scgi了，<a href="http://www.python.ca/scgi/" target="_blank">这里</a>有比较详细的介绍，包括搭方式<br />
+目前来说，从google得知，这东东实现是fastcgi简单，作为CGI的替代，SCGI全称Simple Common Gateway Interface<br />
+看了一下SCGI简短的<a href="http://www.python.ca/scgi/protocol.txt" target="_blank">协议说明</a>，注意到它有个特点是在WEB服务器应答的HTTP头需要强制返回CONTENT_LENGTH字段<br />
+就我所知，这个字段在我用过的服务器上可有可无，当时毕业设计写的WEB服务器，返回浏览器时也可以不包括这个字段<br />
+用PHP模拟应答时也可以不包括内容长度，但有的话就更适合HTTP协议了。而SCGI在这里说内容长度是must have的</p>
+
+<p>PS：slackware-current最近内核升级跟得很快呢</p>

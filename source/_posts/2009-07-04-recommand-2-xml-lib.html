@@ -1,0 +1,35 @@
+---
+layout: post
+title: 推荐两个XML库
+categories:
+- geek
+tags:
+- C
+- expat
+- library
+- libxml
+- minixml
+- parser
+- recommand
+- tinyxml
+- xml
+- 动态库
+- 推荐
+- 编译
+published: true
+comments: true
+---
+<p><p>XML库方面，我知道的有<a href="http://expat.sourceforge.net/">expat</a>、<a href="http://xmlsoft.org/">libxml2</a>、<a href="http://www.grinninglizard.com/tinyxml/">tinyxml</a>和<a href="http://www.minixml.org/">minixml</a>。</p>
+<p>听说expat应用很广，但我没有用过&hellip;&hellip;libxml2这个东东给我的印象是拥肿。</p>
+<p>我今天推荐后两者，一个是基于C++编写的tinyxml库，另一个是基于C编写的minixml库。</p>
+<p>我自己最常用的是tinyxml，此库用C++进行封象，适度的面向对象，命名很人性化，是一个很不错的选择。但这个库的Makefile没有带编译为动态库的方法，要编译为动态库，只要把Makefile相关行改为：<br />
+DEBUG := NO<br />
+TINYXML_USE_STL := NO # 个人认为没必要加入STL的支持<br />
+RELEASE_CFLAGS := -Wall -Wno-unknown-pragmas -Wno-format -O3 -fPIC<br />
+LIBS := -shared -s<br />
+OUTPUT := libtinyxml.so<br />
+SRCS行去掉xmltest.cpp<br />
+然后保存，make即可生成libtinyxml.so，以后只要include自带那两个h头文件即可使用tinyxml库了</p>
+<p>另一个推荐的是minixml库，这个库的出现是因为很多时候没必要用libxml2这个拥肿的东西（听说有10万行, minixml才三千多行）。<br />
+这个库我暂时还没用过，有时间会试用一下。这个为自带configure，配置、编译都非常方便，而且是纯C的，所以对各种应该都比较合适，CUPS就是使用minixml库的。</p>
+<p>两个库都是很轻量级的，tinyxml编译成动态库后不到78K（O3优化），minixml为44K（Os优化），而且都可以用于windows，因为都自带VC工程文件，可以选择合自己口味的，have fun~</p></p>

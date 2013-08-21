@@ -1,0 +1,39 @@
+---
+layout: post
+title: 命令行字符串过长的问题
+categories:
+- opensource
+tags:
+- Argument
+- ARG_MAX
+- exec
+- find
+- getconf
+- Linux
+- popen
+- rm
+- Shell
+- system
+published: true
+comments: true
+---
+<p>在Linux下面用Shell命令很爽，有时编程时情不自禁就想popen或system一下，然后就接个shell命令行字符串，搞定</p>
+
+<p>通过执行命令
+<pre>getconf ARG_MAX</pre>
+可以查看当前系统支持参数的长度</p>
+
+<p>好了，现在就说一个问题<br />
+平时我们喜欢
+<pre lang="bash">rm -rf /mydir/*</pre>
+来递归删除mydir目录的文件<br />
+这里有个问题我们经常忽略，就是*号会在执行的时候完全展开，即系统只会启用一个rm进程出来执行，后面就接这么一大坨的参数，所以如果参数非常多，直到超长，那么这个命令就会执行失败，系统此时会提示你
+<pre>Argument list too long</pre>
+这里有两个解决问题的思路：<br />
+1、如果那个真的是想把mydir删了，就直接用rm -rf /mydir/好了，这样不会有展开问题<br />
+2、如果要指定形如*.tmp的文件的话，为了防止发生参数过长问题，最好使用
+<pre lang="bash">find /mydir/ -name "*.tmp" -exec rm -rf {} +</pre>
+这 样不会有问题，可以参考<a href="http://www.linuxsir.org/main/node/137" target="_blank">Linux文件查找命令find,xargs详述</a></p>
+
+<p>其实我们平时应该尽可能少用popen之类的API来调用shell命令，虽然我知道这是很懒很方便的做法<br />
+最好还是用相应编程语言的API来实现，这样可以保证性能，也可以保证稳定性（内存不够时popen之类的东西会失败的）</p>

@@ -1,0 +1,72 @@
+---
+layout: post
+title: Gentoo下搭建Django环境
+categories:
+- web
+tags:
+- django
+- flup
+- gentoo
+- Linux
+- nginx
+- python
+published: true
+comments: true
+---
+<p>在gentoo下搭建Django环境还是很方便的，首先当然得配好Web Server啦，我用的是Nginx，因为我们使用FastCgi，所以我们还需要安全Flup和Django<br />
+可能有些人还不清楚Nginx, Flup和Django的关系，其实这个关系和Nginx, Spawn-fcgi和php-cgi的关系是一样的，Flup是一个WSGI Server</p>
+
+<p><strong>1、安装配置Nginx（略去）</strong></p>
+
+<p><strong>2、安装Flup、Django</strong>
+<pre>emerge flup django</pre>
+<strong>3、配置和测试Django</strong>
+<pre>cd ~
+django-admin.py startproject www
+cd www
+python manage.py runserver 127.0.0.1:8000
+</pre>
+<strong>4、配置Flup</strong>
+在/etc/init.d/增加django服务脚本
+<pre>#!/sbin/runscript
+# Copyright 1999-2010 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $</pre></p>
+
+<p>depend() {<br />
+return<br />
+}</p>
+
+<p>start() {<br />
+/usr/bin/python2.6 /root/www/manage.py runfcgi method=threaded host=localhost port=8000<br />
+}</p>
+
+<p>stop() {<br />
+kill -9 `ps ax | grep '/root/www/manage.py' | grep -v grep | awk -F' ' '{print $1}'`<br />
+}</p>
+
+<p>restart() {<br />
+svc_stop<br />
+svc_start<br />
+}
+别忘记
+<pre>rc-update add django default</pre>
+<strong>5、配置Nginx.conf</strong>
+<pre>location /django {
+fastcgi_pass 127.0.0.1:8000;
+fastcgi_param PATH_INFO $fastcgi_script_name;
+fastcgi_param REQUEST_METHOD $request_method;
+fastcgi_param QUERY_STRING $query_string;
+fastcgi_param CONTENT_TYPE $content_type;
+fastcgi_param CONTENT_LENGTH $content_length;
+fastcgi_pass_header Authorization;
+fastcgi_param REMOTE_ADDR           $remote_addr;
+fastcgi_param SERVER_PROTOCOL       $server_protocol;
+fastcgi_param SERVER_PORT           $server_port;
+fastcgi_param SERVER_NAME           $server_name;
+fastcgi_intercept_errors off;
+}</pre>
+<strong>6、最终测试</strong>
+<pre>/etc/init.d/nginx restart
+/etc/init.d/django restart</pre>
+访问http://xxx/django就可以看到测试页面啦</p>

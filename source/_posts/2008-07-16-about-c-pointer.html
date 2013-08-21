@@ -1,0 +1,34 @@
+---
+layout: post
+title: 关于C++的指针引用
+categories:
+- geek
+tags:
+- C
+- pointer
+- 引用
+- 指针
+published: true
+comments: true
+---
+<p>今天和牛人同事cml讨论指针引用（其实是他告诉我的），像下面代码：
+<pre lang="c">
+void *p = NULL;
+int *pi = NULL;
+pi = (int *)p;
+</pre>
+这个我想大家都知道，再来：
+<pre lang="c">
+void *p = NULL;
+int *pi = NULL;
+(void *&)pi = p;
+</pre>
+哈哈，其实和上面是一样的，为什么呢？我开始也没反应过来，后来cml说(void *)pi后是一个临时变量，所以要再引用一下才能改变实际的值。就像swap(int &amp;i, int &amp;j)这样，但上面的例子还是建议写成右值版本而不是左值版本。<br />
+这样的话，之前所说的一个myfree3版本可以这么写，当然要C++哦，因为C里是没有引用这个概念的：
+<pre lang="c">
+myfree3(int *&p)
+{
+    free(p);
+}
+</pre>
+也是行得通的，得益于引用这个东东。</p>

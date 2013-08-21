@@ -1,0 +1,28 @@
+---
+layout: post
+title: slackware 12.2的vim bug
+categories:
+- opensource
+tags:
+- bug
+- Linux
+- man
+- patch
+- slackware
+- vi
+- vim
+published: true
+comments: true
+---
+<p>在vim里，用shift + k来快速调用man，对于coder来说是非常常用的，但在最新slackware版本里有些问题<br />
+其实是vim的bug，只是slackware没把其较新的补丁合入，做法:
+<pre lang="bash">wget -r ftp://ftp.vim.org/pub/vim/patches/7.2/
+cd ftp.vim.org/pub/vim/patches/7.2/
+rm MD5 MD5SUMS README
+gzip *    # 这是为了符合SlackBuild打patch的做法
+cp *.gz source/ap/vim/patches/</pre>
+*.gz是刚才gz的补丁文件, 目标目录是SlackBuild目录<br />
+./SlackBuild，生成新包在/tmp下，upgradepkg即可</p>
+
+<p>可参考：
+<a href="http://linuxsir.org/bbs/showthread.php?p=1930015#post1930015">http://linuxsir.org/bbs/showthread.php?p=1930015#post1930015</a></p>

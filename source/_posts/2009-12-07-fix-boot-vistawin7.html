@@ -1,0 +1,35 @@
+---
+layout: post
+title: 修复Vista/Win 7引导
+categories:
+- geek
+tags:
+- '7'
+- boot
+- bootsect
+- fix
+- lilo
+- mbr
+- slackware
+- win
+- 修复
+- 启动
+- 备份
+published: true
+comments: true
+---
+<p>昨天回到宿舍，发现read disk error<br />
+我晕，我之前也没什么非法关机的，想不明白怎么会这个样子<br />
+问题是，当时手头上只有一张Win 7的安装盘，我启动进入修复模式<br />
+竟然发现以前XP下的fixboot和fixmbr不见了……（我太落后了）</p>
+
+<p>之后发现有gentoo的启动光盘，于是就用gentoo的启动光盘启动，chroot到slackware下<br />
+装上lilo，把引导变为lilo启动<br />
+之后再进入slackware上网，查看Win 7的修复方法<br />
+发现在Vista以后，就叫bootsect了，有一大坨参数</p>
+
+<p>接着用Win 7光盘引导，bootsect /help了一下，照猫画虎地修复MBR完成<br />
+启动时，XP扫描程序修复了一大堆问题，还发现4个字节的坏道……<br />
+无语了，磁盘错误要么不来，一来说不定就是灾难性的，让你哭笑不得<br />
+下次除了备份数据（三四年换一个硬盘），还得准备工具光碟才行
+</p>

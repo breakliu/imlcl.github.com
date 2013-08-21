@@ -1,0 +1,33 @@
+---
+layout: post
+title: slackware12.1简单升级到12.2
+categories:
+- opensource
+tags:
+- '12.1'
+- '12.2'
+- Linux
+- slackpkg
+- slackware
+- update
+- upgrade
+- 升级
+- 快速
+- 简单
+published: true
+comments: true
+---
+<p>今晚12.2的DVD ISO下载完，使用slackpkg进行了简单快捷的升级，下面是我总结的一些方法，希望对大家有用：<br />
+1、首得建议telinit 1，进入单用户模式先，这个防止升级glibc时出问题，接着当然得mount上这个ISO啦，记得要-o loop参数<br />
+2、系统里要先有slackpkg，这个东东已合到12.2的ap分支里，已经官方支持，建议大家使用这个代替slapt-get;<br />
+3、安装完slackpkg，修改<span style="color: #0000ff;">/etc/slackpkg/mirrors</span>，把cdrom那一行激活，并修改为ISO的那个目录，我挂到/mnt，所以改为<span style="color: #0000ff;">cdrom://mnt</span>就好<br />
+4、接下来的过程和平时用slackpkg一样，先<span style="color: #0000ff;">slackpkg update</span>一下，再<span style="color: #0000ff;">slackpkg upgrade-all</span>，选取自己想升的包，OK<br />
+5、升完后，会提示是否要<span style="color: #0000ff;">lilo</span>一下，这个是必须的，不然启动时会kernel panic的哦，如果用grub的话，需要自己改一下menu.lst<br />
+6、之后会有新配置文件，提示你操作，我建议为选K，就是新配置文件改名为.new，这样大家可以一个个diff一下，再mv就好啦，不然有些配置得重新配，我个人喜欢这样<br />
+7、最后，如果你不放心，重启前再lilo一下，reboot重启，一切OK，简单吧？！<br />
+8、选下载ISO的好处是，下载时快，升级也快，也可以备份一下，里面的source目录方便后面的SlackBuild</p>
+
+<p>这个两个版本更新的东东不少，内核从2.6.24升到2.6.27，用hdparm -tT /dev/sda的结果去到116M/s啦，之前一直只有一半的速度:-)</p>
+
+<p>这是自己总结的方法，如有不足的地方，欢迎交流LOL<br />
+enjoy~</p>

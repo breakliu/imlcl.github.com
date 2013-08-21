@@ -1,0 +1,19 @@
+---
+layout: post
+title: 为Movable Type建立Google的Sitemap
+categories:
+- geek
+- web
+tags:
+- google
+- movable type
+- mt
+- sitemap
+- slackcode
+- 网络管理员工具
+published: true
+comments: true
+---
+<p><p>建立Sitemap能让google更快地收录本站的内容，可以参考<a href="https://www.google.com/webmasters/sitemaps/docs/zh_CN/overview.html" target="_blank">Sitemaps创建帮助</a>。<br />基于MT(Movable Type)建立Sitemap的方法也是相当简单的，把下面代码复制，并创建名为sitemap.xml的自定义模版，粘贴后保存并publish，你主页的根目录就多了一个sitemap.xml文件，将地址绑定到google sitemap即可，如<a href="http://slackcode.cn/sitemap.xml">http://slackcode.cn/sitemap.xml</a>.</p>
+<p>&lt;?xml version="1.0" encoding="UTF-8"?&gt;<br />&lt;urlset xmlns="http://www.google.com/schemas/sitemap/0.84"&gt;<br />&nbsp;&nbsp;&lt;url&gt;<br />&nbsp;&nbsp;&nbsp;&lt;loc&gt;&lt;$MTBlogURL encode_xml="1"$&gt;&lt;/loc&gt;<br />&nbsp;&nbsp;&nbsp;&lt;priority&gt;1.0&lt;/priority&gt;<br />&nbsp;&nbsp;&lt;/url&gt;<br />&nbsp;&lt;MTEntries lastn="9999"&gt;<br />&nbsp;&nbsp;&lt;url&gt;<br />&nbsp;&nbsp;&nbsp;&lt;loc&gt;&lt;$MTEntryPermalink encode_xml="1"$&gt;&lt;/loc&gt;<br />&nbsp;&nbsp;&nbsp;&lt;lastmod&gt;&lt;$MTEntryModifiedDate utc="1" format="%Y-%m-%dT%H:%M:%SZ"$&gt;&lt;/lastmod&gt;<br />&nbsp;&nbsp;&lt;/url&gt;<br />&nbsp;&lt;/MTEntries&gt;<br />&lt;/urlset&gt;</p>
+<p>此后，google的抓虫算法将更快地找到你的网站并收录，有兴趣可以看看google的"网络管理员工具"。</p></p>

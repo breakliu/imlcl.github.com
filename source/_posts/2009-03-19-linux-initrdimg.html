@@ -1,0 +1,25 @@
+---
+layout: post
+title: 关于Linux里的initrd.img这个东东
+categories:
+- opensource
+tags:
+- img
+- initrd
+- kernel
+- Linux
+- 内核
+- 启动
+published: true
+comments: true
+---
+<p><p>今天把一部机器重编译内核，去掉了initrd.img，运行正常（以前的经验告诉我这是可行的）。</p>
+<p>然后我在想，为什么要搞这个东西出来？<br />
+而initrd.img这个东东里是什么？我个人理解只是放一些启动时必需的文件系统驱动，这些驱动完全可以编译进内核里，而去掉个文件。<br />
+我搜了一下，没有找到比较好的答复，反而听到有人说怕内核太大，所以分割出这个img出来。我细细想想，这说不定是因为当年只有lilo的时候，而不像现代Linux这样，对内核的大小会有要求，所以得像使用initrd.img作为启动盘来启动，再来加载kernel。</p>
+<p>但系像LFS这种比较原法原味的构建过程中，也没有提到initrd(d00m3d提到)，包括我用过的slackware版本，默认安装也不提供initrd，不过你可以自己生成一个。</p>
+<p>就我个人习惯，我会把用到的文件系统编译到内核，去掉这个img。</p>
+<p>参考贴：<br />
+<a href="http://www.linuxsir.org/bbs/thread337836.html">http://www.linuxsir.org/bbs/thread337836.html</a><br />
+<a href="http://www.linuxsir.org/bbs/thread301099.html">http://www.linuxsir.org/bbs/thread301099.html</a><br />
+&nbsp;</p></p>

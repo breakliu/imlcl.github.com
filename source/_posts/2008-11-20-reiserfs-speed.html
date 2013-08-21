@@ -1,0 +1,25 @@
+---
+layout: post
+title: 体现reiserfs速度
+categories:
+- geek
+tags:
+- arch
+- ext2
+- ext3
+- filesystem
+- jfs
+- Linux
+- pacman
+- reiserfs
+- xfs
+- 文件格式
+published: true
+comments: true
+---
+<p>换了硬盘，所以重装了Arch Linux，前段时间看到介绍xfs不错，于是我干脆把整个硬盘格成这个格式。<br />
+可是当我pacman -Su同步时，我傻了眼，解压就如蜗牛。因为自己之前无论用什么版本都用reiserfs的，所以一下子觉得这次同步非常的慢，而且很明显。算了一下，原本这个过程用reiserfs的话，1-2秒就可以搞定，但用xfs却要差不多30秒，我晕。<br />
+因为很不爽，马上分了一个1.5G的盘出来做/var，速度回来啦，心情好起来。<br />
+Linux下的文件格式比较多，我个人一直倾向于reiserfs（发明者入狱，项目基本上没有人维护），这东东使用了平衡二叉树，对小文件搞作非常快，所以pacman -Su才那么快（这个过程有大量的文件和文件夹解压出来）。听说xfs对大块头文件操作很快，jfs特点是cpu占用率最低，ext3的话……我从不用，除非像RH9这种老系统，/boot分区当然用ext2，因为是ro只读的。</p>
+
+<p>吃了一个小蛋糕，满足:-)</p>

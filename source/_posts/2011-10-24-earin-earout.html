@@ -1,0 +1,25 @@
+---
+layout: post
+title: 左耳进, 右耳出
+categories:
+- sunshine
+tags:
+- ckeditor
+- kindeditor
+- rails
+- 讲座
+published: true
+comments: true
+---
+<p>诚然，对于什么教师培训，好像都听不进去……只是偶尔讲师的一些言语触动了我，才会随着其思路发散思考一下。反正几乎是左进右出。</p>
+
+<p>最近使用Rails快速搞了两个小型应该系统，基本上都是存档型的。<br />
+Rails的优势就是众多的插件，让你节省大量时间，不用重造轮子，的确是这样，在这过程中最深刻的体现就是其惯例重于配置，所以使用众多插件时，几乎不用配置，只需要跟着Document按步就班即可，其速度之快无需多说。</p>
+
+<p>一直都在学校信息环境使用<a href="http://www.kindsoft.net/">KindEditor</a>编辑器，版本好像是3.5.2，使用得都很不错，反正老师们都习惯了。这个版本当时的上传功能也是自己修改的，当时编辑器是没有搞上传模块，4.0开始才正式引入<br />
+在Rails里就使用<a href="https://github.com/Macrow/rails_kindeditor">rails_kindeditor</a>了，其实用得还不错，不过有些莫名其妙的问题使得我修改了其源代码才能使用，这个比较郁闷，也找不原因。</p>
+
+<p>今天校长走过来给了我一些建议，他就提一个为什么kindeditor不能按比例缩少图片……哦，的确不行，于是，<a href="https://github.com/galetahub/ckeditor">ckeditor</a>就登场了。<br />
+呃，我承认ckeditor的确稳定和强大一些，缺点就是慢，不过其gem安装，rails generator一路下来顺畅无比犹如行云流水般的快感让我印象深刻，还有是后者对于i18n也有考虑，比较周到</p>
+
+<p>反正活动存档系统就用ckeditor来试点吧，应该没有问题。</p>

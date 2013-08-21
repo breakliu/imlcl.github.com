@@ -1,0 +1,21 @@
+---
+layout: post
+title: 嗯
+categories:
+- geek
+- web
+tags:
+- Linux
+- php
+- syntax
+- wp
+published: true
+comments: true
+---
+<p><p>前几天完成了《剖析slackware pkgtools之installpkg篇》，但还没放上来。原因是发现wp-syntax的高亮有问题，然后搜啊，终于搜到<a href="http://mjxian.cn/wordpress/archives/fckeditor-for-wordpress-wp-syntax.html/comment-page-1#comment-170">这里</a>可以把问题解决，不过lz那段php代码是有问题的，我更正如下解决问题</p>
+<p>$match = str_replace(&quot;&amp;amp;&quot;, &quot;&amp;&quot;, $match);<br />
+$match = str_replace(&quot;&amp;lt&quot;, &quot;&lt;&quot;, $match);<br />
+$match = str_replace(&quot;&amp;gt&quot;, &quot;&gt;&quot;, $match);<br />
+$match = str_replace('&amp;quot', '&quot;', $match);&nbsp;&nbsp;</p>
+<p>然后再帮自己网站的文章地址改了一下，改成加日期的形式。好像看起来不错。<br />
+环境有了，文章陆续放上。</p></p>

@@ -1,0 +1,36 @@
+---
+layout: post
+title: 安装slackware 12.1的方法
+categories:
+- opensource
+tags:
+- iso
+- Linux
+- mount
+- slackware
+- 安装
+published: true
+comments: true
+---
+<p>对于一般的Linux安装，还是比较通用的，现针对slackware 12.1来说一下，方法有：</p>
+
+<p>1、常规方法，刻盘，4G的DVD…… -。-</p>
+
+<p>2、非刻盘法：<br />
+1）通过Grub4Dos引导，网上都有说明，很清楚，把kernel和initrd的文件放到引导那里就行；<br />
+2）通过USB引导，12.1依然有usb启动盘img提供，在/usb-and-pxe-installers/usbboot.img，因为我自己有虚拟机，所以可以使用dd bs=1024k if=/usbboot.img of=/dev/sdb，来把img写到U盘即可。Windows下面好像也有类似的工具，具体没详细研究；<br />
+3）通过一些带有Grub启动功能的光盘。</p>
+
+<p>3、安装：<br />
+1）FTP<br />
+2）解压ISO<br />
+3）不想解压ISO，那要麻烦一些，可以通过以下命令：
+<pre lang="bash">mkdir /mydisk
+mkdir /myiso
+mount /dev/sdb11 /mydisk
+mount -o loop /mydisk/slackware12.1.iso /myiso</pre>
+安装时选pre-mount，定位到/myiso/slackware即可</p>
+
+<p>总得来说，折腾多几次后，明天原理，安装方法基本相通。在公司我都是把iso解压放到ftp上的，这样到哪里装都很方便。</p>
+
+<p>特此分享本人的经验:)</p>
