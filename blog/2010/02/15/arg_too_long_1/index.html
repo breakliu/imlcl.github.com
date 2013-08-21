@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>命令行字符串过长的问题 - 大头龙仔Blog</title>
+  <meta name="author" content="imlcl">
+
+  
+  <meta name="description" content="在Linux下面用Shell命令很爽，有时编程时情不自禁就想popen或system一下，然后就接个shell命令行字符串，搞定 通过执行命令
+getconf ARG_MAX
+可以查看当前系统支持参数的长度 好了，现在就说一个问题
+平时我们喜欢
+rm -rf /mydir/* &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://imlcl.com/blog/2010/02/15/arg_too_long_1">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">大头龙仔Blog</a></h1>
+  
+    <h2>A strong man can save himself. A great man can save another.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com.au/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:imlcl.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">命令行字符串过长的问题</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-02-15T00:00:00+08:00" pubdate data-updated="true">2010-02-15</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content">在Linux下面用Shell命令很爽，有时编程时情不自禁就想popen或system一下，然后就接个shell命令行字符串，搞定
+
+通过执行命令
+<pre>getconf ARG_MAX</pre>
+可以查看当前系统支持参数的长度
+
+好了，现在就说一个问题
+平时我们喜欢
+<pre lang="bash">rm -rf /mydir/*</pre>
+来递归删除mydir目录的文件
+这里有个问题我们经常忽略，就是*号会在执行的时候完全展开，即系统只会启用一个rm进程出来执行，后面就接这么一大坨的参数，所以如果参数非常多，直到超长，那么这个命令就会执行失败，系统此时会提示你
+<pre>Argument list too long</pre>
+这里有两个解决问题的思路：
+1、如果那个真的是想把mydir删了，就直接用rm -rf /mydir/好了，这样不会有展开问题
+2、如果要指定形如*.tmp的文件的话，为了防止发生参数过长问题，最好使用
+<pre lang="bash">find /mydir/ -name "*.tmp" -exec rm -rf {} +</pre>
+这 样不会有问题，可以参考<a href="http://www.linuxsir.org/main/node/137" target="_blank">Linux文件查找命令find,xargs详述</a>
+
+其实我们平时应该尽可能少用popen之类的API来调用shell命令，虽然我知道这是很懒很方便的做法
+最好还是用相应编程语言的API来实现，这样可以保证性能，也可以保证稳定性（内存不够时popen之类的东西会失败的）
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">imlcl</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-02-15T00:00:00+08:00" pubdate data-updated="true">2010-02-15</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/opensource/'>opensource</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://imlcl.com/blog/2010/02/15/arg_too_long_1/" data-via="" data-counturl="http://imlcl.com/blog/2010/02/15/arg_too_long_1/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2010/02/14/solute_wordpress_ftp/" title="Previous Post: 解决wordpress提示输入FTP帐号问题">&laquo; 解决wordpress提示输入FTP帐号问题</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2010/02/23/php_template_engine_blitz/" title="Next Post: PHP模版引擎Blitz Templates">PHP模版引擎Blitz Templates &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/01/first/">写给2013，写给我，写给我们</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/13/git-gitignore/">Git和.gitignore</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/05/1/">服务器基于slackware的KVM布署详解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/04/1/">所谓码农（摘自《码农》第1期）</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/06/1/">[转]ZIP,一个没落天才的故事</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - imlcl -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

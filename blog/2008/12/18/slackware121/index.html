@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>slackware12.1简单升级到12.2 - 大头龙仔Blog</title>
+  <meta name="author" content="imlcl">
+
+  
+  <meta name="description" content="今晚12.2的DVD ISO下载完，使用slackpkg进行了简单快捷的升级，下面是我总结的一些方法，希望对大家有用：
+1、首得建议telinit 1，进入单用户模式先，这个防止升级glibc时出问题，接着当然得mount上这个ISO啦，记得要-o loop参数
+2、系统里要先有slackpkg， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://imlcl.com/blog/2008/12/18/slackware121">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">大头龙仔Blog</a></h1>
+  
+    <h2>A strong man can save himself. A great man can save another.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com.au/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:imlcl.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">slackware12.1简单升级到12.2</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-12-18T00:00:00+08:00" pubdate data-updated="true">2008-12-18</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content">今晚12.2的DVD ISO下载完，使用slackpkg进行了简单快捷的升级，下面是我总结的一些方法，希望对大家有用：
+1、首得建议telinit 1，进入单用户模式先，这个防止升级glibc时出问题，接着当然得mount上这个ISO啦，记得要-o loop参数
+2、系统里要先有slackpkg，这个东东已合到12.2的ap分支里，已经官方支持，建议大家使用这个代替slapt-get;
+3、安装完slackpkg，修改<span style="color: #0000ff;">/etc/slackpkg/mirrors</span>，把cdrom那一行激活，并修改为ISO的那个目录，我挂到/mnt，所以改为<span style="color: #0000ff;">cdrom://mnt</span>就好
+4、接下来的过程和平时用slackpkg一样，先<span style="color: #0000ff;">slackpkg update</span>一下，再<span style="color: #0000ff;">slackpkg upgrade-all</span>，选取自己想升的包，OK
+5、升完后，会提示是否要<span style="color: #0000ff;">lilo</span>一下，这个是必须的，不然启动时会kernel panic的哦，如果用grub的话，需要自己改一下menu.lst
+6、之后会有新配置文件，提示你操作，我建议为选K，就是新配置文件改名为.new，这样大家可以一个个diff一下，再mv就好啦，不然有些配置得重新配，我个人喜欢这样
+7、最后，如果你不放心，重启前再lilo一下，reboot重启，一切OK，简单吧？！
+8、选下载ISO的好处是，下载时快，升级也快，也可以备份一下，里面的source目录方便后面的SlackBuild
+
+这个两个版本更新的东东不少，内核从2.6.24升到2.6.27，用hdparm -tT /dev/sda的结果去到116M/s啦，之前一直只有一半的速度:-)
+
+这是自己总结的方法，如有不足的地方，欢迎交流LOL
+enjoy~
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">imlcl</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-12-18T00:00:00+08:00" pubdate data-updated="true">2008-12-18</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/opensource/'>opensource</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://imlcl.com/blog/2008/12/18/slackware121/" data-via="" data-counturl="http://imlcl.com/blog/2008/12/18/slackware121/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2008/12/15/1/" title="Previous Post: 关于proftpd开启anonymous访问权限">&laquo; 关于proftpd开启anonymous访问权限</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2008/12/25/1/" title="Next Post: 祝大家圣诞快乐">祝大家圣诞快乐 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/01/first/">写给2013，写给我，写给我们</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/13/git-gitignore/">Git和.gitignore</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/05/1/">服务器基于slackware的KVM布署详解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/04/1/">所谓码农（摘自《码农》第1期）</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/06/1/">[转]ZIP,一个没落天才的故事</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - imlcl -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

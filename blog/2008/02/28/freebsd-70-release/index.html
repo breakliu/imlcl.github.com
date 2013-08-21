@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>FreeBSD 7.0-RELEASE 正式发布了 - 大头龙仔Blog</title>
+  <meta name="author" content="imlcl">
+
+  
+  <meta name="description" content="FreeBSD 7.0-RELEASE 正式发布了，这是 7-STABLE 分支的第一个正式的发行版本，同时也是目前第一个以计划而非功能作为优先考虑的奇数版本。这一版本的主要亮点包括： - 对于 SMP 环境下的数据库以及许多其他性能测试中暴露的可伸缩性问题进行了大幅度的改善。FreeBSD 7. &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://imlcl.com/blog/2008/02/28/freebsd-70-release">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">大头龙仔Blog</a></h1>
+  
+    <h2>A strong man can save himself. A great man can save another.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com.au/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:imlcl.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">FreeBSD 7.0-RELEASE 正式发布了</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-02-28T00:00:00+08:00" pubdate data-updated="true">2008-02-28</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content">FreeBSD 7.0-RELEASE 正式发布了，这是 7-STABLE 分支的第一个正式的发行版本，同时也是目前第一个以计划而非功能作为优先考虑的奇数版本。这一版本的主要亮点包括：<br />
+<br /> - 对于 SMP 环境下的数据库以及许多其他性能测试中暴露的可伸缩性问题进行了大幅度的改善。FreeBSD 7.0
+在一些用例中，普通负载时性能比 FreeBSD 6.X 提高了 350%，高负载条件下性能提高达 1500％。与目前为止 Linux
+内核的最佳性能（2.6.22 和 2.6.24版本）相比，性能高
+15%。这些性能改善的结果来自于用于分析和改进系统性能的性能评估用例，对于您具体的工作负载，可能会有所不同。性能方面的改善主要源自以下方面的改
+进：<br />
+　　* 默认采用 1:1 线程模型的 libthr 线程库。<br />
+　　* 对于进程间通讯（IPC）、网络和调度器上锁方面的改进。<br />
+　　* 对 5.x 和 6.x 分支所引入的 SMP 架构的优化。<br />
+<br />
+一些性能测试显示，这一版本的 FreeBSD 对于至多 8 颗 CPU 的情形，其性能随 CPU 个数线性增加。许多工作负载在多核系统中均呈现了显著的性能提升。<br />
+<br />
+- 对 ULE 调度器进行了大幅度的改进，包括性能和交互式应用响应方面的改良 （4BSD 调度器在 7.0 中仍是默认调度器，但我们有可能在 7.1 中将 ULE 更换为默认调度器）<br />
+- 增加了对于 Sun 的 ZFS 文件系统的试验性支持。<br />
+- 增加了可用于为文件系统增加数据日志的 gjournal 和用于虚拟化存储的 gvirstor。<br />
+- 增加了对 XFS 文件系统的只读支持。<br />
+- 对 unionfs 文件系统进行了重写。<br />
+- 新增了 iSCSI 发起端（客户端）。<br />
+- 针对一些网卡驱动增加了 TSO 和 LRO 支持。<br />
+- 新增了对于试验性的 SCTP （流控制传输协议） 的支持（FreeBSD 成为了这一协议的参考实现）。<br />
+- 对无线网络 (802.11) 支持进行了大幅度的改进。<br />
+- 从 OpenBSD 引入了网络链路聚合/trunking (lagg(4))。<br />
+- 为 BPF 增加了即时编译为本地代码的能力，改善了捕捉包的性能。<br />
+- 对基于 ARM 架构的嵌入式系统开发板的支持进行了大幅度的改善。<br />
+- 引入了新的、具有高可伸缩性的用户态内存分配器 jemalloc。<br />
+- 在原先的安装同一版本的安全和可靠性更新的基础上， freebsd-update(8) 正式提供了对于在不同发行版本之间进行二进制升级的支持。<br />
+- X.Org 7.3, KDE 3.5.8, GNOME 2.20.2.<br />
+- GCC 4.2.1.<br />
+- BIND 9.4.2.<br />
+<br />详情看：http://www.freebsdchina.org/document_28_40247.html<br /><br />
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">imlcl</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-02-28T00:00:00+08:00" pubdate data-updated="true">2008-02-28</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/opensource/'>opensource</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://imlcl.com/blog/2008/02/28/freebsd-70-release/" data-via="" data-counturl="http://imlcl.com/blog/2008/02/28/freebsd-70-release/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2008/02/28/1/" title="Previous Post: 昨晚发了一个恶梦">&laquo; 昨晚发了一个恶梦</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2008/02/28/fuck-grapefruit/" title="Next Post: Fuck Grapefruit">Fuck Grapefruit &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/01/first/">写给2013，写给我，写给我们</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/13/git-gitignore/">Git和.gitignore</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/05/1/">服务器基于slackware的KVM布署详解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/04/1/">所谓码农（摘自《码农》第1期）</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/06/1/">[转]ZIP,一个没落天才的故事</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - imlcl -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,636 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>大头龙仔Blog</title>
+  <meta name="author" content="imlcl">
+
+  
+  <meta name="description" content="很久没有进服务器里，emerge &#8211;sync了一下发现有100多个软件包可以更新，想想有大半年啦，于是决定emerge world一下。
+这里就记下我emerge world的过程和之后的工作，其实一般来说风险是非常小的，只有一步步走就行：
+1、一般来说，如果我发现有最新版的GCC， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://imlcl.com/blog/page/5">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">大头龙仔Blog</a></h1>
+  
+    <h2>A strong man can save himself. A great man can save another.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com.au/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:imlcl.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/10/06/gentoo-emerge-world/">Gentoo Emerge World</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-06T00:00:00+08:00" pubdate data-updated="true">2010-10-06</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">很久没有进服务器里，emerge &#8211;sync了一下发现有100多个软件包可以更新，想想有大半年啦，于是决定emerge world一下。
+这里就记下我emerge world的过程和之后的工作，其实一般来说风险是非常小的，只有一步步走就行：
+1、一般来说，如果我发现有最新版的GCC，我会先emerge -uDNpv gcc，没有问题就emerge -uDNv gcc，把GCC更新到最新先，之后可以用gcc-config来选定新的gcc版本；
+
+2、优先更新GCC的好处是，这样后面的重编译都可以选择最新的编译器，这样最新编译器会给系统带来或多或少的好处（这是我的见解)。
+
+3、接着是更新world了，这里，我有个准则是：如果整个系统的软件改动较大，我就用emerge -ev world来更新，否则我就用emerge -uDNv world来更新。至于怎么叫改动大，就看个人了，一般来说，没必要就不要emerge -ev world，优先考虑emerge -uDNv world。因为前者是不管软件的版本是什么都强制重编译的。
+
+4、更新完了之后，我做的第一件事是先看看更新之后的提示信息，看看有没有要注意的。接着来个emerge &#8211;depclean和revdep-rebuild，前一个命令能自己查找软件间的关联，把没有用的卸载掉，后一个是修复一些软件间的依赖性，切记要revdep-rebuild，否则系统可能就启动不了
+
+5、接着是内核了，我个人一向都用genkernel all来解决问题，这步看个人喜好啦。事实上我用linode服务器是不需要更新内核的，因为VPS里已选定好内核，所以内核不需要更新，只要重启即载入最新内核。
+
+6、eclean-dist清理旧包
+
+再想想，大概是这样了，暂时想到也是这样……有空时再补充。其实我个人认为最关键是更新world后，要留意系统提示的信息，这个我基本上一条不漏地读，反正和自己有关的就要留意了。
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/07/07/long_time/">好久没来</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-07T00:00:00+08:00" pubdate data-updated="true">2010-07-07</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">Linode主机由384MB内存免费升级到512MB内存了，真叫人兴奋。
+我晕，我这么久没写文章，一上来就说这个好像比较败人品，不过还是可以看看<a href="http://blog.linode.com/2010/06/16/linode-turns-7-big-ram-increase/">这里</a>
+
+唉，真的很久没写文章了
+嗯……希望自己尽快有写文章的欲望
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/04/15/ready-return-apach/">准备换回Apache服务器</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-04-15T00:00:00+08:00" pubdate data-updated="true">2010-04-15</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">如题，原因嘛，觉得Nginx玩起来要HACK的时间太多了，现在我的时间比以前更少啦，要顾及一下这个了
+今天emerge &#8211;sync了一下，发现VPS好多东东可以升级呢，不过我想系统运行稳定，没有出过什么问题，那就不升啦
+等年尾再升吧，升了就齐齐过新年，这样感觉比较爽LOL
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/04/12/phone-auto-call-sys/">电话自动追呼系统</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-04-12T00:00:00+08:00" pubdate data-updated="true">2010-04-12</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">话说昨天从一个客人的需求得知，他需要一个电话自动追呼系统，来反呼叫攻击他的人，以达到减少被呼叫占线的可能
+
+这东东还是第一次听到啦，怎么联通移动之类的不能解决呢？事实上他们很容易解决，只是肯不肯帮你做而已。其实细想这种行为的话，迟早会泛滥的，到时一定会有统一解决方案
+
+我考虑了一下，巧妙地用简单的编程实现了一个方案，不过效果一定不是很好，还是得结合硬件来做比较稳当呢，哈哈。
+
+And不要和我说用电话防火墙解决，因为信号来到防火墙时，就已经占线啦，而且移动有3秒、联通有15秒通话不计费的“bug”，所以……可想而知这种攻击是多么的爽，最重要是人家接了你电话，你马上挂，是不用收费的！
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/04/09/1/">不错的PPT两则</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-04-09T00:00:00+08:00" pubdate data-updated="true">2010-04-09</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><a href="http://www.slideshare.net/jserv/next-stop-android" target="_blank">Next Stop, Android</a>
+
+<a href="http://www.slideshare.net/jserv/llvm-introduction" target="_blank">LLVM introduction</a>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/03/21/gentoo-django-env/">Gentoo下搭建Django环境</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-21T00:00:00+08:00" pubdate data-updated="true">2010-03-21</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">在gentoo下搭建Django环境还是很方便的，首先当然得配好Web Server啦，我用的是Nginx，因为我们使用FastCgi，所以我们还需要安全Flup和Django
+可能有些人还不清楚Nginx, Flup和Django的关系，其实这个关系和Nginx, Spawn-fcgi和php-cgi的关系是一样的，Flup是一个WSGI Server
+
+<strong>1、安装配置Nginx（略去）</strong>
+
+<strong>2、安装Flup、Django</strong>
+<pre>emerge flup django</pre>
+<strong>3、配置和测试Django</strong>
+<pre>cd ~
+django-admin.py startproject www
+cd www
+python manage.py runserver 127.0.0.1:8000
+</pre>
+<strong>4、配置Flup</strong>
+在/etc/init.d/增加django服务脚本
+<pre>#!/sbin/runscript
+# Copyright 1999-2010 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+depend() {
+return
+}
+
+start() {
+/usr/bin/python2.6 /root/www/manage.py runfcgi method=threaded host=localhost port=8000
+}
+
+stop() {
+kill -9 `ps ax | grep '/root/www/manage.py' | grep -v grep | awk -F' ' '{print $1}'`
+}
+
+restart() {
+svc_stop
+svc_start
+}</pre>
+别忘记
+<pre>rc-update add django default</pre>
+<strong>5、配置Nginx.conf</strong>
+<pre>location /django {
+fastcgi_pass 127.0.0.1:8000;
+fastcgi_param PATH_INFO $fastcgi_script_name;
+fastcgi_param REQUEST_METHOD $request_method;
+fastcgi_param QUERY_STRING $query_string;
+fastcgi_param CONTENT_TYPE $content_type;
+fastcgi_param CONTENT_LENGTH $content_length;
+fastcgi_pass_header Authorization;
+fastcgi_param REMOTE_ADDR           $remote_addr;
+fastcgi_param SERVER_PROTOCOL       $server_protocol;
+fastcgi_param SERVER_PORT           $server_port;
+fastcgi_param SERVER_NAME           $server_name;
+fastcgi_intercept_errors off;
+}</pre>
+<strong>6、最终测试</strong>
+<pre>/etc/init.d/nginx restart
+/etc/init.d/django restart</pre>
+访问http://xxx/django就可以看到测试页面啦
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/03/11/review-and-go-on/">继续前行</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-11T00:00:00+08:00" pubdate data-updated="true">2010-03-11</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">2008年，差不多也是这个时候，我来到深圳，来到深信服，岁月不等人，转眼间，已经是两年后的今天了
+
+老实说，作为一名本科生，刚毕业就有机会来到深信服工作，是对自己能力的一种肯定。而这个地方，我个人认为是非常适合刚毕业的人在这里锻炼的，在这里会给予你很多的机会。
+
+而我来这里这前，是没想过自己会成为一名PHPer，毕竟当初给自己的定位是并不是这个，但我还是很开心自己成为一名PHPer。在这工作期间，除了没有跳街舞，看书少了些，其它习惯基本和我在大学时候差不多，坚持研究自己喜欢的东西，玩Linux。而作为一名PHPer也令我学习了很多以前没有接触过的东西，眼界大开，这将会是日后宝贵的工作经验。
+
+在这里，认识了许多朋友（特别2008届的），得到过他们的帮助，也努力地学习他们的闪光点，名就不点了，我相信你们会知道的：）
+
+再说回我的Web组，真可谓出生入死、共同进退这么久，真的很难忘，也很感激你们
+希望Web组越来越强大，希望深信服Sangfor的明天更辉煌
+
+<strong>1、三门岛露营，因为前晚下雨，东东都湿了</strong>
+
+<a href="http://imlcl.com/wp-content/uploads/2010/03/20090726051.jpg"><img class="alignnone size-full wp-image-771" title="三门岛露营" src="http://imlcl.com/wp-content/uploads/2010/03/20090726051.jpg" alt="" width="640" height="480" /></a>
+<strong>2、三门岛部门合照</strong>
+
+<a href="http://imlcl.com/wp-content/uploads/2010/03/http_imgloadCAYQC8M1.jpg"><img class="alignnone size-full wp-image-774" title="三门岛合照" src="http://imlcl.com/wp-content/uploads/2010/03/http_imgloadCAYQC8M1.jpg" alt="" width="670" height="448" /></a>
+<strong>3、我的办公室602，我站在我的位置上照的</strong>
+
+<a href="http://imlcl.com/wp-content/uploads/2010/03/20091106079.jpg"><img class="alignnone size-full wp-image-772" title="602办室一角" src="http://imlcl.com/wp-content/uploads/2010/03/20091106079.jpg" alt="" width="640" height="480" /></a>
+
+<strong>4、深信服Sangfor研发中心，我就是在这里上班的</strong>
+<a href="http://imlcl.com/wp-content/uploads/2010/03/20100120090.jpg"><img class="alignnone size-full wp-image-773" title="深信服Sangfor研发中心" src="http://imlcl.com/wp-content/uploads/2010/03/20100120090.jpg" alt="" width="608" height="402" /></a>
+
+过完这个星期，我就要回东莞，带走那些回忆，得失自知，苦乐独品
+虽然前路并不明朗，但既然走出了这一步，我就会坚定地走下去，我要自己成功
+同时也祝惠斌工作顺利、事业顺心
+
+最后，以一部我很喜欢的电影《Big Fish》的一句结束语来结束这篇文章：
+<strong>Two roads diverged in a wood, and I took the one less traveled by, and that has made all the difference.</strong>
+
+<strong>大头龙仔
+于2010年3月11日桂庙新村85栋812
+谨此纪念在深圳甜酸苦辣的日子</strong>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/03/08/genkernel-modify-menu-lst/">genkernel支持自动修改menu.lst</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-08T00:00:00+08:00" pubdate data-updated="true">2010-03-08</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">如果你使用Gentoo发行版，并且也使用genkernel来编译自己的内核，那么只要修改/etc/genkernel.conf，打开
+<pre>BOOTLOADER="grub"
+</pre>
+这样当genkernel编译内核完成时，就会把最新的内核加入到grub的menu.lst启动菜单，当然将最新的内核设为default
+这样就能进一步偷懒了（我都是genkernel all）
+事实上自己修改menu.lst的工作量也不大，不过如果用新版的genkernel的话，就比从前省事了
+
+PS：编译内核时别忘了使用eselect kernel来选取你想编译的内核版本
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/03/08/dive-into-python-cn/">Dive Into Python中文版</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-08T00:00:00+08:00" pubdate data-updated="true">2010-03-08</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content">最近在复习Python，感觉Dive Into Python比较适合我这种有一定编程基础，同时也接触过Python的入门者
+
+在线中文版在这里：<a href="http://www.woodpecker.org.cn/diveintopython/toc/index.html" target="_blank">http://www.woodpecker.org.cn/diveintopython/toc/index.html</a>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/03/04/swig/">SWIG不错</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-04T00:00:00+08:00" pubdate data-updated="true">2010-03-04</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><a href="http://www.swig.org/index.php" target="_blank">SWIG</a>是个好东西，架构很灵活，以后用这个来写PHP扩展模块是不错的选择。
+
+SWIG is an interface compiler that connects programs written in C and  C++ with scripting languages such as Perl, Python, Ruby, and Tcl.  It  works by taking the declarations found in C/C++ header files and using  them to generate the wrapper code that scripting languages need to  access the underlying C/C++ code.  In addition, SWIG provides a  variety of customization features that let you tailor the wrapping  process to suit your application.
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/6/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/4/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/01/first/">写给2013，写给我，写给我们</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/13/git-gitignore/">Git和.gitignore</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/05/1/">服务器基于slackware的KVM布署详解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/04/1/">所谓码农（摘自《码农》第1期）</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/06/1/">[转]ZIP,一个没落天才的故事</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - imlcl -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

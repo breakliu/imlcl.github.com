@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>搬家到Linode - 大头龙仔Blog</title>
+  <meta name="author" content="imlcl">
+
+  
+  <meta name="description" content="我就快速选了个KVM的2.6.32内核，分区什么的，都按http://library.linode.com/里的说明弄好。补充一下，Linode资料库的东西挺全面的，基本都能在这里找到解决方法，再不就上linode的IRC，那里有很多高手回答你的问题，再不行才找服务人员了。我当时就上了IRC， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://imlcl.com/blog/2010/02/10/move_to_linode">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">大头龙仔Blog</a></h1>
+  
+    <h2>A strong man can save himself. A great man can save another.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com.au/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:imlcl.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">搬家到Linode</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-02-10T00:00:00+08:00" pubdate data-updated="true">2010-02-10</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content">我就快速选了个KVM的2.6.32内核，分区什么的，都按<a href="http://library.linode.com/" target="_blank">http://library.linode.com/</a>里的说明弄好。补充一下，Linode资料库的东西挺全面的，基本都能在这里找到解决方法，再不就上linode的IRC，那里有很多高手回答你的问题，再不行才找服务人员了。我当时就上了IRC，问了一个人家说从没听过的问题，我后来GOOGLE之后，才发现我是那么的菜鸟
+
+考虑软件包、稳定性等，首发的VPS操作系统是Debian 5 Lenny，其实我发现Debian太保守了，PHP的版本是5.2.6的，我晕死，可以Testing的话就前卫点吧，后面可能考虑移动Arch吧
+用一天时间架好Nginx、Spawn-fcgi、Mysql、PHP，apt-get的确好用，用久了slackware的包管理，有点不习惯这么顺手了:P
+
+以最快速度把大头龙仔Blog移到新的VPS里，接着就更改nameserver 了，再过了24小时，换完成啦。
+回头看看，感觉还好，辛苦有一定的Linux基础，但这个过程再次看到自己的不足。我认为我要认真地再看一遍这方面的教材
+
+另外blog跳起来看，发现有个严重的问题，就是固定链接失败了
+google后找到解决方案了，进入<a href="http://www.anilcetin.com/convert-apache-htaccess-to-nginx/" target="_blank">http://www.anilcetin.com/convert-apache-htaccess-to-nginx/</a>
+把我原来apache的rewrite规则：
+<pre>&lt;IfModule mod_rewrite.c&gt;
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+&lt;/IfModule&gt;</pre>
+转换为Nginx用的:
+<pre>if (!-f $request_filename){
+set $rule_0 1$rule_0;
+}
+if (!-d $request_filename){
+set $rule_0 2$rule_0;
+}
+if ($rule_0 = "21"){
+rewrite /. /index.php last;
+}</pre>
+然后把转换的结果放到
+<pre>location / {
+}</pre>
+里，/etc/init.d/nginx restart，页面刷新不再出现404了
+
+And如果你也觉得<a href="http://www.linode.com/?r=53f640250f764887320238cc00ca06b66aa3c43b" target="_blank">Linode</a>不错的话，可以顺手在Referral code输入<code>53f640250f764887320238cc00ca06b66aa3c43b，这样我将会在三个月后得到一些优惠，我会非常感激你的（这个不是优惠码，谢谢）</code>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">imlcl</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-02-10T00:00:00+08:00" pubdate data-updated="true">2010-02-10</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/server/'>server</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://imlcl.com/blog/2010/02/10/move_to_linode/" data-via="" data-counturl="http://imlcl.com/blog/2010/02/10/move_to_linode/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2010/02/10/hostmonster_refund/" title="Previous Post: Hostmonster主机已经申请退款了">&laquo; Hostmonster主机已经申请退款了</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2010/02/10/php_may_ignore_func/" title="Next Post: PHP可能初忽略的一些函数">PHP可能初忽略的一些函数 &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/01/first/">写给2013，写给我，写给我们</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/13/git-gitignore/">Git和.gitignore</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/05/1/">服务器基于slackware的KVM布署详解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/04/1/">所谓码农（摘自《码农》第1期）</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/06/1/">[转]ZIP,一个没落天才的故事</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - imlcl -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
