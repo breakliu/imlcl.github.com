@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>关于易网库ASP性能 - 大头龙仔Blog</title>
+  <meta name="author" content="imlcl">
+
+  
+  <meta name="description" content="因为某些原因，学校网站需要暂时放到免备案主机空间，就选了朋友感觉不错的易网库 买的是无限型，当时比较恶心就是独立IP要自己买，400元啊，现在都有送的，~！@#￥%……&amp;*（） 其实第一个感觉就是慢，只是绑定四个站，访问流量也不大，我就是觉得奇怪。联系客服他们又说很正常， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://imlcl.com/blog/2011/12/21/1">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">大头龙仔Blog</a></h1>
+  
+    <h2>A strong man can save himself. A great man can save another.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com.au/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:imlcl.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">关于易网库ASP性能</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-21T00:00:00+08:00" pubdate data-updated="true">2011-12-21</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content">因为某些原因，学校网站需要暂时放到免备案主机空间，就选了朋友感觉不错的<a href="http://www.webweb.com/">易网库</a>
+
+买的是无限型，当时比较恶心就是独立IP要自己买，400元啊，现在都有送的，~！@#￥%……&amp;*（）
+
+其实第一个感觉就是慢，只是绑定四个站，访问流量也不大，我就是觉得奇怪。联系客服他们又说很正常，但校园网访问的确很慢，还常常访问不到（这个估计和校园网线路有关，因为我用其它线路访问没有问题）。
+
+直到最近有老师反应该说登陆进系统后，不断要求再登陆，前几天持续出现500错误。今天实在顶不顺，终于找到一次机会网站是出问题的，又可以让他们看到的了。经过排查，他们把.NET版本降为1.X就好了。因为系统默认选的是.NET最高版本，其实我对这东西也不怎么懂，但也不可能差这么远吧？（之前试过重启服务器也不能解决问题）问了朋友说这个应该不会影响这么大，但事实上测试表明差很远，现在网站比以前畅顺多了，即使是高峰期。反正我现在调到PHP解析（客服说这样会比较快），呃……
+
+没问题就好，等明年再说。
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">imlcl</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-21T00:00:00+08:00" pubdate data-updated="true">2011-12-21</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/server/'>server</a>, <a class='category' href='/blog/categories/web/'>web</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/12/18/1/" title="Previous Post: 又说程序员">&laquo; 又说程序员</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/12/26/1/" title="Next Post: 不要把教师困在厕所里(转)">不要把教师困在厕所里(转) &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/01/first/">写给2013，写给我，写给我们</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/13/git-gitignore/">Git和.gitignore</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/05/1/">服务器基于slackware的KVM布署详解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/04/1/">所谓码农（摘自《码农》第1期）</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/06/1/">[转]ZIP,一个没落天才的故事</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/imlcl">@imlcl</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'imlcl',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - imlcl -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'imlcl';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

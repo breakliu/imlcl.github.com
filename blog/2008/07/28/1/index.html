@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>C++回调函数(callback)与仿函数(functor)的异同(zz) - 大头龙仔Blog</title>
+  <meta name="author" content="imlcl">
+
+  
+  <meta name="description" content="许式伟 (版权声明)
+2007-3-3
+回调函数(callback)与仿函数(functor)很多时候从用途上来看很相似，以致于我们经常将它们相提并论。例如： inline bool compare(int a, int b)
+{ return a > b;
+} struct comparer &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://imlcl.com/blog/2008/07/28/1">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">大头龙仔Blog</a></h1>
+  
+    <h2>A strong man can save himself. A great man can save another.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com.au/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:imlcl.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">C++回调函数(callback)与仿函数(functor)的异同(zz)</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-07-28T00:00:00+08:00" pubdate data-updated="true">2008-07-28</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>许式伟 (版权声明)<br />
+2007-3-3</p>
+<p>回调函数(callback)与仿函数(functor)很多时候从用途上来看很相似，以致于我们经常将它们相提并论。例如：</p>
+<pre lang="c">
+inline bool compare(int a, int b)
+{
+   return a > b;
+}
+
+struct comparer {
+  bool operator()(int a, int b) const {
+     return a > b;
+  }
+};
+
+void main()
+{
+   std::vector<int> vec, vec2;
+   std::sort(vec.begin(), vec.end(), compare);
+   std::sort(vec2.begin(), vec2.end(), comparer());
+}
+</pre>
+<p>仿函数(functor)之所以称为仿函数，是因为这是一种利用某些类对象支持operator()的特性，来达到模拟函数调用效果的技术。</p>
+<p>如果这里vec, vec2这两个vector的内容一样，那么从执行结果看，使用回调函数compare与使用仿函数comparer是一样的。</p>
+<p>那么，我们应该用回调，还是用仿函数？</p>
+<p>很多人都说用仿函数吧，回调函数是丑陋的，代码不太象C++风格。</p>
+<p>但其实问题的本质不是在代码风格上，仿函数与回调函数各有利弊，不能一概而论。<br />
+仿函数(functor)的优点</p>
+<p>我的建议是，如果可以用仿函数实现，那么你应该用仿函数，而不要用回调。原因在于： </p>
+<p>    * 仿函数可以不带痕迹地传递上下文参数。而回调技术通常使用一个额外的void*参数传递。这也是多数人认为回调技术丑陋的原因。<br />
+    * 更好的性能。</p>
+<p>仿函数技术可以获得更好的性能，这点直观来讲比较难以理解。你可能说，回调函数申明为inline了，怎么会性能比仿函数差？我们这里来分析下。我们假设某个函数func（例如上面的std::sort）调用中传递了一个回调函数（如上面的compare），那么可以分为两种情况：</p>
+<p>    * func是内联函数，并且比较简单，func调用最终被展开了，那么其中对回调函数的调用也成为一普通函数调用（而不是通过函数指针的间接调用），并且如果这个回调函数如果简单，那么也可能同时被展开。在这种情形下，回调函数与仿函数性能相同。<br />
+    * func 是非内联函数，或者比较复杂而无法展开（例如上面的std::sort，我们知道它是快速排序，函数因为存在递归而无法展开）。此时回调函数作为一个函数指针传入，其代码亦无法展开。而仿函数则不同。虽然func本身复杂不能展开，但是func函数中对仿函数的调用是编译器编译期间就可以确定并进行 inline展开的。因此在这种情形下，仿函数比之于回调函数，有着更好的性能。并且，这种性能优势有时是一种无可比拟的优势（对于std::sort就是如此，因为元素比较的次数非常巨大，是否可以进行内联展开导致了一种雪崩效应）。</p>
+<p>仿函数(functor)不能做的？</p>
+<p>话又说回来了，仿函数并不能完全取代回调函数所有的应用场合。例如，我在std::AutoFreeAlloc中使用了回调函数，而不是仿函数，这是因为AutoFreeAlloc要容纳异质的析构函数，而不是只支持某一种类的析构。这和模板（template）不能处理在同一个容器中支持异质类型，是一个道理。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">imlcl</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-07-28T00:00:00+08:00" pubdate data-updated="true">2008-07-28</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/geek/'>geek</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2008/07/27/1/" title="Previous Post: 终于可以上网了">&laquo; 终于可以上网了</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2008/07/29/1/" title="Next Post: 周星馳以「小強精神」出頭天(zz)">周星馳以「小強精神」出頭天(zz) &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/01/first/">写给2013，写给我，写给我们</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/13/git-gitignore/">Git和.gitignore</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/05/1/">服务器基于slackware的KVM布署详解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/04/1/">所谓码农（摘自《码农》第1期）</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/06/1/">[转]ZIP,一个没落天才的故事</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/imlcl">@imlcl</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'imlcl',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - imlcl -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'imlcl';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

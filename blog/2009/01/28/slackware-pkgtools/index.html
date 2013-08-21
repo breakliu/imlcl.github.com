@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>剖析slackware pkgtools之概述篇 - 大头龙仔Blog</title>
+  <meta name="author" content="imlcl">
+
+  
+  <meta name="description" content="作者: slackcode
+pkgtools版本: pkgtools-12.1.0-noarch-7.tgz
+我并不是什么高手牛人，我只是路过，觉得好玩，所以拿出来看看，希望与大家分享，共同学习
+如有转载，请注明出处:)
+&#8212;&#8212;&#8212;&#8212;&#8212;&# &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://imlcl.com/blog/2009/01/28/slackware-pkgtools">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">大头龙仔Blog</a></h1>
+  
+    <h2>A strong man can save himself. A great man can save another.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com.au/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:imlcl.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">剖析slackware Pkgtools之概述篇</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-01-28T00:00:00+08:00" pubdate data-updated="true">2009-01-28</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content">作者: slackcode
+pkgtools版本: pkgtools-12.1.0-noarch-7.tgz
+我并不是什么高手牛人，我只是路过，觉得好玩，所以拿出来看看，希望与大家分享，共同学习
+如有转载，请注明出处:)
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-
+
+Linux发布版众多，我想应该很多人都知道，到这里可以从图片上看Linux发行版的历史<a href="http://picasaweb.google.com/slackcode/SlackcodeCn">http://picasaweb.google.com/slackcode/SlackcodeCn</a>。发行版多如牛毛，但关键是选择自己喜欢的。
+判断发行版的归属，一般先从该发行版的包管理机制开始，我想这个准则很多人都认同。而我认识很多朋友，喜欢一个发行版与否，大多数都是挑它们的“包管理机制”。常用包管理系统，可以参考这里：<a href="http://linuxtoy.org/docs/guide/ch16s03.html">http://linuxtoy.org/docs/guide/ch16s03.html</a>
+
+而包管理系统，从广义上可以分为两种：源码级和二进制级。源码级的代表是Ports(FreeBSD)、Portage(Gentoo)、LFS的手动式源码级应该也算，二进制级的代表是Deb(Debian、Ubuntu)、RPM(RedHat、Fedora、CentOS)、Pkgtools(slackware)等。
+
+slackware的包管理机制很简洁，而且整个系统构建符合KISS原则，以至于我认为其没有包管理系统。
+为什么这么说？现代的包管理系统为了保证系统的健壮性，所以加入了包依赖机制，这是非常方便的一种设计。但这样也有不好的地方，首先依赖性提高了包系统复杂度；另外从一定程度上降低了系统的可定制性。slackware的pkgtools包管理很古老，从出世到现在基本没有大的变化，不对包与包之间作出依赖性检测，即用户可以随意对系统中的软件包进行独立的增删，事实上这个依赖性检测已交由用户来把关，用户会潜移默化地关注软件包之间的关系。如果你喜欢上面所述的style，而又不想从source构建，那么slackware将非常合你口味。
+另外，之所以说其“没有”包系统的原因，就是pkgtools事实上是把软件从源码级make install到一个地方，然后gzip一下，安装时就是解压到对应该路径，删除时就是对应路径删除，非常的slack。我想当时没有包系统时，也会有人这样来备份系统的，只是pkgtools把这个过程自己化了。
+
+说了这么久，没有说出pkgtools是什么东西。它很简单，就是由七个shell脚本构成的，这七个东西是：explodepkg、installpkg、makebootdisk、makepkg、pkgtool、removepkg、upgradepkg，后续文章都围绕这些脚本进行说明。
+
+从前，我听说，学习slackware会有个陡峭的曲线，之后便是康庄大道。事实上的确如此，这个我是有体会的，而slackware的保守，让我静下心来学习Linux，我的入门从这个发行版开始。
+
+下一篇是《<span class="content">剖析slackware pkgtools之installpkg篇》</span>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">imlcl</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-01-28T00:00:00+08:00" pubdate data-updated="true">2009-01-28</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/geek/'>geek</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2009/01/27/2009/" title="Previous Post: 2009春节">&laquo; 2009春节</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2009/02/06/1/" title="Next Post: 如何认别注定要失败的startup(zz)">如何认别注定要失败的startup(zz) &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/01/first/">写给2013，写给我，写给我们</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/13/git-gitignore/">Git和.gitignore</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/05/1/">服务器基于slackware的KVM布署详解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/04/1/">所谓码农（摘自《码农》第1期）</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/06/1/">[转]ZIP,一个没落天才的故事</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/imlcl">@imlcl</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'imlcl',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - imlcl -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'imlcl';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

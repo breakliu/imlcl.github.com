@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>闲话招行的安全(转) - 大头龙仔Blog</title>
+  <meta name="author" content="imlcl">
+
+  
+  <meta name="description" content="本文原发表于 http://blog.kangkang.org/wordpress/ 转载请保留老实说，在我写这篇东西的时候，曾经考虑过要不要用个比较新浪一些的题目，比如“警惕！招商银行专业版留在你电脑中的后门”，或者”招商银行七宗罪” 之类的。毕竟在互联网上，很黄很暴力的文章更加容易传播一点。 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://imlcl.com/blog/2008/09/05/1">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">大头龙仔Blog</a></h1>
+  
+    <h2>A strong man can save himself. A great man can save another.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com.au/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:imlcl.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">闲话招行的安全(转)</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-09-05T00:00:00+08:00" pubdate data-updated="true">2008-09-05</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content">本文原发表于 <a id="nhgl" href="http://blog.kangkang.org/wordpress/">http://blog.kangkang.org/wordpress/</a> 转载请保留<br id="l27w0" /><br id="n6941" />老实说，在我写这篇东西的时候，曾经考虑过要不要用个比较新浪一些的题目，比如“警惕！招商银行专业版留在你电脑中的后门”，或者”招商银行七宗罪” 之类的。毕竟在互联网上，很黄很暴力的文章更加容易传播一点。但是看起来<a id="hbpu" href="http://mt.delphij.net/cgi-bin/mt/mt-search.cgi?IncludeBlogs=2&amp;search=%E6%8B%9B%E8%A1%8C">以前 delphij 同学和招行打交道的经历</a> 并不十分令人愉快，作为拥有中国最大网络媒体(之一)渠道的他尚且如此，我这只小苍蝇还是不要给自己找麻烦来的好。<br id="p42u" /><br id="p42u0" />关于招行专业版的的安全或者扰民问题，互联网上面已经有很多讨论的，delphij 同学当年曾经掀起了批斗招行的大潮，在这里我要向他致敬，因为他是第一个把招行专业版的安全问题公开给公众的人。那次也引发了不少很有价值的讨论，可惜互联网上面的事情总是人多嘴杂，就像 bbs 上面发的帖三个回帖之内就会跑题一样，讨论最后也变成了好几个不同立场的声音各自为战。一方面是 delphij 同学和招行的员工在争竞招行专业版的文件签名问题，另一方面很多 *nix 粉们在号召大家向招行请愿要求推出 *nix 版本。还有一些人开始从安全的角度讨论这个安全控件到底有没有必要做。最后 delphij 同学自己也感到厌烦了，这个事情就不了了之，招行专业版在那之后也做了点小改进，比如增加了文件签名，增加了 64 位 windows 支持等等。<br id="wsrm" /><br id="wsrm0" />以前的讨论总结一下，对招行专业版的负面意见可以列出如下。<br id="tu4j" /><br id="tu4j0" />
+<ul id="tu4j1">
+	<li id="tu4j2">发行包的可执行文件没有签名</li>
+	<li id="d_80">用给系统增加驱动的办法来保护键盘监听是小题大作</li>
+	<li id="la.3">强行关闭用户的远程桌面是不可忍受的</li>
+	<li id="la.30">拒绝在虚拟机里面使用文件证书</li>
+	<li id="r62l">应该还有，但是我大概忘记了<br id="r62l0" /></li>
+</ul>
+<br id="g2ar" />那么招行专业版的这些行为到底是对还是错呢？这并不好说，因为屁股决定脑袋，作为我们对计算机比较有使用经验的用户来说，是很反感强行关闭远程桌面，以及封禁虚拟机这些看起来跟流氓软件没什么差别的行为的；但是在招行开发人员的角度来说，他们的首要目的是保证小白用户的电脑尽量不要出问题，而小白用户的电脑既然流氓软件插得，我堂堂招商银行专业版凭啥插不得？至于电脑油子的电脑被误伤，关我啥事，何况老虎有打盹，电脑油子的电脑一旦真的不小心因为远程桌面被搞，这也是个麻烦。<br id="e0ni" /><br id="e0ni0" />所以我当时就预计到了 delphij 同学和招行开发部门对砍结果不会有啥结果，其主要原因就是这个屁股决定脑袋。对于招行开发人员来说，什么你电脑的稳定性可用性，那都算个毛，我家专业版最大。<br id="tw1r" /><br id="tw1r0" />话虽然这么说，但是有些事情，还是实在不能忍的，这也是我今天写这篇 blog 的原因。招行开发人员总体来说有增强系统安全性的愿望，但是他们的安全知识和系统知识看起来比较不够。我比较愤怒的是，过了这么多年，他们居然还在把提升权限的驱动往 windows 的 system32 下面装。而且这个驱动的代码里面没有对调用者做任何校验。<br id="ps6c" /><br id="btvq" />在招行专业版的发行包里面有个叫做 CertClient.dat 的文件，安装完了以后，你可以在 windowssystem32drivers 下面找到它。那么这个文件到底是做什么用的呢？反编译一下就知道了，这个文件的用途其实只有一个，就是招行专业版的可执行文件为了在普通用户权限下面能直接读取系统的硬件端口来读取键盘，会调用这个驱动，然后驱动调用windows的接口，使得招行专业版的可执行可以直接读写所有的硬件端口。然后<strong id="imb5">这个驱动里面对调用者没有做任何检查</strong>，任何一个程序在普通用户身份下打开这个驱动，就可以把自己的IO权限提升，即使是 Vista 也不例外。因为 Windows 的权限检查，是在将驱动加载入 windows 时候进行的，而招行专业版将这个危险的驱动装进了system32drivers, 在 Windows 开机的时候，这个驱动就会被加载入内存，为招行专业版和其他可能有的恶意程序，打开了一扇大门。<br id="or2t" /><br id="s18-" />写到这里的时候我不禁想，如果当年 CIH 的作者现在在国内，他利用招行专业版这驱动写了一个摧毁主板 BIOS 的病毒，那么这个病毒到底是应该叫 CIH 病毒还是叫 CMB 病毒呢？<br id="vbf4" /><br id="s18-0" />招行专业版发行包里面还有个 cmbprotector.dat 的驱动，这个驱动反编译看了一下，似乎是个 filter 驱动，用于拦截usb键盘的，和 certclient.dat 一样，这个驱动也是被装入 system32 随系统启动而加载的，因为时间关系，我没有仔细看这个驱动对调用者有没有做检查，如果这个驱动也没有检查的话，那么<strong id="a57c">其对系统安全性的危害可能甚至要高于 certclient.dat</strong>，certclient.dat 顶多使得程序有机会破坏你的硬件或者弄死机，这个可是能实实在在拦截你键盘输入的，木马啥的最喜欢这种东西了。当然这个驱动我没有仔细分析，如果分析错了，那前面说的都白说，所以我也就不讨论了。<br id="u5-f" /><br id="u5-f0" />综上所述，招行专业版虽然会很霸道的关你远程桌面，封你虚拟机，但是换位思考，因为屁股决定脑袋，如果我在开发者的位置，说不定会做的比他们还疯狂，所以也就忍了。只不过搞的时候也要有点专业精神，直接把两个能危害系统安全的驱动就装进了 system32, 这个实在是比较说不过去。<br id="u5-f1" /><br id="r75j" />招行开发者对安全知识的匮乏不仅反映在他们做的专业版上，网银支付也是如此。不知道有多少人用招行给支付宝充钱的时候注意到，最后一步显示的支付宝充值成功页面，浏览器地址栏里面居然是 netpay.cmbchina.com。我一开始还以为这是一个 iframe, 结果有天仔细打开一看，果然就是招行自己的服务器上面显示出来了支付宝的内容。原来招行支付系统会自动去抓取商户网站的页面，显示在自己的域下面。<br id="h0vv" /><br id="h0vv0" />对，我说到这里你可能已经反应过来了，这不就是一个标准的 XSS 么。在这个页面里面可以轻易的取得招行系统的 cookie 或者其他什么玩意。我不知道偷到了招行 cookie 以后能干啥，但总的来说，这种 XSS 出现在银行网站上，本身已经很不正常了。另外我更关注的是他自行抓取商户页面这个行为，这个行为要想利用来搞点什么事情，实在是容易得很。例如将商户回跳URL设置为一个钓鱼网站。里面写上”系统繁忙，请您再次输入银行卡号和密码”。<br id="h0vv1" /><br id="h0vv2" />招行开发者可能会辩解说，商户提交过来的信息都是经过签名的，商户的资质都是被审核过的，因此是可信的行为。但是问题在于，银行系统为什么要相信一个安全性低于银行网站的商户数据？如果商户网站被人黑了怎么办？毕竟这个钓鱼页面可是出现在你 netpay.cmbchina.com 上面的。或者不用黑掉商户网站，直接利用前段时间的 DNS 污染漏洞，对招行服务器网段内所有机器污染 alipay.com ，只要有一两下中招的就赚到了。<br id="lxck" /><br id="leyo" />写了这么多，这篇 blog 也应该收尾了。最后提示各位电脑油子如何在虚拟机中跑专业版，专业版对虚拟机的检查不会非常变态，因为他也怕误杀，所以通常都不会用不够明显的特征来封杀，想来想去，<strong id="itj9">只有 BIOS 特征字串</strong> 以及一些<strong id="itj90">已经公布的端口调用后门</strong> 是一定可以确定不误杀的，所以你知道该怎么办了吧。<br id="bz-s" /><br id="bz-s0" />每次登录招行的网站时候都会看到，”招行送安全，立即下载一网通网盾“ 的宣传，对此我只能无奈的笑笑，反钓鱼网站是个好事，不过鉴于招行其他电脑产品的安全意识状况，我确实比较担心这个一网通网盾也是个不靠谱的东西。为了电脑和自己的身心健康，还是远离它可能更明智一些。
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">imlcl</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-09-05T00:00:00+08:00" pubdate data-updated="true">2008-09-05</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/geek/'>geek</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2008/09/03/chrome/" title="Previous Post: chrome不错">&laquo; chrome不错</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2008/09/05/google/" title="Next Post: google数据结构protobuf">google数据结构protobuf &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/01/01/first/">写给2013，写给我，写给我们</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/13/git-gitignore/">Git和.gitignore</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/05/1/">服务器基于slackware的KVM布署详解</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/04/1/">所谓码农（摘自《码农》第1期）</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/06/1/">[转]ZIP,一个没落天才的故事</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/imlcl">@imlcl</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'imlcl',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - imlcl -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'imlcl';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
