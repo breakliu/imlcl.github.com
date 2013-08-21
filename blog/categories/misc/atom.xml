@@ -4,7 +4,7 @@
   <title><![CDATA[Category: misc | 大头龙仔Blog]]></title>
   <link href="http://imlcl.com/blog/categories/misc/atom.xml" rel="self"/>
   <link href="http://imlcl.com/"/>
-  <updated>2013-08-21T17:22:42+08:00</updated>
+  <updated>2013-08-21T17:29:50+08:00</updated>
   <id>http://imlcl.com/</id>
   <author>
     <name><![CDATA[imlcl]]></name>
@@ -37,7 +37,7 @@
     <link href="http://imlcl.com/blog/2012/05/06/1/"/>
     <updated>2012-05-06T00:00:00+08:00</updated>
     <id>http://imlcl.com/blog/2012/05/06/1</id>
-    <content type="html"><![CDATA[<p>via: <a href="http://cnbeta.com/articles/185863.htm"><a href="http://cnbeta.com/articles/185863.htm">http://cnbeta.com/articles/185863.htm</a></a></p>
+    <content type="html"><![CDATA[<p>via: <a href="http://cnbeta.com/articles/185863.htm">http://cnbeta.com/articles/185863.htm</a></p>
 
 <p>ZIP,一个没落天才的故事，Phil Katz不愿意为一个压缩软件付钱，就索性自己写了一个更好的算法，然后无偿公开。2000年4月14日，他被发现死于一家汽车旅馆，年仅37岁，死时手中握着一个空酒瓶。他留下了zip算法，却没有留下一张像样的照片。</p>
 
@@ -56,7 +56,7 @@ Philip Katz从未在ZIP身上得到半点好处，坚持信念的结果往往是
 就在Philip Katz去世的前后，ZIP的最大对手：WINRAR，正在悄然崛起。当时Winzip早已稳坐压缩界头把交椅，但随着2.7版本的出现，Wrar却日益壮大，两者斗争得异常激烈(注：与Winzip一样，其实早在DOS时代，就存在RAR的DOS版本，只是RAR在DOS时代敌不过只能用命令行的ARJ，到了Windows时代又招架不住WinZip的进攻，皆因RAR压缩率低和速度慢，并且RAR压缩格式以前一直缺少其它软件的支持，导致WinRAR都未能广泛流行)。
 就当时两者的性能而言，Winzip压缩只支持ZIP格式，解压缩支持ZIP、CAB，还有TAR、GZip、UUencode、XXencode、BinHex、MIME等几种Internet常用格式(可以看出WinZip的重心之所在)，ARJ、LHA和ARC则需要相应的外挂程序。但WinZip跟Windows资源管理器结合得很紧密，最常用的压缩和解压缩操作已集成到鼠标右键菜单中，点按右键即可轻松完成压缩解压缩。并且增加了不少人性化的功能如E-mail功能，分卷压缩，密码加密等;那Winrar又凭什么与其争锋呢?答案是格式支持与功能!WinRAR压缩格式支持自家的RAR和ZIP(即可“兼容”ZIP)，解压缩支持RAR、ZIP、CAB、ACE、ARJ、LHA、TAR、GZip、UUE，基本上常用的都有了。WinRAR在界面上类似WinZip在功能上基本是WinZip有的它都有，甚至有好多比WinZip还更好更强大。如有特色的”Repair archive”功能甚至可以修复损坏的zip文件;”Convert archive to SFX”功能把RAR和ZIP文件转换成自解压文件，同WinZip不同的是，在压缩时就可以直接存为自解压文件…取对手之精华，并改进之，这就是Winrar敢于与压缩界龙头叫板的原因。
 或许到了这里，你会问：为什么zip不去支持rar呢?这样竞争不就“公平”了吗?但我告诉你的是：zip格式是开放的，任何压缩软件都可以免费使用，RAR是RARLab的专利算法，其它软件要想提供对Rar格式支持必须交纳费用以获得授权，如果winzip想要支持zip，就必须向rarlab付费，这根本就是拿自己的血汗去喂饱对手。我们须明白：winzip和winrar都是共享软件，中国人用惯了盗版的winrar，以为rar才是压缩格式的王道，如果自以为全天下的压缩软件都应该支持rar格式，那么只能说这是一种极其荒谬的认知。
-虽然ZIP仍然是压缩文件的标准格式，但随着WinRAR的功能越来越强大，并且对ZIP的兼容性和ISO镜像文件的支持，固步自封的WinZip已经逐渐开始被网民们所遗忘。面临被打倒，昔日的强者做出了最后的反击&mdash;Winzip9.0。2004年发布的Winzip9.0是Winzip公司在02年后两年内第一次发布的Winzip软件更新，可见这次Winzip反击的决心。本版本的Winzip带来了很多新的功能特性，如：加密标准提高，支持符合AES技术的128位和256位的高级加密标准;支持64位扩展技术;内置了先进的“真空”压缩算法(Enhanced Deflate)等。这一切都是针对WinRAR 3.30，誓求夺回压缩界的王座。
+虽然ZIP仍然是压缩文件的标准格式，但随着WinRAR的功能越来越强大，并且对ZIP的兼容性和ISO镜像文件的支持，固步自封的WinZip已经逐渐开始被网民们所遗忘。面临被打倒，昔日的强者做出了最后的反击--Winzip9.0。2004年发布的Winzip9.0是Winzip公司在02年后两年内第一次发布的Winzip软件更新，可见这次Winzip反击的决心。本版本的Winzip带来了很多新的功能特性，如：加密标准提高，支持符合AES技术的128位和256位的高级加密标准;支持64位扩展技术;内置了先进的“真空”压缩算法(Enhanced Deflate)等。这一切都是针对WinRAR 3.30，誓求夺回压缩界的王座。
 可惜就像乔丹的最后出场一样，也许真的是老了，我们再难看到英雄昔日的光彩。
 WinZip 9.0对压缩格式的支持并没有什么增加，支持原有的18种压缩格式，但仍然不支持ISO这一非常流行的镜像文件格式，并且最大的问题是不兼容RAR，这就令许多用户敬而远之了;相对而言，WinRAR 3.30目前的压缩格式虽然只有15种，但由于兼容ZIP和支持ISO，仅仅这两条就使不少WinZip的老用户心动神移了。
 随着绝唱反击的失败，于2005年7月，WinZip被Vector Capital收购。
@@ -91,7 +91,7 @@ WinZip 9.0对压缩格式的支持并没有什么增加，支持原有的18种�
     <link href="http://imlcl.com/blog/2011/12/26/1/"/>
     <updated>2011-12-26T00:00:00+08:00</updated>
     <id>http://imlcl.com/blog/2011/12/26/1</id>
-    <content type="html"><![CDATA[<p>via: <a href="http://blog.lbxixiao.com/u/35/archives/2011/149.html"><a href="http://blog.lbxixiao.com/u/35/archives/2011/149.html">http://blog.lbxixiao.com/u/35/archives/2011/149.html</a></a></p>
+    <content type="html"><![CDATA[<p>via: <a href="http://blog.lbxixiao.com/u/35/archives/2011/149.html">http://blog.lbxixiao.com/u/35/archives/2011/149.html</a></p>
 
 <p>引子：笑话《困在厕所里的老师》——一日上课，一学生要求上厕所，老师觉影响课堂秩序，不准。结果尿于裤中。家长状告教育部门：该老师违反人权，剥夺学生如厕权利，应严惩之；又一日上课，一学生要求如厕，老师准之。谁知该生滑倒在厕所。家长状告教育部门：课堂期间擅自让学生离开课室，导致学生受到伤害，应严惩之；又一日上课，一学生要求如厕，老师害怕他在厕所滑倒，前往陪伴，谁知老师离开课堂期间，学生相互打闹受伤。家长状告教育部门：该教师上课期间擅离职守，致使学生打闹受伤，应严惩之；又一日上课要求如厕，于是该老师带领全班一同前往厕所。家庭状告教育部门：该教师玩忽职守，上课期间不传道授业，应严惩之。</p>
 

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: opensource | 大头龙仔Blog]]></title>
   <link href="http://imlcl.com/blog/categories/opensource/atom.xml" rel="self"/>
   <link href="http://imlcl.com/"/>
-  <updated>2013-08-21T17:22:42+08:00</updated>
+  <updated>2013-08-21T17:29:50+08:00</updated>
   <id>http://imlcl.com/</id>
   <author>
     <name><![CDATA[imlcl]]></name>
@@ -25,7 +25,7 @@
 <p>那里这里说到一个.gitignore的文件，就是拿来声明哪些文件或文件夹不需要用Git来跟踪的。
 不过刚开始使用Git时，会遇到的即使加入.gitignore的文件，但Git依然会进行跟踪，那么这里得分两种情况来看了：
 1、如果该文件（夹）已git add进库，那么此时即使你在.gitignore声明，该文件依旧会进行跟踪，需要通过命令将其删除：
-<strong>git rm &mdash;cached -r &lt;path&gt;</strong>
+<strong>git rm --cached -r &lt;path&gt;</strong>
 2、如果该文件（夹）没有git add进库，那么此时你可以提前在.gitignore进行声名，这样就可以不让Git不跟踪了</p>
 
 <p>当备个忘吧，因为平时都没有用GUI工具，都是命令行来得快捷一些，不知有什么好GUI可以用。</p>
@@ -47,7 +47,7 @@
 
 <p>万恶的淘宝做了一件大好事，希望镜像能稳定的坚持下去：）</p>
 
-<p>镜像地址：<a href="http://ruby.taobao.org/"><a href="http://ruby.taobao.org/">http://ruby.taobao.org/</a></a></p>
+<p>镜像地址：<a href="http://ruby.taobao.org/">http://ruby.taobao.org/</a></p>
 ]]></content>
   </entry>
   
@@ -56,7 +56,7 @@
     <link href="http://imlcl.com/blog/2010/10/06/gentoo-emerge-world/"/>
     <updated>2010-10-06T00:00:00+08:00</updated>
     <id>http://imlcl.com/blog/2010/10/06/gentoo-emerge-world</id>
-    <content type="html"><![CDATA[<p>很久没有进服务器里，emerge &mdash;sync了一下发现有100多个软件包可以更新，想想有大半年啦，于是决定emerge world一下。
+    <content type="html"><![CDATA[<p>很久没有进服务器里，emerge --sync了一下发现有100多个软件包可以更新，想想有大半年啦，于是决定emerge world一下。
 这里就记下我emerge world的过程和之后的工作，其实一般来说风险是非常小的，只有一步步走就行：
 1、一般来说，如果我发现有最新版的GCC，我会先emerge -uDNpv gcc，没有问题就emerge -uDNv gcc，把GCC更新到最新先，之后可以用gcc-config来选定新的gcc版本；</p>
 
@@ -64,7 +64,7 @@
 
 <p>3、接着是更新world了，这里，我有个准则是：如果整个系统的软件改动较大，我就用emerge -ev world来更新，否则我就用emerge -uDNv world来更新。至于怎么叫改动大，就看个人了，一般来说，没必要就不要emerge -ev world，优先考虑emerge -uDNv world。因为前者是不管软件的版本是什么都强制重编译的。</p>
 
-<p>4、更新完了之后，我做的第一件事是先看看更新之后的提示信息，看看有没有要注意的。接着来个emerge &mdash;depclean和revdep-rebuild，前一个命令能自己查找软件间的关联，把没有用的卸载掉，后一个是修复一些软件间的依赖性，切记要revdep-rebuild，否则系统可能就启动不了</p>
+<p>4、更新完了之后，我做的第一件事是先看看更新之后的提示信息，看看有没有要注意的。接着来个emerge --depclean和revdep-rebuild，前一个命令能自己查找软件间的关联，把没有用的卸载掉，后一个是修复一些软件间的依赖性，切记要revdep-rebuild，否则系统可能就启动不了</p>
 
 <p>5、接着是内核了，我个人一向都用genkernel all来解决问题，这步看个人喜好啦。事实上我用linode服务器是不需要更新内核的，因为VPS里已选定好内核，所以内核不需要更新，只要重启即载入最新内核。</p>
 

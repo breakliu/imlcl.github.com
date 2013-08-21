@@ -4,7 +4,7 @@
   <title><![CDATA[Category: server | 大头龙仔Blog]]></title>
   <link href="http://imlcl.com/blog/categories/server/atom.xml" rel="self"/>
   <link href="http://imlcl.com/"/>
-  <updated>2013-08-21T17:22:42+08:00</updated>
+  <updated>2013-08-21T17:29:50+08:00</updated>
   <id>http://imlcl.com/</id>
   <author>
     <name><![CDATA[imlcl]]></name>
@@ -22,7 +22,7 @@
 首先呢，我发现自己有半年时间没有写技术类的文章了，其次，关于这个话题，我一直都想整理一篇比较好的文章出来，一来可以做个备忘，更重要是起到分享交流，共同进步。之前一直可能都有一些零零散散关于这部分细节的，但我觉得都看得不是很爽。另外，网上搜到大多数关于KVM的都是debian系或redhat系的，有部分内容和slackware有差异，并且由于slackware的文化，在KVM虚拟化这块，相比其它发行版要麻烦一点点，而slackware的简洁、稳定、快速是我一直所爱，所以更希望写下这篇文章。</p>
 
 <p><strong>二、相关准备
-</strong>1、装有slackware的主机一台，内存最好不要太少吧，如果4G或以上的，就装slackware64，当前slackware最新稳定版是13.37（37这个命名方式是和内核2.6.xx一致），因为是做物理主机的系统，所以稳定至上。至于如何安装slackware，可以看<a href="http://www.linuxsir.org/bbs/thread383703.html">slackbook中文译本</a>，反正基本流程是：光碟或U盘启动 &ndash;&gt; cfdisk分区 &ndash;&gt; setup安装 &ndash;&gt; 重启……，下载slackware可以到这里<a href="http://mirrors.163.com/slackware/"><a href="http://mirrors.163.com/slackware/">http://mirrors.163.com/slackware/</a></a>
+</strong>1、装有slackware的主机一台，内存最好不要太少吧，如果4G或以上的，就装slackware64，当前slackware最新稳定版是13.37（37这个命名方式是和内核2.6.xx一致），因为是做物理主机的系统，所以稳定至上。至于如何安装slackware，可以看<a href="http://www.linuxsir.org/bbs/thread383703.html">slackbook中文译本</a>，反正基本流程是：光碟或U盘启动 -&gt; cfdisk分区 -&gt; setup安装 -&gt; 重启……，下载slackware可以到这里<a href="http://mirrors.163.com/slackware/">http://mirrors.163.com/slackware/</a>
 2、KVM是什么，可以了解，随便一搜就有，还要确定你的CPU是否支持虚拟化技术；（<a href="http://baike.baidu.com/view/13605.htm">什么是虚拟化技术？</a>）
 3、因为我建立两个kvm，一个是slackware-current，一个是windows 2003，所以你也得要有2003的iso，安装2003请选择手动安装，最好是MSDN版本；
 4、虚拟机访问外网要使用网桥（package bridge-utils），但听说用VDE更方面，有兴趣可以看看<a href="http://wiki.alienbase.nl/doku.php?id=slackware:vde">这里</a>。老实说，VDE我弄了一下，好像很麻烦就没弄了……</p>
@@ -61,8 +61,8 @@ tunctl -t tap1</strong>
 
 <p><strong>五、安装windows server 2003</strong>
 windows方面我们使用virtio来提高磁盘和网络的IO性能，那么这里得准备virtio的两个文件：
-1、<a href="http://alt.fedoraproject.org/pub/alt/virtio-win/latest/images/bin/virtio-win-0.1-30.iso"><a href="http://alt.fedoraproject.org/pub/alt/virtio-win/latest/images/bin/virtio-win-0.1-30.iso">http://alt.fedoraproject.org/pub/alt/virtio-win/latest/images/bin/virtio-win-0.1-30.iso</a>
-</a>2、<a href="http://www.linuxwind.org/download/virtio-win-1.1.16.vfd"><a href="http://www.linuxwind.org/download/virtio-win-1.1.16.vfd">http://www.linuxwind.org/download/virtio-win-1.1.16.vfd</a></a></p>
+1、<a href="http://alt.fedoraproject.org/pub/alt/virtio-win/latest/images/bin/virtio-win-0.1-30.iso">http://alt.fedoraproject.org/pub/alt/virtio-win/latest/images/bin/virtio-win-0.1-30.iso
+</a>2、<a href="http://www.linuxwind.org/download/virtio-win-1.1.16.vfd">http://www.linuxwind.org/download/virtio-win-1.1.16.vfd</a></p>
 
 <p>来说明一下，virtio-win-0.1-30.iso里面放有windows的virtio磁盘控制器和网卡的驱动，是安装2003成功后，进入系统后进行相关驱动安装或更新用的。而virtio-win-1.1.16.vfd是一个软盘镜像，是用来安装2003时，通过F6来指定磁盘驱动用的。</p>
 
@@ -142,7 +142,7 @@ tunctl -t tap1</strong>
     <link href="http://imlcl.com/blog/2012/01/06/hash-collision-dos/"/>
     <updated>2012-01-06T00:00:00+08:00</updated>
     <id>http://imlcl.com/blog/2012/01/06/hash-collision-dos</id>
-    <content type="html"><![CDATA[<p>请细请看<a href="http://coolshell.cn/articles/6424.html"><a href="http://coolshell.cn/articles/6424.html">http://coolshell.cn/articles/6424.html</a></a></p>
+    <content type="html"><![CDATA[<p>请细请看<a href="http://coolshell.cn/articles/6424.html">http://coolshell.cn/articles/6424.html</a></p>
 
 <p>搞笑的是Perl没有这问题，这问题在2003年的一篇论文中已报告，但没人重视</p>
 ]]></content>

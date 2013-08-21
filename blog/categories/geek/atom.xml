@@ -4,7 +4,7 @@
   <title><![CDATA[Category: geek | 大头龙仔Blog]]></title>
   <link href="http://imlcl.com/blog/categories/geek/atom.xml" rel="self"/>
   <link href="http://imlcl.com/"/>
-  <updated>2013-08-21T17:22:42+08:00</updated>
+  <updated>2013-08-21T17:29:50+08:00</updated>
   <id>http://imlcl.com/</id>
   <author>
     <name><![CDATA[imlcl]]></name>
@@ -20,8 +20,8 @@
     <id>http://imlcl.com/blog/2012/02/23/lion-rvm-ruby</id>
     <content type="html"><![CDATA[<p>ruby最新p125有些重要的安全升级，我发现升级到Lion 10.7.3后发现rvm install ruby-1.9.3-p125不能使用，后来通过以下方法解决（可参考rvm requirements）：</p>
 
-<p>1、安装最新XCode环境或osx-gcc-installer，我选择的是前者，到官网下载Command Line Tool For Xcode &ndash; February 2012，只要这个就好，这就提供了最基本的编译环境工具链了；
-2、rvm install ruby-1.9.3-p125 &mdash;with-gcc=clang，没有clang是不能编译通过的，因为苹果的gcc是自己定制过的。之后就是rvm upgrade ruby-x.x.x-pxxx ruby-1.9.3-p125什么的，看着搞就行；
+<p>1、安装最新XCode环境或osx-gcc-installer，我选择的是前者，到官网下载Command Line Tool For Xcode - February 2012，只要这个就好，这就提供了最基本的编译环境工具链了；
+2、rvm install ruby-1.9.3-p125 --with-gcc=clang，没有clang是不能编译通过的，因为苹果的gcc是自己定制过的。之后就是rvm upgrade ruby-x.x.x-pxxx ruby-1.9.3-p125什么的，看着搞就行；
 3、还有后续工作是要重新编译一下gem里的一些native extension，特别是DB Driver，rvm requirements最后那里也有提示。不过我干脆就将gem全册再重装，可以用rvm gemdir来看gem的目录，把相关目录里的东东rm掉即可
 4、之后就是常规的操作啦，一切OK</p>
 
@@ -64,7 +64,7 @@ FingerText</a>，刚发现的一个Notepad++插件，只要配置得当，手写
 <p>为什么要自己搭建Web电子邮件系统？其实是教学上的需要，现在免费的邮箱注册都有一些防恶意的设定，举例来说课堂上50多名学生同时登陆同一个网站申请电子邮箱是不可行的，对方网站会认为这是带攻击性的行为，封之，这是我在课堂上的亲身经历，于是就有了这个解决方案。</p>
 
 <p>这是一篇指引性文章，并没有手把手去教，要搭建EMOS电子邮件系统，你需要准备：
-1、EMOS安装ISO，我用的是EMOS_1.5_i386.iso，可以到<a href="http://www.extmail.org/"><a href="http://www.extmail.org/">http://www.extmail.org/</a></a>了解，并下载相关的ISO；
+1、EMOS安装ISO，我用的是EMOS_1.5_i386.iso，可以到<a href="http://www.extmail.org/">http://www.extmail.org/</a>了解，并下载相关的ISO；
 2、存在于校园网络中的VirtualBox（下面简称VBox）等虚拟机或者真实PC一台，我这里使用VBox，关于VBox的教程，网上一搜一大坨；
 3、假定你有一定的Linux、网页基础知识，和懂26个英文字母；
 假如你对上面三点有问题，都可以Google百度之，这其实也是一个简单的学习过程。</p>
@@ -94,7 +94,7 @@ FingerText</a>，刚发现的一个Notepad++插件，只要配置得当，手写
 cd /var/www/extsuite/extmail/html/default
 修改index.html里的function domain()函数，改为：
 function domain() {
-return &lsquo;lbxixiao.com&rsquo;;
+return 'lbxixiao.com';
 }
 之后保存。这里可以使用vi index.html命令来修改
 修改完成，刷新一下刚才的页面：
@@ -113,17 +113,17 @@ Anyway，举一反三，一通百通，厚积薄发才是王道。</p>
     <link href="http://imlcl.com/blog/2010/11/01/curl_vote_beyond/"/>
     <updated>2010-11-01T00:00:00+08:00</updated>
     <id>http://imlcl.com/blog/2010/11/01/curl_vote_beyond</id>
-    <content type="html"><![CDATA[<p>因为别人在刷票，所以为了保证公平性，我也来刷。外界不断变化，唯独理解原理，把握要点才能应对，所以我这次不说如何来实现，只来说要点，你只要有一定Web编程的基础得了。为什么拿curl来开刀？嗯……想了很久，只能说：这东东是个好东西-_&ndash;!!!</p>
+    <content type="html"><![CDATA[<p>因为别人在刷票，所以为了保证公平性，我也来刷。外界不断变化，唯独理解原理，把握要点才能应对，所以我这次不说如何来实现，只来说要点，你只要有一定Web编程的基础得了。为什么拿curl来开刀？嗯……想了很久，只能说：这东东是个好东西-_-!!!</p>
 
 <p>无论你用shell命令行，还是用PHP的curl模块，抑或是C/C++来调用相关的接口等，都可实现之，不过可能要看相关的接口文档
-curl的Man Page在这里<a href="http://curl.haxx.se/docs/manpage.html"><a href="http://curl.haxx.se/docs/manpage.html">http://curl.haxx.se/docs/manpage.html</a></a></p>
+curl的Man Page在这里<a href="http://curl.haxx.se/docs/manpage.html">http://curl.haxx.se/docs/manpage.html</a></p>
 
 <p>原于刷票功能，我们一般关注下面的参数：
-<strong>-d/&mdash;data &lt;data&gt;</strong> 不用多说，这东西后面就填我们的数据，如"userid=1&amp;num=32"，直接使用此选项发送数据，数据将以POST方式发送，你要刷票当然要刷对人啦
-<strong>-G/&mdash;get</strong> 如果想用Get方式，就得接这个
-<strong>-c/&mdash;cookie-jar和-b/&mdash;cookie</strong> 前者是将每次访问地址后cookie保存到一个文件，后者就可调用这个文件，读取cookie参数继续访问，这不就等于模拟了浏览器的行为了吗？没错，用这个就能实现用curl登录功能，并且保留每次操作的cookie。呃……我用这个实现了自动签到的功能……
-<strong>-H/&mdash;header &lt;header&gt;</strong> 这个是好东西，能修改使用curl发送的HTTP请求header，恶邪的你一定想到用这个来改user-agent了（用&mdash;user-agent也行），对啦，想换什么浏览器都行，还可以加个<a href="http://en.wikipedia.org/wiki/X-Forwarded-For">X-Forwarded-For</a>字段来骗骗人呢，总之这个参数是伪装必用利器啊
-<strong>-e/&mdash;referer &lt;URL&gt;</strong> 这个可能也会用的，但我一般都不加这个</p>
+<strong>-d/--data &lt;data&gt;</strong> 不用多说，这东西后面就填我们的数据，如"userid=1&amp;num=32"，直接使用此选项发送数据，数据将以POST方式发送，你要刷票当然要刷对人啦
+<strong>-G/--get</strong> 如果想用Get方式，就得接这个
+<strong>-c/--cookie-jar和-b/--cookie</strong> 前者是将每次访问地址后cookie保存到一个文件，后者就可调用这个文件，读取cookie参数继续访问，这不就等于模拟了浏览器的行为了吗？没错，用这个就能实现用curl登录功能，并且保留每次操作的cookie。呃……我用这个实现了自动签到的功能……
+<strong>-H/--header &lt;header&gt;</strong> 这个是好东西，能修改使用curl发送的HTTP请求header，恶邪的你一定想到用这个来改user-agent了（用--user-agent也行），对啦，想换什么浏览器都行，还可以加个<a href="http://en.wikipedia.org/wiki/X-Forwarded-For">X-Forwarded-For</a>字段来骗骗人呢，总之这个参数是伪装必用利器啊
+<strong>-e/--referer &lt;URL&gt;</strong> 这个可能也会用的，但我一般都不加这个</p>
 
 <p>好吧，使用了curl冰山一角的功能，不过足矣</p>
 ]]></content>
