@@ -1,0 +1,781 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>字符串操作总结(转) - 大头龙仔Blog</title>
+    <meta name="author" content="imlcl">
+    
+	<meta name="description" content="概述 对个字符串的函数的解释根据的是C语言标准文档
+&lt;&lt;INTERNATIONAL &nbsp;ISO/IEC STANDARD 9899&gt;&gt;,完全符合各注意事项可确保您的程序安全无恙,否则您的程序可能会有时段错误,有时不段错误,有时当机,有时不当机. 定义 字符串 &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <script src="/javascripts/ajaxify.js"></script>
+   
+    
+    
+
+</head>
+
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+        imlcl
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  <!-- GitHub -->
+  <li>
+  <a href="https://github.com/imlcl" class="github" title="Github"></a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+    <li id="ajax"><a href="/blog/archives/index.html">Blog</a></li>
+	<li id="ajax"><a href="/about/index.html">About</a></li>
+    <li><a href="/atom.xml">RSS</a></li>
+    
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="toload">
+<!-- begin toload --> 
+    <div id="content" class="inner">
+        <article class="post">
+	<h2 class="title">字符串操作总结(转)</h2>
+	<div class="entry-content"><p><h1><span style="font-family: 宋体;">概述</span></h1></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">对个字符串的函数的解释根据的是</span><span lang="EN-US">C</span><span style="font-family: 宋体;">语言标准文档</span><span lang="EN-US">
+&lt;&lt;INTERNATIONAL <span style="">&nbsp;</span>ISO/IEC STANDARD 9899&gt;&gt;,</span><b style=""><span style="font-family: 宋体;">完全符合各注意事项可确保您的程序安全无恙</span><span lang="EN-US">,</span></b><b style=""><span style="font-family: 宋体;">否则您的程序可能会有时段错误</span><span lang="EN-US">,</span></b><b style=""><span style="font-family: 宋体;">有时不段错误</span><span lang="EN-US">,</span></b><b style=""><span style="font-family: 宋体;">有时当机</span><span lang="EN-US">,</span></b><b style=""><span style="font-family: 宋体;">有时不当机</span><span lang="EN-US">.</span></b></p></p>
+
+<p><!--more-->
+<br /><h1><span style="font-family: 宋体;">定义</span></h1></p>
+
+<p><h2><span style="font-family: 黑体;">字符串</span></h2></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">字符串是以</span><span lang="EN-US">null</span><span style="font-family: 宋体;">结束的字符的序列</span><span lang="EN-US">,</span><b style=""><span style="font-family: 宋体;">它包括第一个</span><span lang="EN-US">null</span></b><b style=""><span style="font-family: 宋体;">字符</span><span lang="EN-US">,</span></b><span style="font-family: 宋体;">但不包括从第一个</span><span lang="EN-US">null</span><span style="font-family: 宋体;">之后的字符</span></p></p>
+
+<p><h2><span style="font-family: 黑体;">指向字符串的指针</span></h2></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">指向字符串的指针是</span><span lang="EN-US">,</span><span style="font-family: 宋体;">指向字符串第一字符的指针</span><span lang="EN-US">(</span><span style="font-family: 宋体;">低地址</span><span lang="EN-US">)</span></p></p>
+
+<p><h2><span style="font-family: 黑体;">字符串的长度</span></h2></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">在</span><span lang="EN-US">null</span><span style="font-family: 宋体;">字符之前的所有字符的总数</span><span lang="EN-US">,</span><b style=""><span style="font-family: 宋体;">不把</span><span lang="EN-US">null</span></b><b style=""><span style="font-family: 宋体;">算在内</span><span lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">如</span> <span lang="EN-US">&#8220;123&#8221;</span></b><b style=""><span style="font-family: 宋体;">的长度是</span><span lang="EN-US">3</span></b></p></p>
+
+<p><h2><span style="font-family: 黑体;">字符串的结束位置</span></h2></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">指的是</span><span lang="EN-US">\0</span><span style="font-family: 宋体;">所在的位置</span></p></p>
+
+<p><h1><span style="font-family: 宋体;">字符串操作</span></h1></p>
+
+<p><h2><span style="font-family: 黑体;">以</span><span lang="EN-US">\0</span><span style="font-family: 黑体;">结束系列</span></h2></p>
+
+<p><h3><span lang="EN-US">strlen</span></h3></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">原型</span></b><span lang="EN-US">:size_t strlen(const char *s);</span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">功能</span></b><span lang="EN-US">:</span><span style="font-family: 宋体;">算字符串长度</span><span lang="EN-US">,</span><span style="font-family: 宋体;">不包括</span><span lang="EN-US">\0</span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">注意事项</span></b><span lang="EN-US">:</span></p></p>
+
+<p><p class="MsoNormal" style="margin-left: 39pt; text-indent: -18pt;"><!--[if !supportLists]--><span style="" lang="EN-US"><span style="">1<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-family: 宋体;">指针</span><span lang="EN-US">s </span><span style="font-family: 宋体;">必须合法</span></p></p>
+
+<p><p class="MsoNormal" style="margin-left: 39pt; text-indent: -18pt;"><!--[if !supportLists]--><span style="" lang="EN-US"><span style="">2<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span lang="EN-US">s</span><span style="font-family: 宋体;">所指字符串必须以</span><span lang="EN-US">\0</span><span style="font-family: 宋体;">结束</span></p></p>
+
+<p><p class="MsoNormal" style="margin-left: 39pt; text-indent: -18pt;"><!--[if !supportLists]--><span style="" lang="EN-US"><span style="">3<span style="font-family: &quot;Times New Roman&quot;; font-style: normal; font-variant: normal; font-weight: normal; font-size: 7pt; line-height: normal; font-size-adjust: none; font-stretch: normal;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><!--[endif]--><span style="font-family: 宋体;">所返回的长度是不把结束符号</span><span lang="EN-US">\0</span><span style="font-family: 宋体;">算在内的</span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">病例分析</span><span lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span style="" lang="EN-US">1 </span><span style="font-family: 宋体;">产品缺陷分析报告</span><span style="" lang="EN-US">.doc </span><span style="font-family: 宋体;">缺陷</span><span style="" lang="EN-US">11
+</span><span style="font-family: 宋体;">违反了</span><b style=""><span style="font-family: 宋体;">注意事项</span></b><span style="" lang="EN-US">3,</span><span style="font-family: 宋体;">错误的认为</span><span style="" lang="EN-US">strlen
+</span><span style="font-family: 宋体;">算出的长度包括</span><span style="" lang="EN-US">\0<o:p></o:p></span></p></p>
+
+<p><p class="MsoNormal"><span style="" lang="EN-US"><o:p>&nbsp;</o:p></span></p></p>
+
+<p><h3><span lang="EN-US">strchr</span><span style="font-size: 10.5pt; line-height: 173%;" lang="EN-US"><o:p></o:p></span></h3></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">原型</span><span lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">#include &lt;string.h&gt;</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">char *strchr(const char *s, int c);</span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">描述</span><span lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">The strchr function locates the first<br />
+occurrence of c (converted to a char)in the</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">string pointed to by s. The terminating<br />
+null character is considered to be part of the</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">string.</span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">返回值</span><span lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">The strchr function returns a pointer to the<br />
+located character, or a null pointer if the</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">character does not occur in the string.</span></p></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">函数</span><span lang="EN-US">strchr </span><span style="font-family: 宋体;">返回的指针指向</span><span lang="EN-US">c</span><span style="font-family: 宋体;">所在位置</span><span lang="EN-US">.</span><span style="font-family: 宋体;">如果</span><span lang="EN-US">c</span><span style="font-family: 宋体;">不在字符串</span><span lang="EN-US">s</span><span style="font-family: 宋体;">中出现则返回空指针</span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">注意事项</span><span lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">1 </span><span style="font-family: 宋体;">指针</span><span lang="EN-US">s</span><span style="font-family: 宋体;">必须合法</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">2 s</span><span style="font-family: 宋体;">所指字符串必须以</span><span lang="EN-US">\0</span><span style="font-family: 宋体;">结束</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">3 </span><span style="font-family: 宋体; color: red;">结束符号</span><span style="color: red;" lang="EN-US">\0</span><span style="font-family: 宋体; color: red;">也参与了搜索</span><span style="color: red;" lang="EN-US">,</span><span style="font-family: 宋体; color: red;">即可以将参数</span><span style="color: red;" lang="EN-US">c</span><span style="font-family: 宋体; color: red;">赋为</span><span style="color: red;" lang="EN-US">0,</span><span style="font-family: 宋体; color: red;">此时返回值将指向</span><span style="color: red;" lang="EN-US">s</span><span style="font-family: 宋体; color: red;">的结束位置</span></p></p>
+
+<p><p class="MsoNormal"><st1:chmetcnv unitname="C" sourcevalue="4" hasspace="True" negative="False" numbertype="1" tcsc="0" w:st="on"><span lang="EN-US">4<span style="color: red;"> c</span></span></st1:chmetcnv><span style="font-family: 宋体; color: red;">的取值范围必须是</span><span style="color: red;" lang="EN-US">-128</span><span style="font-family: 宋体; color: red;">到</span><span style="color: red;" lang="EN-US">127,</span><span style="font-family: 宋体; color: red;">如果是其它值</span><span style="color: red;" lang="EN-US">,</span><span style="font-family: 宋体; color: red;">行为是未定义的</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p></p>
+
+<p><h3><span lang="EN-US">strrchr<span style="">&nbsp; </span></span></h3></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">原型</span><span lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><span style="">&nbsp;</span>#include &lt;string.h&gt;</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">char *strrchr(const char *s, int c);</span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">描述</span><span lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">The strrchr function locates the last<br />
+occurrence of c (converted to a char)inthe</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">string pointed to by s. The terminating<br />
+null character is considered to be part of the</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">string.</span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">返回值</span><span lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">3 The strrchr function returns a pointer to<br />
+the character, or a null pointer if c does not</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">occur in the string.</span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">注意事项</span><span lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">跟函数</span> <span style="font-size: 14pt;" lang="EN-US">strchr </span><span style="font-size: 14pt; font-family: 宋体;">一样</span><span style="font-size: 14pt;" lang="EN-US">,</span><span style="font-size: 14pt; font-family: 宋体;">不同之处</span><span style="font-size: 14pt;" lang="EN-US">,</span><span style="font-size: 14pt; font-family: 宋体;">只是它从后往前搜索</span><span style="font-size: 14pt;" lang="EN-US"><o:p></o:p></span></p></p>
+
+<p><p class="MsoNormal"><st1:chsdate year="1899" month="12" day="30" islunardate="False" isrocdate="False" w:st="on"><span style="" lang="EN-US">7.21.5</span></st1:chsdate><span style="" lang="EN-US">.7 The strstr function<o:p></o:p></span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">原型</span></b><b style=""><span style="" lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span style="" lang="EN-US">#include<br />
+&lt;string.h&gt;<o:p></o:p></span></p></p>
+
+<p><p class="MsoNormal"><span style="" lang="EN-US">char<br />
+*strstr(const char *s1, const char *s2);<o:p></o:p></span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">描述</span></b><b style=""><span style="" lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span style="" lang="EN-US">The<br />
+strstr function locates the first occurrence in the string pointed to by s1 of<br />
+the<o:p></o:p></span></p></p>
+
+<p><p class="MsoNormal"><span style="" lang="EN-US">sequence<br />
+of characters (excluding the terminating null character) in the string pointed<br />
+to<o:p></o:p></span></p></p>
+
+<p><p class="MsoNormal"><span style="" lang="EN-US">by s2.<o:p></o:p></span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">返回值</span></b><b style=""><span style="" lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span style="" lang="EN-US">The<br />
+strstr function returns a pointer to the located string, or a null pointer if<br />
+the string<o:p></o:p></span></p></p>
+
+<p><p class="MsoNormal"><span style="" lang="EN-US">is not<br />
+found. If s2<span style="">&nbsp; </span>points to a string with<br />
+zero length, the function returns s1.<o:p></o:p></span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">注意事项</span></b><b style=""><span style="" lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span style="" lang="EN-US">1 </span><span style="font-family: 宋体;">指针</span><span style="" lang="EN-US">s1</span><span style="font-family: 宋体;">合法</span><span style="" lang="EN-US">,</span><span style="font-family: 宋体;">指针</span><span style="" lang="EN-US">s2</span><span style="font-family: 宋体;">合法</span><span style="" lang="EN-US"><o:p></o:p></span></p></p>
+
+<p><p class="MsoNormal"><span style="" lang="EN-US">2 s1</span><span style="font-family: 宋体;">必须以</span><span style="" lang="EN-US">\0 </span><span style="font-family: 宋体;">结束</span><span style="" lang="EN-US">,s2</span><span style="font-family: 宋体;">必须以</span><span style="" lang="EN-US">\0</span><span style="font-family: 宋体;">结束</span><span style="" lang="EN-US"><o:p></o:p></span></p></p>
+
+<p><p class="MsoNormal"><span style="" lang="EN-US">3 </span><span style="font-family: 宋体;">如果</span><span style="" lang="EN-US">s2</span><span style="font-family: 宋体;">所指字符串长度为</span><span style="" lang="EN-US">0,</span><span style="font-family: 宋体;">则返回</span><span style="" lang="EN-US">s1<o:p></o:p></span></p></p>
+
+<p><p class="MsoNormal"><span style="" lang="EN-US">4 </span><span style="font-family: 宋体;">如果找不到</span><span style="" lang="EN-US">s2</span><span style="font-family: 宋体;">所指字符串</span><span style="" lang="EN-US">,</span><span style="font-family: 宋体;">则返回</span><span style="" lang="EN-US">NULL<o:p></o:p></span></p></p>
+
+<p><p class="MsoNormal"><span style="" lang="EN-US"><o:p>&nbsp;</o:p></span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">病例分析</span></b><b style=""><span style="" lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span style="" lang="EN-US">1 </span><span style="font-family: 宋体;">产品缺陷分析报告</span><span style="" lang="EN-US">.doc </span><span style="font-family: 宋体;">缺陷</span><span style="" lang="EN-US">2
+</span><span style="font-family: 宋体;">违反了</span><span style=""> </span><b style=""><span style="font-family: 宋体;">注意事项</span></b><b style=""><span style="" lang="EN-US"> 2</span></b><span style="" lang="EN-US"><o:p></o:p></span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="" lang="EN-US"><o:p>&nbsp;</o:p></span></b></p></p>
+
+<p><h3><span lang="EN-US">strcpy</span></h3></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">原型</span><span lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">#include &lt;string.h&gt;</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">char *strcpy(char * s1,</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">const char * s2);</span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span lang="EN-US">Description<o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span style="color: blue;" lang="EN-US">The strcpy function<br />
+copies the string pointed to by s2 (including the terminating null<o:p></o:p></span></p></p>
+
+<p><p class="MsoNormal"><span style="color: blue;" lang="EN-US">character) into the<br />
+array pointed to by s1. If copying takes place between objects that<o:p></o:p></span></p></p>
+
+<p><p class="MsoNormal"><span style="color: blue;" lang="EN-US">overlap, the behavior is<br />
+undefined.<o:p></o:p></span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span lang="EN-US">Returns<o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span style="color: blue;" lang="EN-US">The<span style="">&nbsp; </span>strcpy function returns the value of s1.<o:p></o:p></span></p></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">返回</span><span lang="EN-US">s1</span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">注意事项</span><span lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">1 s2</span><span style="font-family: 宋体;">所指字符串必须以</span><span lang="EN-US">\0</span><span style="font-family: 宋体;">结束</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">2 s1</span><span style="font-family: 宋体;">所指缓冲区间长度需</span><span lang="EN-US">&gt;= strlen(s2)+1</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">3 <span style="">&nbsp;</span>s2</span><span style="font-family: 宋体;">所指前</span><span lang="EN-US">strlen(s2)+1</span><span style="font-family: 宋体;">个字节</span><span lang="EN-US">,</span><span style="font-family: 宋体;">不能</span><span lang="EN-US">s1</span><span style="font-family: 宋体;">所指的前</span> <span lang="EN-US">strlen(s2)+1</span><span style="font-family: 宋体;">个字节有重叠</span><span lang="EN-US">,</span><span style="font-family: 宋体;">否则行为是未定义的</span></p></p>
+
+<p><h3><span lang="EN-US">strcat </span></h3></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">原型</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">#include &lt;string.h&gt;</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">char *strcat(char * s1,</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">const char * s2);</span></p></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">描述</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">The strcat function appends a copy of the<br />
+string pointed to by s2 (including the</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">terminating null character) to the end of<br />
+the string pointed to by s1. The initial character</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">of s2 overwrites the null character at the<br />
+end of s1. If copying takes place between</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">objects that overlap, the behavior is<br />
+undefined.</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">Thestrcat function returns the value of s1.</span></p></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">注意事项</span><span lang="EN-US">:</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">1 </span><span style="font-family: 宋体;">指针</span>
+<span lang="EN-US">s1</span><span style="font-family: 宋体;">合法</span><span lang="EN-US">, </span><span style="font-family: 宋体;">指</span><span lang="EN-US">s2</span><span style="font-family: 宋体;">合法</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">2 s1</span><span style="font-family: 宋体;">以</span><span lang="EN-US">\0</span><span style="font-family: 宋体;">结束</span><span lang="EN-US">,s2</span><span style="font-family: 宋体;">以</span><span lang="EN-US">\0</span><span style="font-family: 宋体;">结束</span></p></p>
+
+<p><h3><span lang="EN-US">strcmp</span></h3></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">原型</span><span lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">#include &lt;string.h&gt;</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">int strcmp(const char *s1, const char *s2);</span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">描述</span><span lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">The strcmp function compares the string<br />
+pointed to by s1 to the string pointed to by</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">s2.</span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">返回值</span><span lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">The strcmp function returns an integer<br />
+greater than, equal to, or less than zero,</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">accordingly as the string pointed to by s1<br />
+is greater than, equal to, or less than the string</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">pointed to by s2.</span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">注意事项</span><span lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">1s1 </span><span style="font-family: 宋体;">必须以</span><span lang="EN-US">\0</span><span style="font-family: 宋体;">结束</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">2 s2 </span><span style="font-family: 宋体;">必须以</span><span lang="EN-US">\0</span><span style="font-family: 宋体;">结束</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">3 </span><span style="font-family: 宋体;">如果</span><span lang="EN-US">s1 </span><span style="font-family: 宋体;">长度小于</span><span lang="EN-US">s2</span><span style="font-family: 宋体;">长度</span><span lang="EN-US">,</span><span style="font-family: 宋体;">则</span><span lang="EN-US">s2</span><span style="font-family: 宋体;">中只有前</span><span lang="EN-US">strlen(s1)+1</span><span style="font-family: 宋体;">个字符对结果有影响</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">4</span><span style="font-family: 宋体;">如果</span><span lang="EN-US">s2 </span><span style="font-family: 宋体;">长度小于</span><span lang="EN-US">s1</span><span style="font-family: 宋体;">长度</span><span lang="EN-US">,</span><span style="font-family: 宋体;">则</span><span lang="EN-US">s1</span><span style="font-family: 宋体;">中只有前</span><span lang="EN-US">strlen(s2)+1</span><span style="font-family: 宋体;">个字符对结果有影响</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">5 </span><span style="font-family: 宋体;">比较两个字符是按无符号数比较的</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p></p>
+
+<p><h2><span lang="EN-US">strn&#8230;</span><span style="font-family: 黑体;">系列</span></h2></p>
+
+<p><h3><span lang="EN-US">strncpy</span></h3></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">原型</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">#include &lt;string.h&gt;</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">char *strncpy(char * restrict s1,</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">const char * restrict s2,</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">size_t n);</span></p></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">描述</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">The strncpy function copies not more than n<br />
+characters (characters that follow a null</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">character are not copied) from the array <span style="">&nbsp;</span>pointed to by s2 to the array pointed to by</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">s1. If copying takes place between objects<br />
+that overlap, the behavior is undefined.</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">If the array pointed to by s2 is a string<br />
+that is shorter than n characters, null characters</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">are appended to the copy in the array<br />
+pointed to by s1, until n characters in all have been</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">written.</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">返回值</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">The strncpy function returns the value of<br />
+s1.</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">注意事项</span><span lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">1 s1 </span><span style="font-family: 宋体;">所指的前</span><span lang="EN-US">n</span><span style="font-family: 宋体;">个字节是已分配的内存</span><span lang="EN-US">,</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">2 s2 </span><span style="font-family: 宋体;">必须以</span><span lang="EN-US">\0</span><span style="font-family: 宋体;">结束</span><span lang="EN-US">, </span><span style="font-family: 宋体;">或者从</span><span lang="EN-US">s2</span><span style="font-family: 宋体;">开始的前</span><span lang="EN-US">n</span><span style="font-family: 宋体;">个字节都是已分配的内存</span><span lang="EN-US">.</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">3 </span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><span style="">&nbsp; </span></span><span style="font-family: 宋体;">如果</span><span lang="EN-US">s2 </span><span style="font-family: 宋体;">以</span><span lang="EN-US">\0</span><span style="font-family: 宋体;">结束</span><span lang="EN-US">,</span><span style="font-family: 宋体;">则</span><span lang="EN-US">s2</span><span style="font-family: 宋体;">所指的前</span><span lang="EN-US"> strlen(s2)+1</span><span style="font-family: 宋体;">个字节<b style="">不能</b>与</span><span lang="EN-US"> s1</span><span style="font-family: 宋体;">所指的前</span><span lang="EN-US">n</span><span style="font-family: 宋体;">个字节重叠</span></p></p>
+
+<p><p class="MsoNormal" style="margin-left: 10.5pt; text-indent: -10.5pt;"><span lang="EN-US"><span style="">&nbsp; </span></span><span style="font-family: 宋体;">如果</span><span lang="EN-US">s2</span><span style="font-family: 宋体;">不以</span><span lang="EN-US">\0</span><span style="font-family: 宋体;">结束</span><span lang="EN-US">,</span><span style="font-family: 宋体;">则则</span><span lang="EN-US">s2</span><span style="font-family: 宋体;">所指的前</span><span lang="EN-US">n</span><span style="font-family: 宋体;">个字节<b style="">不能</b>与</span><span lang="EN-US"> s1</span><span style="font-family: 宋体;">所指的前</span><span lang="EN-US">n</span><span style="font-family: 宋体;">个字节重叠</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">4 </span></p></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">如果</span><span lang="EN-US">s2</span><span style="font-family: 宋体;">所指的前</span><span lang="EN-US">n</span><span style="font-family: 宋体;">个字节不含</span><span lang="EN-US"> \0,</span><span style="font-family: 宋体;">则经过拷贝后</span><span lang="EN-US">s1</span><span style="font-family: 宋体;">不以</span><span lang="EN-US">\0 </span><span style="font-family: 宋体;">结束</span><span lang="EN-US">.</span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">病例分析</span><span lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">病例</span><span lang="EN-US">1</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">int main()</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">{</span></p></p>
+
+<p><p class="MsoNormal" style="text-align: left;" align="left"><span lang="EN-US"><span style="">&nbsp;&nbsp; </span></span><span style="font-size: 10pt; font-family: Verdana;" lang="EN-US">char<br />
+src[]=&#8221;123&#8221;;<o:p></o:p></span></p></p>
+
+<p><p class="MsoNormal" style="text-align: left; text-indent: 15pt;" align="left"><span style="font-size: 10pt; font-family: Verdana;" lang="EN-US">char dst[4];<o:p></o:p></span></p></p>
+
+<p><p class="MsoNormal" style="text-align: left; text-indent: 15pt;" align="left"><span style="font-size: 10pt; font-family: Verdana;" lang="EN-US">strncpy(dst,src,8);<o:p></o:p></span></p></p>
+
+<p><p class="MsoNormal" style="text-align: left; text-indent: 15pt;" align="left"><span style="font-size: 10pt; font-family: Verdana;" lang="EN-US">return 0;<o:p></o:p></span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">}</span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">违反了注意事项</span><span lang="EN-US">1,</span></b><b style=""><span style="font-family: 宋体;">此代码在应用层会内存出错</span><span lang="EN-US">,</span></b><b style=""><span style="font-family: 宋体;">但在内核不会出错</span><span lang="EN-US">.</span></b><b style=""><span style="font-family: 宋体;">因为</span><span lang="EN-US">C</span></b><b style=""><span style="font-family: 宋体;">库遵守了</span><span lang="EN-US">ISO C</span></b><b style=""><span style="font-family: 宋体;">标准</span><span lang="EN-US">,</span></b><b style=""><span style="font-family: 宋体;">会拷贝够</span><span lang="EN-US">8</span></b><b style=""><span style="font-family: 宋体;">个字符</span><span lang="EN-US">(</span></b><b style=""><span style="font-family: 宋体;">通过补若干个</span><span lang="EN-US">\0),</span></b><b style=""><span style="font-family: 宋体;">而</span><span lang="EN-US">LINUX</span></b><b style=""><span style="font-family: 宋体;">内核的代码出于对效率的考虑</span><span lang="EN-US">,</span></b><b style=""><span style="font-family: 宋体;">只拷贝了</span><span lang="EN-US">4</span></b><b style=""><span style="font-family: 宋体;">个字符</span><span lang="EN-US">.<o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><b style=""><span lang="EN-US"><o:p>&nbsp;</o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">病例</span><span lang="EN-US">2</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">int main()</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">{</span></p></p>
+
+<p><p class="MsoNormal" style="text-indent: 21pt;"><span lang="EN-US">char src[]=&#8221;<st1:chmetcnv tcsc="0" numbertype="1" negative="False" hasspace="False" sourcevalue="123" unitname=""" w:st="on">123&#8221;;</span></p></p>
+
+<p><p class="MsoNormal" style="text-indent: 21pt;"><span lang="EN-US">strncpy(src,src,4);</span></p></p>
+
+<p><p class="MsoNormal" style="text-indent: 21pt;"><span lang="EN-US">return 0;</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">}</span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">违反了注意事项</span><span lang="EN-US">2,</span></b><b style=""><span style="font-family: 宋体;">行为是未定义的</span><span lang="EN-US">,</span></b><b style=""><span style="font-family: 宋体;">在某些编译器下会出错</span><span lang="EN-US">,</span></b><b style=""><span style="font-family: 宋体;">某些编译器下不会出错</span><span lang="EN-US">.<o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">病例</span><span lang="EN-US">3</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">int main()</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">{</span></p></p>
+
+<p><p class="MsoNormal" style="text-indent: 5.25pt;"><span lang="EN-US"><span style="">&nbsp; </span>char src[]=&#8221;<st1:chmetcnv tcsc="0" numbertype="1" negative="False" hasspace="False" sourcevalue="12345" unitname=""" w:st="on">12345&#8221;;</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><span style="">&nbsp;&nbsp;
+</span>char buf[6];</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><span style="">&nbsp;&nbsp;
+</span>strncpy(buf,src,5);</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><span style="">&nbsp;&nbsp;
+</span>printf(&#8220;%d\n&#8221;,strlen(buf); //(1)</span><span style="font-family: 宋体;">在此当机</span></p></p>
+
+<p><p class="MsoNormal" style="text-indent: 15.75pt;"><span lang="EN-US">return 0;</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">}</span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">违反了注意事项</span><span lang="EN-US">4,buf </span></b><b style=""><span style="font-family: 宋体;">不以</span><span lang="EN-US">\0</span></b><b style=""><span style="font-family: 宋体;">结束</span><span lang="EN-US">.</span></b><b style=""><span style="font-family: 宋体;">在</span><span lang="EN-US">(1)</span></b><b style=""><span style="font-family: 宋体;">中当机</span><span lang="EN-US">,</span></b><b style=""><span style="font-family: 宋体;">此错误因在调用</span><span lang="EN-US">strncpy</span></b><b style=""><span style="font-family: 宋体;">时不出错</span><span lang="EN-US">,</span></b><b style=""><span style="font-family: 宋体;">在后续代码中才出错</span><span lang="EN-US">,</span></b><b style=""><span style="font-family: 宋体;">非常难查</span><span lang="EN-US">.<o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><b style=""><span lang="EN-US"><o:p>&nbsp;</o:p></span></b></p></p>
+
+<p><h3><span lang="EN-US">strncat</span></h3></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">原型</span><span lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">#include &lt;string.h&gt;</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">char *strncat(char * restrict s1,</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">const char * restrict s2,</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">size_t n);</span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">描述</span><span lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">The strncat function appends not more than<br />
+n characters (a null character and</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">characters that follow it are not appended)<br />
+from the array pointed to by s2 to the end of</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">the string pointed to by s1. The initial<br />
+character of s2 overwrites the null character at the</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">end of s1. If copying<span style="">&nbsp; </span>takes place between objects that overlap, the<br />
+behavior is undefined.</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">. A terminating null character is always<br />
+appended to the result.</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">返回值</span><span lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">The strncatfunction returns the value of<br />
+s1.</span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">注意事项</span><span lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">1 s1 </span><span style="font-family: 宋体;">所指缓冲区间必须</span><span lang="EN-US">&gt;= strlen(s1)+n+1</span><span style="font-family: 宋体;">个字节</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">2 </span><span style="font-family: 宋体;">拷贝的结果始终以</span><span lang="EN-US">\0</span><span style="font-family: 宋体;">结束</span><span lang="EN-US">,</span><span style="font-family: 宋体;">这点跟</span><span lang="EN-US">strncpy</span><span style="font-family: 宋体;">是不一样的</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">病例分析</span><span lang="EN-US">:</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">int main()</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">{</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><span style="">&nbsp; </span>char<span style="">&nbsp; </span>str1[]=&#8221;<st1:chmetcnv tcsc="0" numbertype="1" negative="False" hasspace="False" sourcevalue="123" unitname=""" w:st="on">123&#8221;;</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><span style="">&nbsp;
+</span>char str2[]=&#8221;abcd&#8221;;</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><span style="">&nbsp; </span>int<br />
+len1;</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><span style="">&nbsp; </span>int<br />
+len2;</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><span style="">&nbsp; </span>int<br />
+len;</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><span style="">&nbsp;
+</span>char * obj;</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><span style="">&nbsp;
+</span>len1 = strlen(str1);</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><span style="">&nbsp;
+</span>len2 = strlen(str2)</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><span style="">&nbsp; </span>len<br />
+=len1 +len2;</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><span style="">&nbsp; </span>obj<span style="">&nbsp; </span>= malloc(len);</span></p></p>
+
+<p><p class="MsoNormal" style="text-indent: 10.5pt;"><span lang="EN-US">strcpy(obj,str1);</span></p></p>
+
+<p><p class="MsoNormal" style="text-indent: 10.5pt;"><span lang="EN-US">#if<span style="">&nbsp;&nbsp; </span>0</span></p></p>
+
+<p><p class="MsoNormal" style="text-indent: 10.5pt;"><span lang="EN-US">strncpy(obj+len1,str2,len2);</span></p></p>
+
+<p><p class="MsoNormal" style="text-indent: 10.5pt;"><span lang="EN-US">#else </span></p></p>
+
+<p><p class="MsoNormal" style="text-indent: 10.5pt;"><span lang="EN-US">strncat(obj, str2,strlen(s2));</span></p></p>
+
+<p><p class="MsoNormal" style="text-indent: 10.5pt;"><span lang="EN-US">#endif</span></p></p>
+
+<p><p class="MsoNormal" style="text-indent: 10.5pt;"><span lang="EN-US">return 0;</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">}</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">说明</span><span lang="EN-US">: #else &#8230;<br />
+#endif</span><span style="font-family: 宋体;">之间的代码将导致内存出错</span><span lang="EN-US">,<br />
+obj</span><span style="font-family: 宋体;">至少要</span><span lang="EN-US">len+1</span><span style="font-family: 宋体;">个字节</span><span lang="EN-US">.</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">#if 0<span style="">&nbsp;
+</span>&#8230; #else</span><span style="font-family: 宋体;">之间的代码不会出现内存错误</span><span lang="EN-US">,</span><span style="font-family: 宋体;">但为后续代码埋藏了隐患</span><span lang="EN-US">,</span><span style="font-family: 宋体;">因为</span><span lang="EN-US">obj</span></p></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">无</span><span lang="EN-US">\0</span><span style="font-family: 宋体;">结束符</span><span lang="EN-US">.</span></p></p>
+
+<p><h3><span lang="EN-US">strncmp</span></h3></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">原型</span><span lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">#include &lt;string.h&gt;</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">int strncmp(const char *s1, const char *s2,<br />
+size_t n);</span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">描述</span><span lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">The strncmp function compares not more than<br />
+n characters (characters that follow a</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">null character are not compared) from the<br />
+array pointed to by s1 to the array pointed to</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">by<span style="">&nbsp; </span>s2.</span></p></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">返回值</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">The strncmp function returns an integer<br />
+greater than, equal to, or less than zero,</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">accordingly as the possibly null-terminated<br />
+array pointed to by s1 is greater than, equal</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">to, or less than the possibly<br />
+null-terminated array pointed to by s2.</span></p></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">注意事项</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">1 s1 </span><span style="font-family: 宋体;">长度</span><span lang="EN-US">&gt;=n</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">2 s2</span><span style="font-family: 宋体;">长度</span><span lang="EN-US">&gt;=n</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">3 </span><span style="font-family: 宋体;">返回值的符号以比较过程中第一对不相等的字符为准</span><span lang="EN-US">.</span><span style="font-family: 宋体;">假设第一对不相等的字符为</span><span lang="EN-US">a,b</span></p></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">如果</span><span lang="EN-US">a&gt;b </span><span style="font-family: 宋体;">返回的是正数</span><span lang="EN-US">,</span><span style="font-family: 宋体;">否则是负数</span><span lang="EN-US">.</span><span style="font-family: 宋体;">如果整个比较过程没发现不相等的字符对</span><span lang="EN-US">,</span><span style="font-family: 宋体;">则返回</span><span lang="EN-US">0. </span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">4 s1,s2 </span><span style="font-family: 宋体;">从第</span><span lang="EN-US">n+1</span><span style="font-family: 宋体;">个字符开始的字符</span><span lang="EN-US">(</span><span style="font-family: 宋体;">如果存在的话</span><span lang="EN-US">)</span><span style="font-family: 宋体;">对比较结果无影响</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">5 n&gt;=0</span></p></p>
+
+<p><p class="MsoNormal"><st1:chmetcnv tcsc="0" numbertype="1" negative="False" hasspace="True" sourcevalue="6" unitname="C" w:st="on"><span lang="EN-US">6 <span style="color: red;">C</span></span></st1:chmetcnv><span style="font-family: 宋体; color: red;">标准明确规定在比较过程中</span><span style="color: red;" lang="EN-US">,</span><span style="font-family: 宋体; color: red;">将每个字符解释为</span><span style="color: red;" lang="EN-US">unsigned<br />
+char</span><span lang="EN-US"> </span></p></p>
+
+<p><p class="MsoNormal"><b style=""><span style="font-family: 宋体;">实例分析</span><span lang="EN-US"><o:p></o:p></span></b></p></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">实例一</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">strncmp(&#8221;<st1:chmetcnv tcsc="0" numbertype="1" negative="False" hasspace="False" sourcevalue="123" unitname=""" w:st="on">123&#8221;,&#8221;<st1:chmetcnv tcsc="0" numbertype="1" negative="False" hasspace="False" sourcevalue="1234" unitname=""" w:st="on">1234&#8221;,3)
+</span><span style="font-family: 宋体;">返回值为</span><span lang="EN-US">0</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">strncmp(&#8221;<st1:chmetcnv tcsc="0" numbertype="1" negative="False" hasspace="False" sourcevalue="123" unitname=""" w:st="on">123&#8221;,&#8221;<st1:chmetcnv tcsc="0" numbertype="1" negative="False" hasspace="False" sourcevalue="1234" unitname=""" w:st="on">1234&#8221;,4)
+</span><span style="font-family: 宋体;">返回值</span><span lang="EN-US">&lt;0</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">strncmp(&#8221;<st1:chmetcnv tcsc="0" numbertype="1" negative="False" hasspace="False" sourcevalue="123" unitname=""" w:st="on">123&#8221;,&#8221;<st1:chmetcnv tcsc="0" numbertype="1" negative="False" hasspace="False" sourcevalue="1234" unitname=""" w:st="on">1234&#8221;,5)</span><span style="font-family: 宋体;">内存出错</span></p></p>
+
+<p><p class="MsoNormal"><span style="font-family: 宋体;">实例二</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">include &lt;stdio.h&gt;</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">#include &lt;string.h&gt;</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">int main()</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">{</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>char<br />
+src[]=&#8221;123&#8221;;</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>char<br />
+obj[256]={&#8216;1&#8217;,&#8217;2&#8217;,&#8217;3&#8217;,-1};</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int<br />
+ret;</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>ret<br />
+= strcmp(obj,src);</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>printf(&#8220;%d\n&#8221;,ret);</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return<br />
+0;</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US"><o:p>&nbsp;</o:p></span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">}VC gcc</span><span style="font-family: 宋体;">的测试结果都是输出</span><span lang="EN-US">1,</span><span style="font-family: 宋体;">按</span><span lang="EN-US">C</span><span style="font-family: 宋体;">标准解释结果应该是</span><span lang="EN-US">&gt;0</span></p></p>
+
+<p><h1><span style="font-family: 宋体;">总结</span></h1></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">1 </span><span style="font-family: 宋体;">不要人为的假设一个字符串一定是以</span><span lang="EN-US">\0</span><span style="font-family: 宋体;">结束的</span><span lang="EN-US">,</span><span style="font-family: 宋体;">特别是对网络中的数据包</span><span lang="EN-US">.</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">2</span><span style="font-family: 宋体;">在无校验码的情况下</span><span lang="EN-US">,</span><span style="font-family: 宋体;">不建议在网络传输一个以</span><span lang="EN-US">\0</span><span style="font-family: 宋体;">结束的字符串</span><span lang="EN-US">.</span><span style="font-family: 宋体;">因为传输过成会出错</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">3</span><span style="font-family: 宋体;">如果要传</span><span lang="EN-US">\0</span><span style="font-family: 宋体;">结束的字符串给驱动</span><span lang="EN-US">,</span><span style="font-family: 宋体;">建议实现驱动的</span><span lang="EN-US">ioctl</span><span style="font-family: 宋体;">时在传入参数时加上</span><span lang="EN-US">magic number,</span><span style="font-family: 宋体;">确保此参数来自你的应用程序</span><span lang="EN-US">.</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">4strncpy</span><span style="font-family: 宋体;">的执行结果不一定</span>
+<span style="font-family: 宋体;">含有</span><span lang="EN-US">\0,strncat</span><span style="font-family: 宋体;">的结果一定含有</span><span lang="EN-US">0</span></p></p>
+
+<p><p class="MsoNormal"><span lang="EN-US">5 </span><span style="font-family: 宋体;">在调用拷贝函数</span><span lang="EN-US">strcp strncpy </span><span style="font-family: 宋体;">连接函数</span><span lang="EN-US">strcat strncat </span><span style="font-family: 宋体;">确保你分配的缓冲区间足够大</span></p></p>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2008/02/15/string-oper-sum-1/#disqus_thread">Comments</a></span>
+	
+</div>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+    </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2013
+
+    imlcl
+. Powered by <a href="http://octopress.org">Octopress</a> | 
+    Theme <a href="http://github.com/panks/fabric">fabric</a> by <a href="http://panks.me">Pankaj Kumar</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'imlcl';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://imlcl.com/blog/2008/02/15/string-oper-sum-1/';
+        var disqus_url = 'http://imlcl.com/blog/2008/02/15/string-oper-sum-1/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

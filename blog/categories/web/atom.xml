@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: web | 大头龙仔Blog]]></title>
+  <link href="http://imlcl.com/blog/categories/web/atom.xml" rel="self"/>
+  <link href="http://imlcl.com/"/>
+  <updated>2013-08-21T23:52:38+08:00</updated>
+  <id>http://imlcl.com/</id>
+  <author>
+    <name><![CDATA[imlcl]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[[转]10 Things You Didn't Know Rails Could do]]></title>
+    <link href="http://imlcl.com/blog/2012/04/27/10-things-you-didnt-know-rails-could-do/"/>
+    <updated>2012-04-27T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2012/04/27/10-things-you-didnt-know-rails-could-do</id>
+    <content type="html"><![CDATA[<p><a href="http://speakerdeck.com/u/jeg2/p/10-things-you-didnt-know-rails-could-do">http://speakerdeck.com/u/jeg2/p/10-things-you-didnt-know-rails-could-do</a></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[框架框架]]></title>
+    <link href="http://imlcl.com/blog/2012/01/05/framework-1/"/>
+    <updated>2012-01-05T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2012/01/05/framework-1</id>
+    <content type="html"><![CDATA[<p>年近岁晚，谈总结，谈展望，谈奖金，谈计划……</p>
+
+
+
+
+<p>不过最近我更多在考虑学校未来信息化框架，或者叫试验性框架，还没有到最终整合的地步。就目前来说，核心的部分都是我用PHP+MySQL来实现的，功能上基本满足，扩展性不强，外围还有腾讯RTX和现成签到平台等的整合，后续可能还需要整合其它现成平台，还有使用Rails新编写的存档系统和论文系统。就这样看来，扩展性和可维护性就相形见绌，扩展性和可维护性无从谈起。</p>
+
+
+
+
+<p>起初引入Rails是为了节省更多的工作量，但事实上也初步达到了。之前研究Drupal 6，发现不少可用之处，最近也发现Drupal 7，感觉操作界面上有很大进步，这也进一步肯定了当时把Drupal引入到学校成为核心平台的猜想。所以最近都在抓紧时间研究《Drupal 7 Module Development》，这书不错，推荐一下。</p>
+
+
+
+
+<p>不过Drupal的缺点就是比较慢，也就是牺牲性能换取灵活性。那么从这个来看，我觉得Drupal这个框架是先进的，所以现在我也倾向选用此框架来整合现有的信息化平台。从学校情况来看，即使未来人数再扩充一倍也能很好地满足。再由于考虑到后期维护的工作量，所以放弃Rails和CakePHP作为核心平台的开发框架，至少短期来说是这样。毕间Drupal的基础模块、三方模块和自定义模块都能很好地解决现有问题，并且也适用于未来LDAP的整合。目前需要抓紧时间打通各个环节，之前要赶工了。</p>
+
+
+
+
+<p>Linode的Tokyo节点的确不错，建议迁移至此，不过最近也发现广东电信这边晚上的ping值上到160ms，早上又会降回70ms左右，不知搞什么。开了ticket问linode的客服，那边也暂时没有收到相关的反映。如果没问题就不回fremont了，还有随时退款也是linode的一大优势。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[关于易网库ASP性能]]></title>
+    <link href="http://imlcl.com/blog/2011/12/21/asp/"/>
+    <updated>2011-12-21T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2011/12/21/asp</id>
+    <content type="html"><![CDATA[<p>因为某些原因，学校网站需要暂时放到免备案主机空间，就选了朋友感觉不错的<a href="http://www.webweb.com/">易网库</a></p>
+
+
+
+
+<p>买的是无限型，当时比较恶心就是独立IP要自己买，400元啊，现在都有送的，~！@#￥%……&amp;*（）</p>
+
+
+
+
+<p>其实第一个感觉就是慢，只是绑定四个站，访问流量也不大，我就是觉得奇怪。联系客服他们又说很正常，但校园网访问的确很慢，还常常访问不到（这个估计和校园网线路有关，因为我用其它线路访问没有问题）。</p>
+
+
+
+
+<p>直到最近有老师反应该说登陆进系统后，不断要求再登陆，前几天持续出现500错误。今天实在顶不顺，终于找到一次机会网站是出问题的，又可以让他们看到的了。经过排查，他们把.NET版本降为1.X就好了。因为系统默认选的是.NET最高版本，其实我对这东西也不怎么懂，但也不可能差这么远吧？（之前试过重启服务器也不能解决问题）问了朋友说这个应该不会影响这么大，但事实上测试表明差很远，现在网站比以前畅顺多了，即使是高峰期。反正我现在调到PHP解析（客服说这样会比较快），呃……</p>
+
+
+
+
+<p>没问题就好，等明年再说。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[今天发现数据库损坏了]]></title>
+    <link href="http://imlcl.com/blog/2010/11/21/db_crash/"/>
+    <updated>2010-11-21T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2010/11/21/db_crash</id>
+    <content type="html"><![CDATA[<p>如题，一进blog发现没有任何文章，于是登录到后台，发现文章数为0<br />
+因为当时第一反映是怀疑受到攻击，于是又打开linode主页看看是否有受到攻击的新闻，发现没有相关新闻。<br />
+立马ssh到vps，看日志，查了很久，没发现有什么非法进入系统的记录<br />
+之后再看mysql的日志，提示wp_post损坏，需要执行mysql_upgrade和修复，晕死……</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[使用curl实现刷票功能要点]]></title>
+    <link href="http://imlcl.com/blog/2010/11/01/curl_vote_beyond/"/>
+    <updated>2010-11-01T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2010/11/01/curl_vote_beyond</id>
+    <content type="html"><![CDATA[<p>因为别人在刷票，所以为了保证公平性，我也来刷。外界不断变化，唯独理解原理，把握要点才能应对，所以我这次不说如何来实现，只来说要点，你只要有一定Web编程的基础得了。为什么拿curl来开刀？嗯……想了很久，只能说：这东东是个好东西-_-!!!</p>
+
+
+
+
+<p>无论你用shell命令行，还是用PHP的curl模块，抑或是C/C++来调用相关的接口等，都可实现之，不过可能要看相关的接口文档<br />
+curl的Man Page在这里<a href="http://curl.haxx.se/docs/manpage.html">http://curl.haxx.se/docs/manpage.html</a></p>
+
+
+
+
+<p>原于刷票功能，我们一般关注下面的参数：
+<strong>-d/--data &lt;data&gt;</strong> 不用多说，这东西后面就填我们的数据，如"userid=1&amp;num=32"，直接使用此选项发送数据，数据将以POST方式发送，你要刷票当然要刷对人啦
+<strong>-G/--get</strong> 如果想用Get方式，就得接这个
+<strong>-c/--cookie-jar和-b/--cookie</strong> 前者是将每次访问地址后cookie保存到一个文件，后者就可调用这个文件，读取cookie参数继续访问，这不就等于模拟了浏览器的行为了吗？没错，用这个就能实现用curl登录功能，并且保留每次操作的cookie。呃……我用这个实现了自动签到的功能……
+<strong>-H/--header &lt;header&gt;</strong> 这个是好东西，能修改使用curl发送的HTTP请求header，恶邪的你一定想到用这个来改user-agent了（用--user-agent也行），对啦，想换什么浏览器都行，还可以加个<a href="http://en.wikipedia.org/wiki/X-Forwarded-For">X-Forwarded-For</a>字段来骗骗人呢，总之这个参数是伪装必用利器啊
+<strong>-e/--referer &lt;URL&gt;</strong> 这个可能也会用的，但我一般都不加这个</p>
+
+
+
+
+<p>好吧，使用了curl冰山一角的功能，不过足矣</p>
+
+]]></content>
+  </entry>
+  
+</feed>

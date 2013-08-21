@@ -1,0 +1,250 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>让我想起深信服笔试的一道题 - 大头龙仔Blog</title>
+    <meta name="author" content="imlcl">
+    
+	<meta name="description" content="笔试题其中一道是下面的试题一。我当时没有用程序去答，我自己是从汇编角度去答的用gcc -c&nbsp;testasm.c然后objdump -d testasm.o（加上&#8211;show-raw-insn较果会更好）来看汇编代码判断的。其实从程序角度的话，思路上我是知道的， &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <script src="/javascripts/ajaxify.js"></script>
+   
+    
+    
+
+</head>
+
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+        imlcl
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  <!-- GitHub -->
+  <li>
+  <a href="https://github.com/imlcl" class="github" title="Github"></a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+    <li id="ajax"><a href="/blog/archives/index.html">Blog</a></li>
+	<li id="ajax"><a href="/about/index.html">About</a></li>
+    <li><a href="/atom.xml">RSS</a></li>
+    
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="toload">
+<!-- begin toload --> 
+    <div id="content" class="inner">
+        <article class="post">
+	<h2 class="title">让我想起深信服笔试的一道题</h2>
+	<div class="entry-content"><p><div style="TEXT-INDENT: 21pt"><strong>笔试题其中一道是下面的试题一。我当时没有用程序去答，我自己是从汇编角度去答的用gcc -c&nbsp;testasm.c然后objdump -d testasm.o（加上</strong><b>&#8211;show-raw-insn较果会更好）</b><strong>来看汇编代码判断的。其实从程序角度的话，思路上我是知道的，但笔试前我刚好看到这样的问题，自己写过程序，发现，不对&#8230;&#8230;我记得Intel的CPU是小端的，原来我把大小端的定义记反了，基础啊&#8230;&#8230;</strong></div></p>
+
+<p><!--more-->
+<strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 试题一：</strong>编写一段程序判断系统中的CPU是Little endian还是Big endian模式？
+<div style="TEXT-INDENT: 21pt"><strong>分析：</strong></div>
+<div style="TEXT-INDENT: 21pt">作为一个计算机相关专业的人，我们应该在计算机组成中都学习过什么叫Little endian和Big endian。Little endian和Big endian是CPU存放数据的两种不同顺序。对于整型、长整型等数据类型，Big endian认为第一个字节是最高位字节（<span style="COLOR: rgb(255,0,0)">按照从低地址到高地址的顺序存放数据的高位字节到低位字节</span>）；而Little endian则相反，它认为第一个字节是最低位字节（<span style="COLOR: rgb(255,0,0)">按照从低地址到高地址的顺序存放数据的低位字节到高位字节</span>）。</div>
+<div style="TEXT-INDENT: 10.5pt">例如，假设从内存地址0x0000开始有以下数据：</div>
+<p>
+<table style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; MARGIN-LEFT: 5.4pt; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; BORDER-COLLAPSE: collapse" cellspacing="0" cellpadding="0" border="1">
+<tbody>
+<tr>
+<td style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0cm; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 101.1pt; PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent" valign="top" width="135">
+<div align="center">0x0000</div></td>
+<td style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 5.4pt; BORDER-LEFT-COLOR: rgb(236,233,216); PADDING-BOTTOM: 0cm; WIDTH: 106.5pt; PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent" valign="top" width="142">
+<div align="center">0x0001</div></td>
+<td style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 5.4pt; BORDER-LEFT-COLOR: rgb(236,233,216); PADDING-BOTTOM: 0cm; WIDTH: 106.55pt; PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent" valign="top" width="142">
+<div align="center">0x0002</div></td>
+<td style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 5.4pt; BORDER-LEFT-COLOR: rgb(236,233,216); PADDING-BOTTOM: 0cm; WIDTH: 99.85pt; PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent" valign="top" width="133">
+<div align="center">0x0003</div></td></tr>
+<tr>
+<td style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0cm; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 101.1pt; BORDER-TOP-COLOR: rgb(236,233,216); PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent" valign="top" width="135">
+<div align="center">0x12</div></td>
+<td style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; PADDING-LEFT: 5.4pt; BORDER-LEFT-COLOR: rgb(236,233,216); PADDING-BOTTOM: 0cm; WIDTH: 106.5pt; BORDER-TOP-COLOR: rgb(236,233,216); PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent" valign="top" width="142">
+<div align="center">0x34</div></td>
+<td style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; PADDING-LEFT: 5.4pt; BORDER-LEFT-COLOR: rgb(236,233,216); PADDING-BOTTOM: 0cm; WIDTH: 106.55pt; BORDER-TOP-COLOR: rgb(236,233,216); PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent" valign="top" width="142">
+<div align="center">0xab</div></td>
+<td style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; PADDING-LEFT: 5.4pt; BORDER-LEFT-COLOR: rgb(236,233,216); PADDING-BOTTOM: 0cm; WIDTH: 99.85pt; BORDER-TOP-COLOR: rgb(236,233,216); PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent" valign="top" width="133">
+<div align="center">0xcd</div></td></tr></tbody></table></p>
+<div style="TEXT-INDENT: 21pt">如果我们去读取一个地址为0x0000的四个字节变量，若字节序为big- endian，则读出结果为0x1234abcd；若字节序位little-endian，则读出结果为0xcdab3412。如果我们将 0x1234abcd写入到以0x0000开始的内存中，则Little endian和Big endian模式的存放结果如下：</div>
+<p>
+<table style="BORDER-RIGHT: medium none; BORDER-TOP: medium none; MARGIN-LEFT: 5.4pt; BORDER-LEFT: medium none; BORDER-BOTTOM: medium none; BORDER-COLLAPSE: collapse" cellspacing="0" cellpadding="0" border="1">
+<tbody>
+<tr>
+<td style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0cm; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 75.85pt; PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent" valign="top" width="101">
+<div align="center">地址</div></td>
+<td style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 5.4pt; BORDER-LEFT-COLOR: rgb(236,233,216); PADDING-BOTTOM: 0cm; WIDTH: 84.5pt; PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent" valign="top" width="113">
+<div align="center">0x0000</div></td>
+<td style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 5.4pt; BORDER-LEFT-COLOR: rgb(236,233,216); PADDING-BOTTOM: 0cm; WIDTH: 88.35pt; PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent" valign="top" width="118">
+<div align="center">0x0001</div></td>
+<td style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 5.4pt; BORDER-LEFT-COLOR: rgb(236,233,216); PADDING-BOTTOM: 0cm; WIDTH: 88.4pt; PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent" valign="top" width="118">
+<div align="center">0x0002</div></td>
+<td style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; BORDER-TOP: windowtext 0.5pt solid; PADDING-LEFT: 5.4pt; BORDER-LEFT-COLOR: rgb(236,233,216); PADDING-BOTTOM: 0cm; WIDTH: 83.6pt; PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent" valign="top" width="111">
+<div align="center">0x0003</div></td></tr>
+<tr>
+<td style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0cm; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 75.85pt; BORDER-TOP-COLOR: rgb(236,233,216); PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent" valign="top" width="101">
+<div align="center">big-endian</div></td>
+<td style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; PADDING-LEFT: 5.4pt; BORDER-LEFT-COLOR: rgb(236,233,216); PADDING-BOTTOM: 0cm; WIDTH: 84.5pt; BORDER-TOP-COLOR: rgb(236,233,216); PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent" valign="top" width="113">
+<div align="center">0x12</div></td>
+<td style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; PADDING-LEFT: 5.4pt; BORDER-LEFT-COLOR: rgb(236,233,216); PADDING-BOTTOM: 0cm; WIDTH: 88.35pt; BORDER-TOP-COLOR: rgb(236,233,216); PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent" valign="top" width="118">
+<div align="center">0x34</div></td>
+<td style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; PADDING-LEFT: 5.4pt; BORDER-LEFT-COLOR: rgb(236,233,216); PADDING-BOTTOM: 0cm; WIDTH: 88.4pt; BORDER-TOP-COLOR: rgb(236,233,216); PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent" valign="top" width="118">
+<div align="center">0xab</div></td>
+<td style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; PADDING-LEFT: 5.4pt; BORDER-LEFT-COLOR: rgb(236,233,216); PADDING-BOTTOM: 0cm; WIDTH: 83.6pt; BORDER-TOP-COLOR: rgb(236,233,216); PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent" valign="top" width="111">
+<div align="center">0xcd</div></td></tr>
+<tr>
+<td style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; PADDING-LEFT: 5.4pt; PADDING-BOTTOM: 0cm; BORDER-LEFT: windowtext 0.5pt solid; WIDTH: 75.85pt; BORDER-TOP-COLOR: rgb(236,233,216); PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent" valign="top" width="101">
+<div align="center">little-endian</div></td>
+<td style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; PADDING-LEFT: 5.4pt; BORDER-LEFT-COLOR: rgb(236,233,216); PADDING-BOTTOM: 0cm; WIDTH: 84.5pt; BORDER-TOP-COLOR: rgb(236,233,216); PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent" valign="top" width="113">
+<div align="center">0xcd</div></td>
+<td style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; PADDING-LEFT: 5.4pt; BORDER-LEFT-COLOR: rgb(236,233,216); PADDING-BOTTOM: 0cm; WIDTH: 88.35pt; BORDER-TOP-COLOR: rgb(236,233,216); PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent" valign="top" width="118">
+<div align="center">0xab</div></td>
+<td style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; PADDING-LEFT: 5.4pt; BORDER-LEFT-COLOR: rgb(236,233,216); PADDING-BOTTOM: 0cm; WIDTH: 88.4pt; BORDER-TOP-COLOR: rgb(236,233,216); PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent" valign="top" width="118">
+<div align="center">0x34</div></td>
+<td style="BORDER-RIGHT: windowtext 0.5pt solid; PADDING-RIGHT: 5.4pt; PADDING-LEFT: 5.4pt; BORDER-LEFT-COLOR: rgb(236,233,216); PADDING-BOTTOM: 0cm; WIDTH: 83.6pt; BORDER-TOP-COLOR: rgb(236,233,216); PADDING-TOP: 0cm; BORDER-BOTTOM: windowtext 0.5pt solid; BACKGROUND-COLOR: transparent" valign="top" width="111">
+<div align="center">0x12</div></td></tr></tbody></table></p>
+<div style="TEXT-INDENT: 21pt">一般来说，x86系列CPU都是little-endian的字节序，PowerPC通常是Big endian，还有的CPU能通过跳线来设置CPU工作于Little endian还是Big endian模式。</div>
+<div style="TEXT-INDENT: 21pt"><strong>解答：</strong></div>
+<div style="TEXT-INDENT: 21pt">显然，解答这个问题的方法只能是将一个字节（CHAR/BYTE类型）的数据和一个整 型数据存放于同样的内存开始地址，通过读取整型数据，分析CHAR/BYTE数据在整型数据的高位还是低位来判断CPU工作于Little endian还是Big endian模式。得出如下的答案：</div>
+<div><span style="BACKGROUND: rgb(217,217,217) 0% 50%; moz-background-clip: -moz-initial; moz-background-origin: -moz-initial; moz-background-inline-policy: -moz-initial"><font size="2"><font face="Courier New"><span class="SpanClass5"><strong><font color="#0000ff">typedef</font></strong></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass16"><font color="#8000ff">unsigned</font></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass16"><font color="#8000ff">char</font></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass11">BYTE</span><span class="SpanClass10"><strong><font color="#000080">;</font></strong></span></font></font><font size="2"><font face="Courier New"><span class="SpanClass0">&nbsp;<br /></span><span class="SpanClass16"><font color="#8000ff">int</font></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass11">main</span><span class="SpanClass10"><strong><font color="#000080">(</font></strong></span><span class="SpanClass16"><font color="#8000ff">int</font></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass11">argc</span><span class="SpanClass10"><strong><font color="#000080">,</font></strong></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass16"><font color="#8000ff">char</font></span><span class="SpanClass10"><strong><font color="#000080">*</font></strong></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass11">argv</span><span class="SpanClass10"><font color="#000080"><strong>[])</strong></font></span></font></font><span class="SpanClass0"><br /></span><span class="SpanClass10"><strong><font face="Courier New" color="#000080" size="2">{</font></strong></span><span class="SpanClass0"><br /><font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font size="2"><font face="Courier New"><span class="SpanClass16"><font color="#8000ff">unsigned</font></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass16"><font color="#8000ff">int</font></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass11">num</span><span class="SpanClass10"><strong><font color="#000080">,*</font></strong></span><span class="SpanClass11">p</span><span class="SpanClass10"><strong><font color="#000080">;</font></strong></span></font></font><span class="SpanClass0"><br /><font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font size="2"><font face="Courier New"><span class="SpanClass11">p</span><span class="SpanClass0">&nbsp;</span><span class="SpanClass10"><strong><font color="#000080">=</font></strong></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass10"><strong><font color="#000080">&amp;</font></strong></span><span class="SpanClass11">num</span><span class="SpanClass10"><strong><font color="#000080">;</font></strong></span></font></font><span class="SpanClass0"><br /><font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font size="2"><font face="Courier New"><span class="SpanClass11">num</span><span class="SpanClass0">&nbsp;</span><span class="SpanClass10"><strong><font color="#000080">=</font></strong></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass4"><font color="#ff8000">0</font></span><span class="SpanClass10"><strong><font color="#000080">;</font></strong></span></font></font><span class="SpanClass0"><br /><font face="Courier New" size="2">&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font size="2"><font face="Courier New"><span class="SpanClass10"><strong><font color="#000080">*(</font></strong></span><span class="SpanClass11">BYTE</span><span class="SpanClass0">&nbsp;</span><span class="SpanClass10"><strong><font color="#000080">*)</font></strong></span><span class="SpanClass11">p</span><span class="SpanClass0">&nbsp;</span><span class="SpanClass10"><strong><font color="#000080">=</font></strong></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass4"><font color="#ff8000">0xff</font></span><span class="SpanClass10"><strong><font color="#000080">;</font></strong></span></font></font><span class="SpanClass0"><br /><font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font size="2"><font face="Courier New"><strong><span class="SpanClass5"><font color="#0000ff">if</font></span><span class="SpanClass10"><font color="#000080">(</font></span></strong><span class="SpanClass11">num</span><span class="SpanClass0">&nbsp;</span><span class="SpanClass10"><strong><font color="#000080">==</font></strong></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass4"><font color="#ff8000">0xff</font></span><span class="SpanClass10"><strong><font color="#000080">)</font></strong></span></font></font><span class="SpanClass0"><br /><font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="SpanClass10"><strong><font face="Courier New" color="#000080" size="2">{</font></strong></span><span class="SpanClass0"><br /><font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font size="2"><font face="Courier New"><span class="SpanClass11">printf</span><span class="SpanClass10"><strong><font color="#000080">(</font></strong></span><span class="SpanClass6"><font color="#808080">&#8220;The&nbsp;endian&nbsp;of&nbsp;cpu&nbsp;is&nbsp;little\n&#8221;</font></span><span class="SpanClass10"><strong><font color="#000080">);</font></strong></span></font></font><span class="SpanClass0"><br /><font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="SpanClass10"><strong><font face="Courier New" color="#000080" size="2">}</font></strong></span><span class="SpanClass0"><br /><font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font face="Courier New"><font size="2"><span class="SpanClass5"><strong><font color="#0000ff">else</font></strong></span><span class="SpanClass0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></font></font><font size="2"><span class="SpanClass2"><font face="Comic Sans MS" color="#008000">//num&nbsp;==&nbsp;0xff000000<br /></font></span><font face="Courier New"><span class="SpanClass0">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="SpanClass10"><strong><font color="#000080">{</font></strong></span></font></font><span class="SpanClass0"><br /><font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font size="2"><font face="Courier New"><span class="SpanClass11">printf</span><span class="SpanClass10"><strong><font color="#000080">(</font></strong></span><span class="SpanClass6"><font color="#808080">&#8220;The&nbsp;endian&nbsp;of&nbsp;cpu&nbsp;is&nbsp;big\n&#8221;</font></span><span class="SpanClass10"><strong><font color="#000080">);</font></strong></span></font></font><span class="SpanClass0"><br /><font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="SpanClass10"><strong><font face="Courier New" color="#000080" size="2">}</font></strong></span><span class="SpanClass0"><br /><font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font size="2"><font face="Courier New"><span class="SpanClass5"><strong><font color="#0000ff">return</font></strong></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass4"><font color="#ff8000">0</font></span><span class="SpanClass10"><strong><font color="#000080">;</font></strong></span></font></font><span class="SpanClass0"><br /></span><span class="SpanClass10"><strong><font face="Courier New" color="#000080" size="2">}</font></strong></span></span></div>
+<div style="TEXT-INDENT: 21pt">除了上述方法(通过指针类型强制转换并对整型数据首字节赋值，判断该赋值赋给了高位还 是低位)外，还有没有更好的办法呢？我们知道，union的成员本身就被存放在相同的内存空间（共享内存，正是union发挥作用、做贡献的去处），因 此，我们可以将一个CHAR/BYTE数据和一个整型数据同时作为一个union的成员，得出如下答案：</div>
+<div><span style="BACKGROUND: rgb(217,217,217) 0% 50%; moz-background-clip: -moz-initial; moz-background-origin: -moz-initial; moz-background-inline-policy: -moz-initial"><font size="2"><font face="Courier New"><span class="SpanClass16"><font color="#8000ff">int</font></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass11">checkCPU</span><span class="SpanClass10"><font color="#000080"><strong>()</strong></font></span></font></font><span class="SpanClass0"><br /></span><span class="SpanClass10"><strong><font face="Courier New" color="#000080" size="2">{</font></strong></span><span class="SpanClass0"><br /><font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font size="2"><font face="Courier New"><span class="SpanClass16"><font color="#8000ff">union</font></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass11">w</span></font></font><span class="SpanClass0"><br /><font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span class="SpanClass10"><strong><font face="Courier New" color="#000080" size="2">{</font></strong></span><font size="2"><font face="Courier New"><span class="SpanClass0">&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="SpanClass16"><font color="#8000ff">int</font></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass11">a</span><span class="SpanClass10"><strong><font color="#000080">;</font></strong></span></font></font><span class="SpanClass0"><br /><font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font size="2"><font face="Courier New"><span class="SpanClass16"><font color="#8000ff">char</font></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass11">b</span><span class="SpanClass10"><strong><font color="#000080">;</font></strong></span></font></font><span class="SpanClass0"><br /></span><span class="SpanClass11"></span><font size="2"><font face="Courier New"><span class="SpanClass10"><strong><font color="#000080">&nbsp;&nbsp;&nbsp; }</font></strong></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass11">c</span><span class="SpanClass10"><strong><font color="#000080">;</font></strong></span></font></font><span class="SpanClass0"><br /></span><font size="2"><font face="Courier New"><span class="SpanClass11">&nbsp;&nbsp;&nbsp; c</span><span class="SpanClass10"><strong><font color="#000080">.</font></strong></span><span class="SpanClass11">a</span><span class="SpanClass0">&nbsp;</span><span class="SpanClass10"><strong><font color="#000080">=</font></strong></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass4"><font color="#ff8000">1</font></span><span class="SpanClass10"><strong><font color="#000080">;</font></strong></span></font></font><span class="SpanClass0"><br /></span><font size="2"><font face="Courier New"><span class="SpanClass11">&nbsp;&nbsp;&nbsp; return</span><span class="SpanClass0">&nbsp;</span><span class="SpanClass10"><strong><font color="#000080">(</font></strong></span><span class="SpanClass11">c</span><span class="SpanClass10"><strong><font color="#000080">.</font></strong></span><span class="SpanClass11">b</span><span class="SpanClass0">&nbsp;</span><span class="SpanClass10"><strong><font color="#000080">==</font></strong></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass4"><font color="#ff8000">1</font></span><span class="SpanClass10"><font color="#000080"><strong>);</strong></font></span></font></font><span class="SpanClass0"><br /></span><span class="SpanClass10"><strong><font face="Courier New" color="#000080" size="2">}</font></strong></span></span></div>
+<div>实现同样的功能，我们来看看Linux操作系统中相关的源代码是怎么做的：</div>
+<div><span style="BACKGROUND: rgb(217,217,217) 0% 50%; moz-background-clip: -moz-initial; moz-background-origin: -moz-initial; moz-background-inline-policy: -moz-initial"><font size="2"><font face="Courier New"><span class="SpanClass16"><font color="#8000ff">static</font></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass16"><font color="#8000ff">union</font></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass10"><strong><font color="#000080">{</font></strong></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass16"><font color="#8000ff">char</font></span><span class="SpanClass0">&nbsp;c</span><span class="SpanClass10"><strong><font color="#000080">[</font></strong></span><span class="SpanClass4"><font color="#ff8000">4</font></span><span class="SpanClass10"><strong><font color="#000080">];</font></strong></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass16"><font color="#8000ff">unsigned</font></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass16"><font color="#8000ff">long</font></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass11">l</span><span class="SpanClass10"><strong><font color="#000080">;</font></strong></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass10"><strong><font color="#000080">}</font></strong></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass11">endian_test</span><span class="SpanClass0">&nbsp;</span><span class="SpanClass10"><strong><font color="#000080">=</font></strong></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass10"><strong><font color="#000080">{</font></strong></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass10"><strong><font color="#000080">{</font></strong></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass7"><font color="#808080">&#8216;l&#8217;</font></span><span class="SpanClass10"><strong><font color="#000080">,</font></strong></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass7"><font color="#808080">&#8217;?&#8217;</font></span><span class="SpanClass10"><strong><font color="#000080">,</font></strong></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass7"><font color="#808080">&#8217;?&#8217;</font></span><span class="SpanClass10"><strong><font color="#000080">,</font></strong></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass7"><font color="#808080">&#8216;b&#8217;</font></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass10"><strong><font color="#000080">}</font></strong></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass10"><strong><font color="#000080">};</font></strong></span></font></font><span class="SpanClass0"><br /></span><span class="SpanClass9"><font face="Courier New" color="#804000" size="2">#define&nbsp;ENDIANNESS&nbsp;((char)endian_test.l)</font></span></span></div>
+<div style="TEXT-INDENT: 21pt">Linux的内核作者们仅仅用一个union变量和一个简单的宏定义就实现了一大段代码同样的功能！由以上一段代码我们可以深刻领会到Linux源代码的精妙之处！</div>
+<div style="TEXT-INDENT: 21pt"><strong>试题二：</strong>假设网络节点A和网络节点B中的通信协议涉及四类报文，报文格式为&#8221;报文类型字段+报文内容的结构体&#8221;，四个报文内容的结构体类型分别为STRUCTTYPE1~ STRUCTTYPE4，请编写程序以最简单的方式组织一个统一的报文数据结构。</div>
+<div style="TEXT-INDENT: 21pt"><strong>分析：</strong></div>
+<div style="TEXT-INDENT: 21pt">报文的格式为&#8221;报文类型+报文内容的结构体&#8221;，在真实的通信中，每次只能发四类报文中的一种，我们可以将四类报文的结构体组织为一个union（共享一段内存，但每次有效的只是一种），然后和报文类型字段统一组织成一个报文数据结构。</div>
+<div style="TEXT-INDENT: 21pt"><strong>解答：</strong></div>
+<div style="TEXT-INDENT: 21pt">根据上述分析，我们很自然地得出如下答案：</div>
+<div><span style="BACKGROUND: rgb(217,217,217) 0% 50%; moz-background-clip: -moz-initial; moz-background-origin: -moz-initial; moz-background-inline-policy: -moz-initial"><font face="Courier New"><font size="2"><span class="SpanClass5"><strong><font color="#0000ff">typedef</font></strong></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass16"><font color="#8000ff">unsigned</font></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass16"><font color="#8000ff">char</font></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass11">BYTE</span><span class="SpanClass10"><strong><font color="#000080">;</font></strong></span></font></font><span class="SpanClass0"><font face="Courier New" size="2">&nbsp;<br />&nbsp;<br /></font></span><font size="2"><span class="SpanClass2"><font face="Comic Sans MS" color="#008000">//<br /></font></span><font face="Courier New"><span class="SpanClass5"><strong><font color="#0000ff">typedef</font></strong></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass16"><font color="#8000ff">union</font></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass11">tagPacketContent</span></font></font><span class="SpanClass0"><br /></span><span class="SpanClass10"><strong><font face="Courier New" color="#000080" size="2">{</font></strong></span><span class="SpanClass0"><br /><font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font size="2"><font face="Courier New"><span class="SpanClass11">STRUCTTYPE1</span><span class="SpanClass0">&nbsp;</span><span class="SpanClass11">pkt1</span><span class="SpanClass10"><strong><font color="#000080">;</font></strong></span></font></font><span class="SpanClass0"><br /><font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font size="2"><font face="Courier New"><span class="SpanClass11">STRUCTTYPE2</span><span class="SpanClass0">&nbsp;</span><span class="SpanClass11">pkt2</span><span class="SpanClass10"><strong><font color="#000080">;</font></strong></span></font></font><span class="SpanClass0"><br /><font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font size="2"><font face="Courier New"><span class="SpanClass11">STRUCTTYPE3</span><span class="SpanClass0">&nbsp;</span><span class="SpanClass11">pkt1</span><span class="SpanClass10"><strong><font color="#000080">;</font></strong></span></font></font><span class="SpanClass0"><br /><font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font size="2"><font face="Courier New"><span class="SpanClass11">STRUCTTYPE4</span><span class="SpanClass0">&nbsp;</span><span class="SpanClass11">pkt2</span><span class="SpanClass10"><strong><font color="#000080">;</font></strong></span></font></font><span class="SpanClass0"><br /></span><font size="2"><font face="Courier New"><span class="SpanClass10"><strong><font color="#000080">}</font></strong></span><span class="SpanClass11">PacketContent</span><span class="SpanClass10"><strong><font color="#000080">;</font></strong></span></font></font><span class="SpanClass0"><br /><font face="Courier New" size="2">&nbsp;<br /></font></span><font size="2"><span class="SpanClass2"><font face="Comic Sans MS" color="#008000">//<br /></font></span><font face="Courier New"><span class="SpanClass5"><strong><font color="#0000ff">typedef</font></strong></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass16"><font color="#8000ff">struct</font></span><span class="SpanClass0">&nbsp;</span><span class="SpanClass11">tagPacket</span></font></font><span class="SpanClass0"><br /></span><span class="SpanClass10"><strong><font face="Courier New" color="#000080" size="2">{</font></strong></span><span class="SpanClass0"><br /><font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font size="2"><font face="Courier New"><span class="SpanClass11">BYTE</span><span class="SpanClass0">&nbsp;</span><span class="SpanClass11">pktType</span><span class="SpanClass10"><strong><font color="#000080">;</font></strong></span></font></font><span class="SpanClass0"><br /><font face="Courier New" size="2">&nbsp;&nbsp;&nbsp;&nbsp;</font></span><font size="2"><font face="Courier New"><span class="SpanClass11">PacketContent</span><span class="SpanClass0">&nbsp;</span><span class="SpanClass11">pktContent</span><span class="SpanClass10"><strong><font color="#000080">;</font></strong></span></font></font><span class="SpanClass0"><br /></span><font size="2"><font face="Courier New"><span class="SpanClass10"><strong><font color="#000080">}</font></strong></span><span class="SpanClass11">Packet</span><span class="SpanClass10"><strong><font color="#000080">;</font></strong></span></font></font></span></div>
+<div><strong>总结</strong></div>
+<div style="TEXT-INDENT: 21pt">
+<div style="TEXT-INDENT: 21pt"><font size="2">在C/C++程序的编写中，当多个基本数据类型或复合数据结构要占用同一片内存时，我们要使用联合体（试题一是这样的例证）；当多种类型，多个对象，多个事物只取其一时（我们姑且通俗地称其为&#8221;n选1&#8221;），我们也可以使用联合体来发挥其长处（试题二是这样的例证）。</font></div></div></p>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2008/02/08/think-about-a-topic-1/#disqus_thread">Comments</a></span>
+	
+</div>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+    </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2013
+
+    imlcl
+. Powered by <a href="http://octopress.org">Octopress</a> | 
+    Theme <a href="http://github.com/panks/fabric">fabric</a> by <a href="http://panks.me">Pankaj Kumar</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'imlcl';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://imlcl.com/blog/2008/02/08/think-about-a-topic-1/';
+        var disqus_url = 'http://imlcl.com/blog/2008/02/08/think-about-a-topic-1/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

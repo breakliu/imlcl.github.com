@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[大头龙仔Blog]]></title>
+  <link href="http://imlcl.com/atom.xml" rel="self"/>
+  <link href="http://imlcl.com/"/>
+  <updated>2013-08-21T23:52:38+08:00</updated>
+  <id>http://imlcl.com/</id>
+  <author>
+    <name><![CDATA[imlcl]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Migrate to Octopress]]></title>
+    <link href="http://imlcl.com/blog/2013/08/21/migrate-to-octopress/"/>
+    <updated>2013-08-21T23:09:00+08:00</updated>
+    <id>http://imlcl.com/blog/2013/08/21/migrate-to-octopress</id>
+    <content type="html"><![CDATA[<p>迁移过来了，从此加入Markdown阵型。</p>
+
+<p>从wordpress里导入了280篇博文，因为是导入过来的，所以还保持了html代码，可能会有些练练的，但基本上不会有太大影响，我也就不花时间再去重整了。</p>
+
+<p>回想一下，好久好久没写文章了，这个在今后会有改善。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[写给2013，写给我，写给我们]]></title>
+    <link href="http://imlcl.com/blog/2013/01/01/write-to-2013/"/>
+    <updated>2013-01-01T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2013/01/01/write-to-2013</id>
+    <content type="html"><![CDATA[<p>2012一转眼就过支了，这么快就踏入2013年。</p>
+
+<p>想想，回来东莞工作已有三年多了，毕业五年，这些时间似是历历在目，似是过眼云烟。</p>
+
+<p>2012年，我在疑惑地问问自己，我是否进步了？我冥思良久，好像也找不到答案，感觉自己是进步了，但似乎这种进步又可以忽略不计。这是否说明，我还没有把自己看作一名教师，从教师角度出发来衡量自己呢？我也在疑惑，我是否有把自己看作为教师而衡量的必要性。</p>
+
+<p>人生面临许许多多的抉择，而在我身上，似乎显得有些无力。不过，我坚信有一那么一些执着，打从孩提时就刻进了骨子里。要是说这样的工作，这样的生活渐渐地磨平了我，倒不如说我是一个顽皮的小孩，喜欢让自己跌跌撞撞，但最终是为了成就更强大的自我，这也许是未雨绸缪吧。</p>
+
+<p>2013年，我会进入人生另一个重要的时期，离30已经很近了，我还有很多东西没有能力去完成。2012年所留下的很多问号，都要在2013年不断地探索，我，很想知道，我能够改变多少东西。</p>
+
+<p>人生有多少个三年，多少个五年，更别说十年了。当你认为，这也许是平衡点的时候而变得懒惰时，其实，那才是最危险的，我一直都这么谨记着，所以我才有动为为那冰山一角剩余的部分去努力奋斗。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Git和.gitignore]]></title>
+    <link href="http://imlcl.com/blog/2012/09/13/git-gitignore/"/>
+    <updated>2012-09-13T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2012/09/13/git-gitignore</id>
+    <content type="html"><![CDATA[<img src="http://imlcl.com/images/blog/bg20120705011.png">
+
+<p>阮一峰的<a href="http://www.ruanyifeng.com/blog/2012/07/git.html">《Git分支管理策略》</a>可以先看看，很不错</p>
+
+<p>那里这里说到一个.gitignore的文件，就是拿来声明哪些文件或文件夹不需要用Git来跟踪的。<br />
+不过刚开始使用Git时，会遇到的即使加入.gitignore的文件，但Git依然会进行跟踪，那么这里得分两种情况来看了：<br />
+1、如果该文件（夹）已git add进库，那么此时即使你在.gitignore声明，该文件依旧会进行跟踪，需要通过命令将其删除：
+<strong>git rm &#8211;cached -r &lt;path&gt;</strong>
+2、如果该文件（夹）没有git add进库，那么此时你可以提前在.gitignore进行声名，这样就可以不让Git不跟踪了</p>
+
+<p>当备个忘吧，因为平时都没有用GUI工具，都是命令行来得快捷一些，不知有什么好GUI可以用。</p>
+
+<p><a href="http://book.douban.com/subject/3420144/">《Pro Git》</a>也是一本很不错的书，推荐一看</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[服务器基于slackware的KVM布署详解]]></title>
+    <link href="http://imlcl.com/blog/2012/08/05/slackware-kvm/"/>
+    <updated>2012-08-05T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2012/08/05/slackware-kvm</id>
+    <content type="html"><![CDATA[<p><strong>一、背景</strong>
+首先呢，我发现自己有半年时间没有写技术类的文章了，其次，关于这个话题，我一直都想整理一篇比较好的文章出来，一来可以做个备忘，更重要是起到分享交流，共同进步。之前一直可能都有一些零零散散关于这部分细节的，但我觉得都看得不是很爽。另外，网上搜到大多数关于KVM的都是debian系或redhat系的，有部分内容和slackware有差异，并且由于slackware的文化，在KVM虚拟化这块，相比其它发行版要麻烦一点点，而slackware的简洁、稳定、快速是我一直所爱，所以更希望写下这篇文章。</p>
+
+<p><strong>二、相关准备
+</strong>1、装有slackware的主机一台，内存最好不要太少吧，如果4G或以上的，就装slackware64，当前slackware最新稳定版是13.37（37这个命名方式是和内核2.6.xx一致），因为是做物理主机的系统，所以稳定至上。至于如何安装slackware，可以看<a href="http://www.linuxsir.org/bbs/thread383703.html">slackbook中文译本</a>，反正基本流程是：光碟或U盘启动 -&gt; cfdisk分区 -&gt; setup安装 -&gt; 重启……，下载slackware可以到这里<a href="http://mirrors.163.com/slackware/">http://mirrors.163.com/slackware/</a>
+2、KVM是什么，可以了解，随便一搜就有，还要确定你的CPU是否支持虚拟化技术；（<a href="http://baike.baidu.com/view/13605.htm">什么是虚拟化技术？</a>）<br />
+3、因为我建立两个kvm，一个是slackware-current，一个是windows 2003，所以你也得要有2003的iso，安装2003请选择手动安装，最好是MSDN版本；<br />
+4、虚拟机访问外网要使用网桥（package bridge-utils），但听说用VDE更方面，有兴趣可以看看<a href="http://wiki.alienbase.nl/doku.php?id=slackware:vde">这里</a>。老实说，VDE我弄了一下，好像很麻烦就没弄了……</p>
+
+<p>
+<img src="http://imlcl.com/images/blog/servers.jpg">
+<strong>三、软件准备</strong>
+物理服务器机器安装好slackware64 13.37后，那得得要准备相关的软件环境（均运行在root下面）：<br />
+1、qemu-kvm<br />
+2、tunctl（用来tap通讯）</p>
+
+<p>1）qemu-kvm<br />
+首先到slackbuilds.org下载<a href="http://slackbuilds.org/repository/13.37/system/qemu-kvm/">qemu-kvm</a>相关的编译准备文件（还有源码包），运行qemu-kvm.SlackBuild进行编译，OK后会在tmp生成一个名为qemu-kvm-1.0.1-x86_64-1_SBo.tgz的包，installpkg之。如果在编译过程中出现错误，那就得先排错，一般都是相关的依赖问题。<br />
+2）tunctl<br />
+同样地，下载<a href="http://slackbuilds.org/repository/13.37/network/tunctl/">tunctl</a>并编译之，得到tunctl-1.5-x86_64-2_SBo.tgz并installpkg之</p>
+
+<p>这部分完毕</p>
+
+<p><strong>四、设置网桥和Tap</strong>
+KVM虚拟机通过tap来访问互联网，那么物理主机得设置好网桥，下面是我/etc/rc.d/rc.local里设置网桥和tap的代码
+<strong># create brige</strong>
+<strong>ifconfig eth0 0.0.0.0</strong>
+<strong>brctl addbr br0</strong>
+<strong>ifconfig br0 x.x.x.x(物理主机IP) netmask 255.255.255.0(物理主机掩码) up</strong>
+<strong>route add default gw x.x.x.x(网关) br0</strong>
+<strong>brctl addif br0 eth0</strong></p>
+
+<p><strong># create tap0 for windows 2003</strong>
+<strong>tunctl -t tap0</strong>
+<strong>ifconfig tap0 up</strong>
+<strong>brctl addif br0 tap0</strong></p>
+
+<p><strong>#<strong> create tap1 for slackware-current</strong>
+tunctl -t tap1</strong>
+<strong>ifconfig tap1 up</strong>
+<strong>brctl addif br0 tap1</strong></p>
+
+<p><strong>五、安装windows server 2003</strong>
+windows方面我们使用virtio来提高磁盘和网络的IO性能，那么这里得准备virtio的两个文件：<br />
+1、<a href="http://alt.fedoraproject.org/pub/alt/virtio-win/latest/images/bin/virtio-win-0.1-30.iso">http://alt.fedoraproject.org/pub/alt/virtio-win/latest/images/bin/virtio-win-0.1-30.iso
+</a>2、<a href="http://www.linuxwind.org/download/virtio-win-1.1.16.vfd">http://www.linuxwind.org/download/virtio-win-1.1.16.vfd</a></p>
+
+<p>来说明一下，virtio-win-0.1-30.iso里面放有windows的virtio磁盘控制器和网卡的驱动，是安装2003成功后，进入系统后进行相关驱动安装或更新用的。而virtio-win-1.1.16.vfd是一个软盘镜像，是用来安装2003时，通过F6来指定磁盘驱动用的。</p>
+
+<p>在使用qemu-kvm前，需要载入kvm内核模块：
+<strong>modprobe kvm_intel</strong></p>
+
+<p>创建大小为20G的win2003.qcow2磁盘文件：
+<strong>qemu-img create -f qcow2 win2003.qcow 20G</strong></p>
+
+<p>启动KVM进行2003的安装：
+<strong>qemu-kvm -m 768 -boot d -drive file=/xxx/win2003.qcow2,cache=writeback,if=virtio -fda /xxx/virtio-win-1.1.16.vfd -cdrom /xxx/Windows.Server.2003.R2.iso -vnc :1</strong>
+命令运行后，没有提示任何错误就应该是没有问题了，打开tightVNC，登录到该远程桌面进行安装的操作（VNC登录地址是IP1:1）。启动安装是按F6，之后再安“S”，进入后选择“Redhat I/O for windows 2003”相应的驱动，32或64位。之后的安装过程是和平时装2003的过程一样。</p>
+
+<p>安装成功并启动一次，之后将2003关机，换用另外一条指令来启动虚拟机：
+<strong>qemu-kvm -m 768 -net nic,model=virtio -net tap,ifname=tap0,script=no -drive file=/xxx/win2003.qcow2,cache=writeback,if=virtio -cdrom /xxx/virtio-win-0.1-30.iso -vnc :1
+</strong>此次启动将载入virtio-win-0.1-30.iso镜像，包含有磁盘控制器和网卡的驱动<br />
+启动后，同样使用VNC远程接入，把2003里的网卡安装好，也可以把磁盘控制器也升级一下，因为之前软盘镜像带的是2010年的，现在iso里包含的是最新的驱动
+<img src="http://imlcl.com/images/blog/tm1.png">
+到这里，windows 2003安装步骤就完毕了，之后就像平时新装系统设定IP，网关什么的就好，并开启windows远程桌面方便后续的远程操作</p>
+
+<p><strong>六、安装slackware-current
+</strong>另一台虚拟机我装的是slackware-current，安装步骤要比windows 2003简单一些</p>
+
+<p>创建大小为20G的slackware.qcow2磁盘文件：
+<strong>qemu-img create -f qcow2 slackware.qcow 20G</strong></p>
+
+<p>启动KVM进行slackware的安装：
+<strong>qemu-kvm -m 768 -boot d -drive file=/xxx/slackware.qcow2,cache=writeback -cdrom /xxx/slackware-13.37-install-d1.iso -vnc :1</strong>
+用VNC连接，像平时一样来安装，current的安装方法就略去了</p>
+
+<p>安装成功后就换另外一条指令来启动：
+<strong>qemu-kvm -m 768 -net nic -net tap,ifname=tap1,script=no -drive file=/xxx/slackware.qcow2,cache=writeback -vnc :1</strong>
+之后进行一些必要的设定，之后就可以用ssh来连接</p>
+
+<p><strong>七、最终的/etc/rc.d/rc.local</strong>
+到这里，两台KVM虚拟机都安装设置成功了，所以就需要将其加入到rc.local脚本，使两个虚拟机在开机时随系统启动，下面是我的rc.local：
+<strong># create brige</strong>
+<strong>ifconfig eth0 0.0.0.0</strong>
+<strong>brctl addbr br0</strong>
+<strong>ifconfig br0 x.x.x.x(物理主机IP) netmask 255.255.255.0(物理主机掩码) up</strong>
+<strong>route add default gw x.x.x.x(网关) br0</strong>
+<strong>brctl addif br0 eth0</strong></p>
+
+<p><strong># create tap0 for windows 2003</strong>
+<strong>tunctl -t tap0</strong>
+<strong>ifconfig tap0 up</strong>
+<strong>brctl addif br0 tap0</strong></p>
+
+<p><strong>#<strong> create tap1 for slackware-current</strong>
+tunctl -t tap1</strong>
+<strong>ifconfig tap1 up</strong>
+<strong>brctl addif br0 tap1</strong></p>
+
+<p><strong># macaddr</strong>
+<strong>macaddr1=`printf &#8216;DE:AD:BE:EF:%02X:%02X\n&#8217; $((RANDOM%256)) $((RANDOM%256))`</strong>
+<strong>macaddr2=`printf &#8216;DE:AD:BE:EF:%02X:%02X\n&#8217; $((RANDOM%256)) $((RANDOM%256))`</strong></p>
+
+<p><strong># start kvm</strong>
+<strong>qemu-kvm -m 768 -drive file=/home/qcow2/win2003.qcow2,cache=writeback,if=virtio -net nic,model=virtio,macaddr=$macaddr1 -net tap,ifname=tap0,script=no -daemonize -nographic -localtime</strong>
+<strong>qemu-kvm -m 768 -drive file=/home/qcow2/slackware.qcow2,cache=writeback -net nic,macaddr=$macaddr2 -net tap,ifname=tap1,script=no -daemonize -nographic -localtime</strong>
+启动参数多了个mac地址，是用随机数生成的，建议生成mac地址后将其固定，不然每次启动机器都会有不同的mac地址……<br />
+另外，因为不需要用vnc，所以参数里也没有vnc的启动参数，这样也是保证安全的一个做法<br />
+-daemonize：让KVM在后台运行<br />
+-nographic：关闭图形输出<br />
+-localtime：让虚拟机的时间显示正常</p>
+
+<p><strong>八、总结与展望</strong>
+到这里，文章也快要结束了。<br />
+文中没有使用libvirt来进行虚拟机管理，这个后续可以进行改进，并且也没有相应的watchdog，这也是一个不足。<br />
+文中所讲述是一个相对为通用的方法，希望读者能有所启发。<br />
+如果你按照这些步骤进展顺利，那么恭喜你:)
+<strong></strong></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[所谓码农（摘自《码农》第1期）]]></title>
+    <link href="http://imlcl.com/blog/2012/08/04/code-farmer/"/>
+    <updated>2012-08-04T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2012/08/04/code-farmer</id>
+    <content type="html"><![CDATA[<p>《码农》第1期，当时看到，马上在群里推荐，不过第一时间听到的是，“我不是码农”，“我不做码农”。随后，我看到里面讲的这篇，《所谓码农》，觉得挺有意思的，于是决定分享给码农与非码农：</p>
+
+<p>对于码农这个称呼，有些人喜爱有加，有些人不以为然。区别在于对待“农”这个字的感觉。农当然是指农民，这个词寓义很丰富，既可以说它伟大，也可以说它渺小。说它伟大，是因为我们的生存离不开农民，而且中国⼀直是个农业为本的国家，曾经说是百分之八十的人是农民，这意味着往前翻⼀两代，你我众人皆是农民出身。以此观之，农可谓大哉。说它渺小，则是因为大家的观念里，农民意味着有很多缺点，冠冕堂皇的说法是劣根性，比如目光短浅、思维陈旧、自私小气，等等，总之是为我们受过教育的人群所看不惯的种种毛病——这些毛病虽然我们自己也有，但是我们看不见——于是乎“农民”成为了骂人时常用的字眼。</p>
+
+<p>其实，把自己的编程生涯与田间地头的锄禾日当午对应起来，确是有那么些相似之处的。你能想象得到，田间整齐栽种的秧苗，与屏幕上显示的错落有致的代码行有几分神似。各种庄稼的种植是有讲究的，正如你要注意编程风格。施肥灌溉，犹如你对代码进行的编译链接。除草除虫，自然是在做着debug 。你挑水来我浇园，大概是在小菜园中进行的结对编程。因为靠天吃饭，农民们也要学点云计算，去五道口职业技术学校进修的人也多起来了。收割的季节，活多人少，也常常是要搞外包的，因为deadline 很重要，time to market 不容错过。</p>
+
+<p>不过坦率地说，码农这个叫法让人体会更多的是滑稽、搞怪、无厘头。毕竟⼀个是简单的体力劳动，⼀个是高智商的脑力劳动，不可同日而语。而程序员却偏爱这样的时空错乱的感觉，自嘲（我就是个农民！）的同时却又自命不凡（我是码农我怕谁？！），特立独行极了。</p>
+
+<p>码农的草帽底下，是⼀颗充满创造力的自由不羁的头脑。他们遵从最佳实践而痛恨陈规教条，他们欣赏天才而不迷信权威，他们喜欢思考而不轻易苟同。他们是技术人，却追求人文理想；他们敢于呐喊，说出自己的观点和主张，也更善于脚踏实地，用自己的点滴工作去改变现状。码农们是勤奋的，加班加点的工作是常有的事情，城市夜间的灯火，有多少是在码农们的办公室和居所点燃？周末四处举办的技术交流和讲座，又活跃着多少码农的身影？线下读书，线上讨论，冥思苦想，动手实践，新技术驱动着码农们的脚步，码农们在改变着我们的生活。</p>
+
+<p>生存离不开农民，生活离不开码农。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[转]ZIP,一个没落天才的故事]]></title>
+    <link href="http://imlcl.com/blog/2012/05/06/zip-story/"/>
+    <updated>2012-05-06T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2012/05/06/zip-story</id>
+    <content type="html"><![CDATA[<p>via: <a href="http://cnbeta.com/articles/185863.htm">http://cnbeta.com/articles/185863.htm</a></p>
+
+<p>ZIP,一个没落天才的故事，Phil Katz不愿意为一个压缩软件付钱，就索性自己写了一个更好的算法，然后无偿公开。2000年4月14日，他被发现死于一家汽车旅馆，年仅37岁，死时手中握着一个空酒瓶。他留下了zip算法，却没有留下一张像样的照片。</p>
+
+<p>久违了的zip在你的脑海里还能占据多少空间?或许，你跟本就把它忘记了。<br />
+记得刚上大学的2001年,在电脑报上看到过一篇介绍Philip Katz的文章，那时，我才知道，原来zip是曾经是那么的“不可一世”，那么广泛的被使用着。<br />
+Winzip的创始人是Philip Katz。用Ultraedit打开任一个zip文件，可以看到文件最前面PK两个字母，这便是zip文件格式的创始人Philip Katz的名字缩写。<br />
+在19年前，也就是公元1988年，那时候互联网还刚刚开始有了雏形，而最流行的是一种使用电话线拨号登陆别人在家里搭建的服务平台——交换信息的电子公告牌(BBS)系统。这种系统有些类似现在的论坛和新闻组，由于站长之间互相转信也成为了一个庞大的信息网络(惠多网)。<br />
+老一点的网虫可能都有印象，在没有 Internet的年代，中国大地上也曾有几十个这样的BBS存在，著名的字处理软件WPS的作者求伯君和CCED的作者朱崇君当年都是非常有名的个人站长。<br />
+由于电话线的接入速度慢的可怜，通过BBS传输较大文件实在是叫人痛苦的一件事。于是，使用文件压缩技术减小文件的体积并将多个文件压缩到一个封包中就成为了BBS用户的一项必须掌握的技巧。当时的美国BBS上，比较流行的是一种叫做ARC的压缩技术，由于它是一家商业公司开发的压缩技术，使用这种软件进行工作是需要付费的。那时候的菲利普·卡兹是一个沉迷于BBS 上的毛头小伙，由于经常混迹于BBS上，对于ARC的收费非常不满的他自己开发了一个程序叫PKARC，这个程序与ARC完全兼容，可以压缩和解压缩 ARC文件。这样一来，大批的ARC用户自然转而使用菲利普·卡兹的免费软件。ARC的制作公司一怒之下将菲利普·卡兹告上了法庭，法庭自然判决菲利普· 卡兹禁止继续开发和传播PKARC。这种判决并没有磨灭菲利普·卡兹的斗志，而是激起了他要与ARC斗争到底的决心。在虚拟的世界中，自由、平等永远是真正的程序员永久的追求。<br />
+他放弃了PKARC的开发，发誓要写出一款比ARC更好的压缩软件来打败ARC。这一场官司造就了一名编程天才的横空出世，也造就了一个后来在互联网时代的文件标准。几周以后，后来统治整个BBS世界乃至Internet世界的ZIP在菲利普·卡兹手中发出了第一声响亮的啼哭!<br />
+不名则已，一鸣惊人，这种名为PKZIP的程序可以将一个或多个文件压缩到一个后缀为“.zip”的文件中，无论从压缩比、压缩速度方面都超过了商业软件 ARC。卡兹将PKZIP作为自由软件免费发放，使其如同草原上的星星之火般在全美的各大BBS上蔓延开来，用户以几何级数的增长，各大BBS的站长自发将原来使用ARC格式压缩的文件转换成ZIP格式，卡兹用他天才的头脑和顽强的毅力堂堂正正的击败了ARC，ARC的制作公司在PKZIP的强大攻势下很快就消声匿迹了。用自由软件打败商业公司的传奇故事很快传遍了整个BBS世界，疾恶如仇而又身手不凡的菲利普·卡兹如同数字世界的大侠般仗剑江湖，劫富济贫，以一人之力擎起了压缩软件的大旗。<br />
+此后卡兹一直继续着对 PKZIP的开发和维护工作，PKZIP建立和统治了DOS时代的压缩标准。直到Windows的诞生，使用卡兹创造的压缩算法的软件Winzip的出现更使ZIP格式成为Internet的传输标准，ZIP压缩格式也成为压缩文档的事实标准。<br />
+PKZIP及其“克隆”作品Winzip成为Internet历史上最有名的共享软件之一，ZIP压缩格式也成为压缩文档的事实标准，建立起一个统治Internet的“ZIP王朝”。菲利普·卡兹为世界贡献了一个伟大的共享软件，而他自己却几乎没有从中获得任何好处!因为从一开始，ZIP就是为了反抗收费的PKARC“而生”的。<br />
+但是，不良的生活习惯，长期巨大的精神压力，导致了潦倒无助的他在2000年的4月14号，死在了美国威斯康星州密尔沃基的一家汽车旅馆里，死时，手里还紧握着一个烈性酒的酒瓶。<br />
+Philip Katz从未在ZIP身上得到半点好处，坚持信念的结果往往是潦倒的生活，糟糕的个人生活和长期编写软件的巨大压力使卡兹染上了酗酒的恶习，最终断送了他那年轻的生命。他为世界贡献了一个伟大的免费软件，更为重要的是他缔造了一种大众化的压缩格式，然而却过早地离开了这个世界。<br />
+就在Philip Katz去世的前后，ZIP的最大对手：WINRAR，正在悄然崛起。当时Winzip早已稳坐压缩界头把交椅，但随着2.7版本的出现，Wrar却日益壮大，两者斗争得异常激烈(注：与Winzip一样，其实早在DOS时代，就存在RAR的DOS版本，只是RAR在DOS时代敌不过只能用命令行的ARJ，到了Windows时代又招架不住WinZip的进攻，皆因RAR压缩率低和速度慢，并且RAR压缩格式以前一直缺少其它软件的支持，导致WinRAR都未能广泛流行)。<br />
+就当时两者的性能而言，Winzip压缩只支持ZIP格式，解压缩支持ZIP、CAB，还有TAR、GZip、UUencode、XXencode、BinHex、MIME等几种Internet常用格式(可以看出WinZip的重心之所在)，ARJ、LHA和ARC则需要相应的外挂程序。但WinZip跟Windows资源管理器结合得很紧密，最常用的压缩和解压缩操作已集成到鼠标右键菜单中，点按右键即可轻松完成压缩解压缩。并且增加了不少人性化的功能如E-mail功能，分卷压缩，密码加密等;那Winrar又凭什么与其争锋呢?答案是格式支持与功能!WinRAR压缩格式支持自家的RAR和ZIP(即可“兼容”ZIP)，解压缩支持RAR、ZIP、CAB、ACE、ARJ、LHA、TAR、GZip、UUE，基本上常用的都有了。WinRAR在界面上类似WinZip在功能上基本是WinZip有的它都有，甚至有好多比WinZip还更好更强大。如有特色的”Repair archive”功能甚至可以修复损坏的zip文件;”Convert archive to SFX”功能把RAR和ZIP文件转换成自解压文件，同WinZip不同的是，在压缩时就可以直接存为自解压文件…取对手之精华，并改进之，这就是Winrar敢于与压缩界龙头叫板的原因。<br />
+或许到了这里，你会问：为什么zip不去支持rar呢?这样竞争不就“公平”了吗?但我告诉你的是：zip格式是开放的，任何压缩软件都可以免费使用，RAR是RARLab的专利算法，其它软件要想提供对Rar格式支持必须交纳费用以获得授权，如果winzip想要支持zip，就必须向rarlab付费，这根本就是拿自己的血汗去喂饱对手。我们须明白：winzip和winrar都是共享软件，中国人用惯了盗版的winrar，以为rar才是压缩格式的王道，如果自以为全天下的压缩软件都应该支持rar格式，那么只能说这是一种极其荒谬的认知。<br />
+虽然ZIP仍然是压缩文件的标准格式，但随着WinRAR的功能越来越强大，并且对ZIP的兼容性和ISO镜像文件的支持，固步自封的WinZip已经逐渐开始被网民们所遗忘。面临被打倒，昔日的强者做出了最后的反击&#8211;Winzip9.0。2004年发布的Winzip9.0是Winzip公司在02年后两年内第一次发布的Winzip软件更新，可见这次Winzip反击的决心。本版本的Winzip带来了很多新的功能特性，如：加密标准提高，支持符合AES技术的128位和256位的高级加密标准;支持64位扩展技术;内置了先进的“真空”压缩算法(Enhanced Deflate)等。这一切都是针对WinRAR 3.30，誓求夺回压缩界的王座。<br />
+可惜就像乔丹的最后出场一样，也许真的是老了，我们再难看到英雄昔日的光彩。<br />
+WinZip 9.0对压缩格式的支持并没有什么增加，支持原有的18种压缩格式，但仍然不支持ISO这一非常流行的镜像文件格式，并且最大的问题是不兼容RAR，这就令许多用户敬而远之了;相对而言，WinRAR 3.30目前的压缩格式虽然只有15种，但由于兼容ZIP和支持ISO，仅仅这两条就使不少WinZip的老用户心动神移了。<br />
+随着绝唱反击的失败，于2005年7月，WinZip被Vector Capital收购。<br />
+也许在天之灵的Philip Katz并没有想到有这一天，作为下载量达到1亿4000万次，成就压缩标准zip的Winzip计算公司好象没有考虑过用其技术来赚钱的事(实际上很少有人会在WinZip试用期过后支付29美元购买正版授权，因此WinZip至今都没有获得太多利润)。它为大家提供一款如此经典的压缩软件，曾经，它是何等辉煌，但如今却威风难再。或者正如歌词所说:”想回到过去，试着让故事继续，至少不再让你离我而去…”</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[[转]10 Things You Didn't Know Rails Could do]]></title>
+    <link href="http://imlcl.com/blog/2012/04/27/10-things-you-didnt-know-rails-could-do/"/>
+    <updated>2012-04-27T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2012/04/27/10-things-you-didnt-know-rails-could-do</id>
+    <content type="html"><![CDATA[<p><a href="http://speakerdeck.com/u/jeg2/p/10-things-you-didnt-know-rails-could-do">http://speakerdeck.com/u/jeg2/p/10-things-you-didnt-know-rails-could-do</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[无题之愚者自愚]]></title>
+    <link href="http://imlcl.com/blog/2012/04/09/stupid/"/>
+    <updated>2012-04-09T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2012/04/09/stupid</id>
+    <content type="html"><![CDATA[<p>从开学到现在，基本上都是忙个不停，反正是各种各样，果然是辛苦劳碌命。清明节病了三天，辛苦得很，最后受不了还是去看西医了，可能是这段时间太劳累，不小心让自己病了，也让老婆操心了。</p>
+
+<p>首先是各种各样的任务，虽然引入了RoR框架为新系统带来便利，但学习成本还是要算进去的，综合评价系统和备课系统的实现也让我更深入了解了框架，总得来说好处更多。其中一个费时的原因就是一脚踢的开发模式，我真他妈讨厌写前端的东西，但又不得不做，另一个是我经常给打断工作，我觉得这是最严重的，因为要花更多的时间才能恢复到原先的工作当中。另一方面旧有系统很多都是不知什么公司用ASP来写的，一来我对ASP很不熟也很反感，另一方面修改起来真的是要大动干戈，我就干脆不搞了（事实上我是搞了太多了……越来越恶心）。所以，有时许多工作的确就叫做工作，并不是举手之劳。</p>
+
+<p>我这人就是这样子，喜欢事必躬亲，这样才有把握某件事情状况的真实感受，即使只沾到事情的边儿。工作要高质量完成，是要有时间的保证，所以加班是必需的。突然想起以前主管说：别加班了，早点回去休息，休息好效率也高一点。这话也有道理，不过效率高也有个度，没有时间保证都他妈的是扯蛋的事。弄着弄着就晚了，晚了就休息不够，休息不够就容易生病，生病了就效率更低，效率低就占用更多时间……所以这段时间都尽量保证12点前睡着，每点早一点起来，即使是放假。<br />
+昨天还和老婆他们去了东莞图书馆看书，很是满足，很久没去过图书馆，看到一些熟悉的书目，也回忆起大学时期奋斗的日子，那个怀念。不过这图书馆的IT书目不是很新，不过勉强有些看头吧。</p>
+
+<p>又说回最近的大课间，绝对是一个沉重的话题，可能这东西还得火好几年，孩子们真惨，小小年纪就禁锢了，连活动时间也不能开心地玩，在我眼中，这就叫他妈的没童年。</p>
+
+<p>又说他妈的电信业务员的不诚实，800元一个月的对等光纤，骗我说上传下载都有6M，妈的上传速度压根就是2M，还说表面是达不到，事实上达得到，要达到不是你这样测速的，我晕到。妈的当我是SB吗？但这事情搞不过了，这人真他妈的恶心，寮步中国电信姓曾的，不记得名字。我就说如何不懂点原理，就要给骗死了……但事实上，用口骗你没商量，因为你还是得用呢。</p>
+
+<p>其它综合科的所谓常规训练感觉也进行得风风火火，从开学到现在我根本顾不上这些，所以就没有进行，我突然在想，这他妈的是谁发明这东西，给小学生这么大压力的？还有个常规训练，我还以为是大学街舞队时的常规训练……在小学，优秀的学生基本上都是全能学生，各个科目都会抢着要人，看来这次我这吃亏了。</p>
+
+<p>顶，这次好像说得太多，下次都不知什么时候说了。以后要多写技术文章才行，最近都懒于动笔了。最后推荐一个很好用的代码编辑器<a href="http://www.sublimetext.com/">Sublime Text</a>给大家吧，这东西已经出了很久了，不过现在感觉时机成熟，可以放弃TextMate的了。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Lion使用RVM安装ruby]]></title>
+    <link href="http://imlcl.com/blog/2012/02/23/lion-rvm-ruby/"/>
+    <updated>2012-02-23T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2012/02/23/lion-rvm-ruby</id>
+    <content type="html"><![CDATA[<p>ruby最新p125有些重要的安全升级，我发现升级到Lion 10.7.3后发现rvm install ruby-1.9.3-p125不能使用，后来通过以下方法解决（可参考rvm requirements）：</p>
+
+<p>1、安装最新XCode环境或osx-gcc-installer，我选择的是前者，到官网下载Command Line Tool For Xcode - February 2012，只要这个就好，这就提供了最基本的编译环境工具链了；<br />
+2、rvm install ruby-1.9.3-p125 &#8211;with-gcc=clang，没有clang是不能编译通过的，因为苹果的gcc是自己定制过的。之后就是rvm upgrade ruby-x.x.x-pxxx ruby-1.9.3-p125什么的，看着搞就行；<br />
+3、还有后续工作是要重新编译一下gem里的一些native extension，特别是DB Driver，rvm requirements最后那里也有提示。不过我干脆就将gem全册再重装，可以用rvm gemdir来看gem的目录，把相关目录里的东东rm掉即可<br />
+4、之后就是常规的操作啦，一切OK</p>
+
+<p>不过程序都布置到Debian下的，估计就不用考虑这些东西了:)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[玩玩MacBook Pro]]></title>
+    <link href="http://imlcl.com/blog/2012/02/22/macbook-pro/"/>
+    <updated>2012-02-22T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2012/02/22/macbook-pro</id>
+    <content type="html"><![CDATA[<p>最近拿了朋友的MacBook Pro来玩，发现其成功的确有其原因。因为最近都在搞RoR，使用TextMate应该是最好的选择了。我也利用一些时间来研究了这电脑杂七杂八的东西，包括其中一些另类的操作系统理念，MAC OS的界面就不用多说了，其实给我最重要的感觉是简单易用，相比WIN，更能让自己专注于工作（对我个人而言）。</p>
+
+<p>总得来说因为时间很短，暂时也没什么可以分享的，不过刚看一篇好文，分享给大家：<a href="http://www.programmer.com.cn/9436/">Mac OS X 背后的故事（八）三好学生Chris Lattner的LLVM编译工具链</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[你会爱上的一个Notepad++插件——FingerText]]></title>
+    <link href="http://imlcl.com/blog/2012/01/27/notepad-fingertext/"/>
+    <updated>2012-01-27T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2012/01/27/notepad-fingertext</id>
+    <content type="html"><![CDATA[<p>我不是苹果爱好者，但不得不说TextMate是一个非常优秀的代码编辑工具<a href="https://github.com/erinata/FingerText">
+FingerText</a>，刚发现的一个Notepad++插件，只要配置得当，手写代码真的能快很多（超强Tab补全），反正用起来就有TextMate的味儿，反正我已经爱上了。</p>
+
+<p><img class="alignnone" title="FingerText" src="http://sourceforge.net/projects/fingertext/screenshots/316871" alt="" width="621" height="480" /></p>
+
+<p>&nbsp;</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[来自淘宝网的Rubygems镜像]]></title>
+    <link href="http://imlcl.com/blog/2012/01/10/rubygems/"/>
+    <updated>2012-01-10T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2012/01/10/rubygems</id>
+    <content type="html"><![CDATA[<p>如题，这实在是一件兴奋的事儿，解决了gem源不稳定的问题，用rails的朋友们都懂的</p>
+
+<p>学校现在有两个系统用Rails来写的，也不排除后续会有更多系统</p>
+
+<p>这镜像的确省了很多麻烦，大伙们赶紧用上，经测试非常不错</p>
+
+<p>万恶的淘宝做了一件大好事，希望镜像能稳定的坚持下去：）</p>
+
+<p>镜像地址：<a href="http://ruby.taobao.org/">http://ruby.taobao.org/</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hash Collision DoS问题值得关注]]></title>
+    <link href="http://imlcl.com/blog/2012/01/06/hash-collision-dos/"/>
+    <updated>2012-01-06T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2012/01/06/hash-collision-dos</id>
+    <content type="html"><![CDATA[<p>请细请看<a href="http://coolshell.cn/articles/6424.html">http://coolshell.cn/articles/6424.html</a></p>
+
+<p>搞笑的是Perl没有这问题，这问题在2003年的一篇论文中已报告，但没人重视</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[框架框架]]></title>
+    <link href="http://imlcl.com/blog/2012/01/05/framework-1/"/>
+    <updated>2012-01-05T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2012/01/05/framework-1</id>
+    <content type="html"><![CDATA[<p>年近岁晚，谈总结，谈展望，谈奖金，谈计划……</p>
+
+<p>不过最近我更多在考虑学校未来信息化框架，或者叫试验性框架，还没有到最终整合的地步。就目前来说，核心的部分都是我用PHP+MySQL来实现的，功能上基本满足，扩展性不强，外围还有腾讯RTX和现成签到平台等的整合，后续可能还需要整合其它现成平台，还有使用Rails新编写的存档系统和论文系统。就这样看来，扩展性和可维护性就相形见绌，扩展性和可维护性无从谈起。</p>
+
+<p>起初引入Rails是为了节省更多的工作量，但事实上也初步达到了。之前研究Drupal 6，发现不少可用之处，最近也发现Drupal 7，感觉操作界面上有很大进步，这也进一步肯定了当时把Drupal引入到学校成为核心平台的猜想。所以最近都在抓紧时间研究《Drupal 7 Module Development》，这书不错，推荐一下。</p>
+
+<p>不过Drupal的缺点就是比较慢，也就是牺牲性能换取灵活性。那么从这个来看，我觉得Drupal这个框架是先进的，所以现在我也倾向选用此框架来整合现有的信息化平台。从学校情况来看，即使未来人数再扩充一倍也能很好地满足。再由于考虑到后期维护的工作量，所以放弃Rails和CakePHP作为核心平台的开发框架，至少短期来说是这样。毕间Drupal的基础模块、三方模块和自定义模块都能很好地解决现有问题，并且也适用于未来LDAP的整合。目前需要抓紧时间打通各个环节，之前要赶工了。</p>
+
+<p>Linode的Tokyo节点的确不错，建议迁移至此，不过最近也发现广东电信这边晚上的ping值上到160ms，早上又会降回70ms左右，不知搞什么。开了ticket问linode的客服，那边也暂时没有收到相关的反映。如果没问题就不回fremont了，还有随时退款也是linode的一大优势。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hello 2012]]></title>
+    <link href="http://imlcl.com/blog/2012/01/01/hello-2012/"/>
+    <updated>2012-01-01T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2012/01/01/hello-2012</id>
+    <content type="html"><![CDATA[<p>看看时间，原来已经跨入2012年了，今晚也由于特殊原因，我就是看看店，修修电脑，研究研究Drupal的Module（打算用来整合学校现在的信息管理系统）</p>
+
+<p>在过去的这一年，是我人生的一个重要转折点，我结婚了:-)<br />
+与此同时，也来不及感谢每一位的你，希望你们每一位都能Feel到我心中那份感激<br />
+Anyway, here, you know!</p>
+
+<p>新一年，我需要承诺与责任，需要信任与体谅，需要包容与进步，需要关怀与付出，需要成熟与成长……<br />
+2012来了，What the fuck所谓的2012<br />
+活在当下，珍惜身边所有的人，珍惜眼前人，努力让想法付诸于实现<br />
+Hello 2012, I&#8217;m coming, and happy new year!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[不要把教师困在厕所里(转)]]></title>
+    <link href="http://imlcl.com/blog/2011/12/26/teacher-in-WC/"/>
+    <updated>2011-12-26T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2011/12/26/teacher-in-WC</id>
+    <content type="html"><![CDATA[<p>via: <a href="http://blog.lbxixiao.com/u/35/archives/2011/149.html">http://blog.lbxixiao.com/u/35/archives/2011/149.html</a></p>
+
+<p>引子：笑话《困在厕所里的老师》——一日上课，一学生要求上厕所，老师觉影响课堂秩序，不准。结果尿于裤中。家长状告教育部门：该老师违反人权，剥夺学生如厕权利，应严惩之；又一日上课，一学生要求如厕，老师准之。谁知该生滑倒在厕所。家长状告教育部门：课堂期间擅自让学生离开课室，导致学生受到伤害，应严惩之；又一日上课，一学生要求如厕，老师害怕他在厕所滑倒，前往陪伴，谁知老师离开课堂期间，学生相互打闹受伤。家长状告教育部门：该教师上课期间擅离职守，致使学生打闹受伤，应严惩之；又一日上课要求如厕，于是该老师带领全班一同前往厕所。家庭状告教育部门：该教师玩忽职守，上课期间不传道授业，应严惩之。</p>
+
+<p>“老师，我要上厕所。”这话听着并不新鲜。吃喝拉撒，如食色之性，人皆有之。要上就去上贝！有什么好写的？我想，绝大部分家长或者没有做过老师的人都会毫不置疑地这样想。但是，我这里要说的是，当我从一年级到六年级都教了个遍的时候，给不给学生在上课期间上厕所，的确是个技术活。不要简单地认为不让学生上课期间上厕所就是不人道，不重视人权，这里还有诸多变数呢！</p>
+
+<p>在某些省市出现学生因为课间集中上厕所导致厕所倒塌出现学生群体性伤亡的惨剧后，这些地方的教育厅就出台必须允许学生上厕所的规定，甚至连教育部还出台这样的规定；在有些学校因学生在教室尿裤子被家长投诉媒体谴责后，当地教育局也出台文件规定必须允许学生课堂期间上厕所，并且把意义上升到人权的高度；有些学校的校长出国考察看到学生在课堂期间可以自由去上厕所，认为，上厕所是人的本能和基本人权，怎么可以在课堂上压制人性的本能呢？必须给学生上厕所的权利。于是规定全校老师必须允许学生上课期间去上厕所。</p>
+
+<p>以上林林总总，都是有道理的，但又都是犯了简单思维的毛病。伟人告诫我们，要具体问题具体分析，具体分析具体解决。不能搞一刀切啊！对于一些落后到厕所会被学生踩倒的地区，我想，出台必须允许学生在上课期间上厕所的规定简直就是一种侮辱，看起来很人道，其实无耻之极，当地政府简直连猪都不如，随便花点被浪费的钱给学校建个结实的厕所也好过你下这个文件。还有那些因为学校设计严重不合理导致学生因下课期间集中上厕所发生踩踏事件而要求允许学生课堂期间可以上厕所之类的规定，这里不作讨论，因为讨论这个远不如建多几个厕所来得更实在。至于认为学生在课堂期间上厕所是人的基本权利，这观点没错，但犯了简单主义的倾向。下面我将慢慢道来。</p>
+
+<p>在我教一年级的时候，我发现，一旦有学生举手上厕所，而我又答应了他的话，立即就会有一大片的学生举手要求去厕所。并且，他们根本就不是去上厕所，纯粹就是为了出去追打一下图个乐子。这种现象会一直维持到二年级，到三年级才会逐步减少。我就亲眼看过有些一二年级的班级，上课期间一大群学生又跳又闹地跑向厕所，有些还在厕所里里外外玩起了藏猫猫，气得老师出来大喊才把他们一个个撵回教室上课。这样的课堂效率可以想象是如何的低下。但是，一年级的学生确实自控能力较差，毕竟年纪小嘛！不给他上厕所还真会发生尿裤子的现象。有时吃坏了东西拉肚子，这是很紧急的事件，很少人能忍住的，你不给他上厕所后果更严重，直接就往裤子里拉。所以，不给学生上厕所，肯定不行。这里就存在一个问题，如果给吧，很快就有学生跟风出去玩，如果不给吧，一旦发生学生憋不住尿裤子的情况对学生是个巨大的伤害，不但对身体有害，而且以后可能就会有同学拿这事来取笑他／她。怎么办呢？我的办法是，首先，开学第一天的入学教育就要明确宣布，现在是小学生了，要养成下课期间去上厕所的习惯。课堂上如果要上厕所，必须举左手。这里要特别说明一点，学生只举左手，不要举右手，因为举右手是用来回答问题的，而举左手是专门用来表示我要上厕所的。另外，这里还要强调，只需要举左手，不需要说话。这点非常关键，因为，如果他一说：老师，我要上厕所。完了，很快就会有一大片的学生也跟着嚷嚷要上厕所。所以，规定：上厕所的举手，说话的不要。看到学生举手后，老师要根据形势作出判断，一般情况下，得让他去上厕所，因为一旦不让，有些胆小的孩子可能会使劲憋着也不敢举手，最后真会闹出尿裤子的事件，而且对身体非常不好。不过，这里要特别提醒，老师让他去上厕所，千万要低调，不要哗啦啦地大声宣布：啊，ＸＸＸ同学，要上厕所啊？快去快回啊！晕，这样又完了。低调啊，低调！生理功能谁都有，不是你的特异功能，老师别发现新大陆一样地说话，可以用眼神示意他去，如果师生间的默契还没到这一步，那可以假装随意地边讲课边走到这位学生的身边，拍拍他，示意他可以去上厕所。总之尽量像搞地下工作一样，一切在悄然地发生着。另外，有些一年级的同学还分不清左右手，或者觉得这样分左手右手太麻烦，这样的话，也可以让他们按平时习惯举右手，只是看到学生举手后，老师仍然要悄悄地告诉他可以去上厕所。虽然用了这个办法，但也有可能仍然会有些学生很聪明，很快就学样，也跟着举手表示要上厕所。这个时候就得清醒了，一般情况下，看学生的脸色，有些平时特喜欢出去疯的，他举了手也不要轻易给他去。有些平时就比较安静腼腆的，就得让他去。还有，不要两个人同时让他们去，必须等前一个人回来后才给第二位同学去。这些方法主要是针对一二年级的孩子比较适用。</p>
+
+<p>等到了三年级，学生的自控能力越来越强了，课堂不能上厕所的规则也开始成为默认的课堂概念了，学生从一二年级课堂期间准不准许上厕所的概念过渡到课堂期间不应该去上厕所这个概念了，这时，就不要提什么上课不能上厕所这样的话题了。学生已经知道，如厕问题，是应该在下课期间解决的，课堂期间如果确实出现内急，又或者吃坏东西拉肚子忍不住的情况下，也有权利要求去上厕所，但不应该影响别人上课，在取得老师的默许下得悄悄地去，悄悄地回。一般情况下，从三年级开始，就很少学生借上厕所的名义出去溜达一圈或跟同学找机会一起到厕所聊个天什么的现象。如果有这种现象，这已经远远不是上厕所的问题了。这名学生的思想、行为、学习都可能遭遇到较严重的问题。这是另外的话题。</p>
+
+<p>从五年级开始，老师要特别注意的是有部分女同学开始进入青春期，这时她们往往会频繁地“上厕所”。对于这种情况，老师必须网开一面，允许她们去上厕所，因为，不是每个家庭都能很好地指导女孩子做好青春发育时的卫生保建。有些家庭父母本身这方面的意识非常淡漠，甚至连卫生巾都不知道给孩子准备，所以，老师们对于这个年龄段的女学生要特别关照，必须允许她们去厕所“照顾”自己，以免闹出极为尴尬的事情。</p>
+
+<p>小学高年级时候，有极个别学生（特别是男生）由于学业表现极端糟糕，已无心上课了。他们也会以上厕所为借口来逃避课堂。对于这类学生，老师宜采取无规律式做法，即有时允许他上，有时不准他上。万万不要让他摸到老师的规律，老师也不能被上厕所是学生的基本权利这一观点所左右，总之要把局面控制在自己手中，不能让这类学生牵着鼻子走。最重要的是，不能让他们认为，只要我提出上厕所，老师一定准许我去。然后他们就可能在厕所里蹲半天不回教室，更恶劣还可能到校园外面去。如果班上有两个或三个几这样的学习崩盘型学生，绝不能让他们同时去厕所。另外，我个人经验：不能同时让两个同学去上厕所是一条课堂的重要原则（如果有朋友拍砖，我理解，但我确实是这样干的，我一直这样做，但从没对学生说过。我不会同时让两名男同学或两名女同学一起去上厕所，如果有两个男同学或两个女同学同时举手表示要上厕所，必须等前一个回来后才会让后一人去，这是对高年级适用的，中低年级，不分性别，两人同时要求上厕所，一律不行，必须前者回而后者往）。虽然结伙畅游厕所这种情况极少，但并非没有。所以，处理这类学业高度困境在校问题突出学生的上厕所问题，更考验老师的判断力和智慧。</p>
+
+<p>前段时间和同事讨论到了关于学生上课期间给不给他们上厕所的话题。整理出我的基本观点和做法。这些观点和做法，可能不适用现在的人权观，不少朋友会从这个角度来质疑和反对。不过，我始终认为，对这个问题既要充分肯定学生上厕所是他们的基本权利，也是人的本能需要，但同时不能犯这种简单思维的毛病，必须灵活处理。简单地规定学生课堂期间不准或允许上厕所，这是无益的。因为，人是极其复杂的，在课堂实践中有非常多的变数，这里更需要的是老师从课堂实践中准确地判断情况，合理地作出允许还是不允许学生上厕所的决定，作出允许这个不允许那个学生上厕所的决定，作出允许这个时候不允许那个时候学生上厕所的决定，作出允许这个学生先那个学生后上厕所的决定。这些决定，我想，并不能简单地就认为就是对人权的侵犯，不能简单地批评学校管理，不能简单地批判师德。面对一个五十来人甚至更大规模的班级，课堂管理是一件极不容易的事，更何况还要在课堂管理的基础上进行有效的教学，这里的困难没有那些没做过老师的人所认为的那么简单的。要说不人道，班级规模这么大，这个前提就已经不人道了。所以，学生上课期间上厕所，行，但要灵活处理，特别是低调处理，总之不要把老师困在厕所里。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[关于易网库ASP性能]]></title>
+    <link href="http://imlcl.com/blog/2011/12/21/asp/"/>
+    <updated>2011-12-21T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2011/12/21/asp</id>
+    <content type="html"><![CDATA[<p>因为某些原因，学校网站需要暂时放到免备案主机空间，就选了朋友感觉不错的<a href="http://www.webweb.com/">易网库</a></p>
+
+<p>买的是无限型，当时比较恶心就是独立IP要自己买，400元啊，现在都有送的，~！@#￥%……&amp;*（）</p>
+
+<p>其实第一个感觉就是慢，只是绑定四个站，访问流量也不大，我就是觉得奇怪。联系客服他们又说很正常，但校园网访问的确很慢，还常常访问不到（这个估计和校园网线路有关，因为我用其它线路访问没有问题）。</p>
+
+<p>直到最近有老师反应该说登陆进系统后，不断要求再登陆，前几天持续出现500错误。今天实在顶不顺，终于找到一次机会网站是出问题的，又可以让他们看到的了。经过排查，他们把.NET版本降为1.X就好了。因为系统默认选的是.NET最高版本，其实我对这东西也不怎么懂，但也不可能差这么远吧？（之前试过重启服务器也不能解决问题）问了朋友说这个应该不会影响这么大，但事实上测试表明差很远，现在网站比以前畅顺多了，即使是高峰期。反正我现在调到PHP解析（客服说这样会比较快），呃……</p>
+
+<p>没问题就好，等明年再说。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[又说程序员]]></title>
+    <link href="http://imlcl.com/blog/2011/12/18/programmer/"/>
+    <updated>2011-12-18T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2011/12/18/programmer</id>
+    <content type="html"><![CDATA[<p>看到两篇关于程序员的文章，感觉不错，分享给大家
+<p id="page-title"><a href="http://www.ruanyifeng.com/blog/2011/10/dont_call_yourself_a_programmer.html?20111217174251">不要自称为程序员</a></p>
+<a href="你不必非要给自己找个老板">你不必非要给自己找个老板</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[公开课感想]]></title>
+    <link href="http://imlcl.com/blog/2011/12/16/thinkings1/"/>
+    <updated>2011-12-16T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2011/12/16/thinkings1</id>
+    <content type="html"><![CDATA[<p>昨天，我们西溪小学举行了全镇的综合实践展示活动，而我上了一节信息技术的公开展示课（我觉得就不能叫所谓的展示了），有些感想与大家分享。</p>
+
+<p>在信息技术课堂，我一向以“少讲，多练，自主解决问题，学中玩，玩中学”的主旨进行教学，其实在这里还缺少一点，就是学生之间的互动交流，而在评课过程中，几位老师都同时指出这一点我做得不够。</p>
+
+<p>我喜欢看到学生之间的互动，但这是比较消耗时间的做法，不然信息技术课堂就很容易就可以互动起来，整个气氛都不一样了。而在这次公开课的过程当中，这一点我的确做得不好，基本没有让学生进行作品的展示。</p>
+
+<p>没错，每个学生都希望展示自己的成果，从很大一定程度是对自己的鼓励，并能从中增强自信心。丽轩老师也建议我可以分组，让每组共同讨论，推出最好的一个作品进行展示，我个人认为这种做法值得借鉴，到时找些课来试试效果。还有新亮老师说他习惯让做得快的学生，站起来去帮助周围遇到问题的学生，我平时也有这么做，做但在这节课没有体现出来。以后在课堂中应该加以鼓励学生做到互相帮助，相互提高，最高目标是将课堂主导权交给学生。</p>
+
+<p>而胡成老师说的公开课和日常上课应该是两种不同上课方法的观点也值得我思想。<br />
+伟强老师指出各个任务之间的连贯性不好，过渡得太突然，我回想起来的确是这样子，如果可以让整节课串连起来变成一个整体，就更加不会浪费自己精心设计的课堂任务了。</p>
+
+<p>他们还提出了任务五的任务顺序不合理，导致最后学生综合训练任务不够时间进行，使得综合性任务时间缩短了。这个也不应该，其实我原来是五个任务，后来为了学生方便理解，临时多插一个任务，导致最后的变化。要切记学生操作运用的时间要多一些。</p>
+
+<p>最后一点就是板书不足。我不喜欢在上课时写板书也是我存在的问题之一，多位老师都提出了板书的重要性，在这一点我应该多花功夫。有时板书不用多，但还是得有板书，这样有助学生们的记忆和理解。</p>
+
+<p>写得有点乱，但基本上都包含了评课的各种观点，我看到自己非常之多的不足，需要很多努力，还有很长的路要走。<br />
+最后感谢听课与评课的老师，感谢中心组成员，感谢你们对我提出许许多多宝贵的意见。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[共鸣]]></title>
+    <link href="http://imlcl.com/blog/2011/12/13/sound1/"/>
+    <updated>2011-12-13T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2011/12/13/sound1</id>
+    <content type="html"><![CDATA[<p><a href="http://blog.vgod.tw/2011/10/29/impact/">http://blog.vgod.tw/2011/10/29/impact/</a></p>
+
+<p>觉得这文章不错<br />
+昨天删了手机上的小说，只放一些平时要阅读的书本<br />
+也决定跟上时代步阀，关注Google Reader，重新激活学习因子<br />
+希望能找到久违的感觉，勇敢面对每一天的挑战</p>
+]]></content>
+  </entry>
+  
+</feed>

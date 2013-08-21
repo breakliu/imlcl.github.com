@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: opensource | 大头龙仔Blog]]></title>
+  <link href="http://imlcl.com/blog/categories/opensource/atom.xml" rel="self"/>
+  <link href="http://imlcl.com/"/>
+  <updated>2013-08-21T23:52:38+08:00</updated>
+  <id>http://imlcl.com/</id>
+  <author>
+    <name><![CDATA[imlcl]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Git和.gitignore]]></title>
+    <link href="http://imlcl.com/blog/2012/09/13/git-gitignore/"/>
+    <updated>2012-09-13T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2012/09/13/git-gitignore</id>
+    <content type="html"><![CDATA[<p><img src="/images/blog/bg20120705011.png"></p>
+
+<p>阮一峰的<a href="http://www.ruanyifeng.com/blog/2012/07/git.html">《Git分支管理策略》</a>可以先看看，很不错</p>
+
+
+
+
+<p>那里这里说到一个.gitignore的文件，就是拿来声明哪些文件或文件夹不需要用Git来跟踪的。<br />
+不过刚开始使用Git时，会遇到的即使加入.gitignore的文件，但Git依然会进行跟踪，那么这里得分两种情况来看了：<br />
+1、如果该文件（夹）已git add进库，那么此时即使你在.gitignore声明，该文件依旧会进行跟踪，需要通过命令将其删除：
+<strong>git rm --cached -r &lt;path&gt;</strong>
+2、如果该文件（夹）没有git add进库，那么此时你可以提前在.gitignore进行声名，这样就可以不让Git不跟踪了</p>
+
+
+
+
+<p>当备个忘吧，因为平时都没有用GUI工具，都是命令行来得快捷一些，不知有什么好GUI可以用。</p>
+
+
+
+
+<p><a href="http://book.douban.com/subject/3420144/">《Pro Git》</a>也是一本很不错的书，推荐一看</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[来自淘宝网的Rubygems镜像]]></title>
+    <link href="http://imlcl.com/blog/2012/01/10/rubygems/"/>
+    <updated>2012-01-10T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2012/01/10/rubygems</id>
+    <content type="html"><![CDATA[<p>如题，这实在是一件兴奋的事儿，解决了gem源不稳定的问题，用rails的朋友们都懂的</p>
+
+
+
+
+<p>学校现在有两个系统用Rails来写的，也不排除后续会有更多系统</p>
+
+
+
+
+<p>这镜像的确省了很多麻烦，大伙们赶紧用上，经测试非常不错</p>
+
+
+
+
+<p>万恶的淘宝做了一件大好事，希望镜像能稳定的坚持下去：）</p>
+
+
+
+
+<p>镜像地址：<a href="http://ruby.taobao.org/">http://ruby.taobao.org/</a></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gentoo Emerge World]]></title>
+    <link href="http://imlcl.com/blog/2010/10/06/gentoo-emerge-world/"/>
+    <updated>2010-10-06T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2010/10/06/gentoo-emerge-world</id>
+    <content type="html"><![CDATA[<p>很久没有进服务器里，emerge --sync了一下发现有100多个软件包可以更新，想想有大半年啦，于是决定emerge world一下。<br />
+这里就记下我emerge world的过程和之后的工作，其实一般来说风险是非常小的，只有一步步走就行：<br />
+1、一般来说，如果我发现有最新版的GCC，我会先emerge -uDNpv gcc，没有问题就emerge -uDNv gcc，把GCC更新到最新先，之后可以用gcc-config来选定新的gcc版本；</p>
+
+
+
+
+<p>2、优先更新GCC的好处是，这样后面的重编译都可以选择最新的编译器，这样最新编译器会给系统带来或多或少的好处（这是我的见解)。</p>
+
+
+
+
+<p>3、接着是更新world了，这里，我有个准则是：如果整个系统的软件改动较大，我就用emerge -ev world来更新，否则我就用emerge -uDNv world来更新。至于怎么叫改动大，就看个人了，一般来说，没必要就不要emerge -ev world，优先考虑emerge -uDNv world。因为前者是不管软件的版本是什么都强制重编译的。</p>
+
+
+
+
+<p>4、更新完了之后，我做的第一件事是先看看更新之后的提示信息，看看有没有要注意的。接着来个emerge --depclean和revdep-rebuild，前一个命令能自己查找软件间的关联，把没有用的卸载掉，后一个是修复一些软件间的依赖性，切记要revdep-rebuild，否则系统可能就启动不了</p>
+
+
+
+
+<p>5、接着是内核了，我个人一向都用genkernel all来解决问题，这步看个人喜好啦。事实上我用linode服务器是不需要更新内核的，因为VPS里已选定好内核，所以内核不需要更新，只要重启即载入最新内核。</p>
+
+
+
+
+<p>6、eclean-dist清理旧包</p>
+
+
+
+
+<p>再想想，大概是这样了，暂时想到也是这样……有空时再补充。其实我个人认为最关键是更新world后，要留意系统提示的信息，这个我基本上一条不漏地读，反正和自己有关的就要留意了。</p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[不错的PPT两则]]></title>
+    <link href="http://imlcl.com/blog/2010/04/09/ppt-2/"/>
+    <updated>2010-04-09T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2010/04/09/ppt-2</id>
+    <content type="html"><![CDATA[<p><a href="http://www.slideshare.net/jserv/next-stop-android" target="_blank">Next Stop, Android</a></p>
+
+
+
+
+<p><a href="http://www.slideshare.net/jserv/llvm-introduction" target="_blank">LLVM introduction</a></p>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[genkernel支持自动修改menu.lst]]></title>
+    <link href="http://imlcl.com/blog/2010/03/08/genkernel-modify-menu-lst/"/>
+    <updated>2010-03-08T00:00:00+08:00</updated>
+    <id>http://imlcl.com/blog/2010/03/08/genkernel-modify-menu-lst</id>
+    <content type="html"><![CDATA[<p>如果你使用Gentoo发行版，并且也使用genkernel来编译自己的内核，那么只要修改/etc/genkernel.conf，打开
+<pre>BOOTLOADER="grub"
+</pre>
+这样当genkernel编译内核完成时，就会把最新的内核加入到grub的menu.lst启动菜单，当然将最新的内核设为default<br />
+这样就能进一步偷懒了（我都是genkernel all）<br />
+事实上自己修改menu.lst的工作量也不大，不过如果用新版的genkernel的话，就比从前省事了</p>
+
+
+
+
+<p>PS：编译内核时别忘了使用eselect kernel来选取你想编译的内核版本</p>
+
+]]></content>
+  </entry>
+  
+</feed>

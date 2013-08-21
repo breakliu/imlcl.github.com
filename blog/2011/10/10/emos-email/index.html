@@ -1,0 +1,213 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>使用EMOS搭建Web电子邮件系统 - 大头龙仔Blog</title>
+    <meta name="author" content="imlcl">
+    
+	<meta name="description" content="呃，本来真的没有必要弄这东西，但课程需要不得不弄。 为什么要自己搭建Web电子邮件系统？其实是教学上的需要，现在免费的邮箱注册都有一些防恶意的设定，举例来说课堂上50多名学生同时登陆同一个网站申请电子邮箱是不可行的，对方网站会认为这是带攻击性的行为，封之，这是我在课堂上的亲身经历， &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <script src="/javascripts/ajaxify.js"></script>
+   
+    
+    
+
+</head>
+
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+        imlcl
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  <!-- GitHub -->
+  <li>
+  <a href="https://github.com/imlcl" class="github" title="Github"></a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+    <li id="ajax"><a href="/blog/archives/index.html">Blog</a></li>
+	<li id="ajax"><a href="/about/index.html">About</a></li>
+    <li><a href="/atom.xml">RSS</a></li>
+    
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="toload">
+<!-- begin toload --> 
+    <div id="content" class="inner">
+        <article class="post">
+	<h2 class="title">使用EMOS搭建Web电子邮件系统</h2>
+	<div class="entry-content"><p>呃，本来真的没有必要弄这东西，但课程需要不得不弄。</p>
+
+<p>为什么要自己搭建Web电子邮件系统？其实是教学上的需要，现在免费的邮箱注册都有一些防恶意的设定，举例来说课堂上50多名学生同时登陆同一个网站申请电子邮箱是不可行的，对方网站会认为这是带攻击性的行为，封之，这是我在课堂上的亲身经历，于是就有了这个解决方案。</p>
+
+<p>这是一篇指引性文章，并没有手把手去教，要搭建EMOS电子邮件系统，你需要准备：<br />
+1、EMOS安装ISO，我用的是EMOS_1.5_i386.iso，可以到<a href="http://www.extmail.org/">http://www.extmail.org/</a>了解，并下载相关的ISO；<br />
+2、存在于校园网络中的VirtualBox（下面简称VBox）等虚拟机或者真实PC一台，我这里使用VBox，关于VBox的教程，网上一搜一大坨；<br />
+3、假定你有一定的Linux、网页基础知识，和懂26个英文字母；<br />
+假如你对上面三点有问题，都可以Google百度之，这其实也是一个简单的学习过程。</p>
+
+<p>口水太多，说来就来，开始吧。</p>
+
+<p>1、新建一个虚拟机，选择Linux的2.6内核版本，内存可以选512M（假如你电脑内存充足的话），不然就老老实实256M吧，硬盘大小就用默认的8G动态就好。<br />
+2、为了让VBox能接入网络，我使用了网桥模式，如下图设定就好：
+<img src="/images/blog/2.jpg">
+3、插入EMOS的ISO，启动了，进入如下界面，按回车Enter就好：
+<img src="/images/blog/3.jpg">
+4、接着会进入一个界面，点Skip，跳过检测，进入下一步；<br />
+5、接着进入图形安装界面，可以用鼠标了，哈哈，怎么那么眼熟？没错，EMOS安装光盘是基于CentOS构建的。下面是狂点Next，见到是否就点是，看得懂就选一下，看不懂我建议你就不要改。到了网络设备的界面，请相应作修改，下面是我的设定：
+<img src="/images/blog/41.jpg">
+6、之后又进入狂点Next，设个root密码，记住，后面要用root帐户进入的，后面是安装时间，喝口水吧：）<br />
+7、重启后再入EMOS的系统配置，基本也是狂点Next，但有一个要注意的，看图：
+<img src="/images/blog/5.jpg">
+<strong>这里设定的Default Domain，就是后面我们要用的邮箱主机名，就是邮箱地址@后面的部分</strong>
+8、Default Hostname可以用默认的，这个不用管，接着基本都按回车键，看到设定Password的，就设自己的密码，不设都是默认为extmail；<br />
+9、后面如无特殊需要，都是按回车过了，我的最后设备图是：
+<img src="/images/blog/6.jpg">
+配置完毕，自动重启；<br />
+10、到此，EMOS安装完毕，我们可以通过设给系统的IP进行访问，如图：
+<img src="/images/blog/7.jpg">
+现在就来解决那个看得很不爽的IP域名，假如你的服务器布置在公网上，这部分可以略过。下面所做的，只是方便在内网使用，并且让邮箱主机名看起来更像邮箱主机名，而不是IP地址。<br />
+现在通过VBox登陆进去，帐户是root，密码是刚才你设的，登陆后：<br />
+cd /var/www/extsuite/extmail/html/default<br />
+修改index.html里的function domain()函数，改为：<br />
+function domain() {<br />
+return &#8216;lbxixiao.com&#8217;;<br />
+}
+之后保存。这里可以使用vi index.html命令来修改<br />
+修改完成，刷新一下刚才的页面：
+<img src="/images/blog/8.jpg">
+这下好了，不想写太多费话，剩下的就靠个人摸索吧，提示一下网络员登陆地址是x.x.x.x/extman/</p>
+
+<p>呃，就写到这里</p>
+
+<p>补充一下通过此系统讲课的效果还是可以的，关键是自建系统，在内网速度快，容易注册，学生们沟通速度更快，大大提升课堂效率。由于系统是内网的，所以要和学生们说明离开了学校是不能用的（计划建立到学校托管服务器上，到时可实现外网访问）。<br />
+Anyway，举一反三，一通百通，厚积薄发才是王道。</p>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2011/10/10/emos-email/#disqus_thread">Comments</a></span>
+	
+</div>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+    </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2013
+
+    imlcl
+. Powered by <a href="http://octopress.org">Octopress</a> | 
+    Theme <a href="http://github.com/panks/fabric">fabric</a> by <a href="http://panks.me">Pankaj Kumar</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'imlcl';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://imlcl.com/blog/2011/10/10/emos-email/';
+        var disqus_url = 'http://imlcl.com/blog/2011/10/10/emos-email/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>
