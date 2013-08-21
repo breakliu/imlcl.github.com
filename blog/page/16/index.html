@@ -89,6 +89,8 @@
 
 <time datetime="2008-11-04T00:00:00+08:00" pubdate data-updated="true">2008-11-04</time>
         
+         | <a href="/blog/2008/11/04/1/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -128,6 +130,8 @@ LFS达成后，下一步是再做一两次LFS！原来打开AHCI得重新安装X
 
 
 <time datetime="2008-11-02T00:00:00+08:00" pubdate data-updated="true">2008-11-02</time>
+        
+         | <a href="/blog/2008/11/02/lfs/#disqus_thread">Comments</a>
         
       </p>
     
@@ -182,6 +186,8 @@ LFS达成后，下一步是再做一两次LFS！原来打开AHCI得重新安装X
 
 <time datetime="2008-11-02T00:00:00+08:00" pubdate data-updated="true">2008-11-02</time>
         
+         | <a href="/blog/2008/11/02/1/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -217,6 +223,8 @@ LFS达成后，下一步是再做一两次LFS！原来打开AHCI得重新安装X
 
 
 <time datetime="2008-11-01T00:00:00+08:00" pubdate data-updated="true">2008-11-01</time>
+        
+         | <a href="/blog/2008/11/01/2/#disqus_thread">Comments</a>
         
       </p>
     
@@ -262,6 +270,8 @@ LFS达成后，下一步是再做一两次LFS！原来打开AHCI得重新安装X
 
 
 <time datetime="2008-11-01T00:00:00+08:00" pubdate data-updated="true">2008-11-01</time>
+        
+         | <a href="/blog/2008/11/01/1/#disqus_thread">Comments</a>
         
       </p>
     
@@ -323,6 +333,8 @@ You never surrender
 
 <time datetime="2008-10-31T00:00:00+08:00" pubdate data-updated="true">2008-10-31</time>
         
+         | <a href="/blog/2008/10/31/tinyxml/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -361,6 +373,8 @@ You never surrender
 
 <time datetime="2008-10-31T00:00:00+08:00" pubdate data-updated="true">2008-10-31</time>
         
+         | <a href="/blog/2008/10/31/1/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -398,6 +412,8 @@ You never surrender
 
 
 <time datetime="2008-10-26T00:00:00+08:00" pubdate data-updated="true">2008-10-26</time>
+        
+         | <a href="/blog/2008/10/26/good-game/#disqus_thread">Comments</a>
         
       </p>
     
@@ -440,6 +456,8 @@ You never surrender
 
 
 <time datetime="2008-10-26T00:00:00+08:00" pubdate data-updated="true">2008-10-26</time>
+        
+         | <a href="/blog/2008/10/26/2/#disqus_thread">Comments</a>
         
       </p>
     
@@ -491,6 +509,8 @@ We still listen to Bruce Lee battle call
 
 
 <time datetime="2008-10-26T00:00:00+08:00" pubdate data-updated="true">2008-10-26</time>
+        
+         | <a href="/blog/2008/10/26/1/#disqus_thread">Comments</a>
         
       </p>
     
@@ -550,8 +570,34 @@ And cu later~
   </ul>
 </section>
 
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/imlcl">@imlcl</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
 
-
+        github.showRepos({
+            user: 'imlcl',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
 
 
   
@@ -567,21 +613,24 @@ And cu later~
 </footer>
   
 
+<script type="text/javascript">
+      var disqus_shortname = 'imlcl';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
 
 
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 

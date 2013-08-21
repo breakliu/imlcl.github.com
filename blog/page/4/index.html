@@ -89,6 +89,8 @@
 
 <time datetime="2011-02-16T00:00:00+08:00" pubdate data-updated="true">2011-02-16</time>
         
+         | <a href="/blog/2011/02/16/1/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -166,6 +168,8 @@
 
 <time datetime="2010-12-27T00:00:00+08:00" pubdate data-updated="true">2010-12-27</time>
         
+         | <a href="/blog/2010/12/27/1/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -206,6 +210,8 @@
 
 
 <time datetime="2010-11-25T00:00:00+08:00" pubdate data-updated="true">2010-11-25</time>
+        
+         | <a href="/blog/2010/11/25/have_a_rest/#disqus_thread">Comments</a>
         
       </p>
     
@@ -248,6 +254,8 @@
 
 
 <time datetime="2010-11-25T00:00:00+08:00" pubdate data-updated="true">2010-11-25</time>
+        
+         | <a href="/blog/2010/11/25/chaos-eight-sentences/#disqus_thread">Comments</a>
         
       </p>
     
@@ -301,6 +309,8 @@
 
 <time datetime="2010-11-21T00:00:00+08:00" pubdate data-updated="true">2010-11-21</time>
         
+         | <a href="/blog/2010/11/21/db_crash/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -339,6 +349,8 @@
 
 
 <time datetime="2010-11-05T00:00:00+08:00" pubdate data-updated="true">2010-11-05</time>
+        
+         | <a href="/blog/2010/11/05/360_vs_tx_and_thing/#disqus_thread">Comments</a>
         
       </p>
     
@@ -430,6 +442,8 @@
 
 <time datetime="2010-11-01T00:00:00+08:00" pubdate data-updated="true">2010-11-01</time>
         
+         | <a href="/blog/2010/11/01/curl_vote_beyond/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -478,6 +492,8 @@ curl的Man Page在这里<a href="http://curl.haxx.se/docs/manpage.html">http://c
 
 <time datetime="2010-10-20T00:00:00+08:00" pubdate data-updated="true">2010-10-20</time>
         
+         | <a href="/blog/2010/10/20/school_project/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -521,6 +537,8 @@ curl的Man Page在这里<a href="http://curl.haxx.se/docs/manpage.html">http://c
 
 <time datetime="2010-10-14T00:00:00+08:00" pubdate data-updated="true">2010-10-14</time>
         
+         | <a href="/blog/2010/10/14/morning-read/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -560,6 +578,8 @@ curl的Man Page在这里<a href="http://curl.haxx.se/docs/manpage.html">http://c
 
 
 <time datetime="2010-10-13T00:00:00+08:00" pubdate data-updated="true">2010-10-13</time>
+        
+         | <a href="/blog/2010/10/13/linode-vps-move-to-fremont/#disqus_thread">Comments</a>
         
       </p>
     
@@ -619,8 +639,34 @@ curl的Man Page在这里<a href="http://curl.haxx.se/docs/manpage.html">http://c
   </ul>
 </section>
 
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/imlcl">@imlcl</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
 
-
+        github.showRepos({
+            user: 'imlcl',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
 
 
   
@@ -636,21 +682,24 @@ curl的Man Page在这里<a href="http://curl.haxx.se/docs/manpage.html">http://c
 </footer>
   
 
+<script type="text/javascript">
+      var disqus_shortname = 'imlcl';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
 
 
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 

@@ -90,6 +90,8 @@
 
 <time datetime="2008-09-28T00:00:00+08:00" pubdate data-updated="true">2008-09-28</time>
         
+         | <a href="/blog/2008/09/28/missing-your-hair/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -127,6 +129,8 @@ Missing your hair, missing you.
 
 
 <time datetime="2008-09-23T00:00:00+08:00" pubdate data-updated="true">2008-09-23</time>
+        
+         | <a href="/blog/2008/09/23/1/#disqus_thread">Comments</a>
         
       </p>
     
@@ -169,6 +173,8 @@ It takes a strong man to save himself, and great man to save another!
 
 
 <time datetime="2008-09-18T00:00:00+08:00" pubdate data-updated="true">2008-09-18</time>
+        
+         | <a href="/blog/2008/09/18/ask-me-again-in-ten-years-toozz/#disqus_thread">Comments</a>
         
       </p>
     
@@ -372,6 +378,8 @@ Milo:This is a garage.
 
 <time datetime="2008-09-16T00:00:00+08:00" pubdate data-updated="true">2008-09-16</time>
         
+         | <a href="/blog/2008/09/16/2/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -536,6 +544,8 @@ The global object log is constructed before main() starts. During its constructi
 
 <time datetime="2008-09-16T00:00:00+08:00" pubdate data-updated="true">2008-09-16</time>
         
+         | <a href="/blog/2008/09/16/1/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -584,6 +594,8 @@ SonnDo没眼镜还得上课，怎一个牛字了得，真正的“瞎”讲，�
 
 <time datetime="2008-09-12T00:00:00+08:00" pubdate data-updated="true">2008-09-12</time>
         
+         | <a href="/blog/2008/09/12/1/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -625,6 +637,8 @@ SonnDo没眼镜还得上课，怎一个牛字了得，真正的“瞎”讲，�
 
 
 <time datetime="2008-09-08T00:00:00+08:00" pubdate data-updated="true">2008-09-08</time>
+        
+         | <a href="/blog/2008/09/08/1/#disqus_thread">Comments</a>
         
       </p>
     
@@ -671,6 +685,8 @@ Intel E7200
 
 <time datetime="2008-09-05T00:00:00+08:00" pubdate data-updated="true">2008-09-05</time>
         
+         | <a href="/blog/2008/09/05/google/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -708,6 +724,8 @@ Intel E7200
 
 
 <time datetime="2008-09-05T00:00:00+08:00" pubdate data-updated="true">2008-09-05</time>
+        
+         | <a href="/blog/2008/09/05/1/#disqus_thread">Comments</a>
         
       </p>
     
@@ -752,6 +770,8 @@ Intel E7200
 
 
 <time datetime="2008-09-03T00:00:00+08:00" pubdate data-updated="true">2008-09-03</time>
+        
+         | <a href="/blog/2008/09/03/chrome/#disqus_thread">Comments</a>
         
       </p>
     
@@ -807,8 +827,34 @@ Intel E7200
   </ul>
 </section>
 
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/imlcl">@imlcl</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
 
-
+        github.showRepos({
+            user: 'imlcl',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
 
 
   
@@ -824,21 +870,24 @@ Intel E7200
 </footer>
   
 
+<script type="text/javascript">
+      var disqus_shortname = 'imlcl';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
 
 
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 

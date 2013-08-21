@@ -91,6 +91,8 @@
 
 <time datetime="2008-02-24T00:00:00+08:00" pubdate data-updated="true">2008-02-24</time>
         
+         | <a href="/blog/2008/02/24/1/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -153,6 +155,8 @@ Difference 也就是我可以為這個世界創造一些價值的意思她處處
 
 <time datetime="2008-02-22T00:00:00+08:00" pubdate data-updated="true">2008-02-22</time>
         
+         | <a href="/blog/2008/02/22/2/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -188,6 +192,8 @@ Difference 也就是我可以為這個世界創造一些價值的意思她處處
 
 
 <time datetime="2008-02-22T00:00:00+08:00" pubdate data-updated="true">2008-02-22</time>
+        
+         | <a href="/blog/2008/02/22/1/#disqus_thread">Comments</a>
         
       </p>
     
@@ -225,6 +231,8 @@ Difference 也就是我可以為這個世界創造一些價值的意思她處處
 
 
 <time datetime="2008-02-15T00:00:00+08:00" pubdate data-updated="true">2008-02-15</time>
+        
+         | <a href="/blog/2008/02/15/the-most-popular-operating-systems%25e8%25bd%25ac/#disqus_thread">Comments</a>
         
       </p>
     
@@ -319,6 +327,8 @@ compatible with them.
 
 <time datetime="2008-02-15T00:00:00+08:00" pubdate data-updated="true">2008-02-15</time>
         
+         | <a href="/blog/2008/02/15/1/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -364,6 +374,8 @@ compatible with them.
 
 
 <time datetime="2008-02-14T00:00:00+08:00" pubdate data-updated="true">2008-02-14</time>
+        
+         | <a href="/blog/2008/02/14/3/#disqus_thread">Comments</a>
         
       </p>
     
@@ -426,6 +438,8 @@ compatible with them.
 
 <time datetime="2008-02-14T00:00:00+08:00" pubdate data-updated="true">2008-02-14</time>
         
+         | <a href="/blog/2008/02/14/2/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -468,6 +482,8 @@ compatible with them.
 
 <time datetime="2008-02-14T00:00:00+08:00" pubdate data-updated="true">2008-02-14</time>
         
+         | <a href="/blog/2008/02/14/1/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -503,6 +519,8 @@ compatible with them.
 
 
 <time datetime="2008-02-09T00:00:00+08:00" pubdate data-updated="true">2008-02-09</time>
+        
+         | <a href="/blog/2008/02/09/1/#disqus_thread">Comments</a>
         
       </p>
     
@@ -545,6 +563,8 @@ compatible with them.
 
 
 <time datetime="2008-02-08T00:00:00+08:00" pubdate data-updated="true">2008-02-08</time>
+        
+         | <a href="/blog/2008/02/08/3/#disqus_thread">Comments</a>
         
       </p>
     
@@ -603,8 +623,34 @@ compatible with them.
   </ul>
 </section>
 
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/imlcl">@imlcl</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
 
-
+        github.showRepos({
+            user: 'imlcl',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
 
 
   
@@ -620,21 +666,24 @@ compatible with them.
 </footer>
   
 
+<script type="text/javascript">
+      var disqus_shortname = 'imlcl';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
 
 
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 

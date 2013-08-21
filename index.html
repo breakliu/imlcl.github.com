@@ -89,6 +89,8 @@
 
 <time datetime="2013-01-01T00:00:00+08:00" pubdate data-updated="true">2013-01-01</time>
         
+         | <a href="/blog/2013/01/01/first/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -134,6 +136,8 @@
 
 
 <time datetime="2012-09-13T00:00:00+08:00" pubdate data-updated="true">2012-09-13</time>
+        
+         | <a href="/blog/2012/09/13/git-gitignore/#disqus_thread">Comments</a>
         
       </p>
     
@@ -182,6 +186,8 @@
 
 
 <time datetime="2012-08-05T00:00:00+08:00" pubdate data-updated="true">2012-08-05</time>
+        
+         | <a href="/blog/2012/08/05/1/#disqus_thread">Comments</a>
         
       </p>
     
@@ -334,6 +340,8 @@ tunctl -t tap1</strong>
 
 <time datetime="2012-08-04T00:00:00+08:00" pubdate data-updated="true">2012-08-04</time>
         
+         | <a href="/blog/2012/08/04/1/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -379,6 +387,8 @@ tunctl -t tap1</strong>
 
 
 <time datetime="2012-05-06T00:00:00+08:00" pubdate data-updated="true">2012-05-06</time>
+        
+         | <a href="/blog/2012/05/06/1/#disqus_thread">Comments</a>
         
       </p>
     
@@ -439,6 +449,8 @@ WinZip 9.0对压缩格式的支持并没有什么增加，支持原有的18种�
 
 <time datetime="2012-04-27T00:00:00+08:00" pubdate data-updated="true">2012-04-27</time>
         
+         | <a href="/blog/2012/04/27/things-you-didnt-know-rails-could-do/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -474,6 +486,8 @@ WinZip 9.0对压缩格式的支持并没有什么增加，支持原有的18种�
 
 
 <time datetime="2012-04-09T00:00:00+08:00" pubdate data-updated="true">2012-04-09</time>
+        
+         | <a href="/blog/2012/04/09/1/#disqus_thread">Comments</a>
         
       </p>
     
@@ -524,6 +538,8 @@ WinZip 9.0对压缩格式的支持并没有什么增加，支持原有的18种�
 
 <time datetime="2012-02-23T00:00:00+08:00" pubdate data-updated="true">2012-02-23</time>
         
+         | <a href="/blog/2012/02/23/lion-rvm-ruby/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -567,6 +583,8 @@ WinZip 9.0对压缩格式的支持并没有什么增加，支持原有的18种�
 
 <time datetime="2012-02-22T00:00:00+08:00" pubdate data-updated="true">2012-02-22</time>
         
+         | <a href="/blog/2012/02/22/macbook-pro/#disqus_thread">Comments</a>
+        
       </p>
     
   </header>
@@ -604,6 +622,8 @@ WinZip 9.0对压缩格式的支持并没有什么增加，支持原有的18种�
 
 
 <time datetime="2012-01-27T00:00:00+08:00" pubdate data-updated="true">2012-01-27</time>
+        
+         | <a href="/blog/2012/01/27/fingertext/#disqus_thread">Comments</a>
         
       </p>
     
@@ -660,8 +680,34 @@ FingerText</a>，刚发现的一个Notepad++插件，只要配置得当，手写
   </ul>
 </section>
 
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/imlcl">@imlcl</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
 
-
+        github.showRepos({
+            user: 'imlcl',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
 
 
   
@@ -677,21 +723,24 @@ FingerText</a>，刚发现的一个Notepad++插件，只要配置得当，手写
 </footer>
   
 
+<script type="text/javascript">
+      var disqus_shortname = 'imlcl';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
 
 
 
 
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
 
 
 
