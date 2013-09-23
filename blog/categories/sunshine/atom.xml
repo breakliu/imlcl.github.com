@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: sunshine | 大头龙仔Blog]]></title>
-  <link href="http://imlcl.com/blog/categories/sunshine/atom.xml" rel="self"/>
-  <link href="http://imlcl.com/"/>
-  <updated>2013-08-21T23:52:38+08:00</updated>
-  <id>http://imlcl.com/</id>
+  <link href="http://imlcl.github.io/blog/categories/sunshine/atom.xml" rel="self"/>
+  <link href="http://imlcl.github.io/"/>
+  <updated>2013-09-23T12:11:41+08:00</updated>
+  <id>http://imlcl.github.io/</id>
   <author>
     <name><![CDATA[imlcl]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Migrate to Octopress]]></title>
-    <link href="http://imlcl.com/blog/2013/08/21/migrate-to-octopress/"/>
+    <link href="http://imlcl.github.io/blog/2013/08/21/migrate-to-octopress/"/>
     <updated>2013-08-21T23:09:00+08:00</updated>
-    <id>http://imlcl.com/blog/2013/08/21/migrate-to-octopress</id>
+    <id>http://imlcl.github.io/blog/2013/08/21/migrate-to-octopress</id>
     <content type="html"><![CDATA[<p>迁移过来了，从此加入Markdown阵型。</p>
 
 <p>从wordpress里导入了280篇博文，因为是导入过来的，所以还保持了html代码，可能会有些练练的，但基本上不会有太大影响，我也就不花时间再去重整了。</p>
@@ -28,9 +28,9 @@
   
   <entry>
     <title type="html"><![CDATA[写给2013，写给我，写给我们]]></title>
-    <link href="http://imlcl.com/blog/2013/01/01/write-to-2013/"/>
+    <link href="http://imlcl.github.io/blog/2013/01/01/write-to-2013/"/>
     <updated>2013-01-01T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2013/01/01/write-to-2013</id>
+    <id>http://imlcl.github.io/blog/2013/01/01/write-to-2013</id>
     <content type="html"><![CDATA[<p>2012一转眼就过支了，这么快就踏入2013年。</p>
 
 
@@ -63,9 +63,9 @@
   
   <entry>
     <title type="html"><![CDATA[框架框架]]></title>
-    <link href="http://imlcl.com/blog/2012/01/05/framework-1/"/>
+    <link href="http://imlcl.github.io/blog/2012/01/05/framework-1/"/>
     <updated>2012-01-05T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/01/05/framework-1</id>
+    <id>http://imlcl.github.io/blog/2012/01/05/framework-1</id>
     <content type="html"><![CDATA[<p>年近岁晚，谈总结，谈展望，谈奖金，谈计划……</p>
 
 
@@ -93,9 +93,9 @@
   
   <entry>
     <title type="html"><![CDATA[Hello 2012]]></title>
-    <link href="http://imlcl.com/blog/2012/01/01/hello-2012/"/>
+    <link href="http://imlcl.github.io/blog/2012/01/01/hello-2012/"/>
     <updated>2012-01-01T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/01/01/hello-2012</id>
+    <id>http://imlcl.github.io/blog/2012/01/01/hello-2012</id>
     <content type="html"><![CDATA[<p>看看时间，原来已经跨入2012年了，今晚也由于特殊原因，我就是看看店，修修电脑，研究研究Drupal的Module（打算用来整合学校现在的信息管理系统）</p>
 
 
@@ -118,9 +118,9 @@ Hello 2012, I'm coming, and happy new year!</p>
   
   <entry>
     <title type="html"><![CDATA[公开课感想]]></title>
-    <link href="http://imlcl.com/blog/2011/12/16/thinkings1/"/>
+    <link href="http://imlcl.github.io/blog/2011/12/16/thinkings1/"/>
     <updated>2011-12-16T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2011/12/16/thinkings1</id>
+    <id>http://imlcl.github.io/blog/2011/12/16/thinkings1</id>
     <content type="html"><![CDATA[<p>昨天，我们西溪小学举行了全镇的综合实践展示活动，而我上了一节信息技术的公开展示课（我觉得就不能叫所谓的展示了），有些感想与大家分享。</p>
 
 

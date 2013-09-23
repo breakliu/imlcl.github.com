@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: misc | 大头龙仔Blog]]></title>
-  <link href="http://imlcl.com/blog/categories/misc/atom.xml" rel="self"/>
-  <link href="http://imlcl.com/"/>
-  <updated>2013-08-21T23:52:38+08:00</updated>
-  <id>http://imlcl.com/</id>
+  <link href="http://imlcl.github.io/blog/categories/misc/atom.xml" rel="self"/>
+  <link href="http://imlcl.github.io/"/>
+  <updated>2013-09-23T12:11:41+08:00</updated>
+  <id>http://imlcl.github.io/</id>
   <author>
     <name><![CDATA[imlcl]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[所谓码农（摘自《码农》第1期）]]></title>
-    <link href="http://imlcl.com/blog/2012/08/04/code-farmer/"/>
+    <link href="http://imlcl.github.io/blog/2012/08/04/code-farmer/"/>
     <updated>2012-08-04T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/08/04/code-farmer</id>
+    <id>http://imlcl.github.io/blog/2012/08/04/code-farmer</id>
     <content type="html"><![CDATA[<p>《码农》第1期，当时看到，马上在群里推荐，不过第一时间听到的是，“我不是码农”，“我不做码农”。随后，我看到里面讲的这篇，《所谓码农》，觉得挺有意思的，于是决定分享给码农与非码农：</p>
 
 
@@ -50,9 +50,9 @@
   
   <entry>
     <title type="html"><![CDATA[[转]ZIP,一个没落天才的故事]]></title>
-    <link href="http://imlcl.com/blog/2012/05/06/zip-story/"/>
+    <link href="http://imlcl.github.io/blog/2012/05/06/zip-story/"/>
     <updated>2012-05-06T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/05/06/zip-story</id>
+    <id>http://imlcl.github.io/blog/2012/05/06/zip-story</id>
     <content type="html"><![CDATA[<p>via: <a href="http://cnbeta.com/articles/185863.htm">http://cnbeta.com/articles/185863.htm</a></p>
 
 
@@ -89,9 +89,9 @@ WinZip 9.0对压缩格式的支持并没有什么增加，支持原有的18种�
   
   <entry>
     <title type="html"><![CDATA[无题之愚者自愚]]></title>
-    <link href="http://imlcl.com/blog/2012/04/09/stupid/"/>
+    <link href="http://imlcl.github.io/blog/2012/04/09/stupid/"/>
     <updated>2012-04-09T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/04/09/stupid</id>
+    <id>http://imlcl.github.io/blog/2012/04/09/stupid</id>
     <content type="html"><![CDATA[<p>从开学到现在，基本上都是忙个不停，反正是各种各样，果然是辛苦劳碌命。清明节病了三天，辛苦得很，最后受不了还是去看西医了，可能是这段时间太劳累，不小心让自己病了，也让老婆操心了。</p>
 
 
@@ -130,9 +130,9 @@ WinZip 9.0对压缩格式的支持并没有什么增加，支持原有的18种�
   
   <entry>
     <title type="html"><![CDATA[不要把教师困在厕所里(转)]]></title>
-    <link href="http://imlcl.com/blog/2011/12/26/teacher-in-WC/"/>
+    <link href="http://imlcl.github.io/blog/2011/12/26/teacher-in-WC/"/>
     <updated>2011-12-26T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2011/12/26/teacher-in-WC</id>
+    <id>http://imlcl.github.io/blog/2011/12/26/teacher-in-WC</id>
     <content type="html"><![CDATA[<p>via: <a href="http://blog.lbxixiao.com/u/35/archives/2011/149.html">http://blog.lbxixiao.com/u/35/archives/2011/149.html</a></p>
 
 
@@ -185,9 +185,9 @@ WinZip 9.0对压缩格式的支持并没有什么增加，支持原有的18种�
   
   <entry>
     <title type="html"><![CDATA[又说程序员]]></title>
-    <link href="http://imlcl.com/blog/2011/12/18/programmer/"/>
+    <link href="http://imlcl.github.io/blog/2011/12/18/programmer/"/>
     <updated>2011-12-18T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2011/12/18/programmer</id>
+    <id>http://imlcl.github.io/blog/2011/12/18/programmer</id>
     <content type="html"><![CDATA[<p>看到两篇关于程序员的文章，感觉不错，分享给大家
 <p id="page-title"><a href="http://www.ruanyifeng.com/blog/2011/10/dont_call_yourself_a_programmer.html?20111217174251">不要自称为程序员</a></p>
 <a href="你不必非要给自己找个老板">你不必非要给自己找个老板</a></p>

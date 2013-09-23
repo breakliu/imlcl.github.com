@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: server | 大头龙仔Blog]]></title>
-  <link href="http://imlcl.com/blog/categories/server/atom.xml" rel="self"/>
-  <link href="http://imlcl.com/"/>
-  <updated>2013-08-21T23:52:38+08:00</updated>
-  <id>http://imlcl.com/</id>
+  <link href="http://imlcl.github.io/blog/categories/server/atom.xml" rel="self"/>
+  <link href="http://imlcl.github.io/"/>
+  <updated>2013-09-23T12:11:41+08:00</updated>
+  <id>http://imlcl.github.io/</id>
   <author>
     <name><![CDATA[imlcl]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[服务器基于slackware的KVM布署详解]]></title>
-    <link href="http://imlcl.com/blog/2012/08/05/slackware-kvm/"/>
+    <link href="http://imlcl.github.io/blog/2012/08/05/slackware-kvm/"/>
     <updated>2012-08-05T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/08/05/slackware-kvm</id>
+    <id>http://imlcl.github.io/blog/2012/08/05/slackware-kvm</id>
     <content type="html"><![CDATA[<p><strong>一、背景</strong>
 首先呢，我发现自己有半年时间没有写技术类的文章了，其次，关于这个话题，我一直都想整理一篇比较好的文章出来，一来可以做个备忘，更重要是起到分享交流，共同进步。之前一直可能都有一些零零散散关于这部分细节的，但我觉得都看得不是很爽。另外，网上搜到大多数关于KVM的都是debian系或redhat系的，有部分内容和slackware有差异，并且由于slackware的文化，在KVM虚拟化这块，相比其它发行版要麻烦一点点，而slackware的简洁、稳定、快速是我一直所爱，所以更希望写下这篇文章。</p>
 
@@ -211,9 +211,9 @@ tunctl -t tap1</strong>
   
   <entry>
     <title type="html"><![CDATA[Hash Collision DoS问题值得关注]]></title>
-    <link href="http://imlcl.com/blog/2012/01/06/hash-collision-dos/"/>
+    <link href="http://imlcl.github.io/blog/2012/01/06/hash-collision-dos/"/>
     <updated>2012-01-06T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/01/06/hash-collision-dos</id>
+    <id>http://imlcl.github.io/blog/2012/01/06/hash-collision-dos</id>
     <content type="html"><![CDATA[<p>请细请看<a href="http://coolshell.cn/articles/6424.html">http://coolshell.cn/articles/6424.html</a></p>
 
 
@@ -226,9 +226,9 @@ tunctl -t tap1</strong>
   
   <entry>
     <title type="html"><![CDATA[框架框架]]></title>
-    <link href="http://imlcl.com/blog/2012/01/05/framework-1/"/>
+    <link href="http://imlcl.github.io/blog/2012/01/05/framework-1/"/>
     <updated>2012-01-05T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/01/05/framework-1</id>
+    <id>http://imlcl.github.io/blog/2012/01/05/framework-1</id>
     <content type="html"><![CDATA[<p>年近岁晚，谈总结，谈展望，谈奖金，谈计划……</p>
 
 
@@ -256,9 +256,9 @@ tunctl -t tap1</strong>
   
   <entry>
     <title type="html"><![CDATA[关于易网库ASP性能]]></title>
-    <link href="http://imlcl.com/blog/2011/12/21/asp/"/>
+    <link href="http://imlcl.github.io/blog/2011/12/21/asp/"/>
     <updated>2011-12-21T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2011/12/21/asp</id>
+    <id>http://imlcl.github.io/blog/2011/12/21/asp</id>
     <content type="html"><![CDATA[<p>因为某些原因，学校网站需要暂时放到免备案主机空间，就选了朋友感觉不错的<a href="http://www.webweb.com/">易网库</a></p>
 
 
@@ -286,9 +286,9 @@ tunctl -t tap1</strong>
   
   <entry>
     <title type="html"><![CDATA[You're in VirtualBox]]></title>
-    <link href="http://imlcl.com/blog/2011/04/28/you_are_in_virtualbox/"/>
+    <link href="http://imlcl.github.io/blog/2011/04/28/you_are_in_virtualbox/"/>
     <updated>2011-04-28T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2011/04/28/you_are_in_virtualbox</id>
+    <id>http://imlcl.github.io/blog/2011/04/28/you_are_in_virtualbox</id>
     <content type="html"><![CDATA[<p>如题，没错，大头龙仔Blog被我移至VirtualBox虚拟机里了，运行环境是ArchLinux + Nginx</p>
 
 

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: geek | 大头龙仔Blog]]></title>
-  <link href="http://imlcl.com/blog/categories/geek/atom.xml" rel="self"/>
-  <link href="http://imlcl.com/"/>
-  <updated>2013-08-21T23:52:38+08:00</updated>
-  <id>http://imlcl.com/</id>
+  <link href="http://imlcl.github.io/blog/categories/geek/atom.xml" rel="self"/>
+  <link href="http://imlcl.github.io/"/>
+  <updated>2013-09-23T12:11:41+08:00</updated>
+  <id>http://imlcl.github.io/</id>
   <author>
     <name><![CDATA[imlcl]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Lion使用RVM安装ruby]]></title>
-    <link href="http://imlcl.com/blog/2012/02/23/lion-rvm-ruby/"/>
+    <link href="http://imlcl.github.io/blog/2012/02/23/lion-rvm-ruby/"/>
     <updated>2012-02-23T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/02/23/lion-rvm-ruby</id>
+    <id>http://imlcl.github.io/blog/2012/02/23/lion-rvm-ruby</id>
     <content type="html"><![CDATA[<p>ruby最新p125有些重要的安全升级，我发现升级到Lion 10.7.3后发现rvm install ruby-1.9.3-p125不能使用，后来通过以下方法解决（可参考rvm requirements）：</p>
 
 
@@ -38,9 +38,9 @@
   
   <entry>
     <title type="html"><![CDATA[玩玩MacBook Pro]]></title>
-    <link href="http://imlcl.com/blog/2012/02/22/macbook-pro/"/>
+    <link href="http://imlcl.github.io/blog/2012/02/22/macbook-pro/"/>
     <updated>2012-02-22T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/02/22/macbook-pro</id>
+    <id>http://imlcl.github.io/blog/2012/02/22/macbook-pro</id>
     <content type="html"><![CDATA[<p>最近拿了朋友的MacBook Pro来玩，发现其成功的确有其原因。因为最近都在搞RoR，使用TextMate应该是最好的选择了。我也利用一些时间来研究了这电脑杂七杂八的东西，包括其中一些另类的操作系统理念，MAC OS的界面就不用多说了，其实给我最重要的感觉是简单易用，相比WIN，更能让自己专注于工作（对我个人而言）。</p>
 
 
@@ -53,9 +53,9 @@
   
   <entry>
     <title type="html"><![CDATA[你会爱上的一个Notepad++插件——FingerText]]></title>
-    <link href="http://imlcl.com/blog/2012/01/27/notepad-fingertext/"/>
+    <link href="http://imlcl.github.io/blog/2012/01/27/notepad-fingertext/"/>
     <updated>2012-01-27T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/01/27/notepad-fingertext</id>
+    <id>http://imlcl.github.io/blog/2012/01/27/notepad-fingertext</id>
     <content type="html"><![CDATA[<p>我不是苹果爱好者，但不得不说TextMate是一个非常优秀的代码编辑工具<a href="https://github.com/erinata/FingerText">
 FingerText</a>，刚发现的一个Notepad++插件，只要配置得当，手写代码真的能快很多（超强Tab补全），反正用起来就有TextMate的味儿，反正我已经爱上了。</p>
 
@@ -74,9 +74,9 @@ FingerText</a>，刚发现的一个Notepad++插件，只要配置得当，手写
   
   <entry>
     <title type="html"><![CDATA[使用EMOS搭建Web电子邮件系统]]></title>
-    <link href="http://imlcl.com/blog/2011/10/10/emos-email/"/>
+    <link href="http://imlcl.github.io/blog/2011/10/10/emos-email/"/>
     <updated>2011-10-10T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2011/10/10/emos-email</id>
+    <id>http://imlcl.github.io/blog/2011/10/10/emos-email</id>
     <content type="html"><![CDATA[<p>呃，本来真的没有必要弄这东西，但课程需要不得不弄。</p>
 
 
@@ -147,9 +147,9 @@ Anyway，举一反三，一通百通，厚积薄发才是王道。</p>
   
   <entry>
     <title type="html"><![CDATA[使用curl实现刷票功能要点]]></title>
-    <link href="http://imlcl.com/blog/2010/11/01/curl_vote_beyond/"/>
+    <link href="http://imlcl.github.io/blog/2010/11/01/curl_vote_beyond/"/>
     <updated>2010-11-01T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2010/11/01/curl_vote_beyond</id>
+    <id>http://imlcl.github.io/blog/2010/11/01/curl_vote_beyond</id>
     <content type="html"><![CDATA[<p>因为别人在刷票，所以为了保证公平性，我也来刷。外界不断变化，唯独理解原理，把握要点才能应对，所以我这次不说如何来实现，只来说要点，你只要有一定Web编程的基础得了。为什么拿curl来开刀？嗯……想了很久，只能说：这东东是个好东西-_-!!!</p>
 
 

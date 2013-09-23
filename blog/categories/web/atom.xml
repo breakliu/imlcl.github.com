@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: web | 大头龙仔Blog]]></title>
-  <link href="http://imlcl.com/blog/categories/web/atom.xml" rel="self"/>
-  <link href="http://imlcl.com/"/>
-  <updated>2013-08-21T23:52:38+08:00</updated>
-  <id>http://imlcl.com/</id>
+  <link href="http://imlcl.github.io/blog/categories/web/atom.xml" rel="self"/>
+  <link href="http://imlcl.github.io/"/>
+  <updated>2013-09-23T12:11:41+08:00</updated>
+  <id>http://imlcl.github.io/</id>
   <author>
     <name><![CDATA[imlcl]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[[转]10 Things You Didn't Know Rails Could do]]></title>
-    <link href="http://imlcl.com/blog/2012/04/27/10-things-you-didnt-know-rails-could-do/"/>
+    <link href="http://imlcl.github.io/blog/2012/04/27/10-things-you-didnt-know-rails-could-do/"/>
     <updated>2012-04-27T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/04/27/10-things-you-didnt-know-rails-could-do</id>
+    <id>http://imlcl.github.io/blog/2012/04/27/10-things-you-didnt-know-rails-could-do</id>
     <content type="html"><![CDATA[<p><a href="http://speakerdeck.com/u/jeg2/p/10-things-you-didnt-know-rails-could-do">http://speakerdeck.com/u/jeg2/p/10-things-you-didnt-know-rails-could-do</a></p>
 
 ]]></content>
@@ -25,9 +25,9 @@
   
   <entry>
     <title type="html"><![CDATA[框架框架]]></title>
-    <link href="http://imlcl.com/blog/2012/01/05/framework-1/"/>
+    <link href="http://imlcl.github.io/blog/2012/01/05/framework-1/"/>
     <updated>2012-01-05T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/01/05/framework-1</id>
+    <id>http://imlcl.github.io/blog/2012/01/05/framework-1</id>
     <content type="html"><![CDATA[<p>年近岁晚，谈总结，谈展望，谈奖金，谈计划……</p>
 
 
@@ -55,9 +55,9 @@
   
   <entry>
     <title type="html"><![CDATA[关于易网库ASP性能]]></title>
-    <link href="http://imlcl.com/blog/2011/12/21/asp/"/>
+    <link href="http://imlcl.github.io/blog/2011/12/21/asp/"/>
     <updated>2011-12-21T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2011/12/21/asp</id>
+    <id>http://imlcl.github.io/blog/2011/12/21/asp</id>
     <content type="html"><![CDATA[<p>因为某些原因，学校网站需要暂时放到免备案主机空间，就选了朋友感觉不错的<a href="http://www.webweb.com/">易网库</a></p>
 
 
@@ -85,9 +85,9 @@
   
   <entry>
     <title type="html"><![CDATA[今天发现数据库损坏了]]></title>
-    <link href="http://imlcl.com/blog/2010/11/21/db_crash/"/>
+    <link href="http://imlcl.github.io/blog/2010/11/21/db_crash/"/>
     <updated>2010-11-21T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2010/11/21/db_crash</id>
+    <id>http://imlcl.github.io/blog/2010/11/21/db_crash</id>
     <content type="html"><![CDATA[<p>如题，一进blog发现没有任何文章，于是登录到后台，发现文章数为0<br />
 因为当时第一反映是怀疑受到攻击，于是又打开linode主页看看是否有受到攻击的新闻，发现没有相关新闻。<br />
 立马ssh到vps，看日志，查了很久，没发现有什么非法进入系统的记录<br />
@@ -98,9 +98,9 @@
   
   <entry>
     <title type="html"><![CDATA[使用curl实现刷票功能要点]]></title>
-    <link href="http://imlcl.com/blog/2010/11/01/curl_vote_beyond/"/>
+    <link href="http://imlcl.github.io/blog/2010/11/01/curl_vote_beyond/"/>
     <updated>2010-11-01T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2010/11/01/curl_vote_beyond</id>
+    <id>http://imlcl.github.io/blog/2010/11/01/curl_vote_beyond</id>
     <content type="html"><![CDATA[<p>因为别人在刷票，所以为了保证公平性，我也来刷。外界不断变化，唯独理解原理，把握要点才能应对，所以我这次不说如何来实现，只来说要点，你只要有一定Web编程的基础得了。为什么拿curl来开刀？嗯……想了很久，只能说：这东东是个好东西-_-!!!</p>
 
 

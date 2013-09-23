@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[大头龙仔Blog]]></title>
-  <link href="http://imlcl.com/atom.xml" rel="self"/>
-  <link href="http://imlcl.com/"/>
-  <updated>2013-08-21T23:52:38+08:00</updated>
-  <id>http://imlcl.com/</id>
+  <link href="http://imlcl.github.io/atom.xml" rel="self"/>
+  <link href="http://imlcl.github.io/"/>
+  <updated>2013-09-23T12:11:41+08:00</updated>
+  <id>http://imlcl.github.io/</id>
   <author>
     <name><![CDATA[imlcl]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Migrate to Octopress]]></title>
-    <link href="http://imlcl.com/blog/2013/08/21/migrate-to-octopress/"/>
+    <link href="http://imlcl.github.io/blog/2013/08/21/migrate-to-octopress/"/>
     <updated>2013-08-21T23:09:00+08:00</updated>
-    <id>http://imlcl.com/blog/2013/08/21/migrate-to-octopress</id>
+    <id>http://imlcl.github.io/blog/2013/08/21/migrate-to-octopress</id>
     <content type="html"><![CDATA[<p>迁移过来了，从此加入Markdown阵型。</p>
 
 <p>从wordpress里导入了280篇博文，因为是导入过来的，所以还保持了html代码，可能会有些练练的，但基本上不会有太大影响，我也就不花时间再去重整了。</p>
@@ -28,9 +28,9 @@
   
   <entry>
     <title type="html"><![CDATA[写给2013，写给我，写给我们]]></title>
-    <link href="http://imlcl.com/blog/2013/01/01/write-to-2013/"/>
+    <link href="http://imlcl.github.io/blog/2013/01/01/write-to-2013/"/>
     <updated>2013-01-01T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2013/01/01/write-to-2013</id>
+    <id>http://imlcl.github.io/blog/2013/01/01/write-to-2013</id>
     <content type="html"><![CDATA[<p>2012一转眼就过支了，这么快就踏入2013年。</p>
 
 <p>想想，回来东莞工作已有三年多了，毕业五年，这些时间似是历历在目，似是过眼云烟。</p>
@@ -47,10 +47,10 @@
   
   <entry>
     <title type="html"><![CDATA[Git和.gitignore]]></title>
-    <link href="http://imlcl.com/blog/2012/09/13/git-gitignore/"/>
+    <link href="http://imlcl.github.io/blog/2012/09/13/git-gitignore/"/>
     <updated>2012-09-13T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/09/13/git-gitignore</id>
-    <content type="html"><![CDATA[<img src="http://imlcl.com/images/blog/bg20120705011.png">
+    <id>http://imlcl.github.io/blog/2012/09/13/git-gitignore</id>
+    <content type="html"><![CDATA[<img src="http://imlcl.github.io/images/blog/bg20120705011.png">
 
 <p>阮一峰的<a href="http://www.ruanyifeng.com/blog/2012/07/git.html">《Git分支管理策略》</a>可以先看看，很不错</p>
 
@@ -68,9 +68,9 @@
   
   <entry>
     <title type="html"><![CDATA[服务器基于slackware的KVM布署详解]]></title>
-    <link href="http://imlcl.com/blog/2012/08/05/slackware-kvm/"/>
+    <link href="http://imlcl.github.io/blog/2012/08/05/slackware-kvm/"/>
     <updated>2012-08-05T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/08/05/slackware-kvm</id>
+    <id>http://imlcl.github.io/blog/2012/08/05/slackware-kvm</id>
     <content type="html"><![CDATA[<p><strong>一、背景</strong>
 首先呢，我发现自己有半年时间没有写技术类的文章了，其次，关于这个话题，我一直都想整理一篇比较好的文章出来，一来可以做个备忘，更重要是起到分享交流，共同进步。之前一直可能都有一些零零散散关于这部分细节的，但我觉得都看得不是很爽。另外，网上搜到大多数关于KVM的都是debian系或redhat系的，有部分内容和slackware有差异，并且由于slackware的文化，在KVM虚拟化这块，相比其它发行版要麻烦一点点，而slackware的简洁、稳定、快速是我一直所爱，所以更希望写下这篇文章。</p>
 
@@ -81,7 +81,7 @@
 4、虚拟机访问外网要使用网桥（package bridge-utils），但听说用VDE更方面，有兴趣可以看看<a href="http://wiki.alienbase.nl/doku.php?id=slackware:vde">这里</a>。老实说，VDE我弄了一下，好像很麻烦就没弄了……</p>
 
 <p>
-<img src="http://imlcl.com/images/blog/servers.jpg">
+<img src="http://imlcl.github.io/images/blog/servers.jpg">
 <strong>三、软件准备</strong>
 物理服务器机器安装好slackware64 13.37后，那得得要准备相关的软件环境（均运行在root下面）：<br />
 1、qemu-kvm<br />
@@ -134,7 +134,7 @@ windows方面我们使用virtio来提高磁盘和网络的IO性能，那么这�
 <strong>qemu-kvm -m 768 -net nic,model=virtio -net tap,ifname=tap0,script=no -drive file=/xxx/win2003.qcow2,cache=writeback,if=virtio -cdrom /xxx/virtio-win-0.1-30.iso -vnc :1
 </strong>此次启动将载入virtio-win-0.1-30.iso镜像，包含有磁盘控制器和网卡的驱动<br />
 启动后，同样使用VNC远程接入，把2003里的网卡安装好，也可以把磁盘控制器也升级一下，因为之前软盘镜像带的是2010年的，现在iso里包含的是最新的驱动
-<img src="http://imlcl.com/images/blog/tm1.png">
+<img src="http://imlcl.github.io/images/blog/tm1.png">
 到这里，windows 2003安装步骤就完毕了，之后就像平时新装系统设定IP，网关什么的就好，并开启windows远程桌面方便后续的远程操作</p>
 
 <p><strong>六、安装slackware-current
@@ -194,9 +194,9 @@ tunctl -t tap1</strong>
   
   <entry>
     <title type="html"><![CDATA[所谓码农（摘自《码农》第1期）]]></title>
-    <link href="http://imlcl.com/blog/2012/08/04/code-farmer/"/>
+    <link href="http://imlcl.github.io/blog/2012/08/04/code-farmer/"/>
     <updated>2012-08-04T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/08/04/code-farmer</id>
+    <id>http://imlcl.github.io/blog/2012/08/04/code-farmer</id>
     <content type="html"><![CDATA[<p>《码农》第1期，当时看到，马上在群里推荐，不过第一时间听到的是，“我不是码农”，“我不做码农”。随后，我看到里面讲的这篇，《所谓码农》，觉得挺有意思的，于是决定分享给码农与非码农：</p>
 
 <p>对于码农这个称呼，有些人喜爱有加，有些人不以为然。区别在于对待“农”这个字的感觉。农当然是指农民，这个词寓义很丰富，既可以说它伟大，也可以说它渺小。说它伟大，是因为我们的生存离不开农民，而且中国⼀直是个农业为本的国家，曾经说是百分之八十的人是农民，这意味着往前翻⼀两代，你我众人皆是农民出身。以此观之，农可谓大哉。说它渺小，则是因为大家的观念里，农民意味着有很多缺点，冠冕堂皇的说法是劣根性，比如目光短浅、思维陈旧、自私小气，等等，总之是为我们受过教育的人群所看不惯的种种毛病——这些毛病虽然我们自己也有，但是我们看不见——于是乎“农民”成为了骂人时常用的字眼。</p>
@@ -213,9 +213,9 @@ tunctl -t tap1</strong>
   
   <entry>
     <title type="html"><![CDATA[[转]ZIP,一个没落天才的故事]]></title>
-    <link href="http://imlcl.com/blog/2012/05/06/zip-story/"/>
+    <link href="http://imlcl.github.io/blog/2012/05/06/zip-story/"/>
     <updated>2012-05-06T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/05/06/zip-story</id>
+    <id>http://imlcl.github.io/blog/2012/05/06/zip-story</id>
     <content type="html"><![CDATA[<p>via: <a href="http://cnbeta.com/articles/185863.htm">http://cnbeta.com/articles/185863.htm</a></p>
 
 <p>ZIP,一个没落天才的故事，Phil Katz不愿意为一个压缩软件付钱，就索性自己写了一个更好的算法，然后无偿公开。2000年4月14日，他被发现死于一家汽车旅馆，年仅37岁，死时手中握着一个空酒瓶。他留下了zip算法，却没有留下一张像样的照片。</p>
@@ -245,18 +245,18 @@ WinZip 9.0对压缩格式的支持并没有什么增加，支持原有的18种�
   
   <entry>
     <title type="html"><![CDATA[[转]10 Things You Didn't Know Rails Could do]]></title>
-    <link href="http://imlcl.com/blog/2012/04/27/10-things-you-didnt-know-rails-could-do/"/>
+    <link href="http://imlcl.github.io/blog/2012/04/27/10-things-you-didnt-know-rails-could-do/"/>
     <updated>2012-04-27T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/04/27/10-things-you-didnt-know-rails-could-do</id>
+    <id>http://imlcl.github.io/blog/2012/04/27/10-things-you-didnt-know-rails-could-do</id>
     <content type="html"><![CDATA[<p><a href="http://speakerdeck.com/u/jeg2/p/10-things-you-didnt-know-rails-could-do">http://speakerdeck.com/u/jeg2/p/10-things-you-didnt-know-rails-could-do</a></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[无题之愚者自愚]]></title>
-    <link href="http://imlcl.com/blog/2012/04/09/stupid/"/>
+    <link href="http://imlcl.github.io/blog/2012/04/09/stupid/"/>
     <updated>2012-04-09T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/04/09/stupid</id>
+    <id>http://imlcl.github.io/blog/2012/04/09/stupid</id>
     <content type="html"><![CDATA[<p>从开学到现在，基本上都是忙个不停，反正是各种各样，果然是辛苦劳碌命。清明节病了三天，辛苦得很，最后受不了还是去看西医了，可能是这段时间太劳累，不小心让自己病了，也让老婆操心了。</p>
 
 <p>首先是各种各样的任务，虽然引入了RoR框架为新系统带来便利，但学习成本还是要算进去的，综合评价系统和备课系统的实现也让我更深入了解了框架，总得来说好处更多。其中一个费时的原因就是一脚踢的开发模式，我真他妈讨厌写前端的东西，但又不得不做，另一个是我经常给打断工作，我觉得这是最严重的，因为要花更多的时间才能恢复到原先的工作当中。另一方面旧有系统很多都是不知什么公司用ASP来写的，一来我对ASP很不熟也很反感，另一方面修改起来真的是要大动干戈，我就干脆不搞了（事实上我是搞了太多了……越来越恶心）。所以，有时许多工作的确就叫做工作，并不是举手之劳。</p>
@@ -276,9 +276,9 @@ WinZip 9.0对压缩格式的支持并没有什么增加，支持原有的18种�
   
   <entry>
     <title type="html"><![CDATA[Lion使用RVM安装ruby]]></title>
-    <link href="http://imlcl.com/blog/2012/02/23/lion-rvm-ruby/"/>
+    <link href="http://imlcl.github.io/blog/2012/02/23/lion-rvm-ruby/"/>
     <updated>2012-02-23T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/02/23/lion-rvm-ruby</id>
+    <id>http://imlcl.github.io/blog/2012/02/23/lion-rvm-ruby</id>
     <content type="html"><![CDATA[<p>ruby最新p125有些重要的安全升级，我发现升级到Lion 10.7.3后发现rvm install ruby-1.9.3-p125不能使用，后来通过以下方法解决（可参考rvm requirements）：</p>
 
 <p>1、安装最新XCode环境或osx-gcc-installer，我选择的是前者，到官网下载Command Line Tool For Xcode - February 2012，只要这个就好，这就提供了最基本的编译环境工具链了；<br />
@@ -292,9 +292,9 @@ WinZip 9.0对压缩格式的支持并没有什么增加，支持原有的18种�
   
   <entry>
     <title type="html"><![CDATA[玩玩MacBook Pro]]></title>
-    <link href="http://imlcl.com/blog/2012/02/22/macbook-pro/"/>
+    <link href="http://imlcl.github.io/blog/2012/02/22/macbook-pro/"/>
     <updated>2012-02-22T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/02/22/macbook-pro</id>
+    <id>http://imlcl.github.io/blog/2012/02/22/macbook-pro</id>
     <content type="html"><![CDATA[<p>最近拿了朋友的MacBook Pro来玩，发现其成功的确有其原因。因为最近都在搞RoR，使用TextMate应该是最好的选择了。我也利用一些时间来研究了这电脑杂七杂八的东西，包括其中一些另类的操作系统理念，MAC OS的界面就不用多说了，其实给我最重要的感觉是简单易用，相比WIN，更能让自己专注于工作（对我个人而言）。</p>
 
 <p>总得来说因为时间很短，暂时也没什么可以分享的，不过刚看一篇好文，分享给大家：<a href="http://www.programmer.com.cn/9436/">Mac OS X 背后的故事（八）三好学生Chris Lattner的LLVM编译工具链</a></p>
@@ -303,9 +303,9 @@ WinZip 9.0对压缩格式的支持并没有什么增加，支持原有的18种�
   
   <entry>
     <title type="html"><![CDATA[你会爱上的一个Notepad++插件——FingerText]]></title>
-    <link href="http://imlcl.com/blog/2012/01/27/notepad-fingertext/"/>
+    <link href="http://imlcl.github.io/blog/2012/01/27/notepad-fingertext/"/>
     <updated>2012-01-27T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/01/27/notepad-fingertext</id>
+    <id>http://imlcl.github.io/blog/2012/01/27/notepad-fingertext</id>
     <content type="html"><![CDATA[<p>我不是苹果爱好者，但不得不说TextMate是一个非常优秀的代码编辑工具<a href="https://github.com/erinata/FingerText">
 FingerText</a>，刚发现的一个Notepad++插件，只要配置得当，手写代码真的能快很多（超强Tab补全），反正用起来就有TextMate的味儿，反正我已经爱上了。</p>
 
@@ -317,9 +317,9 @@ FingerText</a>，刚发现的一个Notepad++插件，只要配置得当，手写
   
   <entry>
     <title type="html"><![CDATA[来自淘宝网的Rubygems镜像]]></title>
-    <link href="http://imlcl.com/blog/2012/01/10/rubygems/"/>
+    <link href="http://imlcl.github.io/blog/2012/01/10/rubygems/"/>
     <updated>2012-01-10T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/01/10/rubygems</id>
+    <id>http://imlcl.github.io/blog/2012/01/10/rubygems</id>
     <content type="html"><![CDATA[<p>如题，这实在是一件兴奋的事儿，解决了gem源不稳定的问题，用rails的朋友们都懂的</p>
 
 <p>学校现在有两个系统用Rails来写的，也不排除后续会有更多系统</p>
@@ -334,9 +334,9 @@ FingerText</a>，刚发现的一个Notepad++插件，只要配置得当，手写
   
   <entry>
     <title type="html"><![CDATA[Hash Collision DoS问题值得关注]]></title>
-    <link href="http://imlcl.com/blog/2012/01/06/hash-collision-dos/"/>
+    <link href="http://imlcl.github.io/blog/2012/01/06/hash-collision-dos/"/>
     <updated>2012-01-06T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/01/06/hash-collision-dos</id>
+    <id>http://imlcl.github.io/blog/2012/01/06/hash-collision-dos</id>
     <content type="html"><![CDATA[<p>请细请看<a href="http://coolshell.cn/articles/6424.html">http://coolshell.cn/articles/6424.html</a></p>
 
 <p>搞笑的是Perl没有这问题，这问题在2003年的一篇论文中已报告，但没人重视</p>
@@ -345,9 +345,9 @@ FingerText</a>，刚发现的一个Notepad++插件，只要配置得当，手写
   
   <entry>
     <title type="html"><![CDATA[框架框架]]></title>
-    <link href="http://imlcl.com/blog/2012/01/05/framework-1/"/>
+    <link href="http://imlcl.github.io/blog/2012/01/05/framework-1/"/>
     <updated>2012-01-05T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/01/05/framework-1</id>
+    <id>http://imlcl.github.io/blog/2012/01/05/framework-1</id>
     <content type="html"><![CDATA[<p>年近岁晚，谈总结，谈展望，谈奖金，谈计划……</p>
 
 <p>不过最近我更多在考虑学校未来信息化框架，或者叫试验性框架，还没有到最终整合的地步。就目前来说，核心的部分都是我用PHP+MySQL来实现的，功能上基本满足，扩展性不强，外围还有腾讯RTX和现成签到平台等的整合，后续可能还需要整合其它现成平台，还有使用Rails新编写的存档系统和论文系统。就这样看来，扩展性和可维护性就相形见绌，扩展性和可维护性无从谈起。</p>
@@ -362,9 +362,9 @@ FingerText</a>，刚发现的一个Notepad++插件，只要配置得当，手写
   
   <entry>
     <title type="html"><![CDATA[Hello 2012]]></title>
-    <link href="http://imlcl.com/blog/2012/01/01/hello-2012/"/>
+    <link href="http://imlcl.github.io/blog/2012/01/01/hello-2012/"/>
     <updated>2012-01-01T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2012/01/01/hello-2012</id>
+    <id>http://imlcl.github.io/blog/2012/01/01/hello-2012</id>
     <content type="html"><![CDATA[<p>看看时间，原来已经跨入2012年了，今晚也由于特殊原因，我就是看看店，修修电脑，研究研究Drupal的Module（打算用来整合学校现在的信息管理系统）</p>
 
 <p>在过去的这一年，是我人生的一个重要转折点，我结婚了:-)<br />
@@ -380,9 +380,9 @@ Hello 2012, I&#8217;m coming, and happy new year!</p>
   
   <entry>
     <title type="html"><![CDATA[不要把教师困在厕所里(转)]]></title>
-    <link href="http://imlcl.com/blog/2011/12/26/teacher-in-WC/"/>
+    <link href="http://imlcl.github.io/blog/2011/12/26/teacher-in-WC/"/>
     <updated>2011-12-26T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2011/12/26/teacher-in-WC</id>
+    <id>http://imlcl.github.io/blog/2011/12/26/teacher-in-WC</id>
     <content type="html"><![CDATA[<p>via: <a href="http://blog.lbxixiao.com/u/35/archives/2011/149.html">http://blog.lbxixiao.com/u/35/archives/2011/149.html</a></p>
 
 <p>引子：笑话《困在厕所里的老师》——一日上课，一学生要求上厕所，老师觉影响课堂秩序，不准。结果尿于裤中。家长状告教育部门：该老师违反人权，剥夺学生如厕权利，应严惩之；又一日上课，一学生要求如厕，老师准之。谁知该生滑倒在厕所。家长状告教育部门：课堂期间擅自让学生离开课室，导致学生受到伤害，应严惩之；又一日上课，一学生要求如厕，老师害怕他在厕所滑倒，前往陪伴，谁知老师离开课堂期间，学生相互打闹受伤。家长状告教育部门：该教师上课期间擅离职守，致使学生打闹受伤，应严惩之；又一日上课要求如厕，于是该老师带领全班一同前往厕所。家庭状告教育部门：该教师玩忽职守，上课期间不传道授业，应严惩之。</p>
@@ -407,9 +407,9 @@ Hello 2012, I&#8217;m coming, and happy new year!</p>
   
   <entry>
     <title type="html"><![CDATA[关于易网库ASP性能]]></title>
-    <link href="http://imlcl.com/blog/2011/12/21/asp/"/>
+    <link href="http://imlcl.github.io/blog/2011/12/21/asp/"/>
     <updated>2011-12-21T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2011/12/21/asp</id>
+    <id>http://imlcl.github.io/blog/2011/12/21/asp</id>
     <content type="html"><![CDATA[<p>因为某些原因，学校网站需要暂时放到免备案主机空间，就选了朋友感觉不错的<a href="http://www.webweb.com/">易网库</a></p>
 
 <p>买的是无限型，当时比较恶心就是独立IP要自己买，400元啊，现在都有送的，~！@#￥%……&amp;*（）</p>
@@ -424,9 +424,9 @@ Hello 2012, I&#8217;m coming, and happy new year!</p>
   
   <entry>
     <title type="html"><![CDATA[又说程序员]]></title>
-    <link href="http://imlcl.com/blog/2011/12/18/programmer/"/>
+    <link href="http://imlcl.github.io/blog/2011/12/18/programmer/"/>
     <updated>2011-12-18T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2011/12/18/programmer</id>
+    <id>http://imlcl.github.io/blog/2011/12/18/programmer</id>
     <content type="html"><![CDATA[<p>看到两篇关于程序员的文章，感觉不错，分享给大家
 <p id="page-title"><a href="http://www.ruanyifeng.com/blog/2011/10/dont_call_yourself_a_programmer.html?20111217174251">不要自称为程序员</a></p>
 <a href="你不必非要给自己找个老板">你不必非要给自己找个老板</a></p>
@@ -435,9 +435,9 @@ Hello 2012, I&#8217;m coming, and happy new year!</p>
   
   <entry>
     <title type="html"><![CDATA[公开课感想]]></title>
-    <link href="http://imlcl.com/blog/2011/12/16/thinkings1/"/>
+    <link href="http://imlcl.github.io/blog/2011/12/16/thinkings1/"/>
     <updated>2011-12-16T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2011/12/16/thinkings1</id>
+    <id>http://imlcl.github.io/blog/2011/12/16/thinkings1</id>
     <content type="html"><![CDATA[<p>昨天，我们西溪小学举行了全镇的综合实践展示活动，而我上了一节信息技术的公开展示课（我觉得就不能叫所谓的展示了），有些感想与大家分享。</p>
 
 <p>在信息技术课堂，我一向以“少讲，多练，自主解决问题，学中玩，玩中学”的主旨进行教学，其实在这里还缺少一点，就是学生之间的互动交流，而在评课过程中，几位老师都同时指出这一点我做得不够。</p>
@@ -460,9 +460,9 @@ Hello 2012, I&#8217;m coming, and happy new year!</p>
   
   <entry>
     <title type="html"><![CDATA[共鸣]]></title>
-    <link href="http://imlcl.com/blog/2011/12/13/sound1/"/>
+    <link href="http://imlcl.github.io/blog/2011/12/13/sound1/"/>
     <updated>2011-12-13T00:00:00+08:00</updated>
-    <id>http://imlcl.com/blog/2011/12/13/sound1</id>
+    <id>http://imlcl.github.io/blog/2011/12/13/sound1</id>
     <content type="html"><![CDATA[<p><a href="http://blog.vgod.tw/2011/10/29/impact/">http://blog.vgod.tw/2011/10/29/impact/</a></p>
 
 <p>觉得这文章不错<br />

@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://imlcl.com/sitemap.xml 
+Sitemap: http://imlcl.github.io/sitemap.xml 
