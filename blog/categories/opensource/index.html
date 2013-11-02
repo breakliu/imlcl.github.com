@@ -2,89 +2,99 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
+	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<meta charset="utf-8">
-	<title>Category: opensource - 大头龙仔Blog</title>
-    <meta name="author" content="imlcl">
-    
-	<meta name="description" content="Category: opensource">
-	
+	<title>Category: opensource  | 大头龙仔Blog</title>
+
+<meta name="author" content="imlcl"> 
+
+<meta name="description" content="Category: opensource"> <meta name="keywords" content="">
+
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.ico" rel="shortcut icon">
-    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
 
-    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
 
-    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+          if (id) {
+            el = $('#' + id);
 
-    <!-- remove or comment it to disable ajaxification -->   
-    <script src="/javascripts/ajaxify.js"></script>
-   
-    
-    
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
 
+	
 </head>
 
 
 <body>
-    <div id="wrapper">
-    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
-<h1 class="animated bounceInDown">
-    <div id="headerbg">
-        imlcl
-    </div>
-</h1>
-<br>
-
-<ul id="social-links" style="text-align:center">
-  
-  <!-- GitHub -->
-  <li>
-  <a href="https://github.com/imlcl" class="github" title="Github"></a>
-  </li>
-  
-  
-  
-  
-  
-  
-  
-  
+	<header id="header" class="inner"><h1><a href="/">大头龙仔Blog</a></h1>
+<h4>A strong man can save himself. A great man can save another.</h4>
+<nav id="main-nav"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
 </ul>
-
-
-<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
-<ul id="nav">
-	<li id="ajax"><a href="/index.html">Home</a></li>
-    <li id="ajax"><a href="/blog/archives/index.html">Blog</a></li>
-	<li id="ajax"><a href="/about/index.html">About</a></li>
-    <li><a href="/atom.xml">RSS</a></li>
-    
-    <li>
-    <div id="dark">
-        <form method="get" action="/search.html" id="search">
-            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
-        </form>
-    </div>
-    </li>
-        
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
 </ul>
-
-
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com.au/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:imlcl.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
 
 
 </header>
 
-<div id="toload">
-<!-- begin toload --> 
-    <div id="content" class="inner">
-        
+	<div id="content" class="inner">
 	
 
 
@@ -93,43 +103,45 @@
 	<section class="archives"><h1 class="year">2012</h1>
 
 <article>
-  <h2 class="title"><a href="/blog/2012/09/13/git-gitignore/">Git和.gitignore</a></h2>
+	<h2 class="title"><a href="/blog/2012/09/13/git-gitignore/">Git和.gitignore</a></h2>
 	<div class="meta">
-		<span class="date">Sep 13</span>
-		<span class="tags">
+		<div class="date">Sep 13</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2012/09/13/git-gitignore/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2012/01/10/rubygems/">来自淘宝网的Rubygems镜像</a></h2>
+	<h2 class="title"><a href="/blog/2012/01/10/rubygems/">来自淘宝网的Rubygems镜像</a></h2>
 	<div class="meta">
-		<span class="date">Jan 10</span>
-		<span class="tags">
+		<div class="date">Jan 10</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2012/01/10/rubygems/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
-
 
 	
 
@@ -141,148 +153,155 @@
 	<section class="archives"><h1 class="year">2010</h1>
 
 <article>
-  <h2 class="title"><a href="/blog/2010/10/06/gentoo-emerge-world/">Gentoo Emerge World</a></h2>
+	<h2 class="title"><a href="/blog/2010/10/06/gentoo-emerge-world/">Gentoo Emerge World</a></h2>
 	<div class="meta">
-		<span class="date">Oct  6</span>
-		<span class="tags">
+		<div class="date">Oct  6</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/geek/'>geek</a>, <a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2010/10/06/gentoo-emerge-world/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2010/04/09/ppt-2/">不错的PPT两则</a></h2>
+	<h2 class="title"><a href="/blog/2010/04/09/ppt-2/">不错的PPT两则</a></h2>
 	<div class="meta">
-		<span class="date">Apr  9</span>
-		<span class="tags">
+		<div class="date">Apr  9</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2010/04/09/ppt-2/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2010/03/08/genkernel-modify-menu-lst/">genkernel支持自动修改menu.lst</a></h2>
+	<h2 class="title"><a href="/blog/2010/03/08/genkernel-modify-menu-lst/">genkernel支持自动修改menu.lst</a></h2>
 	<div class="meta">
-		<span class="date">Mar  8</span>
-		<span class="tags">
+		<div class="date">Mar  8</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2010/03/08/genkernel-modify-menu-lst/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2010/03/08/dive-into-python-cn/">Dive Into Python中文版</a></h2>
+	<h2 class="title"><a href="/blog/2010/03/08/dive-into-python-cn/">Dive Into Python中文版</a></h2>
 	<div class="meta">
-		<span class="date">Mar  8</span>
-		<span class="tags">
+		<div class="date">Mar  8</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2010/03/08/dive-into-python-cn/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2010/03/01/rage-arch/">Rage Arch</a></h2>
+	<h2 class="title"><a href="/blog/2010/03/01/rage-arch/">Rage Arch</a></h2>
 	<div class="meta">
-		<span class="date">Mar  1</span>
-		<span class="tags">
+		<div class="date">Mar  1</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2010/03/01/rage-arch/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2010/02/15/arg_too_long_1/">命令行字符串过长的问题</a></h2>
+	<h2 class="title"><a href="/blog/2010/02/15/arg_too_long_1/">命令行字符串过长的问题</a></h2>
 	<div class="meta">
-		<span class="date">Feb 15</span>
-		<span class="tags">
+		<div class="date">Feb 15</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2010/02/15/arg_too_long_1/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2010/01/26/mit_sikuli_release/">MIT推出面向大众的图形脚本语言Sikuli</a></h2>
+	<h2 class="title"><a href="/blog/2010/01/26/mit_sikuli_release/">MIT推出面向大众的图形脚本语言Sikuli</a></h2>
 	<div class="meta">
-		<span class="date">Jan 26</span>
-		<span class="tags">
+		<div class="date">Jan 26</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2010/01/26/mit_sikuli_release/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
-
 
 	
 
@@ -294,127 +313,133 @@
 	<section class="archives"><h1 class="year">2009</h1>
 
 <article>
-  <h2 class="title"><a href="/blog/2009/12/08/kernel24-ich7/">2.4内核支持ICH7</a></h2>
+	<h2 class="title"><a href="/blog/2009/12/08/kernel24-ich7/">2.4内核支持ICH7</a></h2>
 	<div class="meta">
-		<span class="date">Dec  8</span>
-		<span class="tags">
+		<div class="date">Dec  8</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2009/12/08/kernel24-ich7/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2009/09/23/about-devfs-sysfs/">关于devfs和sysfs</a></h2>
+	<h2 class="title"><a href="/blog/2009/09/23/about-devfs-sysfs/">关于devfs和sysfs</a></h2>
 	<div class="meta">
-		<span class="date">Sep 23</span>
-		<span class="tags">
+		<div class="date">Sep 23</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2009/09/23/about-devfs-sysfs/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2009/07/08/milepost-gcc/">Milepost GCC</a></h2>
+	<h2 class="title"><a href="/blog/2009/07/08/milepost-gcc/">Milepost GCC</a></h2>
 	<div class="meta">
-		<span class="date">Jul  8</span>
-		<span class="tags">
+		<div class="date">Jul  8</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2009/07/08/milepost-gcc/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2009/05/20/slackware64-current-made-publiczz/">Slackware64 -current Made Public!(zz)</a></h2>
+	<h2 class="title"><a href="/blog/2009/05/20/slackware64-current-made-publiczz/">Slackware64 -current made public!(zz)</a></h2>
 	<div class="meta">
-		<span class="date">May 20</span>
-		<span class="tags">
+		<div class="date">May 20</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2009/05/20/slackware64-current-made-publiczz/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2009/03/26/llfs/">LLFS</a></h2>
+	<h2 class="title"><a href="/blog/2009/03/26/llfs/">LLFS</a></h2>
 	<div class="meta">
-		<span class="date">Mar 26</span>
-		<span class="tags">
+		<div class="date">Mar 26</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2009/03/26/llfs/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2009/03/19/linux-initrdimg/">关于Linux里的initrd.img这个东东</a></h2>
+	<h2 class="title"><a href="/blog/2009/03/19/linux-initrdimg/">关于Linux里的initrd.img这个东东</a></h2>
 	<div class="meta">
-		<span class="date">Mar 19</span>
-		<span class="tags">
+		<div class="date">Mar 19</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2009/03/19/linux-initrdimg/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
-
 
 	
 
@@ -426,604 +451,627 @@
 	<section class="archives"><h1 class="year">2008</h1>
 
 <article>
-  <h2 class="title"><a href="/blog/2008/12/26/slackware-122-vim-bug/">Slackware 12.2的vim Bug</a></h2>
+	<h2 class="title"><a href="/blog/2008/12/26/slackware-122-vim-bug/">slackware 12.2的vim bug</a></h2>
 	<div class="meta">
-		<span class="date">Dec 26</span>
-		<span class="tags">
+		<div class="date">Dec 26</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/12/26/slackware-122-vim-bug/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/12/18/slackware121-122/">slackware12.1简单升级到12.2</a></h2>
+	<h2 class="title"><a href="/blog/2008/12/18/slackware121-122/">slackware12.1简单升级到12.2</a></h2>
 	<div class="meta">
-		<span class="date">Dec 18</span>
-		<span class="tags">
+		<div class="date">Dec 18</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/12/18/slackware121-122/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/12/15/proftpd-open-anonymous/">关于proftpd开启anonymous访问权限</a></h2>
+	<h2 class="title"><a href="/blog/2008/12/15/proftpd-open-anonymous/">关于proftpd开启anonymous访问权限</a></h2>
 	<div class="meta">
-		<span class="date">Dec 15</span>
-		<span class="tags">
+		<div class="date">Dec 15</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/12/15/proftpd-open-anonymous/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/12/13/about-slackware-font/">关于slackware的字体美化</a></h2>
+	<h2 class="title"><a href="/blog/2008/12/13/about-slackware-font/">关于slackware的字体美化</a></h2>
 	<div class="meta">
-		<span class="date">Dec 13</span>
-		<span class="tags">
+		<div class="date">Dec 13</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/12/13/about-slackware-font/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/12/11/slackware-122-is-released/">Slackware 12.2 Is Released</a></h2>
+	<h2 class="title"><a href="/blog/2008/12/11/slackware-122-is-released/">Slackware 12.2 is released</a></h2>
 	<div class="meta">
-		<span class="date">Dec 11</span>
-		<span class="tags">
+		<div class="date">Dec 11</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/12/11/slackware-122-is-released/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/12/08/turn-around-1/">转了一圈</a></h2>
+	<h2 class="title"><a href="/blog/2008/12/08/turn-around-1/">转了一圈</a></h2>
 	<div class="meta">
-		<span class="date">Dec  8</span>
-		<span class="tags">
+		<div class="date">Dec  8</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/12/08/turn-around-1/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/11/13/open-source-travel-manual/">开源世界旅行手册(zz)</a></h2>
+	<h2 class="title"><a href="/blog/2008/11/13/open-source-travel-manual/">开源世界旅行手册(zz)</a></h2>
 	<div class="meta">
-		<span class="date">Nov 13</span>
-		<span class="tags">
+		<div class="date">Nov 13</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/11/13/open-source-travel-manual/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/11/04/slackware-packages-info/">Slackware安装包全系列说明(zz)</a></h2>
+	<h2 class="title"><a href="/blog/2008/11/04/slackware-packages-info/">Slackware安装包全系列说明(zz)</a></h2>
 	<div class="meta">
-		<span class="date">Nov  4</span>
-		<span class="tags">
+		<div class="date">Nov  4</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/11/04/slackware-packages-info/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/11/02/lfs-installed-complete/">LFS达成</a></h2>
+	<h2 class="title"><a href="/blog/2008/11/02/lfs-installed-complete/">LFS达成</a></h2>
 	<div class="meta">
-		<span class="date">Nov  2</span>
-		<span class="tags">
+		<div class="date">Nov  2</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/11/02/lfs-installed-complete/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/10/22/reinstall-lfs/">下定决心装一次lfs</a></h2>
+	<h2 class="title"><a href="/blog/2008/10/22/reinstall-lfs/">下定决心装一次lfs</a></h2>
 	<div class="meta">
-		<span class="date">Oct 22</span>
-		<span class="tags">
+		<div class="date">Oct 22</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/10/22/reinstall-lfs/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/10/18/linux-machine-should-be-old/">都说玩Linux机子不能新</a></h2>
+	<h2 class="title"><a href="/blog/2008/10/18/linux-machine-should-be-old/">都说玩Linux机子不能新</a></h2>
 	<div class="meta">
-		<span class="date">Oct 18</span>
-		<span class="tags">
+		<div class="date">Oct 18</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/10/18/linux-machine-should-be-old/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/09/05/google-protobuf/">Google数据结构protobuf</a></h2>
+	<h2 class="title"><a href="/blog/2008/09/05/google-protobuf/">google数据结构protobuf</a></h2>
 	<div class="meta">
-		<span class="date">Sep  5</span>
-		<span class="tags">
+		<div class="date">Sep  5</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/09/05/google-protobuf/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/08/22/slackware-change-logo/">Slackware换了图标</a></h2>
+	<h2 class="title"><a href="/blog/2008/08/22/slackware-change-logo/">slackware换了图标</a></h2>
 	<div class="meta">
-		<span class="date">Aug 22</span>
-		<span class="tags">
+		<div class="date">Aug 22</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/08/22/slackware-change-logo/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/08/15/install-slackware-121-1/">安装slackware 12.1的方法</a></h2>
+	<h2 class="title"><a href="/blog/2008/08/15/install-slackware-121-1/">安装slackware 12.1的方法</a></h2>
 	<div class="meta">
-		<span class="date">Aug 15</span>
-		<span class="tags">
+		<div class="date">Aug 15</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/08/15/install-slackware-121-1/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/07/31/recommand-emacs-info/">推荐一些学习emacs的资料</a></h2>
+	<h2 class="title"><a href="/blog/2008/07/31/recommand-emacs-info/">推荐一些学习emacs的资料</a></h2>
 	<div class="meta">
-		<span class="date">Jul 31</span>
-		<span class="tags">
+		<div class="date">Jul 31</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/misc/'>misc</a>, <a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/07/31/recommand-emacs-info/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/07/12/the-saliva/">口水仗</a></h2>
+	<h2 class="title"><a href="/blog/2008/07/12/the-saliva/">口水仗</a></h2>
 	<div class="meta">
-		<span class="date">Jul 12</span>
-		<span class="tags">
+		<div class="date">Jul 12</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/07/12/the-saliva/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/06/09/about-hans-reiser/">关于Hans Reiser</a></h2>
+	<h2 class="title"><a href="/blog/2008/06/09/about-hans-reiser/">关于Hans Reiser</a></h2>
 	<div class="meta">
-		<span class="date">Jun  9</span>
-		<span class="tags">
+		<div class="date">Jun  9</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/06/09/about-hans-reiser/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/05/30/if-linux-is-a-beautiful-girl/">如果Linux是美女(zz)</a></h2>
+	<h2 class="title"><a href="/blog/2008/05/30/if-linux-is-a-beautiful-girl/">如果Linux是美女(zz)</a></h2>
 	<div class="meta">
-		<span class="date">May 30</span>
-		<span class="tags">
+		<div class="date">May 30</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/05/30/if-linux-is-a-beautiful-girl/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/05/27/slacktips-alias-funslackware-linux/">SlackTips: Alias fun='Slackware Linux'(转)</a></h2>
+	<h2 class="title"><a href="/blog/2008/05/27/slacktips-alias-funslackware-linux/">SlackTips: alias fun='Slackware Linux'(转)</a></h2>
 	<div class="meta">
-		<span class="date">May 27</span>
-		<span class="tags">
+		<div class="date">May 27</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/05/27/slacktips-alias-funslackware-linux/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/05/21/slackware-mirror-1/">Slackware Mirror</a></h2>
+	<h2 class="title"><a href="/blog/2008/05/21/slackware-mirror-1/">slackware mirror</a></h2>
 	<div class="meta">
-		<span class="date">May 21</span>
-		<span class="tags">
+		<div class="date">May 21</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/05/21/slackware-mirror-1/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/05/09/lua-web-server-kepler/">一个Lua Web服务器: Kepler</a></h2>
+	<h2 class="title"><a href="/blog/2008/05/09/lua-web-server-kepler/">一个Lua Web服务器: Kepler</a></h2>
 	<div class="meta">
-		<span class="date">May  9</span>
-		<span class="tags">
+		<div class="date">May  9</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/05/09/lua-web-server-kepler/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/05/03/slackware-121-release-1/">Slackware 12.1发布</a></h2>
+	<h2 class="title"><a href="/blog/2008/05/03/slackware-121-release-1/">slackware 12.1发布</a></h2>
 	<div class="meta">
-		<span class="date">May  3</span>
-		<span class="tags">
+		<div class="date">May  3</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/05/03/slackware-121-release-1/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/04/01/boost-release-2/">Boost 1.35.0发布</a></h2>
+	<h2 class="title"><a href="/blog/2008/04/01/boost-release-2/">boost 1.35.0发布</a></h2>
 	<div class="meta">
-		<span class="date">Apr  1</span>
-		<span class="tags">
+		<div class="date">Apr  1</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/04/01/boost-release-2/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/02/29/cide-codeblocks/">一个不错的跨平台开源C++IDE－－Code::Blocks</a></h2>
+	<h2 class="title"><a href="/blog/2008/02/29/cide-codeblocks/">一个不错的跨平台开源C++IDE－－Code::Blocks</a></h2>
 	<div class="meta">
-		<span class="date">Feb 29</span>
-		<span class="tags">
+		<div class="date">Feb 29</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/02/29/cide-codeblocks/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/02/28/freebsd-70-release-2/">FreeBSD 7.0-RELEASE 正式发布了</a></h2>
+	<h2 class="title"><a href="/blog/2008/02/28/freebsd-70-release-2/">FreeBSD 7.0-RELEASE 正式发布了</a></h2>
 	<div class="meta">
-		<span class="date">Feb 28</span>
-		<span class="tags">
+		<div class="date">Feb 28</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/02/28/freebsd-70-release-2/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/02/15/the-most-popular-operating-systems%E8%BD%AC/">The Most Popular Operating Systems(转)</a></h2>
+	<h2 class="title"><a href="/blog/2008/02/15/the-most-popular-operating-systems%E8%BD%AC/">The Most Popular Operating Systems(转)</a></h2>
 	<div class="meta">
-		<span class="date">Feb 15</span>
-		<span class="tags">
+		<div class="date">Feb 15</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/02/15/the-most-popular-operating-systems%E8%BD%AC/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/02/07/freebsdchina-wiki/">FreeBSDChina Wiki</a></h2>
+	<h2 class="title"><a href="/blog/2008/02/07/freebsdchina-wiki/">FreeBSDChina Wiki</a></h2>
 	<div class="meta">
-		<span class="date">Feb  7</span>
-		<span class="tags">
+		<div class="date">Feb  7</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/02/07/freebsdchina-wiki/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
 	
 
 
 <article>
-  <h2 class="title"><a href="/blog/2008/02/07/freebsd-70-release-process-1/">FreeBSD 7.0 Release Process</a></h2>
+	<h2 class="title"><a href="/blog/2008/02/07/freebsd-70-release-process-1/">FreeBSD 7.0 Release Process</a></h2>
 	<div class="meta">
-		<span class="date">Feb  7</span>
-		<span class="tags">
+		<div class="date">Feb  7</div>
+		
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
+</div>
 
-</span>
+
 	    
 	    <span class="comments"><a href="/blog/2008/02/07/freebsd-70-release-process-1/#disqus_thread">Comments</a></span>
 	    
 	</div>
 </article>
 
-
-
-    </div>
-    <footer id="footer">
-    <div style="display:inline">
-    Copyright &copy; 2013
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
 
     imlcl
-. Powered by <a href="http://octopress.org">Octopress</a> | 
-    Theme <a href="http://github.com/panks/fabric">fabric</a> by <a href="http://panks.me">Pankaj Kumar</a>
-</div>
 
-
-    </footer>
-    <script src="/javascripts/fabric.js"></script>
+<br>
+Powered by Octopress.
+</footer>
+	<script src="/javascripts/slash.js"></script>
 <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
@@ -1040,7 +1088,7 @@
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -1049,14 +1097,5 @@
 
 
 
-<!-- end toload --> 
-</div>
-</div>
-<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
-<script type="text/javascript">
-/*<![CDATA[*/
-;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
-/*]]>*/
-</script><!-- remove it to remove the scroll to top button -->
 </body>
 </html>

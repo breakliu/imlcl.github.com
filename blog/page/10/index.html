@@ -2,90 +2,144 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
+	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<meta charset="utf-8">
-	<title>大头龙仔Blog</title>
-    <meta name="author" content="imlcl">
-    
-	<meta name="description" content="Published on: 2009-07-17 Tags: misc sourceforge2009年度最佳开源项目可以投票了，可以到这里看看http://sourceforge.net/community/cca09/
-C++DBC, FLOW3, GoldenDict, &hellip;">
-	
+	<title>A strong man can save himself. A great man can save another.  | 大头龙仔Blog</title>
+
+<meta name="author" content="imlcl"> 
+
+<meta name="description" content="imlcl.com 大头龙仔 blog 随笔感悟 编程技术 it web php ruby rails c linux server slackware"> <meta name="keywords" content="">
+
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.ico" rel="shortcut icon">
-    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
 
-    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
 
-    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+          if (id) {
+            el = $('#' + id);
 
-    <!-- remove or comment it to disable ajaxification -->   
-    <script src="/javascripts/ajaxify.js"></script>
-   
-    
-    
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
 
+	
 </head>
 
 
 <body>
-    <div id="wrapper">
-    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
-<h1 class="animated bounceInDown">
-    <div id="headerbg">
-        imlcl
-    </div>
-</h1>
-<br>
-
-<ul id="social-links" style="text-align:center">
-  
-  <!-- GitHub -->
-  <li>
-  <a href="https://github.com/imlcl" class="github" title="Github"></a>
-  </li>
-  
-  
-  
-  
-  
-  
-  
-  
+	<header id="header" class="inner"><h1><a href="/">大头龙仔Blog</a></h1>
+<h4>A strong man can save himself. A great man can save another.</h4>
+<nav id="main-nav"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
 </ul>
-
-
-<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
-<ul id="nav">
-	<li id="ajax"><a href="/index.html">Home</a></li>
-    <li id="ajax"><a href="/blog/archives/index.html">Blog</a></li>
-	<li id="ajax"><a href="/about/index.html">About</a></li>
-    <li><a href="/atom.xml">RSS</a></li>
-    
-    <li>
-    <div id="dark">
-        <form method="get" action="/search.html" id="search">
-            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
-        </form>
-    </div>
-    </li>
-        
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
 </ul>
-
-
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com.au/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:imlcl.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
 
 
 </header>
 
-<div id="toload">
-<!-- begin toload --> 
-    <div id="content" class="inner">
-        
+	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/07/18/joel_soft_tr_cn_1/">
+		
+			飙高音(zz)</a>
+	</h2>
+	<div class="entry-content">
+		<p><p><a href="http://www.ruanyifeng.com/blog/2009/07/hitting_the_high_notes.html">http://www.ruanyifeng.com/blog/2009/07/hitting_the_high_notes.html</a></p>
+<p>另有<a href="http://www.ruanyifeng.com/blog/it/mjos/">joel谈软件译文</a></p></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-07-18T00:00:00+08:00" pubdate data-updated="true">2009-07-18</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/misc/'>misc</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2009/07/18/joel_soft_tr_cn_1//blog/page/10/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
@@ -95,9 +149,17 @@ C++DBC, FLOW3, GoldenDict, &hellip;">
 		
 			OSCON 2009</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="entry-content">
+		<p><p>sourceforge2009年度最佳开源项目可以投票了，可以到这里看看<a href="http://sourceforge.net/community/cca09/">http://sourceforge.net/community/cca09/</a></p>
+<p><a href="http://cppdbc.sourceforge.net/index.php">C++DBC</a>, <a href="http://flow3.typo3.org/about/">FLOW3</a>, <a href="http://goldendict.berlios.de/">GoldenDict</a>, <a href="http://www.reactos.org/en/index.html">ReactOS</a>等我比较感兴趣，Notepad++也是sf里的，只不过是Windows下面的程序罢了，不然我一定第一个投，因为现在工作上天天用Notepad++了。</p></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
@@ -110,27 +172,19 @@ C++DBC, FLOW3, GoldenDict, &hellip;">
 
 
 <time datetime="2009-07-17T00:00:00+08:00" pubdate data-updated="true">2009-07-17</time></div>
-      <div class="tags">Tags: 
+	
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/misc/'>misc</a>
 
-
 </div>
-    </div>
-		<p><p>sourceforge2009年度最佳开源项目可以投票了，可以到这里看看<a href="http://sourceforge.net/community/cca09/">http://sourceforge.net/community/cca09/</a></p>
-<p><a href="http://cppdbc.sourceforge.net/index.php">C++DBC</a>, <a href="http://flow3.typo3.org/about/">FLOW3</a>, <a href="http://goldendict.berlios.de/">GoldenDict</a>, <a href="http://www.reactos.org/en/index.html">ReactOS</a>等我比较感兴趣，Notepad++也是sf里的，只不过是Windows下面的程序罢了，不然我一定第一个投，因为现在工作上天天用Notepad++了。</p></p>
 
-		
-		
-	</div>
 
-<div class="meta">
 	
 		<span class="comments"><a href="/blog/2009/07/17/oscon-2009//blog/page/10/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 
     <article class="post">
@@ -140,9 +194,17 @@ C++DBC, FLOW3, GoldenDict, &hellip;">
 		
 			PHP荐书——Pro PHP Patterns Frameworks Testing and More</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="entry-content">
+		<p><p>推荐书名为: Pro PHP Patterns Frameworks Testing and More的一本书，google一下必定找到相关的英文电子书版本。</p>
+<p>另外，很意地发现有Slackware for ARM，详情请看看<a href="http://slackware.com/">http://slackware.com/</a></p></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
@@ -155,27 +217,19 @@ C++DBC, FLOW3, GoldenDict, &hellip;">
 
 
 <time datetime="2009-07-15T00:00:00+08:00" pubdate data-updated="true">2009-07-15</time></div>
-      <div class="tags">Tags: 
+	
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/web/'>web</a>
 
-
 </div>
-    </div>
-		<p><p>推荐书名为: Pro PHP Patterns Frameworks Testing and More的一本书，google一下必定找到相关的英文电子书版本。</p>
-<p>另外，很意地发现有Slackware for ARM，详情请看看<a href="http://slackware.com/">http://slackware.com/</a></p></p>
 
-		
-		
-	</div>
 
-<div class="meta">
 	
 		<span class="comments"><a href="/blog/2009/07/15/php-pro-php-patterns-frameworks-testing-and-more//blog/page/10/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 
     <article class="post">
@@ -185,9 +239,18 @@ C++DBC, FLOW3, GoldenDict, &hellip;">
 		
 			Milepost GCC</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="entry-content">
+		<p><p>前天就发现这个消息，结合Machine Language的GCC编译器，还没试用过，暂时也没看到实际使用测试数据，不知道实际效果如何，但ML的前景我很看好的，有兴趣可以参考：<br />
+<a href="http://ctuning.org/wiki/index.php/Main_Page">http://ctuning.org/wiki/index.php/Main_Page<br />
+</a><a href="http://www.milepost.eu/">http://www.milepost.eu/</a></p></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
@@ -200,28 +263,19 @@ C++DBC, FLOW3, GoldenDict, &hellip;">
 
 
 <time datetime="2009-07-08T00:00:00+08:00" pubdate data-updated="true">2009-07-08</time></div>
-      <div class="tags">Tags: 
+	
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
-
 </div>
-    </div>
-		<p><p>前天就发现这个消息，结合Machine Language的GCC编译器，还没试用过，暂时也没看到实际使用测试数据，不知道实际效果如何，但ML的前景我很看好的，有兴趣可以参考：<br />
-<a href="http://ctuning.org/wiki/index.php/Main_Page">http://ctuning.org/wiki/index.php/Main_Page<br />
-</a><a href="http://www.milepost.eu/">http://www.milepost.eu/</a></p></p>
 
-		
-		
-	</div>
 
-<div class="meta">
 	
 		<span class="comments"><a href="/blog/2009/07/08/milepost-gcc//blog/page/10/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 
     <article class="post">
@@ -231,29 +285,7 @@ C++DBC, FLOW3, GoldenDict, &hellip;">
 		
 			推荐两个XML库</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-07-04T00:00:00+08:00" pubdate data-updated="true">2009-07-04</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='/blog/categories/geek/'>geek</a>
-
-
-</div>
-    </div>
+	<div class="entry-content">
 		<p><p>XML库方面，我知道的有<a href="http://expat.sourceforge.net/">expat</a>、<a href="http://xmlsoft.org/">libxml2</a>、<a href="http://www.grinninglizard.com/tinyxml/">tinyxml</a>和<a href="http://www.minixml.org/">minixml</a>。</p>
 <p>听说expat应用很广，但我没有用过&hellip;&hellip;libxml2这个东东给我的印象是拥肿。</p>
 <p>我今天推荐后两者，一个是基于C++编写的tinyxml库，另一个是基于C编写的minixml库。</p>
@@ -273,12 +305,34 @@ SRCS行去掉xmltest.cpp<br />
 		
 	</div>
 
+
 <div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-07-04T00:00:00+08:00" pubdate data-updated="true">2009-07-04</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/geek/'>geek</a>
+
+</div>
+
+
 	
 		<span class="comments"><a href="/blog/2009/07/04/recommand-2-xml-lib//blog/page/10/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 
     <article class="post">
@@ -288,9 +342,16 @@ SRCS行去掉xmltest.cpp<br />
 		
 			PHP 5.3.0发布</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="entry-content">
+		<p><p>PHP5.3昨天<a href="http://php.net/ChangeLog-5.php">发布</a>，同时带来了<a href="http://cn2.php.net/manual/en/migration53.new-features.php">新特性</a>，当然也有<a href="http://cn2.php.net/manual/en/migration53.incompatible.php">向后不兼容</a>。在新特性里，说得比较多的是namespaces, 静态绑定, goto的支持和闭包，有兴趣可以关注一下。</p></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
@@ -303,26 +364,19 @@ SRCS行去掉xmltest.cpp<br />
 
 
 <time datetime="2009-07-02T00:00:00+08:00" pubdate data-updated="true">2009-07-02</time></div>
-      <div class="tags">Tags: 
+	
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/web/'>web</a>
 
-
 </div>
-    </div>
-		<p><p>PHP5.3昨天<a href="http://php.net/ChangeLog-5.php">发布</a>，同时带来了<a href="http://cn2.php.net/manual/en/migration53.new-features.php">新特性</a>，当然也有<a href="http://cn2.php.net/manual/en/migration53.incompatible.php">向后不兼容</a>。在新特性里，说得比较多的是namespaces, 静态绑定, goto的支持和闭包，有兴趣可以关注一下。</p></p>
 
-		
-		
-	</div>
 
-<div class="meta">
 	
 		<span class="comments"><a href="/blog/2009/07/02/php-5-3-0//blog/page/10/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 
     <article class="post">
@@ -332,9 +386,17 @@ SRCS行去掉xmltest.cpp<br />
 		
 			Michael Jackson 45度前倾的专利分析(zz)</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="entry-content">
+		<p><p>&nbsp;via:&nbsp;<a href="http://www.zfreet.com/post/michael-jackson-creating-anti-gravity-illusion.html">http://www.zfreet.com/post/michael-jackson-creating-anti-gravity-illusion.html</a></p>
+<p>非常有意思啊，虽然我不太喜欢MJ</p></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
@@ -347,27 +409,19 @@ SRCS行去掉xmltest.cpp<br />
 
 
 <time datetime="2009-07-02T00:00:00+08:00" pubdate data-updated="true">2009-07-02</time></div>
-      <div class="tags">Tags: 
+	
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/misc/'>misc</a>
 
-
 </div>
-    </div>
-		<p><p>&nbsp;via:&nbsp;<a href="http://www.zfreet.com/post/michael-jackson-creating-anti-gravity-illusion.html">http://www.zfreet.com/post/michael-jackson-creating-anti-gravity-illusion.html</a></p>
-<p>非常有意思啊，虽然我不太喜欢MJ</p></p>
 
-		
-		
-	</div>
 
-<div class="meta">
 	
 		<span class="comments"><a href="/blog/2009/07/02/michael-jackson-45//blog/page/10/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 
     <article class="post">
@@ -377,9 +431,18 @@ SRCS行去掉xmltest.cpp<br />
 		
 			忙乎</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="entry-content">
+		<p><p>最近几乎失去自由似的忙乎忙乎&hellip;&hellip;前几天调一个vector问题竟然花去我一天多时间，才发现push_back进去的是一个对象，而不是指针~！&middot;#￥%&hellip;&hellip;&mdash;&mdash;*（）</p>
+<p>忙乎忙乎，几乎都不想去写文字，就连前天Bird和阿SA过来，都加班到九点才见到他们，相聚时间虽短，但对于我来说，已经足够了，下次补回来，同时也表扬一下soondo先。</p>
+<p>忙乎忙乎，昨晚开始玩<a href="http://www.verycd.com/topics/2751320/">《原型体》(Prototype)</a>，有点血腥，但画面很漂亮，操作畅快，自从鬼泣4后，都没玩到这么强打击感的大作了，推荐大家试试这个作品。另外也推荐一下<a href="http://www.verycd.com/topics/2755132/">Virtua Tennis 2009</a>，三代我玩过，感觉很好。</p></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
@@ -392,28 +455,19 @@ SRCS行去掉xmltest.cpp<br />
 
 
 <time datetime="2009-07-02T00:00:00+08:00" pubdate data-updated="true">2009-07-02</time></div>
-      <div class="tags">Tags: 
+	
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
 
-
 </div>
-    </div>
-		<p><p>最近几乎失去自由似的忙乎忙乎&hellip;&hellip;前几天调一个vector问题竟然花去我一天多时间，才发现push_back进去的是一个对象，而不是指针~！&middot;#￥%&hellip;&hellip;&mdash;&mdash;*（）</p>
-<p>忙乎忙乎，几乎都不想去写文字，就连前天Bird和阿SA过来，都加班到九点才见到他们，相聚时间虽短，但对于我来说，已经足够了，下次补回来，同时也表扬一下soondo先。</p>
-<p>忙乎忙乎，昨晚开始玩<a href="http://www.verycd.com/topics/2751320/">《原型体》(Prototype)</a>，有点血腥，但画面很漂亮，操作畅快，自从鬼泣4后，都没玩到这么强打击感的大作了，推荐大家试试这个作品。另外也推荐一下<a href="http://www.verycd.com/topics/2755132/">Virtua Tennis 2009</a>，三代我玩过，感觉很好。</p></p>
 
-		
-		
-	</div>
 
-<div class="meta">
 	
 		<span class="comments"><a href="/blog/2009/07/02/busy-1//blog/page/10/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 
     <article class="post">
@@ -423,29 +477,7 @@ SRCS行去掉xmltest.cpp<br />
 		
 			十个让你变成糟糕的程序员的行为(zz)</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-06-27T00:00:00+08:00" pubdate data-updated="true">2009-06-27</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='/blog/categories/misc/'>misc</a>
-
-
-</div>
-    </div>
+	<div class="entry-content">
 		<p><p>via: <a href="http://cocre.com/?p=1081">http://cocre.com/?p=1081</a></p>
 <p>之前本站发表过《<a href="http://cocre.com/?p=222" target="_blank">优秀程序员的十个习惯</a>》以及《<a rel="bookmark" href="http://cocre.com/?p=428">程序员需要具备的基本技能</a>》，那是我们需要去学习和培养的。这里，我们主要讨论十个糟糕程序员的特征，主要是需要让我们去避免和小心的。</p>
 <p><strong>1) 情绪化的思维</strong></p>
@@ -496,24 +528,9 @@ SRCS行去掉xmltest.cpp<br />
 		
 	</div>
 
+
 <div class="meta">
-	
-		<span class="comments"><a href="/blog/2009/06/27/ten_programming_bad_act_zz//blog/page/10/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2009/06/09/meet_scnucrew/">
-		
-			又见SCNUCREW</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="date">
 
 
 
@@ -525,15 +542,30 @@ SRCS行去掉xmltest.cpp<br />
   
 
 
-<time datetime="2009-06-09T00:00:00+08:00" pubdate data-updated="true">2009-06-09</time></div>
-      <div class="tags">Tags: 
+<time datetime="2009-06-27T00:00:00+08:00" pubdate data-updated="true">2009-06-27</time></div>
+	
 
+<div class="tags">
 
-	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
-
+	<a class='category' href='/blog/categories/misc/'>misc</a>
 
 </div>
-    </div>
+
+
+	
+		<span class="comments"><a href="/blog/2009/06/27/ten_programming_bad_act_zz//blog/page/10/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/06/09/meet_scnucrew/">
+		
+			又见SCNUCREW</a>
+	</h2>
+	<div class="entry-content">
 		<p><p><a target="_blank" href="http://img.bimg.126.net/photo/nEyMn9cNXHMrfi6YFIqXBw==/1739233881095955442.jpg"><img alt="" src="http://img.bimg.126.net/photo/nEyMn9cNXHMrfi6YFIqXBw==/1739233881095955442.jpg" /></a></p>
 <p>6月5日，华师舞蹈专场Vol.2，我回去了。<br />
 那天晚上的专场很精彩、很热闹，我很开心。这段时间大家也辛苦了，一边顶着考试的压力，一边准备一件件琐碎的事情，感谢每一个为专场付出过人的:)<br />
@@ -561,24 +593,9 @@ SRCS行去掉xmltest.cpp<br />
 		
 	</div>
 
+
 <div class="meta">
-	
-		<span class="comments"><a href="/blog/2009/06/09/meet_scnucrew//blog/page/10/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2009/05/20/slackware64-current-made-publiczz/">
-		
-			Slackware64 -current Made Public!(zz)</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="date">
 
 
 
@@ -590,32 +607,20 @@ SRCS行去掉xmltest.cpp<br />
   
 
 
-<time datetime="2009-05-20T00:00:00+08:00" pubdate data-updated="true">2009-05-20</time></div>
-      <div class="tags">Tags: 
+<time datetime="2009-06-09T00:00:00+08:00" pubdate data-updated="true">2009-06-09</time></div>
+	
 
+<div class="tags">
 
-	<a class='category' href='/blog/categories/opensource/'>opensource</a>
-
+	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
 
 </div>
-    </div>
-		<p><p><span class="Apple-style-span" style="word-spacing: 0px; font: 16px 'times new roman'; text-transform: none; color: rgb(0,0,0); text-indent: 0px; white-space: normal; letter-spacing: normal; border-collapse: separate; orphans: 2; widows: 2; webkit-border-horizontal-spacing: 2px; webkit-border-vertical-spacing: 2px; webkit-text-decorations-in-effect: none; webkit-text-size-adjust: auto; webkit-text-stroke-width: 0">[tap tap tap]&#8230; Is this thing on? ;-)</span></p>
-<p>Ready or not, Slackware has now gone 64-bit with an official x86_64 port being maintained in-sync with the regular x86 -current branch. DVDs will be available for purchase from the Slackware store when Slackware 13.0 is released. Many thanks go out to the Slackware team for their help with this branch and a special thank you to Eric Hameleers who did the real heavy lifting re-compiling everything for this architecture, testing, re-testing, and staying in-sync with -current.</p>
-<p>We&#8217;ve been developing and testing Slackware64 for quite a while. Most of the team is already using Slackware64 on their personal machines, and things are working well enough that it is time to let the community check our work.</p>
-<p>We&#8217;d like to thank the unofficial 64 bit projects for taking up the slack for us for so long so that we could take our time getting everything just right. Without those alternatives, we would have been pressured to get things out before they were really ready.</p>
-<p>As always &#8211; have fun!</p>
-<p>Pat and the Slackware crew</p></p>
 
-		
-		
-	</div>
 
-<div class="meta">
 	
-		<span class="comments"><a href="/blog/2009/05/20/slackware64-current-made-publiczz//blog/page/10/index.html#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/blog/2009/06/09/meet_scnucrew//blog/page/10/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 <nav id="pagenavi">
     
@@ -624,22 +629,16 @@ SRCS行去掉xmltest.cpp<br />
     
         <a href="/blog/page/11/" class="next">Next</a>
     
-    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
-</nav>
-
-    </div>
-    <footer id="footer">
-    <div style="display:inline">
-    Copyright &copy; 2013
+    <div class="center"><a href="/archives">Blog Archives</a></div>
+</nav></div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
 
     imlcl
-. Powered by <a href="http://octopress.org">Octopress</a> | 
-    Theme <a href="http://github.com/panks/fabric">fabric</a> by <a href="http://panks.me">Pankaj Kumar</a>
-</div>
 
-
-    </footer>
-    <script src="/javascripts/fabric.js"></script>
+<br>
+Powered by Octopress.
+</footer>
+	<script src="/javascripts/slash.js"></script>
 <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
@@ -656,7 +655,7 @@ SRCS行去掉xmltest.cpp<br />
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -665,14 +664,5 @@ SRCS行去掉xmltest.cpp<br />
 
 
 
-<!-- end toload --> 
-</div>
-</div>
-<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
-<script type="text/javascript">
-/*<![CDATA[*/
-;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
-/*]]>*/
-</script><!-- remove it to remove the scroll to top button -->
 </body>
 </html>

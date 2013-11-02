@@ -2,89 +2,158 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
+	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<meta charset="utf-8">
-	<title>大头龙仔Blog</title>
-    <meta name="author" content="imlcl">
-    
-	<meta name="description" content="Published on: 2011-03-14 Tags: sunshine 想来想去，还是用这个游戏名称作为标题。 这次培训和理科综合的老师们一起培训，其中七个心理老师是一个科组。这次培训，让我对心理老师的工作有了个全新的了解，另外，这次培训过程中，她们弄了很多意味深长的小游戏，“抓住幸福” &hellip;">
-	
+	<title>A strong man can save himself. A great man can save another.  | 大头龙仔Blog</title>
+
+<meta name="author" content="imlcl"> 
+
+<meta name="description" content="imlcl.com 大头龙仔 blog 随笔感悟 编程技术 it web php ruby rails c linux server slackware"> <meta name="keywords" content="">
+
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.ico" rel="shortcut icon">
-    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
 
-    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
 
-    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+          if (id) {
+            el = $('#' + id);
 
-    <!-- remove or comment it to disable ajaxification -->   
-    <script src="/javascripts/ajaxify.js"></script>
-   
-    
-    
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
 
+	
 </head>
 
 
 <body>
-    <div id="wrapper">
-    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
-<h1 class="animated bounceInDown">
-    <div id="headerbg">
-        imlcl
-    </div>
-</h1>
-<br>
-
-<ul id="social-links" style="text-align:center">
-  
-  <!-- GitHub -->
-  <li>
-  <a href="https://github.com/imlcl" class="github" title="Github"></a>
-  </li>
-  
-  
-  
-  
-  
-  
-  
-  
+	<header id="header" class="inner"><h1><a href="/">大头龙仔Blog</a></h1>
+<h4>A strong man can save himself. A great man can save another.</h4>
+<nav id="main-nav"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
 </ul>
-
-
-<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
-<ul id="nav">
-	<li id="ajax"><a href="/index.html">Home</a></li>
-    <li id="ajax"><a href="/blog/archives/index.html">Blog</a></li>
-	<li id="ajax"><a href="/about/index.html">About</a></li>
-    <li><a href="/atom.xml">RSS</a></li>
-    
-    <li>
-    <div id="dark">
-        <form method="get" action="/search.html" id="search">
-            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
-        </form>
-    </div>
-    </li>
-        
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
 </ul>
-
-
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com.au/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:imlcl.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
 
 
 </header>
 
-<div id="toload">
-<!-- begin toload --> 
-    <div id="content" class="inner">
-        
+	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/03/21/wtk1/">
+		
+			这个……</a>
+	</h2>
+	<div class="entry-content">
+		<p><div id="_mcePaste">兔子月薪5千，打算用20万建一个窝。</div>
+<div id="_mcePaste">狼不允许，说私自建就是违章建筑，只允许向王八买。</div>
+<div id="_mcePaste">王八是搞房地产的，先用20万贿赂狼取得开发权，再用50万元向狼买这块地，投资10万元把兔子窝盖好，向兔子要价200万元。</div>
+<div id="_mcePaste">兔子拿不出这么多钱于是向狐狸借200万元，连本带利300万，20年还清，</div>
+<div id="_mcePaste">兔子全家二十年给狐狸打工。</div>
+<div id="_mcePaste">狼、狐狸、王八都挣了钱，只有兔子亏，连孩子也不敢生了。</div>
+<div id="_mcePaste">兔子越来越少，狼觉得这样下去大家没肉吃，于是调控。</div>
+<div id="_mcePaste">狼显得非常重视兔窝价格太贵的问题，研究部署了遏制兔窝价格过快上涨的政策措施。最后认定兔窝价格卖得太高的原因是因为有的兔子买了兔窝后自己不住而进行倒卖所致。</div>
+<div id="_mcePaste">于是狼规定：兔子买了兔窝5年内卖了的，要向狼交纳营业税。</div>
+<div id="_mcePaste">结果兔窝价格没降下来，狼却发了大财。</div>
+<div id="_mcePaste">狼又对狐狸说：只借钱给首先交了更多钱的兔子，并提高高利贷的利息，多买兔子窝的不借，全交现钱。</div>
+<div id="_mcePaste">这样狐狸在兔子的购窝过程中也发了财。</div>
+<div id="_mcePaste">王八借着兔窝价格上涨的行情，以更高的价格向狼买地，并转转嫁到猪窝价格上，再加价后卖给兔子。</div>
+<div id="_mcePaste">看到狼辛苦地为自己操劳，兔子很感谢狼，但还是发现兔窝价格越来越贵。</div>
+<div id="_mcePaste">狼说：这事挺复杂，还真不太好办，不过兔子们放心，我们将继续调控，可以向已经有兔窝的兔子征收兔窝税┉</div>
+<div id="_mcePaste">看见的转发一下，因为有些兔子还不太明白</div></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-21T00:00:00+08:00" pubdate data-updated="true">2011-03-21</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/misc/'>misc</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2011/03/21/wtk1//blog/page/4/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
@@ -94,29 +163,7 @@
 		
 			抓住幸福</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-03-14T00:00:00+08:00" pubdate data-updated="true">2011-03-14</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
-
-
-</div>
-    </div>
+	<div class="entry-content">
 		<p>想来想去，还是用这个游戏名称作为标题。</p>
 
 <p>这次培训和理科综合的老师们一起培训，其中七个心理老师是一个科组。这次培训，让我对心理老师的工作有了个全新的了解，另外，这次培训过程中，她们弄了很多意味深长的小游戏，“抓住幸福”就是其中一个。</p>
@@ -131,24 +178,9 @@
 		
 	</div>
 
+
 <div class="meta">
-	
-		<span class="comments"><a href="/blog/2011/03/14/catch-heart//blog/page/4/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2011/02/16/summary-2010/">
-		
-			舍东东总结2010</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="date">
 
 
 
@@ -160,15 +192,30 @@
   
 
 
-<time datetime="2011-02-16T00:00:00+08:00" pubdate data-updated="true">2011-02-16</time></div>
-      <div class="tags">Tags: 
+<time datetime="2011-03-14T00:00:00+08:00" pubdate data-updated="true">2011-03-14</time></div>
+	
 
+<div class="tags">
 
-	<a class='category' href='/blog/categories/misc/'>misc</a>
-
+	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
 
 </div>
-    </div>
+
+
+	
+		<span class="comments"><a href="/blog/2011/03/14/catch-heart//blog/page/4/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/02/16/summary-2010/">
+		
+			舍东东总结2010</a>
+	</h2>
+	<div class="entry-content">
 		<p>2010年总结：<br />
 据国家有关当局统计，改革开放三十年来，升值最快的是住房、墓地、乌纱帽、月饼和二奶。<br />
 贬值最快的是职称、文凭、道德、诚信和人民币。<br />
@@ -216,12 +263,34 @@
 		
 	</div>
 
+
 <div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-02-16T00:00:00+08:00" pubdate data-updated="true">2011-02-16</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/misc/'>misc</a>
+
+</div>
+
+
 	
 		<span class="comments"><a href="/blog/2011/02/16/summary-2010//blog/page/4/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 
     <article class="post">
@@ -231,9 +300,21 @@
 		
 			迁移完成</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="entry-content">
+		<p>这种迁移速度会给人BS的，不过也没有办法啦</p>
+
+<p>现在不再租用Linode的VPS，省去一些钱，都放到托管主机上去了，因为主机是用IIS的，所以我也不得不用IIS来跳WP<br />
+之前打算用Apache来做Proxy，发现这样还是不太好，毕竟无端端多了个中间Proxy，感觉就是不爽，加之在Win上Apache的稳定性稍差，故放弃之</p>
+
+<p>总之迁移完成吧</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
@@ -246,31 +327,19 @@
 
 
 <time datetime="2010-12-27T00:00:00+08:00" pubdate data-updated="true">2010-12-27</time></div>
-      <div class="tags">Tags: 
+	
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/server/'>server</a>
 
-
 </div>
-    </div>
-		<p>这种迁移速度会给人BS的，不过也没有办法啦</p>
 
-<p>现在不再租用Linode的VPS，省去一些钱，都放到托管主机上去了，因为主机是用IIS的，所以我也不得不用IIS来跳WP<br />
-之前打算用Apache来做Proxy，发现这样还是不太好，毕竟无端端多了个中间Proxy，感觉就是不爽，加之在Win上Apache的稳定性稍差，故放弃之</p>
 
-<p>总之迁移完成吧</p>
-
-		
-		
-	</div>
-
-<div class="meta">
 	
 		<span class="comments"><a href="/blog/2010/12/27/migration-complete//blog/page/4/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 
     <article class="post">
@@ -280,29 +349,7 @@
 		
 			小息一阵</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-25T00:00:00+08:00" pubdate data-updated="true">2010-11-25</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
-
-
-</div>
-    </div>
+	<div class="entry-content">
 		<p>学校现代教育技术中期评估终于暂告一段落<br />
 其实这段时间写了很多自我感觉质量很低的代码，心情郁闷<br />
 那种一杯茶，一部电影，一部游戏，再疯狂代码的生活好像离我越来越远<br />
@@ -315,24 +362,9 @@
 		
 	</div>
 
+
 <div class="meta">
-	
-		<span class="comments"><a href="/blog/2010/11/25/have_a_rest//blog/page/4/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2010/11/25/chaos-eight-sentences/">
-		
-			逆乱八句</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="date">
 
 
 
@@ -345,14 +377,29 @@
 
 
 <time datetime="2010-11-25T00:00:00+08:00" pubdate data-updated="true">2010-11-25</time></div>
-      <div class="tags">Tags: 
+	
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
 
-
 </div>
-    </div>
+
+
+	
+		<span class="comments"><a href="/blog/2010/11/25/have_a_rest//blog/page/4/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/11/25/chaos-eight-sentences/">
+		
+			逆乱八句</a>
+	</h2>
+	<div class="entry-content">
 		<p>一、最近利用闲暇时间看小说，《斗破苍穹》太慢了，不过最近写得紧凑些了，《神墓》实在太好看了，以辰南“逆乱八式”灵感得出标题<br />
 二、参加大婶婚礼，因为穿着问题而给BS，ungelivable，And星星的问题，总得来说是耿耿于怀<br />
 三、发现DIY现在的确不好做，就像老爸说的任何事情想起来和做起来简直是差天共地，但又有任何事情都会有困难，就看如何去化解，我认为先看方向是否正确，是否值得化解<br />
@@ -375,12 +422,34 @@
 		
 	</div>
 
+
 <div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-11-25T00:00:00+08:00" pubdate data-updated="true">2010-11-25</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
+
+</div>
+
+
 	
 		<span class="comments"><a href="/blog/2010/11/25/chaos-eight-sentences//blog/page/4/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 
     <article class="post">
@@ -390,9 +459,19 @@
 		
 			今天发现数据库损坏了</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="entry-content">
+		<p>如题，一进blog发现没有任何文章，于是登录到后台，发现文章数为0<br />
+因为当时第一反映是怀疑受到攻击，于是又打开linode主页看看是否有受到攻击的新闻，发现没有相关新闻。<br />
+立马ssh到vps，看日志，查了很久，没发现有什么非法进入系统的记录<br />
+之后再看mysql的日志，提示wp_post损坏，需要执行mysql_upgrade和修复，晕死……</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
@@ -405,29 +484,19 @@
 
 
 <time datetime="2010-11-21T00:00:00+08:00" pubdate data-updated="true">2010-11-21</time></div>
-      <div class="tags">Tags: 
+	
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/web/'>web</a>
 
-
 </div>
-    </div>
-		<p>如题，一进blog发现没有任何文章，于是登录到后台，发现文章数为0<br />
-因为当时第一反映是怀疑受到攻击，于是又打开linode主页看看是否有受到攻击的新闻，发现没有相关新闻。<br />
-立马ssh到vps，看日志，查了很久，没发现有什么非法进入系统的记录<br />
-之后再看mysql的日志，提示wp_post损坏，需要执行mysql_upgrade和修复，晕死……</p>
 
-		
-		
-	</div>
 
-<div class="meta">
 	
 		<span class="comments"><a href="/blog/2010/11/21/db_crash//blog/page/4/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 
     <article class="post">
@@ -437,29 +506,7 @@
 		
 			在360与腾讯过家家时，我们该醒醒了 [枣报特评](转自爱枣报)</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-11-05T00:00:00+08:00" pubdate data-updated="true">2010-11-05</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='/blog/categories/misc/'>misc</a>
-
-
-</div>
-    </div>
+	<div class="entry-content">
 		<p>腾讯葫芦娃大战360，热闹非凡。看微博，口水互喷引来水军无数；看桌面，接连弹窗好似交警罚单；看业界，坐待鹬蚌相争只等渔翁之利；看我们，无处 申冤闭眼任凭蹂躏。</p>
 
 <p>其中利害关系，坊间传言颇多，剧情狗血，请各位自己上Google搜（不要上百度，百度结盟QQ，未必能保证公正，现在前十条都是360负面）。再 则商家互斗，也属正常，我不参和为谁摇旗呐喊，也不对就此事件本身进行评论。</p>
@@ -520,24 +567,9 @@
 		
 	</div>
 
+
 <div class="meta">
-	
-		<span class="comments"><a href="/blog/2010/11/05/360_vs_tx_and_thing//blog/page/4/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2010/11/01/curl_vote_beyond/">
-		
-			使用curl实现刷票功能要点</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="date">
 
 
 
@@ -549,15 +581,30 @@
   
 
 
-<time datetime="2010-11-01T00:00:00+08:00" pubdate data-updated="true">2010-11-01</time></div>
-      <div class="tags">Tags: 
+<time datetime="2010-11-05T00:00:00+08:00" pubdate data-updated="true">2010-11-05</time></div>
+	
 
+<div class="tags">
 
-	<a class='category' href='/blog/categories/geek/'>geek</a>, <a class='category' href='/blog/categories/web/'>web</a>
-
+	<a class='category' href='/blog/categories/misc/'>misc</a>
 
 </div>
-    </div>
+
+
+	
+		<span class="comments"><a href="/blog/2010/11/05/360_vs_tx_and_thing//blog/page/4/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/11/01/curl_vote_beyond/">
+		
+			使用curl实现刷票功能要点</a>
+	</h2>
+	<div class="entry-content">
 		<p>因为别人在刷票，所以为了保证公平性，我也来刷。外界不断变化，唯独理解原理，把握要点才能应对，所以我这次不说如何来实现，只来说要点，你只要有一定Web编程的基础得了。为什么拿curl来开刀？嗯……想了很久，只能说：这东东是个好东西-_-!!!</p>
 
 <p>无论你用shell命令行，还是用PHP的curl模块，抑或是C/C++来调用相关的接口等，都可实现之，不过可能要看相关的接口文档<br />
@@ -576,24 +623,9 @@ curl的Man Page在这里<a href="http://curl.haxx.se/docs/manpage.html">http://c
 		
 	</div>
 
+
 <div class="meta">
-	
-		<span class="comments"><a href="/blog/2010/11/01/curl_vote_beyond//blog/page/4/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2010/10/20/school_project/">
-		
-			学校预算方案</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="date">
 
 
 
@@ -605,15 +637,30 @@ curl的Man Page在这里<a href="http://curl.haxx.se/docs/manpage.html">http://c
   
 
 
-<time datetime="2010-10-20T00:00:00+08:00" pubdate data-updated="true">2010-10-20</time></div>
-      <div class="tags">Tags: 
+<time datetime="2010-11-01T00:00:00+08:00" pubdate data-updated="true">2010-11-01</time></div>
+	
 
+<div class="tags">
 
-	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
-
+	<a class='category' href='/blog/categories/geek/'>geek</a>, <a class='category' href='/blog/categories/web/'>web</a>
 
 </div>
-    </div>
+
+
+	
+		<span class="comments"><a href="/blog/2010/11/01/curl_vote_beyond//blog/page/4/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2010/10/20/school_project/">
+		
+			学校预算方案</a>
+	</h2>
+	<div class="entry-content">
 		<p>一个方案是用锐捷的核心交换机，一个方案是H3C的，令我以外的是前者竟然加了个深信服网上行为管理设置进去……后者则搞了个中科天威的SSL VPN</p>
 
 <p>方案看到头都大，不过关注的几个要点都有啦，就不用管了。最希望是把整套旧校园网络更换之，因为都五六年了，N个交换机坏了去修，端口严重不足……</p>
@@ -627,24 +674,9 @@ curl的Man Page在这里<a href="http://curl.haxx.se/docs/manpage.html">http://c
 		
 	</div>
 
+
 <div class="meta">
-	
-		<span class="comments"><a href="/blog/2010/10/20/school_project//blog/page/4/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2010/10/14/morning-read/">
-		
-			我也一起早读</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="date">
 
 
 
@@ -656,31 +688,20 @@ curl的Man Page在这里<a href="http://curl.haxx.se/docs/manpage.html">http://c
   
 
 
-<time datetime="2010-10-14T00:00:00+08:00" pubdate data-updated="true">2010-10-14</time></div>
-      <div class="tags">Tags: 
+<time datetime="2010-10-20T00:00:00+08:00" pubdate data-updated="true">2010-10-20</time></div>
+	
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
 
-
 </div>
-    </div>
-		<p>现在早读时间我也跟着一起早读，虽然平时都会读书，但现在是要保证尽可能稳定的读书时间，最近都读Python相关的书</p>
 
-<p>用两个词来讲，最近是时间和瓶颈。</p>
 
-<p>很多事情自己没有亲自做过都不会甘心，我在想，究竟我做对了多少，做错了又是多少？</p>
-
-		
-		
-	</div>
-
-<div class="meta">
 	
-		<span class="comments"><a href="/blog/2010/10/14/morning-read//blog/page/4/index.html#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/blog/2010/10/20/school_project//blog/page/4/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 <nav id="pagenavi">
     
@@ -689,22 +710,16 @@ curl的Man Page在这里<a href="http://curl.haxx.se/docs/manpage.html">http://c
     
         <a href="/blog/page/5/" class="next">Next</a>
     
-    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
-</nav>
-
-    </div>
-    <footer id="footer">
-    <div style="display:inline">
-    Copyright &copy; 2013
+    <div class="center"><a href="/archives">Blog Archives</a></div>
+</nav></div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
 
     imlcl
-. Powered by <a href="http://octopress.org">Octopress</a> | 
-    Theme <a href="http://github.com/panks/fabric">fabric</a> by <a href="http://panks.me">Pankaj Kumar</a>
-</div>
 
-
-    </footer>
-    <script src="/javascripts/fabric.js"></script>
+<br>
+Powered by Octopress.
+</footer>
+	<script src="/javascripts/slash.js"></script>
 <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
@@ -721,7 +736,7 @@ curl的Man Page在这里<a href="http://curl.haxx.se/docs/manpage.html">http://c
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -730,14 +745,5 @@ curl的Man Page在这里<a href="http://curl.haxx.se/docs/manpage.html">http://c
 
 
 
-<!-- end toload --> 
-</div>
-</div>
-<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
-<script type="text/javascript">
-/*<![CDATA[*/
-;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
-/*]]>*/
-</script><!-- remove it to remove the scroll to top button -->
 </body>
 </html>

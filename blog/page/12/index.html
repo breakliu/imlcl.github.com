@@ -2,89 +2,189 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
+	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<meta charset="utf-8">
-	<title>大头龙仔Blog</title>
-    <meta name="author" content="imlcl">
-    
-	<meta name="description" content=" Published on: 2009-02-16 Tags: misc 很不错的一个系列，请看这里 Comments ">
-	
+	<title>A strong man can save himself. A great man can save another.  | 大头龙仔Blog</title>
+
+<meta name="author" content="imlcl"> 
+
+<meta name="description" content="imlcl.com 大头龙仔 blog 随笔感悟 编程技术 it web php ruby rails c linux server slackware"> <meta name="keywords" content="">
+
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.ico" rel="shortcut icon">
-    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
 
-    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
 
-    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+          if (id) {
+            el = $('#' + id);
 
-    <!-- remove or comment it to disable ajaxification -->   
-    <script src="/javascripts/ajaxify.js"></script>
-   
-    
-    
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
 
+	
 </head>
 
 
 <body>
-    <div id="wrapper">
-    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
-<h1 class="animated bounceInDown">
-    <div id="headerbg">
-        imlcl
-    </div>
-</h1>
-<br>
-
-<ul id="social-links" style="text-align:center">
-  
-  <!-- GitHub -->
-  <li>
-  <a href="https://github.com/imlcl" class="github" title="Github"></a>
-  </li>
-  
-  
-  
-  
-  
-  
-  
-  
+	<header id="header" class="inner"><h1><a href="/">大头龙仔Blog</a></h1>
+<h4>A strong man can save himself. A great man can save another.</h4>
+<nav id="main-nav"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
 </ul>
-
-
-<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
-<ul id="nav">
-	<li id="ajax"><a href="/index.html">Home</a></li>
-    <li id="ajax"><a href="/blog/archives/index.html">Blog</a></li>
-	<li id="ajax"><a href="/about/index.html">About</a></li>
-    <li><a href="/atom.xml">RSS</a></li>
-    
-    <li>
-    <div id="dark">
-        <form method="get" action="/search.html" id="search">
-            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
-        </form>
-    </div>
-    </li>
-        
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
 </ul>
-
-
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com.au/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:imlcl.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
 
 
 </header>
 
-<div id="toload">
-<!-- begin toload --> 
-    <div id="content" class="inner">
-        
+	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/02/17/installpkg/">
+		
+			剖析slackware Pkgtools之installpkg篇</a>
+	</h2>
+	<div class="entry-content">
+		<p><span class="content">作者: slackcode</span>
+pkgtools版本: pkgtools-12.1.0-noarch-7.tgz<br />
+我并不是什么高手牛人，我只是路过，觉得好玩，所以拿出来看看，希望与大家分享，共同学习<br />
+如有转载，请注明出处:)<br />
+———————————————————-<br />
+installpkg源文件请到这里:
+<a href="http://darkstar.ist.utl.pt/pub/slackware/slackware-12.2/source/a/pkgtools/scripts/installpkg">http://darkstar.ist.utl.pt/pub/slackware/slackware-12.2/source/a/pkgtools/scripts/installpkg</a>
+<pre lang="bash"># If installpkg encounters a problem, it will return a non-zero error code.
+# If it finds more than one problem (i.e. with a list of packages) you'll only
+# hear about the most recent one. :)</pre></p>
+
+<p># 1 = tar returned error code<br />
+# 2 = failed &#8216;gzip -l package&#8217;<br />
+# 3 = does not end in .tgz<br />
+# 4 = not a file<br />
+# 99 = user abort from menu mode<br />
+EXITSTATUS=0
+installpkg执行结束后的返回值, 即$?
+<pre lang="bash"># So that we know what to expect...
+umask 022        # 当前权限 与 (777 - 022)
+TAR=tar-1.13
+$TAR --help 1> /dev/null 2> /dev/null
+if [ ! $? = 0 ]; then
+    TAR=tar
+fi</pre>
+这里是判断$TAR &#8211;help的返回值,命令执行成功一般都为0,失败为非0,$?即为这个返回值
+<pre lang="bash">if [ ! "`LC_MESSAGES=C $TAR --version`" = "tar (GNU tar) 1.13</pre></p>
+
+<p>Copyright (C) 1988, 92,93,94,95,96,97,98, 1999 Free Software Foundation, Inc.<br />
+This is free software; see the source for copying conditions.  There is NO<br />
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p>
+
+<p>Written by John Gilmore and Jay Fenlason.&#8221; ]; then<br />
+    echo &#8220;WARNING: pkgtools are unstable with tar > 1.13.&#8221;<br />
+    echo &#8221;         You should provide a &#34;tar-1.13&#34; in your \$PATH.&#8221;<br />
+    sleep 5<br />
+fi
+
+installpkg定义tar-1.13为稳定版本, slackware 12.2有tar-1.13和tar-1.16.1<br />
+再看看tar是哪个版本<br />
+ls -l /bin/tar*<br />
+-rwxr-xr-x 1 root root 233196 2006-12-14 13:37 /bin/tar*<br />
+-rwxr-xr-x 1 root root 115036 2006-12-14 13:37 /bin/tar-1.13*<br />
+lrwxrwxrwx 1 root root      3 2008-12-09 23:00 /bin/tar-1.16.1 -> tar<br />
+从这个看来, tar即tar-1.16.1了<br />
+if [ ! &#8220;`LC_MESSAGES=C $TAR &#8211;version | head -n 1`&#8221; = &#8220;tar (GNU tar) 1.13&#8221; ]不是更简单么?不过可能出于严谨,作者认为只有版本号对是不够的,还要判断整个version<br />
+另这个LC_MESSAGES=C是需要的,我使用系统默认的en_US发现有问题,我知道使用C就是使用127bit的ASCII码系统,至于为什么en_US会不行,希望有高人能回答一下
+
+		
+		<a href="/blog/2009/02/17/installpkg/" class="more-link">Read on &rarr;</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-17T00:00:00+08:00" pubdate data-updated="true">2009-02-17</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/geek/'>geek</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2009/02/17/installpkg//blog/page/12/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
@@ -94,9 +194,16 @@
 		
 			推荐《如果你遇到这种情况，会怎样选择呢？》</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="entry-content">
+		<p><p>很不错的一个系列，请看<a href="http://www.xiaolai.net/index.php/archives/5556.html">这里</a></p></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
@@ -109,26 +216,19 @@
 
 
 <time datetime="2009-02-16T00:00:00+08:00" pubdate data-updated="true">2009-02-16</time></div>
-      <div class="tags">Tags: 
+	
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/misc/'>misc</a>
 
-
 </div>
-    </div>
-		<p><p>很不错的一个系列，请看<a href="http://www.xiaolai.net/index.php/archives/5556.html">这里</a></p></p>
 
-		
-		
-	</div>
 
-<div class="meta">
 	
 		<span class="comments"><a href="/blog/2009/02/16/what-your-choice//blog/page/12/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 
     <article class="post">
@@ -138,29 +238,7 @@
 		
 			让你回味一生的100句凡人语录(zz)</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-02-16T00:00:00+08:00" pubdate data-updated="true">2009-02-16</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='/blog/categories/misc/'>misc</a>
-
-
-</div>
-    </div>
+	<div class="entry-content">
 		<p><p>via: <a href="http://www.feiniaoji.com/article/1141.shtml">http://www.feiniaoji.com/article/1141.shtml</a></p>
 <p>1、一个人有生就有死，但只要你活着，就要以最好的方式活下去。<br />
 2、当我们失去的时候，才知道自己曾经拥有。<br />
@@ -267,24 +345,9 @@
 		
 	</div>
 
+
 <div class="meta">
-	
-		<span class="comments"><a href="/blog/2009/02/16/review-100-sentences//blog/page/12/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2009/02/13/en-1-2/">
-		
-			嗯</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="date">
 
 
 
@@ -296,15 +359,30 @@
   
 
 
-<time datetime="2009-02-13T00:00:00+08:00" pubdate data-updated="true">2009-02-13</time></div>
-      <div class="tags">Tags: 
+<time datetime="2009-02-16T00:00:00+08:00" pubdate data-updated="true">2009-02-16</time></div>
+	
 
+<div class="tags">
 
-	<a class='category' href='/blog/categories/geek/'>geek</a>, <a class='category' href='/blog/categories/web/'>web</a>
-
+	<a class='category' href='/blog/categories/misc/'>misc</a>
 
 </div>
-    </div>
+
+
+	
+		<span class="comments"><a href="/blog/2009/02/16/review-100-sentences//blog/page/12/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/02/13/en-1-2/">
+		
+			嗯</a>
+	</h2>
+	<div class="entry-content">
 		<p><p>前几天完成了《剖析slackware pkgtools之installpkg篇》，但还没放上来。原因是发现wp-syntax的高亮有问题，然后搜啊，终于搜到<a href="http://mjxian.cn/wordpress/archives/fckeditor-for-wordpress-wp-syntax.html/comment-page-1#comment-170">这里</a>可以把问题解决，不过lz那段php代码是有问题的，我更正如下解决问题</p>
 <p>$match = str_replace(&quot;&amp;amp;&quot;, &quot;&amp;&quot;, $match);<br />
 $match = str_replace(&quot;&amp;lt&quot;, &quot;&lt;&quot;, $match);<br />
@@ -317,24 +395,9 @@ $match = str_replace(&#8216;&amp;quot&#8217;, &#8216;&quot;&#8217;, $match);&nbs
 		
 	</div>
 
+
 <div class="meta">
-	
-		<span class="comments"><a href="/blog/2009/02/13/en-1-2//blog/page/12/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2009/02/09/mba-good-story/">
-		
-			一中大MBA朋友总结的语录(zz)</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="date">
 
 
 
@@ -346,15 +409,30 @@ $match = str_replace(&#8216;&amp;quot&#8217;, &#8216;&quot;&#8217;, $match);&nbs
   
 
 
-<time datetime="2009-02-09T00:00:00+08:00" pubdate data-updated="true">2009-02-09</time></div>
-      <div class="tags">Tags: 
+<time datetime="2009-02-13T00:00:00+08:00" pubdate data-updated="true">2009-02-13</time></div>
+	
 
+<div class="tags">
 
-	<a class='category' href='/blog/categories/misc/'>misc</a>
-
+	<a class='category' href='/blog/categories/geek/'>geek</a>, <a class='category' href='/blog/categories/web/'>web</a>
 
 </div>
-    </div>
+
+
+	
+		<span class="comments"><a href="/blog/2009/02/13/en-1-2//blog/page/12/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/02/09/mba-good-story/">
+		
+			一中大MBA朋友总结的语录(zz)</a>
+	</h2>
+	<div class="entry-content">
 		<p>1．大家的智商都差不多，有区别的只是坚持。——某GG</p>
 
 <p>2、大家都很优秀，就是看谁更能折腾，或是更能忍耐。——某GG</p>
@@ -403,24 +481,9 @@ $match = str_replace(&#8216;&amp;quot&#8217;, &#8216;&quot;&#8217;, $match);&nbs
 		
 	</div>
 
+
 <div class="meta">
-	
-		<span class="comments"><a href="/blog/2009/02/09/mba-good-story//blog/page/12/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2009/02/06/startup-failure/">
-		
-			如何认别注定要失败的startup(zz)</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="date">
 
 
 
@@ -432,15 +495,30 @@ $match = str_replace(&#8216;&amp;quot&#8217;, &#8216;&quot;&#8217;, $match);&nbs
   
 
 
-<time datetime="2009-02-06T00:00:00+08:00" pubdate data-updated="true">2009-02-06</time></div>
-      <div class="tags">Tags: 
+<time datetime="2009-02-09T00:00:00+08:00" pubdate data-updated="true">2009-02-09</time></div>
+	
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/misc/'>misc</a>
 
-
 </div>
-    </div>
+
+
+	
+		<span class="comments"><a href="/blog/2009/02/09/mba-good-story//blog/page/12/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/02/06/startup-failure/">
+		
+			如何认别注定要失败的startup(zz)</a>
+	</h2>
+	<div class="entry-content">
 		<p>via: <a href="http://groups.google.com/group/pongba/browse_thread/thread/4d1082f5e0256f1d">http://groups.google.com/group/pongba/browse_thread/thread/4d1082f5e0256f1d</a></p>
 
 <p>如何认别注定要失败的startup</p>
@@ -470,24 +548,9 @@ Anti Pattern(<a rel="nofollow" href="http://zh.wikipedia.org/wiki/%E5%8F%8D%E9%9
 		
 	</div>
 
+
 <div class="meta">
-	
-		<span class="comments"><a href="/blog/2009/02/06/startup-failure//blog/page/12/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2009/01/28/slackware-pkgtools-1/">
-		
-			剖析slackware Pkgtools之概述篇</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="date">
 
 
 
@@ -499,15 +562,30 @@ Anti Pattern(<a rel="nofollow" href="http://zh.wikipedia.org/wiki/%E5%8F%8D%E9%9
   
 
 
-<time datetime="2009-01-28T00:00:00+08:00" pubdate data-updated="true">2009-01-28</time></div>
-      <div class="tags">Tags: 
+<time datetime="2009-02-06T00:00:00+08:00" pubdate data-updated="true">2009-02-06</time></div>
+	
 
+<div class="tags">
 
-	<a class='category' href='/blog/categories/geek/'>geek</a>
-
+	<a class='category' href='/blog/categories/misc/'>misc</a>
 
 </div>
-    </div>
+
+
+	
+		<span class="comments"><a href="/blog/2009/02/06/startup-failure//blog/page/12/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/01/28/slackware-pkgtools-1/">
+		
+			剖析slackware Pkgtools之概述篇</a>
+	</h2>
+	<div class="entry-content">
 		<p>作者: slackcode<br />
 pkgtools版本: pkgtools-12.1.0-noarch-7.tgz<br />
 我并不是什么高手牛人，我只是路过，觉得好玩，所以拿出来看看，希望与大家分享，共同学习<br />
@@ -533,24 +611,9 @@ pkgtools版本: pkgtools-12.1.0-noarch-7.tgz<br />
 		
 	</div>
 
+
 <div class="meta">
-	
-		<span class="comments"><a href="/blog/2009/01/28/slackware-pkgtools-1//blog/page/12/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2009/01/27/2009-festival/">
-		
-			2009春节</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="date">
 
 
 
@@ -562,15 +625,30 @@ pkgtools版本: pkgtools-12.1.0-noarch-7.tgz<br />
   
 
 
-<time datetime="2009-01-27T00:00:00+08:00" pubdate data-updated="true">2009-01-27</time></div>
-      <div class="tags">Tags: 
+<time datetime="2009-01-28T00:00:00+08:00" pubdate data-updated="true">2009-01-28</time></div>
+	
 
+<div class="tags">
 
-	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
-
+	<a class='category' href='/blog/categories/geek/'>geek</a>
 
 </div>
-    </div>
+
+
+	
+		<span class="comments"><a href="/blog/2009/01/28/slackware-pkgtools-1//blog/page/12/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/01/27/2009-festival/">
+		
+			2009春节</a>
+	</h2>
+	<div class="entry-content">
 		<p>2009的春节很冷，还下着小雨，本来冷清的街道就显得更孤单了。</p>
 
 <p>2009的春节，更多的是伤感，但还是要开心的。</p>
@@ -585,12 +663,34 @@ pkgtools版本: pkgtools-12.1.0-noarch-7.tgz<br />
 		
 	</div>
 
+
 <div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-01-27T00:00:00+08:00" pubdate data-updated="true">2009-01-27</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
+
+</div>
+
+
 	
 		<span class="comments"><a href="/blog/2009/01/27/2009-festival//blog/page/12/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 
     <article class="post">
@@ -600,9 +700,16 @@ pkgtools版本: pkgtools-12.1.0-noarch-7.tgz<br />
 		
 			E71入手</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="entry-content">
+		<p>考虑很久，最终入手E71，拿在手上，感觉很满足，并且对自己说：以后也不会再买WM的手机</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
@@ -615,26 +722,19 @@ pkgtools版本: pkgtools-12.1.0-noarch-7.tgz<br />
 
 
 <time datetime="2009-01-21T00:00:00+08:00" pubdate data-updated="true">2009-01-21</time></div>
-      <div class="tags">Tags: 
+	
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
 
-
 </div>
-    </div>
-		<p>考虑很久，最终入手E71，拿在手上，感觉很满足，并且对自己说：以后也不会再买WM的手机</p>
 
-		
-		
-	</div>
 
-<div class="meta">
 	
 		<span class="comments"><a href="/blog/2009/01/21/e71-buy//blog/page/12/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 
     <article class="post">
@@ -644,29 +744,7 @@ pkgtools版本: pkgtools-12.1.0-noarch-7.tgz<br />
 		
 			在shell脚本里使用函数</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-01-16T00:00:00+08:00" pubdate data-updated="true">2009-01-16</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='/blog/categories/geek/'>geek</a>
-
-
-</div>
-    </div>
+	<div class="entry-content">
 		<p>之所以要在shell里使用函数，大多数因为脚本中有大量重复的代码，这些代码可以整理封装为函数使用，使脚本更加易读，维护性也更好，下面就来说说如何在Linux shell脚本里使用函数。</p>
 
 <p>在shell脚本里，定义函数有两种格式：
@@ -699,24 +777,9 @@ chmod 0777 /home/lcl/test.sh;
 		
 	</div>
 
+
 <div class="meta">
-	
-		<span class="comments"><a href="/blog/2009/01/16/shell-using-func//blog/page/12/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2009/01/16/holidays-things/">
-		
-			放假做些事儿</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="date">
 
 
 
@@ -729,37 +792,19 @@ chmod 0777 /home/lcl/test.sh;
 
 
 <time datetime="2009-01-16T00:00:00+08:00" pubdate data-updated="true">2009-01-16</time></div>
-      <div class="tags">Tags: 
+	
 
+<div class="tags">
 
-	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
-
+	<a class='category' href='/blog/categories/geek/'>geek</a>
 
 </div>
-    </div>
-		<p>快放假啦，一直好想写一个《剖析slackware pkgtools系列》，这次放到这个假其完成。除此外当然还有SoonDo布置的任务，还要读一个文学作品，其它时间当然是玩啦哈哈。</p>
 
-<p>对于《剖析slackware pkgtools》内容，先在这里列个提纲先，有兴趣的读者可以跟进：<br />
-1、剖析slackware pkgtools之概述篇<br />
-2、剖析slackware pkgtools之installpkg篇<br />
-3、剖析slackware pkgtools之upgradepkg篇<br />
-4、剖析slackware pkgtools之removepkg篇<br />
-5、剖析slackware pkgtools之explodepkg、makepkg篇<br />
-6、剖析slackware pkgtools之makebootdisk篇<br />
-7、剖析slackware pkgtools之pkgtool篇</p>
 
-<p>我不是脚本高手，我希望借此机会来学习一下shell脚本，并且也可以深入理解slackware的包机制，欢迎到时一起讨论:-)</p>
-
-		
-		
-	</div>
-
-<div class="meta">
 	
-		<span class="comments"><a href="/blog/2009/01/16/holidays-things//blog/page/12/index.html#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/blog/2009/01/16/shell-using-func//blog/page/12/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 <nav id="pagenavi">
     
@@ -768,22 +813,16 @@ chmod 0777 /home/lcl/test.sh;
     
         <a href="/blog/page/13/" class="next">Next</a>
     
-    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
-</nav>
-
-    </div>
-    <footer id="footer">
-    <div style="display:inline">
-    Copyright &copy; 2013
+    <div class="center"><a href="/archives">Blog Archives</a></div>
+</nav></div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
 
     imlcl
-. Powered by <a href="http://octopress.org">Octopress</a> | 
-    Theme <a href="http://github.com/panks/fabric">fabric</a> by <a href="http://panks.me">Pankaj Kumar</a>
-</div>
 
-
-    </footer>
-    <script src="/javascripts/fabric.js"></script>
+<br>
+Powered by Octopress.
+</footer>
+	<script src="/javascripts/slash.js"></script>
 <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
@@ -800,7 +839,7 @@ chmod 0777 /home/lcl/test.sh;
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -809,14 +848,5 @@ chmod 0777 /home/lcl/test.sh;
 
 
 
-<!-- end toload --> 
-</div>
-</div>
-<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
-<script type="text/javascript">
-/*<![CDATA[*/
-;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
-/*]]>*/
-</script><!-- remove it to remove the scroll to top button -->
 </body>
 </html>

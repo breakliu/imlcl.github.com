@@ -2,91 +2,148 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
+	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<meta charset="utf-8">
-	<title>大头龙仔Blog</title>
-    <meta name="author" content="imlcl">
-    
-	<meta name="description" content="Published on: 2009-05-19 Tags: sunshine 今天老爸51岁，祝他生日快乐，身体健康，最重要是少抽点烟。
-昨天看到刘未鹏的我在南大的七年，令我想起小时候的很多很多&hellip;&hellip;
-当中印象很深刻是老爸在初二时买了部电脑给我， &hellip;">
-	
+	<title>A strong man can save himself. A great man can save another.  | 大头龙仔Blog</title>
+
+<meta name="author" content="imlcl"> 
+
+<meta name="description" content="imlcl.com 大头龙仔 blog 随笔感悟 编程技术 it web php ruby rails c linux server slackware"> <meta name="keywords" content="">
+
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.ico" rel="shortcut icon">
-    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
 
-    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
 
-    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+          if (id) {
+            el = $('#' + id);
 
-    <!-- remove or comment it to disable ajaxification -->   
-    <script src="/javascripts/ajaxify.js"></script>
-   
-    
-    
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
 
+	
 </head>
 
 
 <body>
-    <div id="wrapper">
-    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
-<h1 class="animated bounceInDown">
-    <div id="headerbg">
-        imlcl
-    </div>
-</h1>
-<br>
-
-<ul id="social-links" style="text-align:center">
-  
-  <!-- GitHub -->
-  <li>
-  <a href="https://github.com/imlcl" class="github" title="Github"></a>
-  </li>
-  
-  
-  
-  
-  
-  
-  
-  
+	<header id="header" class="inner"><h1><a href="/">大头龙仔Blog</a></h1>
+<h4>A strong man can save himself. A great man can save another.</h4>
+<nav id="main-nav"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
 </ul>
-
-
-<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
-<ul id="nav">
-	<li id="ajax"><a href="/index.html">Home</a></li>
-    <li id="ajax"><a href="/blog/archives/index.html">Blog</a></li>
-	<li id="ajax"><a href="/about/index.html">About</a></li>
-    <li><a href="/atom.xml">RSS</a></li>
-    
-    <li>
-    <div id="dark">
-        <form method="get" action="/search.html" id="search">
-            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
-        </form>
-    </div>
-    </li>
-        
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
 </ul>
-
-
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com.au/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:imlcl.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
 
 
 </header>
 
-<div id="toload">
-<!-- begin toload --> 
-    <div id="content" class="inner">
-        
+	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/05/20/slackware64-current-made-publiczz/">
+		
+			Slackware64 -current Made Public!(zz)</a>
+	</h2>
+	<div class="entry-content">
+		<p><p><span class="Apple-style-span" style="word-spacing: 0px; font: 16px 'times new roman'; text-transform: none; color: rgb(0,0,0); text-indent: 0px; white-space: normal; letter-spacing: normal; border-collapse: separate; orphans: 2; widows: 2; webkit-border-horizontal-spacing: 2px; webkit-border-vertical-spacing: 2px; webkit-text-decorations-in-effect: none; webkit-text-size-adjust: auto; webkit-text-stroke-width: 0">[tap tap tap]&#8230; Is this thing on? ;-)</span></p>
+<p>Ready or not, Slackware has now gone 64-bit with an official x86_64 port being maintained in-sync with the regular x86 -current branch. DVDs will be available for purchase from the Slackware store when Slackware 13.0 is released. Many thanks go out to the Slackware team for their help with this branch and a special thank you to Eric Hameleers who did the real heavy lifting re-compiling everything for this architecture, testing, re-testing, and staying in-sync with -current.</p>
+<p>We&#8217;ve been developing and testing Slackware64 for quite a while. Most of the team is already using Slackware64 on their personal machines, and things are working well enough that it is time to let the community check our work.</p>
+<p>We&#8217;d like to thank the unofficial 64 bit projects for taking up the slack for us for so long so that we could take our time getting everything just right. Without those alternatives, we would have been pressured to get things out before they were really ready.</p>
+<p>As always &#8211; have fun!</p>
+<p>Pat and the Slackware crew</p></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-05-20T00:00:00+08:00" pubdate data-updated="true">2009-05-20</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/opensource/'>opensource</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2009/05/20/slackware64-current-made-publiczz//blog/page/11/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
@@ -96,29 +153,7 @@
 		
 			51</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-05-19T00:00:00+08:00" pubdate data-updated="true">2009-05-19</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
-
-
-</div>
-    </div>
+	<div class="entry-content">
 		<p><p>今天老爸51岁，祝他生日快乐，身体健康，最重要是少抽点烟。</p>
 <p>昨天看到刘未鹏的<a href="http://mindhacks.cn/2009/05/17/seven-years-in-nju/">我在南大的七年</a>，令我想起小时候的很多很多&hellip;&hellip;<br />
 当中印象很深刻是老爸在初二时买了部电脑给我，我记得当时配置是Celeron 266 + 32MB memory + Trident 9750显卡，后来给我超到300MHz，加了128MB内存后，用到上大学才换过来。<br />
@@ -133,24 +168,9 @@
 		
 	</div>
 
+
 <div class="meta">
-	
-		<span class="comments"><a href="/blog/2009/05/19/51-what//blog/page/11/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2009/05/01/game_braid/">
-		
-			推荐《时空幻境》(Braid)</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="date">
 
 
 
@@ -162,15 +182,30 @@
   
 
 
-<time datetime="2009-05-01T00:00:00+08:00" pubdate data-updated="true">2009-05-01</time></div>
-      <div class="tags">Tags: 
+<time datetime="2009-05-19T00:00:00+08:00" pubdate data-updated="true">2009-05-19</time></div>
+	
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
 
-
 </div>
-    </div>
+
+
+	
+		<span class="comments"><a href="/blog/2009/05/19/51-what//blog/page/11/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/05/01/game_braid/">
+		
+			推荐《时空幻境》(Braid)</a>
+	</h2>
+	<div class="entry-content">
 		<p><p>《时空幻境》(Braid)，可以到<a href="http://www.verycd.com/topics/2740778/">http://www.verycd.com/topics/2740778/</a>下载，此版本为汉化版。<br />
 而我最一次看到这个游戏的推荐是matrix67的blog上，我立即把这个100MB的游戏下下来。游戏需小，但我惊喜地发现，原来自己很久没玩过这么好的游戏了。而在verycd的评论上，看到转来的一篇文章，弥补了我对这个游戏的理解，我当前进度处在第五世界，也许当我玩爆这个游戏，会有更加新的感受。</p>
 <p>文章(zz)<br />
@@ -224,12 +259,34 @@ Braid中最后的设定是寻找星星，它们可以划过黑暗，照亮Tim的
 		
 	</div>
 
+
 <div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-05-01T00:00:00+08:00" pubdate data-updated="true">2009-05-01</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
+
+</div>
+
+
 	
 		<span class="comments"><a href="/blog/2009/05/01/game_braid//blog/page/11/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 
     <article class="post">
@@ -239,9 +296,18 @@ Braid中最后的设定是寻找星星，它们可以划过黑暗，照亮Tim的
 		
 			IQIQ</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="entry-content">
+		<p><p>在matrix67上看到，很正点，推荐一下大家去看看：</p>
+<p><a title="Permanent Link to 我目前所见过的最难的IQ测试题" rel="bookmark" href="http://www.matrix67.com/blog/archives/1749">我目前所见过的最难的IQ测试题</a></p>
+<p><a title="Permanent Link to 趣题：寻找策略使得总有一人猜出他背上的数" rel="bookmark" href="http://www.matrix67.com/blog/archives/1768">趣题：寻找策略使得总有一人猜出他背上的数</a></p></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
@@ -254,28 +320,19 @@ Braid中最后的设定是寻找星星，它们可以划过黑暗，照亮Tim的
 
 
 <time datetime="2009-04-26T00:00:00+08:00" pubdate data-updated="true">2009-04-26</time></div>
-      <div class="tags">Tags: 
+	
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
 
-
 </div>
-    </div>
-		<p><p>在matrix67上看到，很正点，推荐一下大家去看看：</p>
-<p><a title="Permanent Link to 我目前所见过的最难的IQ测试题" rel="bookmark" href="http://www.matrix67.com/blog/archives/1749">我目前所见过的最难的IQ测试题</a></p>
-<p><a title="Permanent Link to 趣题：寻找策略使得总有一人猜出他背上的数" rel="bookmark" href="http://www.matrix67.com/blog/archives/1768">趣题：寻找策略使得总有一人猜出他背上的数</a></p></p>
 
-		
-		
-	</div>
 
-<div class="meta">
 	
 		<span class="comments"><a href="/blog/2009/04/26/iqiq-1//blog/page/11/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 
     <article class="post">
@@ -285,9 +342,16 @@ Braid中最后的设定是寻找星星，它们可以划过黑暗，照亮Tim的
 		
 			漂亮的排序算法: 7种排序算法的内存状态演示(zz)</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="entry-content">
+		<p><p><a title="Permanent Link to 漂亮的排序算法：7种排序算法的内存状态演示" rel="bookmark" href="http://www.matrix67.com/blog/archives/1763">漂亮的排序算法：7种排序算法的内存状态演示</a></p></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
@@ -300,26 +364,19 @@ Braid中最后的设定是寻找星星，它们可以划过黑暗，照亮Tim的
 
 
 <time datetime="2009-04-26T00:00:00+08:00" pubdate data-updated="true">2009-04-26</time></div>
-      <div class="tags">Tags: 
+	
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/geek/'>geek</a>
 
-
 </div>
-    </div>
-		<p><p><a title="Permanent Link to 漂亮的排序算法：7种排序算法的内存状态演示" rel="bookmark" href="http://www.matrix67.com/blog/archives/1763">漂亮的排序算法：7种排序算法的内存状态演示</a></p></p>
 
-		
-		
-	</div>
 
-<div class="meta">
 	
 		<span class="comments"><a href="/blog/2009/04/26/beatutiful-7-algorithmn-pic//blog/page/11/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 
     <article class="post">
@@ -329,29 +386,7 @@ Braid中最后的设定是寻找星星，它们可以划过黑暗，照亮Tim的
 		
 			资深设计师的30条忠告(zz)</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-04-08T00:00:00+08:00" pubdate data-updated="true">2009-04-08</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='/blog/categories/misc/'>misc</a>
-
-
-</div>
-    </div>
+	<div class="entry-content">
 		<p><p>via:&nbsp;<a href="http://groups.google.com/group/pongba/browse_thread/thread/177efd30eba169ee">http://groups.google.com/group/pongba/browse_thread/thread/177efd30eba169ee</a></p>
 <p><span class="Apple-style-span" style="font-family: arial; ">Don&#8217;t be too sure when it looks like true. Dig into the domain.&nbsp;<br />
 当某个东西看起来是真的时候，别那么确定就相信它。使劲去挖掘。&nbsp;
@@ -436,12 +471,34 @@ don&#8217;t let them fight with your design.&nbsp;<br />
 		
 	</div>
 
+
 <div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-08T00:00:00+08:00" pubdate data-updated="true">2009-04-08</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/misc/'>misc</a>
+
+</div>
+
+
 	
 		<span class="comments"><a href="/blog/2009/04/08/30-suggestions//blog/page/11/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 
     <article class="post">
@@ -451,9 +508,19 @@ don&#8217;t let them fight with your design.&nbsp;<br />
 		
 			LLFS</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="entry-content">
+		<p><p>LFS，是<a href="http://www.linuxfromscratch.org/">Linux From Scratch</a>，一个从零开始让你学习如何构建一个Linux系统的发行版，我记忆中，没有在真实环境中试过这个发行版。</p>
+<p>LFS 6.4出来，全新的tool chain，这次我决定在我的slackware上构建这个发行版，有兴趣可以到这里：<a href="http://linuxsir.org/bbs/forum58.html">http://linuxsir.org/bbs/forum58.html</a></p>
+<p>抽空完成，下星期要发布removepkg篇啦，哈哈</p>
+<p>LLFS: Learn love from scratch</p></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
@@ -466,29 +533,19 @@ don&#8217;t let them fight with your design.&nbsp;<br />
 
 
 <time datetime="2009-03-26T00:00:00+08:00" pubdate data-updated="true">2009-03-26</time></div>
-      <div class="tags">Tags: 
+	
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
-
 </div>
-    </div>
-		<p><p>LFS，是<a href="http://www.linuxfromscratch.org/">Linux From Scratch</a>，一个从零开始让你学习如何构建一个Linux系统的发行版，我记忆中，没有在真实环境中试过这个发行版。</p>
-<p>LFS 6.4出来，全新的tool chain，这次我决定在我的slackware上构建这个发行版，有兴趣可以到这里：<a href="http://linuxsir.org/bbs/forum58.html">http://linuxsir.org/bbs/forum58.html</a></p>
-<p>抽空完成，下星期要发布removepkg篇啦，哈哈</p>
-<p>LLFS: Learn love from scratch</p></p>
 
-		
-		
-	</div>
 
-<div class="meta">
 	
 		<span class="comments"><a href="/blog/2009/03/26/llfs//blog/page/11/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 
     <article class="post">
@@ -498,29 +555,7 @@ don&#8217;t let them fight with your design.&nbsp;<br />
 		
 			关于Linux里的initrd.img这个东东</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-03-19T00:00:00+08:00" pubdate data-updated="true">2009-03-19</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='/blog/categories/opensource/'>opensource</a>
-
-
-</div>
-    </div>
+	<div class="entry-content">
 		<p><p>今天把一部机器重编译内核，去掉了initrd.img，运行正常（以前的经验告诉我这是可行的）。</p>
 <p>然后我在想，为什么要搞这个东西出来？<br />
 而initrd.img这个东东里是什么？我个人理解只是放一些启动时必需的文件系统驱动，这些驱动完全可以编译进内核里，而去掉个文件。<br />
@@ -536,24 +571,9 @@ don&#8217;t let them fight with your design.&nbsp;<br />
 		
 	</div>
 
+
 <div class="meta">
-	
-		<span class="comments"><a href="/blog/2009/03/19/linux-initrdimg//blog/page/11/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2009/03/13/after-thinkings-1/">
-		
-			后觉感叹</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="date">
 
 
 
@@ -565,15 +585,30 @@ don&#8217;t let them fight with your design.&nbsp;<br />
   
 
 
-<time datetime="2009-03-13T00:00:00+08:00" pubdate data-updated="true">2009-03-13</time></div>
-      <div class="tags">Tags: 
+<time datetime="2009-03-19T00:00:00+08:00" pubdate data-updated="true">2009-03-19</time></div>
+	
 
+<div class="tags">
 
-	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
-
+	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
 </div>
-    </div>
+
+
+	
+		<span class="comments"><a href="/blog/2009/03/19/linux-initrdimg//blog/page/11/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/03/13/after-thinkings-1/">
+		
+			后觉感叹</a>
+	</h2>
+	<div class="entry-content">
 		<p><p>今晚回到宿舍，上GReader，看到华师街舞队有个新文章，题目为：<a href="http://scnucrew.blog.163.com/blog/static/3142174320092123515390/#comment=fks_082067086085089069080083086095087087085065085081082064">不知不觉</a>，来自BBin。</p>
 <p><img width="320" height="240" align="left" alt="" src="http://lh4.ggpht.com/_xik2G_wUQDU/SblAH3SXcjI/AAAAAAAAApA/sMJDNhvlQJ8/DSC06527.JPG" /></p>
 <p>细读了一篇，又一次感觉回到了当年的自己，看着那人来人往而感叹。<br />
@@ -594,12 +629,34 @@ don&#8217;t let them fight with your design.&nbsp;<br />
 		
 	</div>
 
+
 <div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-03-13T00:00:00+08:00" pubdate data-updated="true">2009-03-13</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
+
+</div>
+
+
 	
 		<span class="comments"><a href="/blog/2009/03/13/after-thinkings-1//blog/page/11/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 
     <article class="post">
@@ -609,9 +666,21 @@ don&#8217;t let them fight with your design.&nbsp;<br />
 		
 			空空的电脑</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="entry-content">
+		<p><p>脑子发空，我的电脑也空空</p>
+<p>终于装了Vista 64bit，觉得自己很out，都不会用Vista了。但我很快就会装回来XP，这个系统，始终不习惯，即使我的电脑没有让这个系统拖慢</p>
+<p>看到程序员<a href="http://blog.linux.org.tw/~jserv/">jserv</a>写的一篇文章<a href="http://blog.linux.org.tw/~jserv/archives/002092.html">long for</a>，心痛得没法再躲。虽然不认识他，但我深深感受到他那份痛，Good luck for him~</p>
+<p>昨晚看完<a href="http://www.douban.com/subject/1296736/?i=0">《The pianist》</a>，这种电影已经放在电脑里很久，很喜欢这电影，战火、歧视对人们的摧残在里面体现得淋漓尽致，但主人公抱着那喜欢，还有心中的琴曲，从一次又一次的死神手里争脱，活下来了。</p>
+<p>windrose兄把我的pkgtools系统放到<a href="http://slack.linuxsir.org/main/">slackware中文用户组</a>那里了，感谢他的支持。最近比较忙，我会抽空把这个serial搞定的，边学边写。</p>
+<p>空空的电脑，空空的脑</p></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
@@ -624,121 +693,19 @@ don&#8217;t let them fight with your design.&nbsp;<br />
 
 
 <time datetime="2009-02-24T00:00:00+08:00" pubdate data-updated="true">2009-02-24</time></div>
-      <div class="tags">Tags: 
+	
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
 
-
 </div>
-    </div>
-		<p><p>脑子发空，我的电脑也空空</p>
-<p>终于装了Vista 64bit，觉得自己很out，都不会用Vista了。但我很快就会装回来XP，这个系统，始终不习惯，即使我的电脑没有让这个系统拖慢</p>
-<p>看到程序员<a href="http://blog.linux.org.tw/~jserv/">jserv</a>写的一篇文章<a href="http://blog.linux.org.tw/~jserv/archives/002092.html">long for</a>，心痛得没法再躲。虽然不认识他，但我深深感受到他那份痛，Good luck for him~</p>
-<p>昨晚看完<a href="http://www.douban.com/subject/1296736/?i=0">《The pianist》</a>，这种电影已经放在电脑里很久，很喜欢这电影，战火、歧视对人们的摧残在里面体现得淋漓尽致，但主人公抱着那喜欢，还有心中的琴曲，从一次又一次的死神手里争脱，活下来了。</p>
-<p>windrose兄把我的pkgtools系统放到<a href="http://slack.linuxsir.org/main/">slackware中文用户组</a>那里了，感谢他的支持。最近比较忙，我会抽空把这个serial搞定的，边学边写。</p>
-<p>空空的电脑，空空的脑</p></p>
 
-		
-		
-	</div>
 
-<div class="meta">
 	
 		<span class="comments"><a href="/blog/2009/02/24/null-pc//blog/page/11/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2009/02/17/installpkg/">
-		
-			剖析slackware Pkgtools之installpkg篇</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-02-17T00:00:00+08:00" pubdate data-updated="true">2009-02-17</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='/blog/categories/geek/'>geek</a>
-
-
-</div>
-    </div>
-		<p><span class="content">作者: slackcode</span>
-pkgtools版本: pkgtools-12.1.0-noarch-7.tgz<br />
-我并不是什么高手牛人，我只是路过，觉得好玩，所以拿出来看看，希望与大家分享，共同学习<br />
-如有转载，请注明出处:)<br />
-———————————————————-<br />
-installpkg源文件请到这里:
-<a href="http://darkstar.ist.utl.pt/pub/slackware/slackware-12.2/source/a/pkgtools/scripts/installpkg">http://darkstar.ist.utl.pt/pub/slackware/slackware-12.2/source/a/pkgtools/scripts/installpkg</a>
-<pre lang="bash"># If installpkg encounters a problem, it will return a non-zero error code.
-# If it finds more than one problem (i.e. with a list of packages) you'll only
-# hear about the most recent one. :)</pre></p>
-
-<p># 1 = tar returned error code<br />
-# 2 = failed &#8216;gzip -l package&#8217;<br />
-# 3 = does not end in .tgz<br />
-# 4 = not a file<br />
-# 99 = user abort from menu mode<br />
-EXITSTATUS=0
-installpkg执行结束后的返回值, 即$?
-<pre lang="bash"># So that we know what to expect...
-umask 022        # 当前权限 与 (777 - 022)
-TAR=tar-1.13
-$TAR --help 1> /dev/null 2> /dev/null
-if [ ! $? = 0 ]; then
-    TAR=tar
-fi</pre>
-这里是判断$TAR &#8211;help的返回值,命令执行成功一般都为0,失败为非0,$?即为这个返回值
-<pre lang="bash">if [ ! "`LC_MESSAGES=C $TAR --version`" = "tar (GNU tar) 1.13</pre></p>
-
-<p>Copyright (C) 1988, 92,93,94,95,96,97,98, 1999 Free Software Foundation, Inc.<br />
-This is free software; see the source for copying conditions.  There is NO<br />
-warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p>
-
-<p>Written by John Gilmore and Jay Fenlason.&#8221; ]; then<br />
-    echo &#8220;WARNING: pkgtools are unstable with tar > 1.13.&#8221;<br />
-    echo &#8221;         You should provide a &#34;tar-1.13&#34; in your \$PATH.&#8221;<br />
-    sleep 5<br />
-fi
-
-installpkg定义tar-1.13为稳定版本, slackware 12.2有tar-1.13和tar-1.16.1<br />
-再看看tar是哪个版本<br />
-ls -l /bin/tar*<br />
--rwxr-xr-x 1 root root 233196 2006-12-14 13:37 /bin/tar*<br />
--rwxr-xr-x 1 root root 115036 2006-12-14 13:37 /bin/tar-1.13*<br />
-lrwxrwxrwx 1 root root      3 2008-12-09 23:00 /bin/tar-1.16.1 -> tar<br />
-从这个看来, tar即tar-1.16.1了<br />
-if [ ! &#8220;`LC_MESSAGES=C $TAR &#8211;version | head -n 1`&#8221; = &#8220;tar (GNU tar) 1.13&#8221; ]不是更简单么?不过可能出于严谨,作者认为只有版本号对是不够的,还要判断整个version<br />
-另这个LC_MESSAGES=C是需要的,我使用系统默认的en_US发现有问题,我知道使用C就是使用127bit的ASCII码系统,至于为什么en_US会不行,希望有高人能回答一下
-
-		
-		<a href="/blog/2009/02/17/installpkg/" class="more-link">Read on &rarr;</a>
-	</div>
-
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2009/02/17/installpkg//blog/page/11/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
+</div></article>
 
 <nav id="pagenavi">
     
@@ -747,22 +714,16 @@ if [ ! &#8220;`LC_MESSAGES=C $TAR &#8211;version | head -n 1`&#8221; = &#8220;ta
     
         <a href="/blog/page/12/" class="next">Next</a>
     
-    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
-</nav>
-
-    </div>
-    <footer id="footer">
-    <div style="display:inline">
-    Copyright &copy; 2013
+    <div class="center"><a href="/archives">Blog Archives</a></div>
+</nav></div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
 
     imlcl
-. Powered by <a href="http://octopress.org">Octopress</a> | 
-    Theme <a href="http://github.com/panks/fabric">fabric</a> by <a href="http://panks.me">Pankaj Kumar</a>
-</div>
 
-
-    </footer>
-    <script src="/javascripts/fabric.js"></script>
+<br>
+Powered by Octopress.
+</footer>
+	<script src="/javascripts/slash.js"></script>
 <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
@@ -779,7 +740,7 @@ if [ ! &#8220;`LC_MESSAGES=C $TAR &#8211;version | head -n 1`&#8221; = &#8220;ta
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -788,14 +749,5 @@ if [ ! &#8220;`LC_MESSAGES=C $TAR &#8211;version | head -n 1`&#8221; = &#8220;ta
 
 
 
-<!-- end toload --> 
-</div>
-</div>
-<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
-<script type="text/javascript">
-/*<![CDATA[*/
-;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
-/*]]>*/
-</script><!-- remove it to remove the scroll to top button -->
 </body>
 </html>

@@ -2,89 +2,154 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
+	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<meta charset="utf-8">
-	<title>大头龙仔Blog</title>
-    <meta name="author" content="imlcl">
-    
-	<meta name="description" content="Published on: 2009-01-15 Tags: misc By 刘未鹏(pongba) | http://blog.csdn.net/pongba 我虽不是经济学专业，但是翻开任何一本经济学的教材，或者直接翻开 wikipedia 的 economics 条目， &hellip;">
-	
+	<title>A strong man can save himself. A great man can save another.  | 大头龙仔Blog</title>
+
+<meta name="author" content="imlcl"> 
+
+<meta name="description" content="imlcl.com 大头龙仔 blog 随笔感悟 编程技术 it web php ruby rails c linux server slackware"> <meta name="keywords" content="">
+
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.ico" rel="shortcut icon">
-    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
 
-    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script language="Javascript" type="text/javascript">
+$(document).ready(
+  function() {
+    (function($) {
+      $(".fancybox[data-content-id]").each(function() {
+        this.href = $(this).data('content-id');
+      });
+      $(".fancybox").fancybox({
+        beforeLoad: function() {
+          var el, 
+              id = $(this.element).data('title-id');
 
-    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+          if (id) {
+            el = $('#' + id);
 
-    <!-- remove or comment it to disable ajaxification -->   
-    <script src="/javascripts/ajaxify.js"></script>
-   
-    
-    
+            if (el.length) {
+              this.title = el.html();
+            }
+          }
+          if ($(this).data('content')) {
+            this.content = $(this).data('content');
+          }
+        },
+        helpers: {
+          title: {
+            type: 'inside'
+          }
+        }
+      });
+    })(jQuery);
+  }
+);
+</script>
 
+	
 </head>
 
 
 <body>
-    <div id="wrapper">
-    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
-<h1 class="animated bounceInDown">
-    <div id="headerbg">
-        imlcl
-    </div>
-</h1>
-<br>
-
-<ul id="social-links" style="text-align:center">
-  
-  <!-- GitHub -->
-  <li>
-  <a href="https://github.com/imlcl" class="github" title="Github"></a>
-  </li>
-  
-  
-  
-  
-  
-  
-  
-  
+	<header id="header" class="inner"><h1><a href="/">大头龙仔Blog</a></h1>
+<h4>A strong man can save himself. A great man can save another.</h4>
+<nav id="main-nav"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
 </ul>
-
-
-<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
-<ul id="nav">
-	<li id="ajax"><a href="/index.html">Home</a></li>
-    <li id="ajax"><a href="/blog/archives/index.html">Blog</a></li>
-	<li id="ajax"><a href="/about/index.html">About</a></li>
-    <li><a href="/atom.xml">RSS</a></li>
-    
-    <li>
-    <div id="dark">
-        <form method="get" action="/search.html" id="search">
-            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
-        </form>
-    </div>
-    </li>
-        
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/portfolio">Portfolio</a></li>
+	<li><a href="/archives">Archive</a></li>
 </ul>
-
-
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com.au/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:imlcl.github.io">
+			</form>
+		</div>
+	</div>
+</nav>
 
 
 </header>
 
-<div id="toload">
-<!-- begin toload --> 
-    <div id="content" class="inner">
-        
+	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/01/16/holidays-things/">
+		
+			放假做些事儿</a>
+	</h2>
+	<div class="entry-content">
+		<p>快放假啦，一直好想写一个《剖析slackware pkgtools系列》，这次放到这个假其完成。除此外当然还有SoonDo布置的任务，还要读一个文学作品，其它时间当然是玩啦哈哈。</p>
+
+<p>对于《剖析slackware pkgtools》内容，先在这里列个提纲先，有兴趣的读者可以跟进：<br />
+1、剖析slackware pkgtools之概述篇<br />
+2、剖析slackware pkgtools之installpkg篇<br />
+3、剖析slackware pkgtools之upgradepkg篇<br />
+4、剖析slackware pkgtools之removepkg篇<br />
+5、剖析slackware pkgtools之explodepkg、makepkg篇<br />
+6、剖析slackware pkgtools之makebootdisk篇<br />
+7、剖析slackware pkgtools之pkgtool篇</p>
+
+<p>我不是脚本高手，我希望借此机会来学习一下shell脚本，并且也可以深入理解slackware的包机制，欢迎到时一起讨论:-)</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-01-16T00:00:00+08:00" pubdate data-updated="true">2009-01-16</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
+
+</div>
+
+
+	
+		<span class="comments"><a href="/blog/2009/01/16/holidays-things//blog/page/13/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
 
 
     <article class="post">
@@ -94,29 +159,7 @@
 		
 			什么才是你的不可替代性和核心竞争力(zz)</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-01-15T00:00:00+08:00" pubdate data-updated="true">2009-01-15</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='/blog/categories/misc/'>misc</a>
-
-
-</div>
-    </div>
+	<div class="entry-content">
 		<p><span style="font-size: medium;">By 刘未鹏(pongba) | </span><a href="http://blog.csdn.net/pongba"><span style="font-size: medium;">http://blog.csdn.net/pongba</span></a></p>
 
 <p><span style="font-size: medium;">我虽不是经济学专业，但是翻开任何一本经济学的教材，或者直接翻开 </span><a href="http://en.wikipedia.org/wiki/Economics" target="_blank"><span style="font-size: medium;">wikipedia 的 economics 条目</span></a><span style="font-size: medium;">，都会看到物以稀为贵这条铁律。人才作为资源的一种，也是同样的道理。而稀缺性，换种说法也可以叫做不可替代性。一种资源越是稀缺，不可替代性就越强。再加上如果这种资源是一种具有实实在在使用价值的东西（而不是荷兰的</span><a href="http://www.google.cn/search?hl=zh-CN&amp;q=%E9%83%81%E9%87%91%E9%A6%99%E6%B3%A1%E6%B2%AB" target="_blank"><span style="font-size: medium;">郁金香泡沫</span></a><span style="font-size: medium;">），那么其价格就会越高。</span></p>
@@ -146,12 +189,34 @@
 		
 	</div>
 
+
 <div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-01-15T00:00:00+08:00" pubdate data-updated="true">2009-01-15</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/misc/'>misc</a>
+
+</div>
+
+
 	
 		<span class="comments"><a href="/blog/2009/01/15/the-core-power-about-you//blog/page/13/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 
     <article class="post">
@@ -161,9 +226,20 @@
 		
 			冲刺年末</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="entry-content">
+		<p>年末的工作，节奏已经慢下来</p>
+
+<p>面前就是趣味运动会和年会节目</p>
+
+<p>4x100也好，年会节目也好，出到外面，我们就是代表部门的，力争第一！</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
@@ -176,30 +252,19 @@
 
 
 <time datetime="2009-01-12T00:00:00+08:00" pubdate data-updated="true">2009-01-12</time></div>
-      <div class="tags">Tags: 
+	
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
 
-
 </div>
-    </div>
-		<p>年末的工作，节奏已经慢下来</p>
 
-<p>面前就是趣味运动会和年会节目</p>
 
-<p>4x100也好，年会节目也好，出到外面，我们就是代表部门的，力争第一！</p>
-
-		
-		
-	</div>
-
-<div class="meta">
 	
 		<span class="comments"><a href="/blog/2009/01/12/acc-of-the-year//blog/page/13/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 
     <article class="post">
@@ -209,29 +274,7 @@
 		
 			回首2008、展望2009之精华(zz)</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-01-07T00:00:00+08:00" pubdate data-updated="true">2009-01-07</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='/blog/categories/misc/'>misc</a>
-
-
-</div>
-    </div>
+	<div class="entry-content">
 		<p>by xqm</p>
 
 <p>“我来公司这么多年，今年感觉最累，但也是最充实的。”这句话是在一次例行的工作交流会上，gdz问我有什么感受时，我给的答案。</p>
@@ -250,24 +293,9 @@
 		
 	</div>
 
+
 <div class="meta">
-	
-		<span class="comments"><a href="/blog/2009/01/07/review-2008-2009-1//blog/page/13/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2009/01/06/soldier-general/">
-		
-			不想做将军的士兵不是好兵(zz)</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="date">
 
 
 
@@ -279,15 +307,30 @@
   
 
 
-<time datetime="2009-01-06T00:00:00+08:00" pubdate data-updated="true">2009-01-06</time></div>
-      <div class="tags">Tags: 
+<time datetime="2009-01-07T00:00:00+08:00" pubdate data-updated="true">2009-01-07</time></div>
+	
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/misc/'>misc</a>
 
-
 </div>
-    </div>
+
+
+	
+		<span class="comments"><a href="/blog/2009/01/07/review-2008-2009-1//blog/page/13/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/01/06/soldier-general/">
+		
+			不想做将军的士兵不是好兵(zz)</a>
+	</h2>
+	<div class="entry-content">
 		<p>via: <a href="http://godel.blog.sohu.com/107990431.html">http://godel.blog.sohu.com/107990431.html</a></p>
 
 <p>“不想做将军的士兵不是好兵”一直是年轻人挂在嘴边的名言，且雄心勃勃、不遗余力地身体力行。特别在那些准备面试的大学生中，这句名言更是非常畅销。但是，他们往往忽视了一个细节，且听我说个真实的笑话。</p>
@@ -309,24 +352,9 @@
 		
 	</div>
 
+
 <div class="meta">
-	
-		<span class="comments"><a href="/blog/2009/01/06/soldier-general//blog/page/13/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2009/01/02/2008-final-review/">
-		
-			=2008总结</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="date">
 
 
 
@@ -338,15 +366,30 @@
   
 
 
-<time datetime="2009-01-02T00:00:00+08:00" pubdate data-updated="true">2009-01-02</time></div>
-      <div class="tags">Tags: 
+<time datetime="2009-01-06T00:00:00+08:00" pubdate data-updated="true">2009-01-06</time></div>
+	
 
+<div class="tags">
 
-	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
-
+	<a class='category' href='/blog/categories/misc/'>misc</a>
 
 </div>
-    </div>
+
+
+	
+		<span class="comments"><a href="/blog/2009/01/06/soldier-general//blog/page/13/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/01/02/2008-final-review/">
+		
+			=2008总结</a>
+	</h2>
+	<div class="entry-content">
 		<p>庆祝完亲爱的SoonDo的生日，就迎来了充满更多挑战的2009</p>
 
 <p>毕业工作半年多啦，我记得标哥和我说过，在这里工作3个月，如果你没有什么进步，你就要好好反省一下。我很惭愧，因为我觉得自己的进步远没达到自己的预期。虽然郁闷，但我还是得静下来想想为什么，好好去总结，坚持不停地提升自己，把握机会，做好每一件事。</p>
@@ -365,24 +408,9 @@
 		
 	</div>
 
+
 <div class="meta">
-	
-		<span class="comments"><a href="/blog/2009/01/02/2008-final-review//blog/page/13/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2008/12/31/leo-suggestions-to-programmer/">
-		
-			Leo给程序员的09年建议(zz)</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="date">
 
 
 
@@ -394,15 +422,30 @@
   
 
 
-<time datetime="2008-12-31T00:00:00+08:00" pubdate data-updated="true">2008-12-31</time></div>
-      <div class="tags">Tags: 
+<time datetime="2009-01-02T00:00:00+08:00" pubdate data-updated="true">2009-01-02</time></div>
+	
 
+<div class="tags">
 
-	<a class='category' href='/blog/categories/misc/'>misc</a>
-
+	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
 
 </div>
-    </div>
+
+
+	
+		<span class="comments"><a href="/blog/2009/01/02/2008-final-review//blog/page/13/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2008/12/31/leo-suggestions-to-programmer/">
+		
+			Leo给程序员的09年建议(zz)</a>
+	</h2>
+	<div class="entry-content">
 		<p>via: <a href="http://blog.csdn.net/jobchanceleo/archive/2008/12/31/3662263.aspx">http://blog.csdn.net/jobchanceleo/archive/2008/12/31/3662263.aspx</a></p>
 
 <p><strong><span style="font-size: 12pt; color: red; font-family: 宋体;">职场立身经</span></strong>
@@ -456,24 +499,9 @@
 		
 	</div>
 
+
 <div class="meta">
-	
-		<span class="comments"><a href="/blog/2008/12/31/leo-suggestions-to-programmer//blog/page/13/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2008/12/26/slackware-122-vim-bug/">
-		
-			Slackware 12.2的vim Bug</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="date">
 
 
 
@@ -485,15 +513,30 @@
   
 
 
-<time datetime="2008-12-26T00:00:00+08:00" pubdate data-updated="true">2008-12-26</time></div>
-      <div class="tags">Tags: 
+<time datetime="2008-12-31T00:00:00+08:00" pubdate data-updated="true">2008-12-31</time></div>
+	
 
+<div class="tags">
 
-	<a class='category' href='/blog/categories/opensource/'>opensource</a>
-
+	<a class='category' href='/blog/categories/misc/'>misc</a>
 
 </div>
-    </div>
+
+
+	
+		<span class="comments"><a href="/blog/2008/12/31/leo-suggestions-to-programmer//blog/page/13/index.html#disqus_thread">Comments</a></span>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2008/12/26/slackware-122-vim-bug/">
+		
+			Slackware 12.2的vim Bug</a>
+	</h2>
+	<div class="entry-content">
 		<p>在vim里，用shift + k来快速调用man，对于coder来说是非常常用的，但在最新slackware版本里有些问题<br />
 其实是vim的bug，只是slackware没把其较新的补丁合入，做法:
 <pre lang="bash">wget -r ftp://ftp.vim.org/pub/vim/patches/7.2/
@@ -511,12 +554,34 @@ cp *.gz source/ap/vim/patches/</pre>
 		
 	</div>
 
+
 <div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-12-26T00:00:00+08:00" pubdate data-updated="true">2008-12-26</time></div>
+	
+
+<div class="tags">
+
+	<a class='category' href='/blog/categories/opensource/'>opensource</a>
+
+</div>
+
+
 	
 		<span class="comments"><a href="/blog/2008/12/26/slackware-122-vim-bug//blog/page/13/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 
     <article class="post">
@@ -526,9 +591,20 @@ cp *.gz source/ap/vim/patches/</pre>
 		
 			祝大家圣诞快乐</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="entry-content">
+		<p>最近忙年会节目，第一次排情景剧，现在已经到了录音阶段啦，进度还是控制得可以，要加油先得。但是因为年会的准备，我工作也拉下来啦，呜呜……</p>
+
+<p>最后要上去跳一段，所以最近都在练习一下基本功，只不过又病了，这段时间又转为休养，筋又硬了……希望我的布鞋快点寄回来啦，不然没鞋，怎么跳啊？</p>
+
+<p>今天是圣诞节，立此文以祝大家圣诞快乐，谢谢</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
 
 
 
@@ -541,30 +617,19 @@ cp *.gz source/ap/vim/patches/</pre>
 
 
 <time datetime="2008-12-25T00:00:00+08:00" pubdate data-updated="true">2008-12-25</time></div>
-      <div class="tags">Tags: 
+	
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
 
-
 </div>
-    </div>
-		<p>最近忙年会节目，第一次排情景剧，现在已经到了录音阶段啦，进度还是控制得可以，要加油先得。但是因为年会的准备，我工作也拉下来啦，呜呜……</p>
 
-<p>最后要上去跳一段，所以最近都在练习一下基本功，只不过又病了，这段时间又转为休养，筋又硬了……希望我的布鞋快点寄回来啦，不然没鞋，怎么跳啊？</p>
 
-<p>今天是圣诞节，立此文以祝大家圣诞快乐，谢谢</p>
-
-		
-		
-	</div>
-
-<div class="meta">
 	
 		<span class="comments"><a href="/blog/2008/12/25/christmax-2008//blog/page/13/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 
     <article class="post">
@@ -574,29 +639,7 @@ cp *.gz source/ap/vim/patches/</pre>
 		
 			slackware12.1简单升级到12.2</a>
 	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2008-12-18T00:00:00+08:00" pubdate data-updated="true">2008-12-18</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='/blog/categories/opensource/'>opensource</a>
-
-
-</div>
-    </div>
+	<div class="entry-content">
 		<p>今晚12.2的DVD ISO下载完，使用slackpkg进行了简单快捷的升级，下面是我总结的一些方法，希望对大家有用：<br />
 1、首得建议telinit 1，进入单用户模式先，这个防止升级glibc时出问题，接着当然得mount上这个ISO啦，记得要-o loop参数<br />
 2、系统里要先有slackpkg，这个东东已合到12.2的ap分支里，已经官方支持，建议大家使用这个代替slapt-get;<br />
@@ -616,24 +659,9 @@ enjoy~</p>
 		
 	</div>
 
+
 <div class="meta">
-	
-		<span class="comments"><a href="/blog/2008/12/18/slackware121-122//blog/page/13/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2008/12/15/proftpd-open-anonymous/">
-		
-			关于proftpd开启anonymous访问权限</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+	<div class="date">
 
 
 
@@ -645,46 +673,20 @@ enjoy~</p>
   
 
 
-<time datetime="2008-12-15T00:00:00+08:00" pubdate data-updated="true">2008-12-15</time></div>
-      <div class="tags">Tags: 
+<time datetime="2008-12-18T00:00:00+08:00" pubdate data-updated="true">2008-12-18</time></div>
+	
 
+<div class="tags">
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
-
 </div>
-    </div>
-		<p>proftpd是Linux下很常用的一个Ftp服务器，slackware自带vsftpd和proftpd两个ftp服务器。<br />
-vsftpd小巧快速，proftpd在定制性和安全性比vsftpd好。</p>
 
-<p>我打算把proftpd开anonymous（匿名）访问权限，slackware 12.2安装时，proftpd已把/etc/proftpd.conf配置好支持anonymous的，但登录时老出现:<br />
-220 ProFTPD 1.3.1 Server (ProFTPD Default Installation) [::ffff:127.0.0.1]<br />
-Name (localhost:root): anonymous<br />
-331 Anonymous login ok, send your complete email address as your password<br />
-Password:<br />
-530 Login incorrect.<br />
-Login failed.<br />
-从而失败。上网查了很多资料，但没找到解决方法。后来发现是自己没有认真阅读proftpd.conf，人家里面就有一句:
-<pre lang="bash"># To enable this, remove the user ftp from /etc/ftpusers.</pre>
-打开/etc/ftpusers，人家里面又有一句:
-<pre lang="bash"># To enable anonymous FTP, remove the "ftp" user:</pre>
-我晕，那只要在ftp前加个#后，<pre lang="bash">/etc/rc.d/rc.inetd restart</pre>就行啦。</p>
 
-<p>总结一下：<br />
-1、我想不明白为什么网上没有这个帮助资料，可能我比较菜，也比较粗心；<br />
-2、网上提到开anonymous高频help是加入<pre lang="bash">RequireValidShell off</pre>slackware默认安装已有这个参数；<br />
-3、借此分享给大家</p>
-
-		
-		
-	</div>
-
-<div class="meta">
 	
-		<span class="comments"><a href="/blog/2008/12/15/proftpd-open-anonymous//blog/page/13/index.html#disqus_thread">Comments</a></span>
+		<span class="comments"><a href="/blog/2008/12/18/slackware121-122//blog/page/13/index.html#disqus_thread">Comments</a></span>
 	
-</div>
-</article>
+</div></article>
 
 <nav id="pagenavi">
     
@@ -693,22 +695,16 @@ Login failed.<br />
     
         <a href="/blog/page/14/" class="next">Next</a>
     
-    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
-</nav>
-
-    </div>
-    <footer id="footer">
-    <div style="display:inline">
-    Copyright &copy; 2013
+    <div class="center"><a href="/archives">Blog Archives</a></div>
+</nav></div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
 
     imlcl
-. Powered by <a href="http://octopress.org">Octopress</a> | 
-    Theme <a href="http://github.com/panks/fabric">fabric</a> by <a href="http://panks.me">Pankaj Kumar</a>
-</div>
 
-
-    </footer>
-    <script src="/javascripts/fabric.js"></script>
+<br>
+Powered by Octopress.
+</footer>
+	<script src="/javascripts/slash.js"></script>
 <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
@@ -725,7 +721,7 @@ Login failed.<br />
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -734,14 +730,5 @@ Login failed.<br />
 
 
 
-<!-- end toload --> 
-</div>
-</div>
-<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
-<script type="text/javascript">
-/*<![CDATA[*/
-;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
-/*]]>*/
-</script><!-- remove it to remove the scroll to top button -->
 </body>
 </html>
