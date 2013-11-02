@@ -1,0 +1,195 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>关于slackware的字体美化 - 大头龙仔Blog</title>
+    <meta name="author" content="imlcl">
+    
+	<meta name="description" content="Linux的美化可谓是个永恒的话题，我记得以前还为美化这个东东搞过几天，还没达到自己的要求（相对XP）。 可是呢，人靠衣服，系统也希望弄得好看点，这样心情才好呢，这次来说说slackware的字体美化，也算是Linux的通用方法。 有两个链接可以参考的:
+http://linuxsir.org/ &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <script src="/javascripts/ajaxify.js"></script>
+   
+    
+    
+
+</head>
+
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+        imlcl
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  <!-- GitHub -->
+  <li>
+  <a href="https://github.com/imlcl" class="github" title="Github"></a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+    <li id="ajax"><a href="/blog/archives/index.html">Blog</a></li>
+	<li id="ajax"><a href="/about/index.html">About</a></li>
+    <li><a href="/atom.xml">RSS</a></li>
+    
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="toload">
+<!-- begin toload --> 
+    <div id="content" class="inner">
+        <article class="post">
+	<h2 class="title">关于slackware的字体美化</h2>
+	<div class="entry-content"><p>Linux的美化可谓是个永恒的话题，我记得以前还为美化这个东东搞过几天，还没达到自己的要求（相对XP）。</p>
+
+<p>可是呢，人靠衣服，系统也希望弄得好看点，这样心情才好呢，这次来说说slackware的字体美化，也算是Linux的通用方法。</p>
+
+<p>有两个链接可以参考的:
+<a href="http://linuxsir.org/bbs/thread339680.html">http://linuxsir.org/bbs/thread339680.html</a>
+<a href="http://www.linuxquestions.org/questions/slackware-14/beautiful-fonts-in-12.1-640468/">http://www.linuxquestions.org/questions/slackware-14/beautiful-fonts-in-12.1-640468/</a></p>
+
+<p>后面那个链接还把libXft和cairo换成LCD适应的，有这个就更好，该网站也提供tgz包下载，直接installpkg就好了，非常方便。但我个人觉得把FreeType的选项打开就好，方法有两个：<br />
+1、用slackware的有福，pat已在SlackBuild里准备好，可以从source/l/freetype那里找到，把两个zcat前面的#去掉，这里也可以顺便将其编译为i686架构的，然后./SlackBuild一下，生成新的tgz在/tmp目录下，upgradepkg之即可，爽吧？<br />
+2、geeker们可以自己去改FreeType的头文件，这个可以google一下，也就是手动打开宏定义而已</p>
+
+<p>另slackware12.1只带wqy-zenhei是不够的，可以再加入wqy-bitmapfont（个人喜欢其对细字体的优秀支持），INSTALL说明一步步装就好了，上面第一个链接也有这个说明。</p>
+
+<p>另个人推荐把startx的dpi设为96，可以<span style="color: red;">startx -dpi 96</span>或编编辑/usr/bin/startx，改为：<br />
+sysserverrc=/usr/lib/X11/xinit/xserverrc<br />
+defaultclient=xterm<br />
+defaultserver=/usr/bin/X<br />
+defaultclientargs=&#8221;&#8221;<br />
+defaultserverargs=&#8221;<span style="color: red;"><span style="color: red;">-dpi 96</span></span>&#8221;<br />
+clientargs=&#8221;&#8221;<br />
+serverargs=&#8221;&#8221;<br />
+（来自第二个链接）</p>
+
+<p>至此完成美化了，不同发行版方行都是差不多的。</p>
+
+<p>有些人是看不到漂亮字体就不爽的，估计要花些时间配啦，什么雅黑啊，苹果的字体都可以用上，我以前看过一些图很不错的，想弄可以google之。</p>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2008/12/13/about-slackware-font/#disqus_thread">Comments</a></span>
+	
+</div>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+    </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2013
+
+    imlcl
+. Powered by <a href="http://octopress.org">Octopress</a> | 
+    Theme <a href="http://github.com/panks/fabric">fabric</a> by <a href="http://panks.me">Pankaj Kumar</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'imlcl';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://imlcl.github.io/blog/2008/12/13/about-slackware-font/';
+        var disqus_url = 'http://imlcl.github.io/blog/2008/12/13/about-slackware-font/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

@@ -2,10 +2,17 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: geek | 大头龙仔Blog]]></title>
+<<<<<<< HEAD
   <link href="http://imlcl.com/blog/categories/geek/atom.xml" rel="self"/>
   <link href="http://imlcl.com/"/>
   <updated>2013-08-21T17:29:50+08:00</updated>
   <id>http://imlcl.com/</id>
+=======
+  <link href="http://imlcl.github.io/blog/categories/geek/atom.xml" rel="self"/>
+  <link href="http://imlcl.github.io/"/>
+  <updated>2013-09-23T12:16:25+08:00</updated>
+  <id>http://imlcl.github.io/</id>
+>>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
   <author>
     <name><![CDATA[imlcl]]></name>
     
@@ -15,6 +22,7 @@
   
   <entry>
     <title type="html"><![CDATA[Lion使用RVM安装ruby]]></title>
+<<<<<<< HEAD
     <link href="http://imlcl.com/blog/2012/02/23/lion-rvm-ruby/"/>
     <updated>2012-02-23T00:00:00+08:00</updated>
     <id>http://imlcl.com/blog/2012/02/23/lion-rvm-ruby</id>
@@ -26,22 +34,56 @@
 4、之后就是常规的操作啦，一切OK</p>
 
 <p>不过程序都布置到Debian下的，估计就不用考虑这些东西了:)</p>
+=======
+    <link href="http://imlcl.github.io/blog/2012/02/23/lion-rvm-ruby/"/>
+    <updated>2012-02-23T00:00:00+08:00</updated>
+    <id>http://imlcl.github.io/blog/2012/02/23/lion-rvm-ruby</id>
+    <content type="html"><![CDATA[<p>ruby最新p125有些重要的安全升级，我发现升级到Lion 10.7.3后发现rvm install ruby-1.9.3-p125不能使用，后来通过以下方法解决（可参考rvm requirements）：</p>
+
+
+
+
+<p>1、安装最新XCode环境或osx-gcc-installer，我选择的是前者，到官网下载Command Line Tool For Xcode - February 2012，只要这个就好，这就提供了最基本的编译环境工具链了；<br />
+2、rvm install ruby-1.9.3-p125 --with-gcc=clang，没有clang是不能编译通过的，因为苹果的gcc是自己定制过的。之后就是rvm upgrade ruby-x.x.x-pxxx ruby-1.9.3-p125什么的，看着搞就行；<br />
+3、还有后续工作是要重新编译一下gem里的一些native extension，特别是DB Driver，rvm requirements最后那里也有提示。不过我干脆就将gem全册再重装，可以用rvm gemdir来看gem的目录，把相关目录里的东东rm掉即可<br />
+4、之后就是常规的操作啦，一切OK</p>
+
+
+
+
+<p>不过程序都布置到Debian下的，估计就不用考虑这些东西了:)</p>
+
+>>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[玩玩MacBook Pro]]></title>
+<<<<<<< HEAD
     <link href="http://imlcl.com/blog/2012/02/22/macbook-pro/"/>
     <updated>2012-02-22T00:00:00+08:00</updated>
     <id>http://imlcl.com/blog/2012/02/22/macbook-pro</id>
     <content type="html"><![CDATA[<p>最近拿了朋友的MacBook Pro来玩，发现其成功的确有其原因。因为最近都在搞RoR，使用TextMate应该是最好的选择了。我也利用一些时间来研究了这电脑杂七杂八的东西，包括其中一些另类的操作系统理念，MAC OS的界面就不用多说了，其实给我最重要的感觉是简单易用，相比WIN，更能让自己专注于工作（对我个人而言）。</p>
 
 <p>总得来说因为时间很短，暂时也没什么可以分享的，不过刚看一篇好文，分享给大家：<a href="http://www.programmer.com.cn/9436/">Mac OS X 背后的故事（八）三好学生Chris Lattner的LLVM编译工具链</a></p>
+=======
+    <link href="http://imlcl.github.io/blog/2012/02/22/macbook-pro/"/>
+    <updated>2012-02-22T00:00:00+08:00</updated>
+    <id>http://imlcl.github.io/blog/2012/02/22/macbook-pro</id>
+    <content type="html"><![CDATA[<p>最近拿了朋友的MacBook Pro来玩，发现其成功的确有其原因。因为最近都在搞RoR，使用TextMate应该是最好的选择了。我也利用一些时间来研究了这电脑杂七杂八的东西，包括其中一些另类的操作系统理念，MAC OS的界面就不用多说了，其实给我最重要的感觉是简单易用，相比WIN，更能让自己专注于工作（对我个人而言）。</p>
+
+
+
+
+<p>总得来说因为时间很短，暂时也没什么可以分享的，不过刚看一篇好文，分享给大家：<a href="http://www.programmer.com.cn/9436/">Mac OS X 背后的故事（八）三好学生Chris Lattner的LLVM编译工具链</a></p>
+
+>>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[你会爱上的一个Notepad++插件——FingerText]]></title>
+<<<<<<< HEAD
     <link href="http://imlcl.com/blog/2012/01/27/fingertext/"/>
     <updated>2012-01-27T00:00:00+08:00</updated>
     <id>http://imlcl.com/blog/2012/01/27/fingertext</id>
@@ -51,11 +93,30 @@ FingerText</a>，刚发现的一个Notepad++插件，只要配置得当，手写
 <p><img class="alignnone" title="FingerText" src="http://sourceforge.net/projects/fingertext/screenshots/316871" alt="" width="621" height="480" /></p>
 
 <p>&nbsp;</p>
+=======
+    <link href="http://imlcl.github.io/blog/2012/01/27/notepad-fingertext/"/>
+    <updated>2012-01-27T00:00:00+08:00</updated>
+    <id>http://imlcl.github.io/blog/2012/01/27/notepad-fingertext</id>
+    <content type="html"><![CDATA[<p>我不是苹果爱好者，但不得不说TextMate是一个非常优秀的代码编辑工具<a href="https://github.com/erinata/FingerText">
+FingerText</a>，刚发现的一个Notepad++插件，只要配置得当，手写代码真的能快很多（超强Tab补全），反正用起来就有TextMate的味儿，反正我已经爱上了。</p>
+
+
+
+
+<p><img class="alignnone" title="FingerText" src="http://sourceforge.net/projects/fingertext/screenshots/316871" alt="" width="621" height="480" /></p>
+
+
+
+
+<p>&nbsp;</p>
+
+>>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[使用EMOS搭建Web电子邮件系统]]></title>
+<<<<<<< HEAD
     <link href="http://imlcl.com/blog/2011/10/10/1/"/>
     <updated>2011-10-10T00:00:00+08:00</updated>
     <id>http://imlcl.com/blog/2011/10/10/1</id>
@@ -105,11 +166,82 @@ return 'lbxixiao.com';
 
 <p>补充一下通过此系统讲课的效果还是可以的，关键是自建系统，在内网速度快，容易注册，学生们沟通速度更快，大大提升课堂效率。由于系统是内网的，所以要和学生们说明离开了学校是不能用的（计划建立到学校托管服务器上，到时可实现外网访问）。
 Anyway，举一反三，一通百通，厚积薄发才是王道。</p>
+=======
+    <link href="http://imlcl.github.io/blog/2011/10/10/emos-email/"/>
+    <updated>2011-10-10T00:00:00+08:00</updated>
+    <id>http://imlcl.github.io/blog/2011/10/10/emos-email</id>
+    <content type="html"><![CDATA[<p>呃，本来真的没有必要弄这东西，但课程需要不得不弄。</p>
+
+
+
+
+<p>为什么要自己搭建Web电子邮件系统？其实是教学上的需要，现在免费的邮箱注册都有一些防恶意的设定，举例来说课堂上50多名学生同时登陆同一个网站申请电子邮箱是不可行的，对方网站会认为这是带攻击性的行为，封之，这是我在课堂上的亲身经历，于是就有了这个解决方案。</p>
+
+
+
+
+<p>这是一篇指引性文章，并没有手把手去教，要搭建EMOS电子邮件系统，你需要准备：<br />
+1、EMOS安装ISO，我用的是EMOS_1.5_i386.iso，可以到<a href="http://www.extmail.org/">http://www.extmail.org/</a>了解，并下载相关的ISO；<br />
+2、存在于校园网络中的VirtualBox（下面简称VBox）等虚拟机或者真实PC一台，我这里使用VBox，关于VBox的教程，网上一搜一大坨；<br />
+3、假定你有一定的Linux、网页基础知识，和懂26个英文字母；<br />
+假如你对上面三点有问题，都可以Google百度之，这其实也是一个简单的学习过程。</p>
+
+
+
+
+<p>口水太多，说来就来，开始吧。</p>
+
+
+
+
+<p>1、新建一个虚拟机，选择Linux的2.6内核版本，内存可以选512M（假如你电脑内存充足的话），不然就老老实实256M吧，硬盘大小就用默认的8G动态就好。<br />
+2、为了让VBox能接入网络，我使用了网桥模式，如下图设定就好：
+<img src="/images/blog/2.jpg">
+3、插入EMOS的ISO，启动了，进入如下界面，按回车Enter就好：
+<img src="/images/blog/3.jpg">
+4、接着会进入一个界面，点Skip，跳过检测，进入下一步；<br />
+5、接着进入图形安装界面，可以用鼠标了，哈哈，怎么那么眼熟？没错，EMOS安装光盘是基于CentOS构建的。下面是狂点Next，见到是否就点是，看得懂就选一下，看不懂我建议你就不要改。到了网络设备的界面，请相应作修改，下面是我的设定：
+<img src="/images/blog/41.jpg">
+6、之后又进入狂点Next，设个root密码，记住，后面要用root帐户进入的，后面是安装时间，喝口水吧：）<br />
+7、重启后再入EMOS的系统配置，基本也是狂点Next，但有一个要注意的，看图：
+<img src="/images/blog/5.jpg">
+<strong>这里设定的Default Domain，就是后面我们要用的邮箱主机名，就是邮箱地址@后面的部分</strong>
+8、Default Hostname可以用默认的，这个不用管，接着基本都按回车键，看到设定Password的，就设自己的密码，不设都是默认为extmail；<br />
+9、后面如无特殊需要，都是按回车过了，我的最后设备图是：
+<img src="/images/blog/6.jpg">
+配置完毕，自动重启；<br />
+10、到此，EMOS安装完毕，我们可以通过设给系统的IP进行访问，如图：
+<img src="/images/blog/7.jpg">
+现在就来解决那个看得很不爽的IP域名，假如你的服务器布置在公网上，这部分可以略过。下面所做的，只是方便在内网使用，并且让邮箱主机名看起来更像邮箱主机名，而不是IP地址。<br />
+现在通过VBox登陆进去，帐户是root，密码是刚才你设的，登陆后：<br />
+cd /var/www/extsuite/extmail/html/default<br />
+修改index.html里的function domain()函数，改为：<br />
+function domain() {<br />
+return 'lbxixiao.com';<br />
+}
+之后保存。这里可以使用vi index.html命令来修改<br />
+修改完成，刷新一下刚才的页面：
+<img src="/images/blog/8.jpg">
+这下好了，不想写太多费话，剩下的就靠个人摸索吧，提示一下网络员登陆地址是x.x.x.x/extman/</p>
+
+
+
+
+<p>呃，就写到这里</p>
+
+
+
+
+<p>补充一下通过此系统讲课的效果还是可以的，关键是自建系统，在内网速度快，容易注册，学生们沟通速度更快，大大提升课堂效率。由于系统是内网的，所以要和学生们说明离开了学校是不能用的（计划建立到学校托管服务器上，到时可实现外网访问）。<br />
+Anyway，举一反三，一通百通，厚积薄发才是王道。</p>
+
+>>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[使用curl实现刷票功能要点]]></title>
+<<<<<<< HEAD
     <link href="http://imlcl.com/blog/2010/11/01/curl_vote_beyond/"/>
     <updated>2010-11-01T00:00:00+08:00</updated>
     <id>http://imlcl.com/blog/2010/11/01/curl_vote_beyond</id>
@@ -118,6 +250,22 @@ Anyway，举一反三，一通百通，厚积薄发才是王道。</p>
 <p>无论你用shell命令行，还是用PHP的curl模块，抑或是C/C++来调用相关的接口等，都可实现之，不过可能要看相关的接口文档
 curl的Man Page在这里<a href="http://curl.haxx.se/docs/manpage.html">http://curl.haxx.se/docs/manpage.html</a></p>
 
+=======
+    <link href="http://imlcl.github.io/blog/2010/11/01/curl_vote_beyond/"/>
+    <updated>2010-11-01T00:00:00+08:00</updated>
+    <id>http://imlcl.github.io/blog/2010/11/01/curl_vote_beyond</id>
+    <content type="html"><![CDATA[<p>因为别人在刷票，所以为了保证公平性，我也来刷。外界不断变化，唯独理解原理，把握要点才能应对，所以我这次不说如何来实现，只来说要点，你只要有一定Web编程的基础得了。为什么拿curl来开刀？嗯……想了很久，只能说：这东东是个好东西-_-!!!</p>
+
+
+
+
+<p>无论你用shell命令行，还是用PHP的curl模块，抑或是C/C++来调用相关的接口等，都可实现之，不过可能要看相关的接口文档<br />
+curl的Man Page在这里<a href="http://curl.haxx.se/docs/manpage.html">http://curl.haxx.se/docs/manpage.html</a></p>
+
+
+
+
+>>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
 <p>原于刷票功能，我们一般关注下面的参数：
 <strong>-d/--data &lt;data&gt;</strong> 不用多说，这东西后面就填我们的数据，如"userid=1&amp;num=32"，直接使用此选项发送数据，数据将以POST方式发送，你要刷票当然要刷对人啦
 <strong>-G/--get</strong> 如果想用Get方式，就得接这个
@@ -125,7 +273,15 @@ curl的Man Page在这里<a href="http://curl.haxx.se/docs/manpage.html">http://c
 <strong>-H/--header &lt;header&gt;</strong> 这个是好东西，能修改使用curl发送的HTTP请求header，恶邪的你一定想到用这个来改user-agent了（用--user-agent也行），对啦，想换什么浏览器都行，还可以加个<a href="http://en.wikipedia.org/wiki/X-Forwarded-For">X-Forwarded-For</a>字段来骗骗人呢，总之这个参数是伪装必用利器啊
 <strong>-e/--referer &lt;URL&gt;</strong> 这个可能也会用的，但我一般都不加这个</p>
 
+<<<<<<< HEAD
 <p>好吧，使用了curl冰山一角的功能，不过足矣</p>
+=======
+
+
+
+<p>好吧，使用了curl冰山一角的功能，不过足矣</p>
+
+>>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
 ]]></content>
   </entry>
   

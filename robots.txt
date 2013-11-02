@@ -1,4 +1,8 @@
 User-agent: *
 Disallow: 
 
+<<<<<<< HEAD
 Sitemap: http://imlcl.com/sitemap.xml 
+=======
+Sitemap: http://imlcl.github.io/sitemap.xml 
+>>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4

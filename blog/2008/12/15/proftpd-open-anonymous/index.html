@@ -1,0 +1,188 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>关于proftpd开启anonymous访问权限 - 大头龙仔Blog</title>
+    <meta name="author" content="imlcl">
+    
+	<meta name="description" content="proftpd是Linux下很常用的一个Ftp服务器，slackware自带vsftpd和proftpd两个ftp服务器。
+vsftpd小巧快速，proftpd在定制性和安全性比vsftpd好。 我打算把proftpd开anonymous（匿名）访问权限，slackware 12.2安装时， &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <script src="/javascripts/ajaxify.js"></script>
+   
+    
+    
+
+</head>
+
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+        imlcl
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  <!-- GitHub -->
+  <li>
+  <a href="https://github.com/imlcl" class="github" title="Github"></a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+    <li id="ajax"><a href="/blog/archives/index.html">Blog</a></li>
+	<li id="ajax"><a href="/about/index.html">About</a></li>
+    <li><a href="/atom.xml">RSS</a></li>
+    
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="toload">
+<!-- begin toload --> 
+    <div id="content" class="inner">
+        <article class="post">
+	<h2 class="title">关于proftpd开启anonymous访问权限</h2>
+	<div class="entry-content"><p>proftpd是Linux下很常用的一个Ftp服务器，slackware自带vsftpd和proftpd两个ftp服务器。<br />
+vsftpd小巧快速，proftpd在定制性和安全性比vsftpd好。</p>
+
+<p>我打算把proftpd开anonymous（匿名）访问权限，slackware 12.2安装时，proftpd已把/etc/proftpd.conf配置好支持anonymous的，但登录时老出现:<br />
+220 ProFTPD 1.3.1 Server (ProFTPD Default Installation) [::ffff:127.0.0.1]<br />
+Name (localhost:root): anonymous<br />
+331 Anonymous login ok, send your complete email address as your password<br />
+Password:<br />
+530 Login incorrect.<br />
+Login failed.<br />
+从而失败。上网查了很多资料，但没找到解决方法。后来发现是自己没有认真阅读proftpd.conf，人家里面就有一句:
+<pre lang="bash"># To enable this, remove the user ftp from /etc/ftpusers.</pre>
+打开/etc/ftpusers，人家里面又有一句:
+<pre lang="bash"># To enable anonymous FTP, remove the "ftp" user:</pre>
+我晕，那只要在ftp前加个#后，<pre lang="bash">/etc/rc.d/rc.inetd restart</pre>就行啦。</p>
+
+<p>总结一下：<br />
+1、我想不明白为什么网上没有这个帮助资料，可能我比较菜，也比较粗心；<br />
+2、网上提到开anonymous高频help是加入<pre lang="bash">RequireValidShell off</pre>slackware默认安装已有这个参数；<br />
+3、借此分享给大家</p>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2008/12/15/proftpd-open-anonymous/#disqus_thread">Comments</a></span>
+	
+</div>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+    </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2013
+
+    imlcl
+. Powered by <a href="http://octopress.org">Octopress</a> | 
+    Theme <a href="http://github.com/panks/fabric">fabric</a> by <a href="http://panks.me">Pankaj Kumar</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'imlcl';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://imlcl.github.io/blog/2008/12/15/proftpd-open-anonymous/';
+        var disqus_url = 'http://imlcl.github.io/blog/2008/12/15/proftpd-open-anonymous/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>

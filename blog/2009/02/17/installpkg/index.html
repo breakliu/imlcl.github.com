@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 <!DOCTYPE html>
 <!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
 <!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
@@ -73,10 +74,94 @@
     
       <p class="meta">
         
+=======
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>剖析slackware pkgtools之installpkg篇 - 大头龙仔Blog</title>
+    <meta name="author" content="imlcl">
+    
+	<meta name="description" content="作者: slackcode
+pkgtools版本: pkgtools-12.1.0-noarch-7.tgz
+我并不是什么高手牛人，我只是路过，觉得好玩，所以拿出来看看，希望与大家分享，共同学习
+如有转载，请注明出处:)
+———————————————————-
+installpkg源文件请到这里 &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <script src="/javascripts/ajaxify.js"></script>
+   
+    
+    
+
+</head>
+
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+        imlcl
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  <!-- GitHub -->
+  <li>
+  <a href="https://github.com/imlcl" class="github" title="Github"></a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+    <li id="ajax"><a href="/blog/archives/index.html">Blog</a></li>
+	<li id="ajax"><a href="/about/index.html">About</a></li>
+    <li><a href="/atom.xml">RSS</a></li>
+    
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+>>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
 
 
 
 
+<<<<<<< HEAD
 
 
 
@@ -98,10 +183,25 @@ pkgtools版本: pkgtools-12.1.0-noarch-7.tgz
 我并不是什么高手牛人，我只是路过，觉得好玩，所以拿出来看看，希望与大家分享，共同学习
 如有转载，请注明出处:)
 ———————————————————-
+=======
+</header>
+
+<div id="toload">
+<!-- begin toload --> 
+    <div id="content" class="inner">
+        <article class="post">
+	<h2 class="title">剖析slackware Pkgtools之installpkg篇</h2>
+	<div class="entry-content"><p><span class="content">作者: slackcode</span>
+pkgtools版本: pkgtools-12.1.0-noarch-7.tgz<br />
+我并不是什么高手牛人，我只是路过，觉得好玩，所以拿出来看看，希望与大家分享，共同学习<br />
+如有转载，请注明出处:)<br />
+———————————————————-<br />
+>>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
 installpkg源文件请到这里:
 <a href="http://darkstar.ist.utl.pt/pub/slackware/slackware-12.2/source/a/pkgtools/scripts/installpkg">http://darkstar.ist.utl.pt/pub/slackware/slackware-12.2/source/a/pkgtools/scripts/installpkg</a>
 <pre lang="bash"># If installpkg encounters a problem, it will return a non-zero error code.
 # If it finds more than one problem (i.e. with a list of packages) you'll only
+<<<<<<< HEAD
 # hear about the most recent one. :)
 
 # 1 = tar returned error code
@@ -110,6 +210,16 @@ installpkg源文件请到这里:
 # 4 = not a file
 # 99 = user abort from menu mode
 EXITSTATUS=0</pre>
+=======
+# hear about the most recent one. :)</pre></p>
+
+<p># 1 = tar returned error code<br />
+# 2 = failed &#8216;gzip -l package&#8217;<br />
+# 3 = does not end in .tgz<br />
+# 4 = not a file<br />
+# 99 = user abort from menu mode<br />
+EXITSTATUS=0
+>>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
 installpkg执行结束后的返回值, 即$?
 <pre lang="bash"># So that we know what to expect...
 umask 022        # 当前权限 与 (777 - 022)
@@ -119,6 +229,7 @@ if [ ! $? = 0 ]; then
     TAR=tar
 fi</pre>
 这里是判断$TAR &#8211;help的返回值,命令执行成功一般都为0,失败为非0,$?即为这个返回值
+<<<<<<< HEAD
 <pre lang="bash">if [ ! "`LC_MESSAGES=C $TAR --version`" = "tar (GNU tar) 1.13
 
 Copyright (C) 1988, 92,93,94,95,96,97,98, 1999 Free Software Foundation, Inc.
@@ -139,10 +250,33 @@ ls -l /bin/tar*
 lrwxrwxrwx 1 root root      3 2008-12-09 23:00 /bin/tar-1.16.1 -> tar
 从这个看来, tar即tar-1.16.1了
 if [ ! &#8220;`LC_MESSAGES=C $TAR &#8211;version | head -n 1`&#8221; = &#8220;tar (GNU tar) 1.13&#8221; ]不是更简单么?不过可能出于严谨,作者认为只有版本号对是不够的,还要判断整个version
+=======
+<pre lang="bash">if [ ! "`LC_MESSAGES=C $TAR --version`" = "tar (GNU tar) 1.13</pre></p>
+
+<p>Copyright (C) 1988, 92,93,94,95,96,97,98, 1999 Free Software Foundation, Inc.<br />
+This is free software; see the source for copying conditions.  There is NO<br />
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.</p>
+
+<p>Written by John Gilmore and Jay Fenlason.&#8221; ]; then<br />
+    echo &#8220;WARNING: pkgtools are unstable with tar > 1.13.&#8221;<br />
+    echo &#8221;         You should provide a &#34;tar-1.13&#34; in your \$PATH.&#8221;<br />
+    sleep 5<br />
+fi
+
+installpkg定义tar-1.13为稳定版本, slackware 12.2有tar-1.13和tar-1.16.1<br />
+再看看tar是哪个版本<br />
+ls -l /bin/tar*<br />
+-rwxr-xr-x 1 root root 233196 2006-12-14 13:37 /bin/tar*<br />
+-rwxr-xr-x 1 root root 115036 2006-12-14 13:37 /bin/tar-1.13*<br />
+lrwxrwxrwx 1 root root      3 2008-12-09 23:00 /bin/tar-1.16.1 -> tar<br />
+从这个看来, tar即tar-1.16.1了<br />
+if [ ! &#8220;`LC_MESSAGES=C $TAR &#8211;version | head -n 1`&#8221; = &#8220;tar (GNU tar) 1.13&#8221; ]不是更简单么?不过可能出于严谨,作者认为只有版本号对是不够的,还要判断整个version<br />
+>>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
 另这个LC_MESSAGES=C是需要的,我使用系统默认的en_US发现有问题,我知道使用C就是使用127bit的ASCII码系统,至于为什么en_US会不行,希望有高人能回答一下
 <!--more-->
 <pre lang="bash">usage() {
  cat << EOF
+<<<<<<< HEAD
 Usage: installpkg [options] package_name
 
 Installpkg is used to install a .tgz package like this:
@@ -170,6 +304,35 @@ tagfile这个东西用得比较少,如果你经常装slackware,并且想定制�
 http://www.linuxsir.org/bbs/thread117475.html
 http://www.flaterco.com/kb/slackware.html
 http://www.linuxsir.org/bbs/thread117475-2.html
+=======
+Usage: installpkg [options] package_name</pre></p>
+
+<p>Installpkg is used to install a .tgz package like this:<br />
+   installpkg xf_bin.tgz</p>
+
+<p>options:      -warn (warn if files will be overwritten, but do not install)<br />
+              -root /mnt (install someplace else, like /mnt)<br />
+              -infobox (use dialog to draw an info box)<br />
+              -menu (confirm package installation with a menu, unless<br />
+                    the priority is [required] or ADD)<br />
+              -ask (used with menu mode: always ask if a package should be<br />
+                   installed regardless of what the package&#8217;s priority is)<br />
+              -priority ADD|REC|OPT|SKP  (provide a priority for the entire<br />
+                    package list to use instead of the priority in the<br />
+                    tagfile)<br />
+              -tagfile /somedir/tagfile (specify a different file to use<br />
+                    for package priorities.  The default is &#8220;tagfile&#8221; in<br />
+                    the package&#8217;s directory)</p>
+
+<p>EOF<br />
+}
+
+这个东西大家应该很熟悉<br />
+tagfile这个东西用得比较少,如果你经常装slackware,并且想定制自己的安装过程,那么用tagfile可以省去每次都选择安装包的麻烦,可以参考:<br />
+http://www.linuxsir.org/bbs/thread117475.html<br />
+http://www.flaterco.com/kb/slackware.html<br />
+http://www.linuxsir.org/bbs/thread117475-2.html<br />
+>>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
 http://www.justlinux.com/nhf/Distribution_Specific/Slackware_Linux/Slackware__Tagfiles.html
 <pre lang="bash"># Eliminate whitespace function:
 crunch() {
@@ -208,10 +371,17 @@ crunch() {
   fi
 }
 </pre>
+<<<<<<< HEAD
 其实这段代码我不是太理解,因为我只接触过new-style name
 以pkgtools-12.1.0-noarch-7.tgz为例吧,new-style名字结构为: name-ver-arch-build.tgz构成
 我以前试过自己构建tgz包,但没有遵循这个命名规则,removepkg时没能正确识别这个包
 总得来说,这个函数的作用是取得这个包的名字
+=======
+其实这段代码我不是太理解,因为我只接触过new-style name<br />
+以pkgtools-12.1.0-noarch-7.tgz为例吧,new-style名字结构为: name-ver-arch-build.tgz构成<br />
+我以前试过自己构建tgz包,但没有遵循这个命名规则,removepkg时没能正确识别这个包<br />
+总得来说,这个函数的作用是取得这个包的名字<br />
+>>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
 我的疑问是为什么不直接cut -f 1 -d -呢,而要多做这么多工作?
 <pre lang="bash"># Set the prefix for the package database directories (packages, scripts).
 ADM_DIR="$ROOT/var/log"
@@ -248,6 +418,7 @@ if [ "$MODE" = "warn" ]; then
     mkdir -p $TMP/scan$$
     ( cd $TMP/scan$$ ; $TAR xzf - install ) < $1 2> /dev/null
     # tar xzf - install的意思是: 把$1里的install目录解压为当前目录
+<<<<<<< HEAD
     # 我第一次看到这种用法, 感到很cool
 
     if [ -r $TMP/scan$$/install/doinst.sh ]; then
@@ -275,10 +446,40 @@ if [ "$MODE" = "warn" ]; then
   exit
 fi
 </pre>
+=======
+    # 我第一次看到这种用法, 感到很cool</pre></p>
+
+<p>    if [ -r $TMP/scan$$/install/doinst.sh ]; then<br />
+      if cat $TMP/scan$$/install/doinst.sh | grep &#8217; rm -rf &#8217; 1>/dev/null 2>/dev/null ; then<br />
+        cat $TMP/scan$$/install/doinst.sh | grep &#8217; rm -rf &#8217; > $TMP/scan$$/install/delete<br />
+        echo &#8220;The following locations will be completely WIPED OUT to allow symbolic&#8221;<br />
+        echo &#8220;links to be made. (We&#8217;re talking &#8216;rm -rf&#8217;) These locations may be files,&#8221;<br />
+        echo &#8220;or entire directories.  Be sure you&#8217;ve backed up anything at these&#8221;<br />
+        echo &#8220;locations that you want to save before you install this package:&#8221;<br />
+        cat $TMP/scan$$/install/delete | cut -f 3,7 -d &#8217; &#8217; | tr &#8217; &#8217; &#8216;/&#8217;<br />
+        # 对于这句的处理我觉得挺有意思, pkgtools约定的格式用法<br />
+        # 向用户提示一下rm -rf的东东<br />
+      fi<br />
+      if [ -d $TMP/scan$$ ]; then<br />
+        ( cd $TMP/scan$$ ; rm -rf install ) 2> /dev/null<br />
+        ( cd $TMP ; rmdir scan$$ ) 2> /dev/null<br />
+      fi<br />
+    fi<br />
+    echo &#8220;The following files will be overwritten when installing this package.&#8221;<br />
+    echo &#8220;Be sure they aren&#8217;t important before you install this package:&#8221;<br />
+    ( $TAR tzvvf - ) < $1 | grep -v 'drwx'<br />
+    echo<br />
+    shift 1<br />
+  done<br />
+  exit<br />
+fi
+
+>>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
 warn模式, 作用是模拟安装过程, 提示用户哪些操作要注意的
 <pre lang="bash"># Main loop:
 # 好不容易, 终于来到installpkg主循环啦LOL
 for package in $* ; do
+<<<<<<< HEAD
   # 当你installpkg a b c d时, 那里$*就是a b c d啦, 就是传入的所有包名字
 
   # If someone left off the .tgz, try to figure that out:
@@ -298,6 +499,27 @@ for package in $* ; do
   # packagedir  =  /root(如果是installpkg bash-3.1.017-i486-2.tgz, 这个结果是.)
   # packagebase =  bash, package_name是函数, 那句英文注释说明其作用了
 </pre>
+=======
+  # 当你installpkg a b c d时, 那里$*就是a b c d啦, 就是传入的所有包名字</pre></p>
+
+<p>  # If someone left off the .tgz, try to figure that out:<br />
+  # &#8220;$package&#8221;不可读且&#8221;$package.tgz&#8221;可读, 自己加上.tgz<br />
+  if [ ! -r &#8220;$package&#8221; -a -r &#8220;$package.tgz&#8221; ]; then<br />
+    package=$package.tgz<br />
+  fi</p>
+
+<p>  # &#8220;shortname&#8221; isn&#8217;t really THAT short&#8230; it&#8217;s just the full name without &#8220;.tgz&#8221;<br />
+  shortname=&#8221;`basename $package .tgz`&#8221;<br />
+  packagedir=&#8221;`dirname $package`&#8221;<br />
+  # This is the base package name, used for grepping tagfiles and descriptions:<br />
+  packagebase=&#8221;`package_name $shortname`&#8221;<br />
+  # examples:<br />
+  # installpkg /root/bash-3.1.017-i486-2.tgz<br />
+  # shortname   =  bash-3.1.017-i486-2<br />
+  # packagedir  =  /root(如果是installpkg bash-3.1.017-i486-2.tgz, 这个结果是.)<br />
+  # packagebase =  bash, package_name是函数, 那句英文注释说明其作用了
+
+>>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
 <pre lang="bash">  # Reject package if it does not end in '.tgz':
   if [ ! -r "`dirname $package`/$shortname.tgz" ]; then
     EXITSTATUS=3
@@ -305,6 +527,7 @@ for package in $* ; do
       echo "Cannot install $package: package does not end in .tgz"
     fi
     continue;
+<<<<<<< HEAD
   fi
 
   # Determine package's priority:
@@ -342,6 +565,45 @@ for package in $* ; do
 ADD:  Install the package.
 REC:  Prompt whether to install the package, default yes.
 OPT:  Prompt whether to install the package, default no.
+=======
+  fi</pre></p>
+
+<p>  # Determine package&#8217;s priority:<br />
+  unset PRIORITY<br />
+  if [ &#8220;$USERTAGFILE&#8221; = &#8220;&#8221; ]; then<br />
+    TAGFILE=&#8221;`dirname $package`/tagfile&#8221;<br />
+  else<br />
+    TAGFILE=&#8221;$USERTAGFILE&#8221;<br />
+  fi<br />
+  if [ ! -r &#8220;$TAGFILE&#8221; ]; then<br />
+    TAGFILE=/dev/null<br />
+  fi<br />
+  if grep &#8220;^$packagebase:&#8221; &#8220;$TAGFILE&#8221; | grep ADD > /dev/null 2> /dev/null ; then<br />
+    PRIORITY=&#8221;ADD&#8221;<br />
+  elif grep &#8220;^$packagebase:&#8221; &#8220;$TAGFILE&#8221; | grep REC > /dev/null 2> /dev/null ; then<br />
+    PRIORITY=&#8221;REC&#8221;<br />
+  elif grep &#8220;^$packagebase:&#8221; &#8220;$TAGFILE&#8221; | grep OPT > /dev/null 2> /dev/null ; then<br />
+    PRIORITY=&#8221;OPT&#8221;<br />
+  elif grep &#8220;^$packagebase:&#8221; &#8220;$TAGFILE&#8221; | grep SKP > /dev/null 2> /dev/null ; then<br />
+    PRIORITY=&#8221;SKP&#8221;<br />
+  fi<br />
+  if [ &#8220;$PRIORITY&#8221; = &#8220;ADD&#8221; ]; then<br />
+    PMSG=&#8221;[ADD]&#8221;<br />
+  elif [ &#8220;$PRIORITY&#8221; = &#8220;REC&#8221; ]; then<br />
+    PMSG=&#8221;[REC]&#8221;<br />
+  elif [ &#8220;$PRIORITY&#8221; = &#8220;OPT&#8221; ]; then<br />
+    PMSG=&#8221;[OPT]&#8221;<br />
+  elif [ &#8220;$PRIORITY&#8221; = &#8220;SKP&#8221; ]; then<br />
+    PMSG=&#8221;[SKP]&#8221;<br />
+  else<br />
+    PMSG=&#8221;&#8221;<br />
+  fi
+
+上面的$packagebase派上用场了, 还是tagfile, 之前发过一些关于tagfile的介绍, 我本人没用过tagfile来安装过<br />
+ADD:  Install the package.<br />
+REC:  Prompt whether to install the package, default yes.<br />
+OPT:  Prompt whether to install the package, default no.<br />
+>>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
 SKP:  Do not install the package.
 <pre lang="bash">  # Locate package description file:
   DESCRIPTION="/dev/null"
@@ -364,6 +626,7 @@ SKP:  Do not install the package.
     elif grep "^$shortname:" "$TMP/scan$$/install/slack-desc" 1> /dev/null 2> /dev/null ; then
       DESCRIPTION="$TMP/scan$$/install/slack-desc"
     fi
+<<<<<<< HEAD
   fi
 
   # Simple package integrity check:
@@ -472,6 +735,116 @@ EOF
   fi
 </pre>
 dialog部分理解不是太好,觉得逻辑有点乱,加上自己平时都直接installpk的,不带参数
+=======
+  fi</pre></p>
+
+<p>  # Simple package integrity check:<br />
+  if [ ! -f $package ]; then<br />
+    EXITSTATUS=4<br />
+    if [ &#8220;$MODE&#8221; = &#8220;install&#8221; ]; then<br />
+      echo &#8220;Cannot install $package: package is not a regular file&#8221;<br />
+    fi<br />
+    continue;<br />
+  fi</p>
+
+<p>  # gzip -l一下,看看成功否<br />
+  gzip -l $package 1> /dev/null 2> /dev/null<br />
+  if [ ! &#8220;$?&#8221; = &#8220;0&#8221; ]; thenf<br />
+    EXITSTATUS=2 # failed gzip -l # failed gzip -l 不成功<br />
+    if [ &#8220;$MODE&#8221; = &#8220;install&#8221; ]; then<br />
+      echo &#8220;Cannot install $package: package is corrupt (failed &#8216;gzip -l $package&#8217;)&#8221;<br />
+    fi<br />
+    continue;<br />
+  fi</p>
+
+<p>  # Collect the package information into a temp file:<br />
+  COMPRESSED=`gzip -l $package | grep -v uncompressed_name | crunch | cut -f 1 -d &#8217; &#8216;`<br />
+  UNCOMPRESSED=`gzip -l $package | grep -v uncompressed_name | crunch | cut -f 2 -d &#8217; &#8216;`<br />
+  COMPRESSED=&#8221;`expr $COMPRESSED / 1024` K&#8221;<br />
+  UNCOMPRESSED=&#8221;`expr $UNCOMPRESSED / 1024` K&#8221;<br />
+#  MD5SUM=`md5sum $package | cut -f 1 -d &#8217; &#8216;`<br />
+  cat $DESCRIPTION | grep &#8220;^$packagebase:&#8221; | cut -f 2- -d : | cut -b2- 1> $TMP/tmpmsg$$ 2> /dev/null<br />
+  if [ &#8220;$shortname&#8221; != &#8220;$packagebase&#8221; ]; then<br />
+    cat $DESCRIPTION | grep &#8220;^$shortname:&#8221; | cut -f 2- -d : | cut -b2- 1>> $TMP/tmpmsg$$ 2> /dev/null<br />
+  fi<br />
+  # Adjust the length here.  This allows a slack-desc to be any size up to 13 lines instead of fixed at 11.<br />
+  # 这些要补足12行的原因,我估计是为了显示上的美观<br />
+  LENGTH=`cat $TMP/tmpmsg$$ | wc -l`<br />
+  while [ $LENGTH -lt 12 ]; do<br />
+    echo >> $TMP/tmpmsg$$<br />
+    LENGTH=`expr $LENGTH + 1`<br />
+  done<br />
+  echo &#8220;Size: Compressed: $COMPRESSED, uncompressed: $UNCOMPRESSED.&#8221; >> $TMP/tmpmsg$$<br />
+  # For recent versions of dialog it is necessary to add \n to the end of each line<br />
+  # or it will remove repeating spaces and mess up our careful formatting:<br />
+  cat << EOF > $TMP/controlns$$<br />
+\n<br />
+\n<br />
+\n<br />
+\n<br />
+\n<br />
+\n<br />
+\n<br />
+\n<br />
+\n<br />
+\n<br />
+\n<br />
+\n<br />
+\n<br />
+EOF<br />
+  # 一行行合并这两个文件<br />
+  paste -d &#8220;&#8221; $TMP/tmpmsg$$ $TMP/controlns$$ > $TMP/pasted$$<br />
+  rm -f $TMP/controlns$$<br />
+  mv $TMP/pasted$$ $TMP/tmpmsg$$<br />
+  # Emit information to the console:<br />
+  if [ &#8220;$MODE&#8221; = &#8220;install&#8221; ]; then<br />
+    if [ &#8220;$PMSG&#8221; = &#8220;&#8221; ]; then<br />
+      echo &#8220;Installing package $shortname&#8230; &#8221; # 不使用tagfile,应该都进到这个<br />
+    else<br />
+      echo &#8220;Installing package $shortname ($PMSG)&#8230; &#8221;<br />
+    fi<br />
+    echo &#8220;PACKAGE DESCRIPTION:&#8221;<br />
+    cat $DESCRIPTION | grep &#8220;^$packagebase:&#8221; | uniq<br />
+    if [ &#8220;$shortname&#8221; != &#8220;$packagebase&#8221; ]; then<br />
+      cat $DESCRIPTION | grep &#8220;^$shortname:&#8221; | uniq<br />
+    fi<br />
+  elif [ &#8220;$MODE&#8221; = &#8220;infobox&#8221; -a ! &#8220;$PRIORITY&#8221; = &#8220;SKP&#8221; ]; then # install non-SKP infobox package<br />
+    # infobox模式, 非SKP(install non-SKP infobox package)<br />
+    dialog &#8211;title &#8220;Installing package $shortname $PMSG&#8221; &#8211;infobox &#8220;`cat $TMP/tmpmsg$$`&#8221; 0 0<br />
+  elif [ &#8220;$MODE&#8221; = &#8220;menu&#8221; -a &#8220;$PRIORITY&#8221; = &#8220;ADD&#8221; -a ! &#8220;$ALWAYSASK&#8221; = &#8220;yes&#8221; ]; then # ADD overrides menu mode unless -ask was used<br />
+    # menu模式, ADD, 非-ask(ADD overrides menu mode unless -ask was used)<br />
+    dialog &#8211;title &#8220;Installing package $shortname $PMSG&#8221; &#8211;infobox &#8220;`cat $TMP/tmpmsg$$`&#8221; 0 0<br />
+  elif [ &#8220;$MODE&#8221; = &#8220;menu&#8221; -a &#8220;$USERPRIORITY&#8221; = &#8220;ADD&#8221; ]; then # install no matter what $PRIORITY<br />
+    # menu模式, installpkg指定为ADD(install no matter what $PRIORITY)<br />
+    dialog &#8211;title &#8220;Installing package $shortname $PMSG&#8221; &#8211;infobox &#8220;`cat $TMP/tmpmsg$$`&#8221; 0 0<br />
+  elif [ &#8220;$MODE&#8221; = &#8220;menu&#8221; -a &#8220;$PRIORITY&#8221; = &#8220;SKP&#8221; -a ! &#8220;$ALWAYSASK&#8221; = &#8220;yes&#8221; ]; then # SKP overrides menu mode unless -ask used<br />
+    # menu模式, SKP, 非-ask(SKP overrides menu mode unless -ask used)<br />
+    rm -f $TMP/tmpmsg$$<br />
+    continue # next package 不安装,跳过<br />
+  elif [ &#8220;$MODE&#8221; = &#8220;infobox&#8221; -a &#8220;$PRIORITY&#8221; = &#8220;SKP&#8221; -a ! &#8220;$ALWAYSASK&#8221; = &#8220;yes&#8221; ]; then # SKP overrides infobox mode, too<br />
+    # infobox模式, SKP, 非-ask(SKP overrides infobox mode, too)<br />
+    rm -f $TMP/tmpmsg$$<br />
+    continue # next package 不安装,跳过<br />
+  else # we must need a full menu:<br />
+    # 构造一个带选择的dialog界面<br />
+    dialog &#8211;title &#8220;Package Name: $shortname $PMSG&#8221; &#8211;menu &#8220;`cat $TMP/tmpmsg$$`&#8221; 0 0 3 \<br />
+    &#8220;Yes&#8221; &#8220;Install package $shortname&#8221; \<br />
+    &#8220;No&#8221; &#8220;Do not install package $shortname&#8221; \<br />
+    &#8220;Quit&#8221; &#8220;Abort software installation completely&#8221; 2> $TMP/reply$$<br />
+    if [ ! $? = 0 ]; then<br />
+      echo &#8220;No&#8221; > $TMP/reply$$<br />
+    fi<br />
+    REPLY=&#8221;`cat $TMP/reply$$`&#8221;<br />
+    rm -f $TMP/reply$$ $TMP/tmpmsg$$<br />
+    if [ &#8220;$REPLY&#8221; = &#8220;Quit&#8221; ]; then<br />
+      exit 99 # EXIT STATUS 99 = ABORT! 退出啦,返回值是99<br />
+    elif [ &#8220;$REPLY&#8221; = &#8220;No&#8221; ]; then<br />
+      continue # skip the package 跳过这个包<br />
+    fi<br />
+  fi
+
+dialog部分理解不是太好,觉得逻辑有点乱,加上自己平时都直接installpk的,不带参数<br />
+>>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
 理解的兄弟请留言一下
 <pre lang="bash">  # Test tarball integrity, and make sure we're not installing files on top of existing symbolic links:
   # 这个地方测试一下这个tgz包能不能解压
@@ -492,6 +865,7 @@ dialog部分理解不是太好,觉得逻辑有点乱,加上自己平时都直接
       rm -f "$ROOT/$file"
     fi
   done
+<<<<<<< HEAD
   rm -f $TMP/tmplist$$
 
   # Write the package file database entry and install the package:
@@ -694,12 +1068,144 @@ exit $EXITSTATUS
 
 </footer>
   
+=======
+  rm -f $TMP/tmplist$$</pre></p>
+
+<p>  # Write the package file database entry and install the package:<br />
+  # 建立数据库, 都是由以shortname为文件名的文本文件组成<br />
+  # 就在/var/adm/packages或/var/log/packages下<br />
+  # 所以在这里你可以查得当前系统安装的软件包信息<br />
+  echo &#8220;PACKAGE NAME:     $shortname&#8221; > $ADM_DIR/packages/$shortname<br />
+  echo &#8220;COMPRESSED PACKAGE SIZE:     $COMPRESSED&#8221; >> $ADM_DIR/packages/$shortname<br />
+  echo &#8220;UNCOMPRESSED PACKAGE SIZE:     $UNCOMPRESSED&#8221; >> $ADM_DIR/packages/$shortname<br />
+  echo &#8220;PACKAGE LOCATION: $package&#8221; >> $ADM_DIR/packages/$shortname<br />
+#  echo &#8220;PACKAGE MD5SUM: $MD5SUM&#8221; >> $ADM_DIR/packages/$shortname<br />
+  echo &#8220;PACKAGE DESCRIPTION:&#8221; >> $ADM_DIR/packages/$shortname<br />
+  cat $DESCRIPTION | grep &#8220;^$packagebase:&#8221; >> $ADM_DIR/packages/$shortname 2> /dev/null<br />
+  if [ &#8220;$shortname&#8221; != &#8220;$packagebase&#8221; ]; then<br />
+    cat $DESCRIPTION | grep &#8220;^$shortname:&#8221; >> $ADM_DIR/packages/$shortname 2> /dev/null<br />
+  fi<br />
+  echo &#8220;FILE LIST:&#8221; >> $ADM_DIR/packages/$shortname<br />
+  ( cd $ROOT/ ; $TAR -xzlUpvf - ) < $package >> $TMP/$shortname 2> /dev/null<br />
+  # 这个tar参数好长啊, 常用的不说了, 说不常用的, 这个命令在tar-1.16.1有错误, tar-1.13没有问题<br />
+  # 初步估计是-U参数问题, tar-1.16.1的&#8211;help没有-U说明<br />
+  # 另外, 要注意的是, 如果installpkg<br />
+  # -l, &#8211;one-file-system    stay in local file system when creating archive<br />
+  #     这个东东好像比较难理解,可以参考:http://www.delorie.com/gnu/docs/tar/tar_97.html<br />
+  #     基本意思就是只解压在同一文件系统下, 至于这样做的意义, 个人认为是出于包完整性的考虑<br />
+  # -U, &#8211;unlink-first       remove each file prior to extracting over it, 先删除文件, 再解压<br />
+  # -p, &#8211;same-permissions   extract all protection information, 保持文件属性<br />
+  if [ &#8220;`cat $TMP/$shortname | grep &#8216;^&#46;/&#8217; | wc -l | tr -d &#8217; &#8216;`&#8221; = &#8220;1&#8221; ]; then<br />
+    # Good.  We have a package that meets the Slackware spec.<br />
+    # tgz包里有个.目录, 不知这个算不算tgz包的特征啊, 从上面这句英文来看就是了<br />
+    cat $TMP/$shortname >> $ADM_DIR/packages/$shortname<br />
+  else<br />
+    # Some dumb bunny built a package with something other than makepkg.  Bad!<br />
+    # Oh well.  Bound to happen.  Par for the course.  Fix it and move on&#8230;<br />
+    # 这段英文有意思, 哈<br />
+    echo &#8216;./&#8217; >> $ADM_DIR/packages/$shortname<br />
+    cat $TMP/$shortname | grep -v &#8216;^./$&#8217; | cut -b3- >> $ADM_DIR/packages/$shortname<br />
+    # 这一行我理解不了,不知为什么多了cut<br />
+  fi<br />
+  rm -f $TMP/$shortname</p>
+
+<p>  if [ -x /sbin/ldconfig ]; then<br />
+    /sbin/ldconfig # 更动态链接绑定, 新加入的so文件需要这个命令来使其生效<br />
+  fi<br />
+  if [ -f $ROOT/install/doinst.sh ]; then<br />
+    if [ &#8220;$MODE&#8221; = &#8220;install&#8221; ]; then<br />
+      echo &#8220;Executing install script for $shortname&#8230;&#8221;<br />
+    fi<br />
+    ( cd $ROOT/ ; sh install/doinst.sh -install; ) # 执行安装包的安装脚本<br />
+  fi<br />
+  # Clean up the mess&#8230;<br />
+  if [ -d $ROOT/install ]; then # install是目录<br />
+    if [ -r $ROOT/install/doinst.sh ]; then # doinst.sh可读<br />
+      # 备份这个doinst.sh<br />
+      cp $ROOT/install/doinst.sh $ADM_DIR/scripts/$shortname<br />
+      chmod 755 $ADM_DIR/scripts/$shortname<br />
+    fi<br />
+    # /install/doinst.sh and /install/slack-* are reserved locations for the package system.<br />
+    ( cd $ROOT/install ; rm -f doinst.sh slack-* 1> /dev/null 2><1 )     rmdir $ROOT/install 1> /dev/null 2><1<br />
+  fi<br />
+  # If we used a scan directory, get rid of it:<br />
+  if [ -d &#8220;$TMP/scan$$&#8221; ]; then<br />
+    rm -rf &#8220;$TMP/scan$$&#8221;<br />
+  fi<br />
+  rm -f $TMP/tmpmsg$$ $TMP/reply$$<br />
+  if [ &#8220;$MODE&#8221; = &#8220;install&#8221; ]; then<br />
+    echo<br />
+  fi<br />
+done</p>
+
+<p>exit $EXITSTATUS
+
+感觉像流水账，但回头看看，这不就是shell脚本么？<br />
+其中的shell指令也有些巧妙，当我细读这个脚本时体会到了<br />
+边读边学，还看到了一些tar和while的不常用用法，见识多了，但还是有不懂的地方，希望热心的朋友们指出和提出意见<br />
+读完installpkg后，更感觉到slackware的slack
+<span class="content">下一篇是《剖析slackware pkgtools之</span><span class="content">upgradepkg</span><span class="content">篇》</span></p>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2009/02/17/installpkg/#disqus_thread">Comments</a></span>
+	
+</div>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+    </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2013
+
+    imlcl
+. Powered by <a href="http://octopress.org">Octopress</a> | 
+    Theme <a href="http://github.com/panks/fabric">fabric</a> by <a href="http://panks.me">Pankaj Kumar</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+>>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
 
 <script type="text/javascript">
       var disqus_shortname = 'imlcl';
       
         
+<<<<<<< HEAD
         var disqus_script = 'count.js';
+=======
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://imlcl.github.io/blog/2009/02/17/installpkg/';
+        var disqus_url = 'http://imlcl.github.io/blog/2009/02/17/installpkg/';
+        var disqus_script = 'embed.js';
+>>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
@@ -712,11 +1218,23 @@ exit $EXITSTATUS
 
 
 
+<<<<<<< HEAD
 
 
 
 
 
 
+=======
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+>>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
 </body>
 </html>

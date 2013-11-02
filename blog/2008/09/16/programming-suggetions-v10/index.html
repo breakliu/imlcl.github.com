@@ -1,0 +1,299 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>关于更好的编程风格的建议 v1.0(zz) - 大头龙仔Blog</title>
+    <meta name="author" content="imlcl">
+    
+	<meta name="description" content="[C/C++] - Tips for Better Coding Style
+关于更好的编程风格的建议 (v1.0)
+Translated By Phoenix(phoenix8848@gmail.com)
+In this entry, I show you 4 tips that address &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <script src="/javascripts/ajaxify.js"></script>
+   
+    
+    
+
+</head>
+
+
+<body>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+        imlcl
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  <!-- GitHub -->
+  <li>
+  <a href="https://github.com/imlcl" class="github" title="Github"></a>
+  </li>
+  
+  
+  
+  
+  
+  
+  
+  
+</ul>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+    <li id="ajax"><a href="/blog/archives/index.html">Blog</a></li>
+	<li id="ajax"><a href="/about/index.html">About</a></li>
+    <li><a href="/atom.xml">RSS</a></li>
+    
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
+</ul>
+
+
+
+
+</header>
+
+<div id="toload">
+<!-- begin toload --> 
+    <div id="content" class="inner">
+        <article class="post">
+	<h2 class="title">关于更好的编程风格的建议 v1.0(zz)</h2>
+	<div class="entry-content"><p><div style="text-align: center;">[C/C++] - Tips for Better Coding Style</div>
+<div style="text-align: center;">关于更好的编程风格的建议 (v1.0)</div>
+<div style="text-align: center;">Translated By Phoenix(phoenix8848@gmail.com)</div>
+In this entry, I show you 4 tips that address frequently asked questions from C++ programmers of all levels of expertise. It&#8217;s surprising to discover how many experienced programmers are still unaware of the deprecation of the .h notation of standard header files, the proper usage of namespaces, and the rules regarding binding of references to temporary objects, for example. These issues and others will be discussed here.<br />
+在这篇文章里我将谈谈各种层次的Ｃ++程序员经常问及的四个问题。例如我很惊讶地发现还有很多程序员没有意识到标准头文件扩展名.h的争议，命名空间的恰当用法以及引用临时对象的规则。这些问题及其它将在这里进行讨论。</p>
+
+<p>First, we start by explaining the difference between the deprecated “xxx.h” header names and the modern, standard-compliant “xxx” header-naming notation. Next, we explore a few dark corners of C++ which due to compilers&#8217; limitations and the somewhat recondite nature of the associated language rules tend(原文为“rulestend”) to confuse many programmers, e.g., the notion of comma-separated expressions and the rules of binding references to rvalues. Finally, we will learn how to invoke a function prior to a program&#8217;s startup.</p>
+
+<p>首先我们从解释受非议的“XXX.h”头文件名与现代、符合标准的“&lt;XXX&gt;”头文件名记号之间的区别开始。接下来我们探索C++不为人知 的角落，由于编译器的局限性和关联语言规则某些隐蔽的自然特性迷惑了许多程序员，比如逗号分隔表达式的意义与引用型变量的规则。最后我们将学习如何在程序 启动前启动一个函数。</p>
+
+<p>Tip 1: “iostream.h” or “iostream”?</p>
+
+<p>语题1：“iostream.h” or “iostream”?</p>
+
+<p>Many C++ programmers still use “iostream.h” instead of the newer, standard compliant “iostream” library. What are the differences between the two? First, the .h notation of standard header files was deprecated more than five years ago. Using deprecated features in new code is never a good idea. In terms of functionality, “iostream” contains a set of templatized I/O classes which support both narrow and wide characters, as opposed to “iostream.h” which only supports char-oriented streams. Third, the C++ standard specification of iostream&#8217;s interface was changed in many subtle aspects. Consequently, the interfaces and implementation of “iostream” differ from those of “iostream.h”. Finally, “iostream” components are declared in namespace std whereas “iostream.h” components are global.</p>
+
+<p>很多C++程序员还在使用“iostream.h”代替新的符合标准的“iostream”库。两者有什么区别呢？首先，标准头文件“.h”扩展名在五年 前就倍受争议。在新代码中使用有争议的（过时的）特性永远都不是一个好主意。从本质上看，“iostream”包括一系列支持窄字符与宽字符的模板化 （templatized） I/O输入输出类，而相反地，“iostream.h”只支持字符流。第三，iostream接口的标准C++规范在许多细节方面进行了变动。因 此，“iostream”的接口与实现同那些“iostream.h”是有区别的。最后，“iostream”是在std命名空间中定义的而 “iostream.h”则是全局的。</p>
+
+<p>Because of these substantial differences, you cannot mix the two libraries in one program. As a rule, use “iostream” unless you&#8217;re dealing with legacy code that is only compatible with “iostream.h”.</p>
+
+<p>由于这些本质方面的不同，不能在同一程序中混合使用这两种库。结论为除非在处理与“iostream”保持兼容的历史遗留代码时否则最好使用“iostream.h”。</p>
+
+<p>Tip 2: Binding a Reference to an R-Value</p>
+
+<p>话题2：将引用与右值绑定</p>
+
+<p>（R-Value：右值，与“左值”相对。例如x=3中，“x”是一个“左值”，“3”是一个右值。从本质上讲，左值是一个内存的地址，右值是一个实际的二进制值。）</p>
+
+<p>R-Values and L-Values are a fundamental concept of C++ programming. In essence, an R-Value is an expression that cannot appear on the left-hand side of an assignment expression. By contrast, an L-Value refers to an object (in its wider sense), or a chunk of memory, to which you can write a value. References can be bound to both R-Values and L-Values. However, due to the language&#8217;s restrictions regarding R-Values, you have to be aware of the restrictions on binding references to R-Values, too.</p>
+
+<p>右值和左值是C++编程的一个基本概念。本质上来讲右值是一个不可能出现在等号左边的表达式。相反，左值引用一个对象（广义范围上的），或者一块可读写的 内存。引用既可以指向右值也可以指向左值。然而，由于语言在处理右值上的限制，你也得在将引用指向右值是慎重考虑。</p>
+
+<p>Binding a reference to an R-Value is allowed as long as the reference is bound to a const type. The rationale behind this rule is straightforward: you can&#8217;t change an R-Value, and only a reference to const ensures that the program doesn&#8217;t modify an R-Value through its reference. In the following example, the function f() takes a reference to const int:</p>
+
+<p>将引用与右值绑定像引用静态类型一样也是被允许的。这条原则背后的原理是很显而易见的：你无法改变右值，因为对静态类型的引用确保程序不会通过这个接口改变右值。下面的例子，f()函数包含一个对静态整型变量的引用。
+<div style="border: 1px solid #cccccc; padding: 4px 5px 4px 4px; background-color: #eeeeee; font-size: 13px; width: 98%;"><!--</p>
+
+<p>Code highlighting produced by Actipro CodeHighlighter (freeware)<br>
+http://www.CodeHighlighter.com/</p>
+
+<p>&#8211;><span style="color: #008080;">1</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> f(</span><span style="color: #0000ff;">const</span><span style="color: #000000;"> </span><span style="color: #0000ff;">int</span><span style="color: #000000;"> </span><span style="color: #000000;">&amp;</span><span style="color: #000000;"> i);
+</span><span style="color: #008080;">2</span> <span style="color: #000000;">
+</span><span style="color: #008080;">3</span> <span style="color: #0000ff;">int</span><span style="color: #000000;"> main()
+</span><span style="color: #008080;">4</span> <span style="color: #000000;">{
+</span><span style="color: #008080;">5</span> <span style="color: #000000;">f(</span><span style="color: #000000;">2</span><span style="color: #000000;">); </span><span style="color: #008000;">/*</span><span style="color: #008000;"> OK </span><span style="color: #008000;">*/</span><span style="color: #000000;">
+</span><span style="color: #008080;">6</span> <span style="color: #000000;">}</span></div>
+The program passes the R-Value 2 as an argument to f(). At runtime, C++ creates a temporary object of type int with the value 2 and binds it to the reference i. The temporary and its reference exist from the moment f() is invoked until it returns; they are destroyed immediately afterwards. Note that had we declared the reference i without the const qualifier, the function f() could have modified its argument, thereby causing undefined behavior. For this reason, you may only bind references to const objects.</p>
+
+<p>这段代码将右值“2”做为函数f()的一个参数。代码运行时，C++将创建一个值为2的临时整型变量并将其与引用类型i绑定。这个临时对象与它的接口将在 f()运行期间一直存到直到函数f返回。函数f返回后它们立即被释放。注意我们没有将i声明为静态类型，但是函数f仍有可能修改它的这个参数，这将引起异 常。因此最好是将引用与静态类型绑定。</p>
+
+<p>The same rule applies to user-defined objects. You may bind a reference to a temporary object only if it&#8217;s const:</p>
+
+<p>同样的规则适用于自定义类型。只有一个临时对象为静态时才可以与引用类型绑定。</p>
+
+<p>struct A{};
+<div style="border: 1px solid #cccccc; padding: 4px 5px 4px 4px; background-color: #eeeeee; font-size: 13px; width: 98%;"><!--</p>
+
+<p>Code highlighting produced by Actipro CodeHighlighter (freeware)<br>
+http://www.CodeHighlighter.com/</p>
+
+<p>&#8211;><span style="color: #008080;">1</span> <span style="color: #0000ff;">void</span><span style="color: #000000;"> f(</span><span style="color: #0000ff;">const</span><span style="color: #000000;"> A</span><span style="color: #000000;">&amp;</span><span style="color: #000000;"> a);
+</span><span style="color: #008080;">2</span> <span style="color: #000000;">
+</span><span style="color: #008080;">3</span> <span style="color: #0000ff;">int</span><span style="color: #000000;"> main()
+</span><span style="color: #008080;">4</span> <span style="color: #000000;">{
+</span><span style="color: #008080;">5</span> <span style="color: #000000;"> f(A()); </span><span style="color: #008000;">/*</span><span style="color: #008000;"> OK, binding a temporary A to a const reference</span><span style="color: #008000;">*/</span><span style="color: #000000;">
+</span><span style="color: #008080;">6</span> <span style="color: #000000;">}</span></div>
+Tip 3: Comma-Separated Expressions</p>
+
+<p>话题3：逗号表达式</p>
+
+<p>Comma-separated expressions were inherited from C. It&#8217;s likely that you use such expressions in for- and while-loops rather often. Yet, the language rules in this regard are far from being intuitive. First, let&#8217;s see what a comma separated expression is.</p>
+
+<p>逗号表达式是从C语言沿袭下来的。它就像你经常使用的for循环与while-loop循环一样。但是这里面的语法规则远不像看起来的那样。首先，让我们看看什么是逗号表达式。</p>
+
+<p>An expression may consist of one or more sub-expressions separated by commas. For example:</p>
+
+<p>一个表达式可以被逗号分隔为一个或若干个子表达式。例如：
+<div style="border: 1px solid #cccccc; padding: 4px 5px 4px 4px; background-color: #eeeeee; font-size: 13px; width: 98%;"><!--</p>
+
+<p>Code highlighting produced by Actipro CodeHighlighter (freeware)<br>
+http://www.CodeHighlighter.com/</p>
+
+<p>&#8211;><span style="color: #008080;">1</span> <span style="color: #000000;"> </span><span style="color: #0000ff;">if</span><span style="color: #000000;">(</span><span style="color: #000000;">++</span><span style="color: #000000;">x, </span><span style="color: #000000;">&#8211;</span><span style="color: #000000;">y, cin.good()) </span><span style="color: #008000;">/*</span><span style="color: #008000;">three expressions</span><span style="color: #008000;">*/</span></div>
+The if condition contains three expressions separated by commas. C++ ensures that each of the expressions is evaluated and its side effects take place. However, the value of an entire comma-separated expression is only the result of the rightmost expression. Therefore, the if condition above evaluates as true only if cin.good() returns true. Here&#8217;s another example of a comma expression:</p>
+
+<p>这条if语句被逗号分事为三个表达式。从C++的角度每个表达式都是合法的但是副作用产生了。整个逗号表达式的值是由最右边的表达式决定的。于是只有con.good()的返回值是true时整个表达式的值才是true。这里有另一个关于逗号表达式的例子。
+<div style="border: 1px solid #cccccc; padding: 4px 5px 4px 4px; background-color: #eeeeee; font-size: 13px; width: 98%;"><!--</p>
+
+<p>Code highlighting produced by Actipro CodeHighlighter (freeware)<br>
+http://www.CodeHighlighter.com/</p>
+
+<p>&#8211;><span style="color: #008080;">1</span> <span style="color: #0000ff;">int</span><span style="color: #000000;"> j</span><span style="color: #000000;">=</span><span style="color: #000000;">10</span><span style="color: #000000;">;
+</span><span style="color: #008080;">2</span> <span style="color: #0000ff;">int</span><span style="color: #000000;"> i</span><span style="color: #000000;">=</span><span style="color: #000000;">0</span><span style="color: #000000;">;
+</span><span style="color: #008080;">3</span> <span style="color: #000000;">
+</span><span style="color: #008080;">4</span> <span style="color: #0000ff;">while</span><span style="color: #000000;">( </span><span style="color: #000000;">++</span><span style="color: #000000;">i, </span><span style="color: #000000;">&#8211;</span><span style="color: #000000;">j)
+</span><span style="color: #008080;">5</span> <span style="color: #000000;">{
+</span><span style="color: #008080;">6</span> <span style="color: #000000;"> </span><span style="color: #008000;">/*</span><span style="color: #008000;">..repeat as long as j is not 0</span><span style="color: #008000;">*/</span><span style="color: #000000;">
+</span><span style="color: #008080;">7</span> <span style="color: #000000;">}</span></div>
+Tip 4: Calling a Function Before Program&#8217;s Startup</p>
+
+<p>在程序启动前调用函数</p>
+
+<p>Certain applications need to invoke startup functions that run before the main program starts. For example, polling, billing, and logger functions must be invoked before the actual program begins. The easiest way to achieve this is by calling these functions from a constructor of a global object. Because global objects are conceptually constructed before the program&#8217;s outset, these functions will run before main() starts. For example:</p>
+
+<p>有些应用需要在主程序启运前运行启动函数。例如投票、支付和登录函数必须在实际种程序启动前运行。一个最简单的实现方法就是在一个全局对象的构造函数里调用这些函数。因为全局对象在程序的最开头被隐式的创建，这些函数就可以在main()函数之前得到运行。例如：
+<div style="border: 1px solid #cccccc; padding: 4px 5px 4px 4px; background-color: #eeeeee; font-size: 13px; width: 98%;"><!--</p>
+
+<p>Code highlighting produced by Actipro CodeHighlighter (freeware)<br>
+http://www.CodeHighlighter.com/</p>
+
+<p>&#8211;><span style="color: #008080;"> 1</span> <span style="color: #0000ff;">class</span><span style="color: #000000;"> Logger
+</span><span style="color: #008080;"> 2</span> <span style="color: #000000;">{
+</span><span style="color: #008080;"> 3</span> <span style="color: #0000ff;">public</span><span style="color: #000000;">:
+</span><span style="color: #008080;"> 4</span> <span style="color: #000000;"> Logger()
+</span><span style="color: #008080;"> 5</span> <span style="color: #000000;"> {
+</span><span style="color: #008080;"> 6</span> <span style="color: #000000;"> activate_log();
+</span><span style="color: #008080;"> 7</span> <span style="color: #000000;"> }
+</span><span style="color: #008080;"> 8</span> <span style="color: #000000;">};
+</span><span style="color: #008080;"> 9</span> <span style="color: #000000;">
+</span><span style="color: #008080;">10</span> <span style="color: #000000;">Logger log; </span><span style="color: #008000;">/*</span><span style="color: #008000;">global instance</span><span style="color: #008000;">*/</span><span style="color: #000000;">
+</span><span style="color: #008080;">11</span> <span style="color: #000000;">
+</span><span style="color: #008080;">12</span> <span style="color: #0000ff;">int</span><span style="color: #000000;"> main()
+</span><span style="color: #008080;">13</span> <span style="color: #000000;">{
+</span><span style="color: #008080;">14</span> <span style="color: #000000;"> record </span><span style="color: #000000;">*</span><span style="color: #000000;"> prec</span><span style="color: #000000;">=</span><span style="color: #000000;">read_log();
+</span><span style="color: #008080;">15</span> <span style="color: #000000;"> </span><span style="color: #008000;">//</span><span style="color: #008000;">.. application code</span><span style="color: #008000;">
+</span><span style="color: #008080;">16</span> <span style="color: #000000;">}</span></div>
+The global object log is constructed before main() starts. During its construction, log invokes the function activate_log(). Thus, when main() starts, it can read data from the log file.</p>
+
+<p>全局对象log在main()函数启动之前被创建。在它的构造函数里，log调用了active_log()函数。于是，当main()函数启动时，它可以从日志文件中读取数据。</p>
+</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2008/09/16/programming-suggetions-v10/#disqus_thread">Comments</a></span>
+	
+</div>
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+
+    </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2013
+
+    imlcl
+. Powered by <a href="http://octopress.org">Octopress</a> | 
+    Theme <a href="http://github.com/panks/fabric">fabric</a> by <a href="http://panks.me">Pankaj Kumar</a>
+</div>
+
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'imlcl';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://imlcl.github.io/blog/2008/09/16/programming-suggetions-v10/';
+        var disqus_url = 'http://imlcl.github.io/blog/2008/09/16/programming-suggetions-v10/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
+</body>
+</html>
