@@ -1,108 +1,122 @@
 
 <!DOCTYPE HTML>
+
 <html>
+
 <head>
-	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
-	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<meta charset="utf-8">
-	<title>A strong man can save himself. A great man can save another.  | 大头龙仔Blog</title>
-
-<meta name="author" content="imlcl"> 
-
-<meta name="description" content="imlcl.com 大头龙仔 blog 随笔感悟 编程技术 it web php ruby rails c linux server slackware"> <meta name="keywords" content="">
-
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
-	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
-	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
-
-<script language="Javascript" type="text/javascript">
-$(document).ready(
-  function() {
-    (function($) {
-      $(".fancybox[data-content-id]").each(function() {
-        this.href = $(this).data('content-id');
-      });
-      $(".fancybox").fancybox({
-        beforeLoad: function() {
-          var el, 
-              id = $(this.element).data('title-id');
-
-          if (id) {
-            el = $('#' + id);
-
-            if (el.length) {
-              this.title = el.html();
-            }
-          }
-          if ($(this).data('content')) {
-            this.content = $(this).data('content');
-          }
-        },
-        helpers: {
-          title: {
-            type: 'inside'
-          }
-        }
-      });
-    })(jQuery);
-  }
-);
-</script>
+	<title>大头龙仔Blog</title>
+	<meta name="author" content="imlcl">
 
 	
+	<meta name="description" content="2010-02-10 server Comments 搬家到Linode 我就快速选了个KVM的2.6.32内核，分区什么的，都按http://library.linode.com/里的说明弄好。补充一下，Linode资料库的东西挺全面的，基本都能在这里找到解决方法，再不就上linode的IRC &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://imlcl.github.io/blog/page/7/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+  
+
 </head>
 
 
 <body>
-	<header id="header" class="inner"><h1><a href="/">大头龙仔Blog</a></h1>
-<h4>A strong man can save himself. A great man can save another.</h4>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("slackcode@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+</div>
+
 <nav id="main-nav"><ul>
 	<li><a href="/">Blog</a></li>
 	<li><a href="/about">About</a></li>
 	<li><a href="/archives">Archive</a></li>
 </ul>
+
 </nav>
-<nav id="mobile-nav">
-	<div class="alignleft menu">
-		<a class="button">Menu</a>
-		<div class="container"><ul>
-	<li><a href="/">Blog</a></li>
-	<li><a href="/about">About</a></li>
-	<li><a href="/archives">Archive</a></li>
-</ul>
+<nav id="sub-nav">
+	<div class="social">
+		
+			<a class="email" href="mailto:slackcode@gmail.com" title="Email">Email</a>
+		
+		
+		
+		
+		
+			<a class="github" href="https://github.com/imlcl" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner">
+<div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-02-10T00:00:00+08:00" data-updated="true" itemprop="datePublished">2010-02-10</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/server/'>server</a>
+
+
 </div>
-	</div>
-	<div class="alignright search">
-		<a class="button"></a>
-		<div class="container">
-			<form action="http://google.com.au/search" method="get">
-				<input type="text" name="q" results="0">
-				<input type="hidden" name="q" value="site:imlcl.github.io">
-			</form>
-		</div>
-	</div>
-</nav>
-
-
-</header>
-
-	<div id="content" class="inner">
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2010/02/10/move_to_linode/">
+			<span class="comments"><a href="/blog/2010/02/10/move_to_linode/#disqus_thread">Comments</a></span>
 		
-			搬家到Linode</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2010/02/10/move_to_linode/" itemprop="url">搬家到Linode</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>我就快速选了个KVM的2.6.32内核，分区什么的，都按<a href="http://library.linode.com/" target="_blank">http://library.linode.com/</a>里的说明弄好。补充一下，Linode资料库的东西挺全面的，基本都能在这里找到解决方法，再不就上linode的IRC，那里有很多高手回答你的问题，再不行才找服务人员了。我当时就上了IRC，问了一个人家说从没听过的问题，我后来GOOGLE之后，才发现我是那么的菜鸟</p>
 
 <p>考虑软件包、稳定性等，首发的VPS操作系统是Debian 5 Lenny，其实我发现Debian太保守了，PHP的版本是5.2.6的，我晕死，可以Testing的话就前卫点吧，后面可能考虑移动Arch吧<br />
@@ -142,9 +156,12 @@ rewrite /. /index.php last;
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -156,30 +173,20 @@ rewrite /. /index.php last;
   
 
 
-<time datetime="2010-02-10T00:00:00+08:00" pubdate data-updated="true">2010-02-10</time></div>
-	
+<time datetime="2010-02-10T00:00:00+08:00" data-updated="true" itemprop="datePublished">2010-02-10</time></div>
+		<div class="tags">
 
-<div class="tags">
 
 	<a class='category' href='/blog/categories/server/'>server</a>
 
+
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2010/02/10/move_to_linode//blog/page/7/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2010/02/10/hostmonster_refund/">
+			<span class="comments"><a href="/blog/2010/02/10/hostmonster_refund/#disqus_thread">Comments</a></span>
 		
-			Hostmonster主机已经申请退款了</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2010/02/10/hostmonster_refund/" itemprop="url">Hostmonster主机已经申请退款了</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>hostmonster已经申请退款了，邮件说七个工作日退款金额将会到帐，有保障，服务也很好<br />
 其实我觉得hostmonster是挺好的，服务响应也很快<br />
 但我只是架了个wordpress，日前日访问题很低的，而我查看一下24小时主机挂起的小时数，基本上每天都有1000秒<br />
@@ -192,9 +199,12 @@ rewrite /. /index.php last;
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -206,30 +216,20 @@ rewrite /. /index.php last;
   
 
 
-<time datetime="2010-02-10T00:00:00+08:00" pubdate data-updated="true">2010-02-10</time></div>
-	
+<time datetime="2010-02-05T00:00:00+08:00" data-updated="true" itemprop="datePublished">2010-02-05</time></div>
+		<div class="tags">
 
-<div class="tags">
 
-	<a class='category' href='/blog/categories/server/'>server</a>
+	<a class='category' href='/blog/categories/web/'>web</a>
+
 
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2010/02/10/hostmonster_refund//blog/page/7/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2010/02/05/c_php_fwrite/">
+			<span class="comments"><a href="/blog/2010/02/05/c_php_fwrite/#disqus_thread">Comments</a></span>
 		
-			惯C使用PHP的fwrite</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2010/02/05/c_php_fwrite/" itemprop="url">惯C使用PHP的fwrite</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p><pre lang="php">
 function fwrite_stream($fp, $string)
 {
@@ -259,9 +259,12 @@ It will use memory mapping techniques if supported by your OS to enhance perform
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -273,30 +276,20 @@ It will use memory mapping techniques if supported by your OS to enhance perform
   
 
 
-<time datetime="2010-02-05T00:00:00+08:00" pubdate data-updated="true">2010-02-05</time></div>
-	
+<time datetime="2010-02-04T00:00:00+08:00" data-updated="true" itemprop="datePublished">2010-02-04</time></div>
+		<div class="tags">
 
-<div class="tags">
 
-	<a class='category' href='/blog/categories/web/'>web</a>
+	<a class='category' href='/blog/categories/geek/'>geek</a>
+
 
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2010/02/05/c_php_fwrite//blog/page/7/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2010/02/04/tip_about_linux_find/">
+			<span class="comments"><a href="/blog/2010/02/04/tip_about_linux_find/#disqus_thread">Comments</a></span>
 		
-			关于find技巧一则</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2010/02/04/tip_about_linux_find/" itemprop="url">关于find技巧一则</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>今天改一个bug的时候，遇到一个问题卡住了，想了很久，最后用比较简洁的方法解决了</p>
 
 <p>之后做数据中心，需要删除一些临时文件的，这些临时文件只能是生成1分钟后才能删除<br />
@@ -323,9 +316,12 @@ find /tmp/ -name "*.php_tmp" -maxdepth 1 -mmin +5 -exec rm -f {} \;
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -337,30 +333,20 @@ find /tmp/ -name "*.php_tmp" -maxdepth 1 -mmin +5 -exec rm -f {} \;
   
 
 
-<time datetime="2010-02-04T00:00:00+08:00" pubdate data-updated="true">2010-02-04</time></div>
-	
+<time datetime="2010-02-03T00:00:00+08:00" data-updated="true" itemprop="datePublished">2010-02-03</time></div>
+		<div class="tags">
 
-<div class="tags">
 
-	<a class='category' href='/blog/categories/geek/'>geek</a>
+	<a class='category' href='/blog/categories/web/'>web</a>
+
 
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2010/02/04/tip_about_linux_find//blog/page/7/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2010/02/03/see_scgi/">
+			<span class="comments"><a href="/blog/2010/02/03/see_scgi/#disqus_thread">Comments</a></span>
 		
-			小识SCGI</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2010/02/03/see_scgi/" itemprop="url">小识SCGI</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>今天slackpkg升级slackware时，发现httpd.conf.new多了一行：
 <strong>LoadModule proxy_scgi_module lib/httpd/modules/mod_proxy_scgi.so</strong></p>
 
@@ -376,9 +362,12 @@ find /tmp/ -name "*.php_tmp" -maxdepth 1 -mmin +5 -exec rm -f {} \;
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -390,30 +379,20 @@ find /tmp/ -name "*.php_tmp" -maxdepth 1 -mmin +5 -exec rm -f {} \;
   
 
 
-<time datetime="2010-02-03T00:00:00+08:00" pubdate data-updated="true">2010-02-03</time></div>
-	
+<time datetime="2010-02-03T00:00:00+08:00" data-updated="true" itemprop="datePublished">2010-02-03</time></div>
+		<div class="tags">
 
-<div class="tags">
 
 	<a class='category' href='/blog/categories/web/'>web</a>
 
+
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2010/02/03/see_scgi//blog/page/7/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2010/02/03/hiphop_for_php/">
+			<span class="comments"><a href="/blog/2010/02/03/hiphop_for_php/#disqus_thread">Comments</a></span>
 		
-			HipHop for PHP</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2010/02/03/hiphop_for_php/" itemprop="url">HipHop for PHP</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>听到HipHop实在太熟悉了，不过这次想不到是一个开源项目的名称</p>
 
 <p>之前听说<a href="http://blog.geekliu.com/2010/02/01/compile_php.html" target="_blank">Facebook将重写PHP运行时机制</a>，现在才知道这项目开展了有一段时间了（<a href="http://news.csdn.net/a/20100203/216872.html" target="_blank">Facebook性能大提升的秘密：HipHop</a>）</p>
@@ -424,9 +403,12 @@ find /tmp/ -name "*.php_tmp" -maxdepth 1 -mmin +5 -exec rm -f {} \;
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -438,30 +420,20 @@ find /tmp/ -name "*.php_tmp" -maxdepth 1 -mmin +5 -exec rm -f {} \;
   
 
 
-<time datetime="2010-02-03T00:00:00+08:00" pubdate data-updated="true">2010-02-03</time></div>
-	
+<time datetime="2010-02-01T00:00:00+08:00" data-updated="true" itemprop="datePublished">2010-02-01</time></div>
+		<div class="tags">
 
-<div class="tags">
 
 	<a class='category' href='/blog/categories/web/'>web</a>
 
+
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2010/02/03/hiphop_for_php//blog/page/7/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2010/02/01/compile_php/">
+			<span class="comments"><a href="/blog/2010/02/01/compile_php/#disqus_thread">Comments</a></span>
 		
-			Facebook将重写PHP运行时机制</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2010/02/01/compile_php/" itemprop="url">Facebook将重写PHP运行时机制</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>详见<a href="http://developers.slashdot.org/story/10/01/31/0252201/Facebook-Rewrites-PHP-Runtime-For-Speed" target="_blank">http://developers.slashdot.org/story/10/01/31/0252201/Facebook-Rewrites-PHP-Runtime-For-Speed</a></p>
 
 <p>虽然不确定，但这个举动非常值得期待，让PHP也像Python那样可以编译<br />
@@ -472,9 +444,12 @@ find /tmp/ -name "*.php_tmp" -maxdepth 1 -mmin +5 -exec rm -f {} \;
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -486,30 +461,20 @@ find /tmp/ -name "*.php_tmp" -maxdepth 1 -mmin +5 -exec rm -f {} \;
   
 
 
-<time datetime="2010-02-01T00:00:00+08:00" pubdate data-updated="true">2010-02-01</time></div>
-	
+<time datetime="2010-01-27T00:00:00+08:00" data-updated="true" itemprop="datePublished">2010-01-27</time></div>
+		<div class="tags">
 
-<div class="tags">
 
-	<a class='category' href='/blog/categories/web/'>web</a>
+	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
+
 
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2010/02/01/compile_php//blog/page/7/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2010/01/27/about_my_audio_card/">
+			<span class="comments"><a href="/blog/2010/01/27/about_my_audio_card/#disqus_thread">Comments</a></span>
 		
-			可恶的声卡</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2010/01/27/about_my_audio_card/" itemprop="url">可恶的声卡</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>关于我的声卡，说来，话好像挺长的</p>
 
 <p>在我读初三的时候，开始喜欢上高品质的音乐，可能一方面是受到老爸的影响吧<br />
@@ -536,9 +501,12 @@ find /tmp/ -name "*.php_tmp" -maxdepth 1 -mmin +5 -exec rm -f {} \;
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -550,30 +518,20 @@ find /tmp/ -name "*.php_tmp" -maxdepth 1 -mmin +5 -exec rm -f {} \;
   
 
 
-<time datetime="2010-01-27T00:00:00+08:00" pubdate data-updated="true">2010-01-27</time></div>
-	
+<time datetime="2010-01-26T00:00:00+08:00" data-updated="true" itemprop="datePublished">2010-01-26</time></div>
+		<div class="tags">
 
-<div class="tags">
 
-	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
+	<a class='category' href='/blog/categories/opensource/'>opensource</a>
+
 
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2010/01/27/about_my_audio_card//blog/page/7/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2010/01/26/mit_sikuli_release/">
+			<span class="comments"><a href="/blog/2010/01/26/mit_sikuli_release/#disqus_thread">Comments</a></span>
 		
-			MIT推出面向大众的图形脚本语言Sikuli</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2010/01/26/mit_sikuli_release/" itemprop="url">MIT推出面向大众的图形脚本语言Sikuli</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>今天看到<a href="http://blog.vgod.tw" target="_blank">vgod</a>的<a href="http://blog.vgod.tw/2010/01/25/change-the-world/" target="_blank">Change The World</a>，才发现他是<a href="http://groups.csail.mit.edu/uid/sikuli/" target="_blank">Sikuli</a>的发明人之一，关于Sikuli可以看这样一个<a href="http://v.youku.com/v_show/id_XMTQ3NjQ0OTQ0.html" target="_blank">视频</a></p>
 
 <p>我喜欢用<a href="http://www.autoitscript.com/" target="_blank">AutoIt</a>做一些简单的自动化，看到Sikuli就像看到一个更加易用的AutoIt（我暂时只想到这个比喻）</p>
@@ -586,9 +544,12 @@ find /tmp/ -name "*.php_tmp" -maxdepth 1 -mmin +5 -exec rm -f {} \;
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -600,30 +561,20 @@ find /tmp/ -name "*.php_tmp" -maxdepth 1 -mmin +5 -exec rm -f {} \;
   
 
 
-<time datetime="2010-01-26T00:00:00+08:00" pubdate data-updated="true">2010-01-26</time></div>
-	
+<time datetime="2010-01-22T00:00:00+08:00" data-updated="true" itemprop="datePublished">2010-01-22</time></div>
+		<div class="tags">
 
-<div class="tags">
 
-	<a class='category' href='/blog/categories/opensource/'>opensource</a>
+	<a class='category' href='/blog/categories/web/'>web</a>
+
 
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2010/01/26/mit_sikuli_release//blog/page/7/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2010/01/22/post_rss_addr/">
+			<span class="comments"><a href="/blog/2010/01/22/post_rss_addr/#disqus_thread">Comments</a></span>
 		
-			文章RSS地址更改</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2010/01/22/post_rss_addr/" itemprop="url">文章RSS地址更改</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>Blog文章RSS订阅地址改为：<a href="http://feeds.feedburner.com/geekliu" target="_blank">http://feeds.feedburner.com/geekliu</a></p>
 
 <p>才醒起，Google是收购了FeedBurner了</p>
@@ -632,35 +583,9 @@ find /tmp/ -name "*.php_tmp" -maxdepth 1 -mmin +5 -exec rm -f {} \;
 		
 	</div>
 
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-01-22T00:00:00+08:00" pubdate data-updated="true">2010-01-22</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/web/'>web</a>
+</article>
 
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2010/01/22/post_rss_addr//blog/page/7/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
 <nav id="pagenavi">
     
         <a href="/blog/page/6/" class="prev">Prev</a>
@@ -668,16 +593,18 @@ find /tmp/ -name "*.php_tmp" -maxdepth 1 -mmin +5 -exec rm -f {} \;
     
         <a href="/blog/page/8/" class="next">Next</a>
     
-    <div class="center"><a href="/archives">Blog Archives</a></div>
+    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
 </nav></div>
-	<footer id="footer" class="inner">Copyright &copy; 2013
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2013
 
     imlcl
 
 <br>
 Powered by Octopress.
-</footer>
-	<script src="/javascripts/slash.js"></script>
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+			<script src="/javascripts/slash.js"></script>
 <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
@@ -694,7 +621,7 @@ Powered by Octopress.
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -703,5 +630,7 @@ Powered by Octopress.
 
 
 
+		</div>
+	</div>
 </body>
 </html>

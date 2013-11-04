@@ -1,100 +1,93 @@
 
 <!DOCTYPE HTML>
+
 <html>
+
 <head>
-	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
-	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<meta charset="utf-8">
-	<title>搬家到Linode  | 大头龙仔Blog</title>
-
-<meta name="author" content="imlcl"> 
-
-<meta name="description" content="imlcl.com 大头龙仔 blog 随笔感悟 编程技术 it web php ruby rails c linux server slackware"> <meta name="keywords" content="">
-
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
-	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
-	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
-
-<script language="Javascript" type="text/javascript">
-$(document).ready(
-  function() {
-    (function($) {
-      $(".fancybox[data-content-id]").each(function() {
-        this.href = $(this).data('content-id');
-      });
-      $(".fancybox").fancybox({
-        beforeLoad: function() {
-          var el, 
-              id = $(this.element).data('title-id');
-
-          if (id) {
-            el = $('#' + id);
-
-            if (el.length) {
-              this.title = el.html();
-            }
-          }
-          if ($(this).data('content')) {
-            this.content = $(this).data('content');
-          }
-        },
-        helpers: {
-          title: {
-            type: 'inside'
-          }
-        }
-      });
-    })(jQuery);
-  }
-);
-</script>
+	<title>搬家到Linode - 大头龙仔Blog</title>
+	<meta name="author" content="imlcl">
 
 	
+	<meta name="description" content="搬家到Linode 我就快速选了个KVM的2.6.32内核，分区什么的，都按http://library.linode.com/里的说明弄好。补充一下，Linode资料库的东西挺全面的，基本都能在这里找到解决方法，再不就上linode的IRC，那里有很多高手回答你的问题，再不行才找服务人员了。 &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://imlcl.github.io/blog/2010/02/10/move_to_linode/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+  
+
 </head>
 
 
 <body>
-	<header id="header" class="inner"><h1><a href="/">大头龙仔Blog</a></h1>
-<h4>A strong man can save himself. A great man can save another.</h4>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("slackcode@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+</div>
+
 <nav id="main-nav"><ul>
 	<li><a href="/">Blog</a></li>
 	<li><a href="/about">About</a></li>
 	<li><a href="/archives">Archive</a></li>
 </ul>
+
 </nav>
-<nav id="mobile-nav">
-	<div class="alignleft menu">
-		<a class="button">Menu</a>
-		<div class="container"><ul>
-	<li><a href="/">Blog</a></li>
-	<li><a href="/about">About</a></li>
-	<li><a href="/archives">Archive</a></li>
-</ul>
-</div>
-	</div>
-	<div class="alignright search">
-		<a class="button"></a>
-		<div class="container">
-			<form action="http://google.com.au/search" method="get">
-				<input type="text" name="q" results="0">
-				<input type="hidden" name="q" value="site:imlcl.github.io">
-			</form>
-		</div>
+<nav id="sub-nav">
+	<div class="social">
+		
+			<a class="email" href="mailto:slackcode@gmail.com" title="Email">Email</a>
+		
+		
+		
+		
+		
+			<a class="github" href="https://github.com/imlcl" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
 	</div>
 </nav>
-
-
-</header>
-
-	<div id="content" class="inner"><article class="post">
-	<h2 class="title">搬家到Linode</h2>
-	<div class="entry-content"><p>我就快速选了个KVM的2.6.32内核，分区什么的，都按<a href="http://library.linode.com/" target="_blank">http://library.linode.com/</a>里的说明弄好。补充一下，Linode资料库的东西挺全面的，基本都能在这里找到解决方法，再不就上linode的IRC，那里有很多高手回答你的问题，再不行才找服务人员了。我当时就上了IRC，问了一个人家说从没听过的问题，我后来GOOGLE之后，才发现我是那么的菜鸟</p>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">搬家到Linode</h1>
+	<div class="entry-content" itemprop="articleBody"><p>我就快速选了个KVM的2.6.32内核，分区什么的，都按<a href="http://library.linode.com/" target="_blank">http://library.linode.com/</a>里的说明弄好。补充一下，Linode资料库的东西挺全面的，基本都能在这里找到解决方法，再不就上linode的IRC，那里有很多高手回答你的问题，再不行才找服务人员了。我当时就上了IRC，问了一个人家说从没听过的问题，我后来GOOGLE之后，才发现我是那么的菜鸟</p>
 
 <p>考虑软件包、稳定性等，首发的VPS操作系统是Debian 5 Lenny，其实我发现Debian太保守了，PHP的版本是5.2.6的，我晕死，可以Testing的话就前卫点吧，后面可能考虑移动Arch吧<br />
 用一天时间架好Nginx、Spawn-fcgi、Mysql、PHP，apt-get的确好用，用久了slackware的包管理，有点不习惯这么顺手了:P</p>
@@ -130,41 +123,14 @@ rewrite /. /index.php last;
 <p>And如果你也觉得<a href="http://www.linode.com/?r=53f640250f764887320238cc00ca06b66aa3c43b" target="_blank">Linode</a>不错的话，可以顺手在Referral code输入<code>53f640250f764887320238cc00ca06b66aa3c43b，这样我将会在三个月后得到一些优惠，我会非常感激你的（这个不是优惠码，谢谢）</code></p>
 </div>
 
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-02-10T00:00:00+08:00" pubdate data-updated="true">2010-02-10</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/server/'>server</a>
-
-</div>
-
-
-	
-		<span class="comments"><a href="/blog/2010/02/10/move_to_linode/#disqus_thread">Comments</a></span>
-	
-</div></article>
+</article>
 
 	<div class="share">
 	<div class="addthis_toolbox addthis_default_style ">
 	
 	
 	
-<!---	<a class="addthis_counter addthis_pill_style"></a> --->
+	<a class="addthis_counter addthis_pill_style"></a>
 	</div>
   <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
 </div>
@@ -172,19 +138,21 @@ rewrite /. /index.php last;
 
 
 <section id="comment">
-    <h2 class="title">Comments</h2>
+    <h1 class="title">Comments</h1>
     <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
 </section>
 </div>
-	<footer id="footer" class="inner">Copyright &copy; 2013
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2013
 
     imlcl
 
 <br>
 Powered by Octopress.
-</footer>
-	<script src="/javascripts/slash.js"></script>
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+			<script src="/javascripts/slash.js"></script>
 <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
@@ -204,7 +172,7 @@ Powered by Octopress.
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -213,5 +181,7 @@ Powered by Octopress.
 
 
 
+		</div>
+	</div>
 </body>
 </html>

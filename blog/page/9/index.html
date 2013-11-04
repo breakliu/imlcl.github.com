@@ -1,108 +1,125 @@
 
 <!DOCTYPE HTML>
+
 <html>
+
 <head>
-	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
-	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<meta charset="utf-8">
-	<title>A strong man can save himself. A great man can save another.  | 大头龙仔Blog</title>
-
-<meta name="author" content="imlcl"> 
-
-<meta name="description" content="imlcl.com 大头龙仔 blog 随笔感悟 编程技术 it web php ruby rails c linux server slackware"> <meta name="keywords" content="">
-
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
-	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
-	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
-
-<script language="Javascript" type="text/javascript">
-$(document).ready(
-  function() {
-    (function($) {
-      $(".fancybox[data-content-id]").each(function() {
-        this.href = $(this).data('content-id');
-      });
-      $(".fancybox").fancybox({
-        beforeLoad: function() {
-          var el, 
-              id = $(this.element).data('title-id');
-
-          if (id) {
-            el = $('#' + id);
-
-            if (el.length) {
-              this.title = el.html();
-            }
-          }
-          if ($(this).data('content')) {
-            this.content = $(this).data('content');
-          }
-        },
-        helpers: {
-          title: {
-            type: 'inside'
-          }
-        }
-      });
-    })(jQuery);
-  }
-);
-</script>
+	<title>大头龙仔Blog</title>
+	<meta name="author" content="imlcl">
 
 	
+	<meta name="description" content="2009-11-19 geek Comments Shell脚本也能用函数别名 实际看来，应该叫函数别名比函数指针恰当吧，但我之前还不知道可以这么弄。
+只是今天看回自己一年前写的一个脚本程序，发现很多冗余代码，于是就重写了。
+重写后发现只要50%的代码，很简洁，得益于这个函数别名了。
+fun1 &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://imlcl.github.io/blog/page/9/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+  
+
 </head>
 
 
 <body>
-	<header id="header" class="inner"><h1><a href="/">大头龙仔Blog</a></h1>
-<h4>A strong man can save himself. A great man can save another.</h4>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("slackcode@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+</div>
+
 <nav id="main-nav"><ul>
 	<li><a href="/">Blog</a></li>
 	<li><a href="/about">About</a></li>
 	<li><a href="/archives">Archive</a></li>
 </ul>
+
 </nav>
-<nav id="mobile-nav">
-	<div class="alignleft menu">
-		<a class="button">Menu</a>
-		<div class="container"><ul>
-	<li><a href="/">Blog</a></li>
-	<li><a href="/about">About</a></li>
-	<li><a href="/archives">Archive</a></li>
-</ul>
+<nav id="sub-nav">
+	<div class="social">
+		
+			<a class="email" href="mailto:slackcode@gmail.com" title="Email">Email</a>
+		
+		
+		
+		
+		
+			<a class="github" href="https://github.com/imlcl" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner">
+<div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-19T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-11-19</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/geek/'>geek</a>
+
+
 </div>
-	</div>
-	<div class="alignright search">
-		<a class="button"></a>
-		<div class="container">
-			<form action="http://google.com.au/search" method="get">
-				<input type="text" name="q" results="0">
-				<input type="hidden" name="q" value="site:imlcl.github.io">
-			</form>
-		</div>
-	</div>
-</nav>
-
-
-</header>
-
-	<div id="content" class="inner">
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2009/11/19/shell-func/">
+			<span class="comments"><a href="/blog/2009/11/19/shell-func/#disqus_thread">Comments</a></span>
 		
-			Shell脚本也能用函数别名</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/11/19/shell-func/" itemprop="url">Shell脚本也能用函数别名</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>实际看来，应该叫函数别名比函数指针恰当吧，但我之前还不知道可以这么弄。<br />
 只是今天看回自己一年前写的一个脚本程序，发现很多冗余代码，于是就重写了。<br />
 重写后发现只要50%的代码，很简洁，得益于这个函数别名了。
@@ -136,9 +153,12 @@ fun$idx</pre>
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -150,30 +170,20 @@ fun$idx</pre>
   
 
 
-<time datetime="2009-11-19T00:00:00+08:00" pubdate data-updated="true">2009-11-19</time></div>
-	
+<time datetime="2009-10-17T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-10-17</time></div>
+		<div class="tags">
 
-<div class="tags">
 
 	<a class='category' href='/blog/categories/geek/'>geek</a>
 
+
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2009/11/19/shell-func//blog/page/9/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2009/10/17/10-hack-tools/">
+			<span class="comments"><a href="/blog/2009/10/17/10-hack-tools/#disqus_thread">Comments</a></span>
 		
-			十大hack工具(zz)</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/10/17/10-hack-tools/" itemprop="url">十大hack工具(zz)</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>觉得很快会用到，先转到这里，备一下忘<br />
 &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
 via:http://roclinux.cn/?p=1645</p>
@@ -203,9 +213,12 @@ via:http://roclinux.cn/?p=1645</p>
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -217,30 +230,20 @@ via:http://roclinux.cn/?p=1645</p>
   
 
 
-<time datetime="2009-10-17T00:00:00+08:00" pubdate data-updated="true">2009-10-17</time></div>
-	
+<time datetime="2009-10-12T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-10-12</time></div>
+		<div class="tags">
 
-<div class="tags">
 
-	<a class='category' href='/blog/categories/geek/'>geek</a>
+	<a class='category' href='/blog/categories/web/'>web</a>
+
 
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2009/10/17/10-hack-tools//blog/page/9/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2009/10/12/careful-php-in_array/">
+			<span class="comments"><a href="/blog/2009/10/12/careful-php-in_array/#disqus_thread">Comments</a></span>
 		
-			慎用PHP的in_array</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/10/12/careful-php-in_array/" itemprop="url">慎用PHP的in_array</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>从使用经验得知，in_array是线性查找，当数据量多一些时，就会巨慢<br />
 如果要提速，请使用hash数组进行保存，以协助查找
 <pre> # 这样太慢了
@@ -254,9 +257,12 @@ if ( isset( $hashTmp[&#8220;item&#8221;] ) )</p>
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -268,30 +274,20 @@ if ( isset( $hashTmp[&#8220;item&#8221;] ) )</p>
   
 
 
-<time datetime="2009-10-12T00:00:00+08:00" pubdate data-updated="true">2009-10-12</time></div>
-	
+<time datetime="2009-09-23T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-09-23</time></div>
+		<div class="tags">
 
-<div class="tags">
 
-	<a class='category' href='/blog/categories/web/'>web</a>
+	<a class='category' href='/blog/categories/opensource/'>opensource</a>
+
 
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2009/10/12/careful-php-in_array//blog/page/9/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2009/09/23/about-devfs-sysfs/">
+			<span class="comments"><a href="/blog/2009/09/23/about-devfs-sysfs/#disqus_thread">Comments</a></span>
 		
-			关于devfs和sysfs</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/09/23/about-devfs-sysfs/" itemprop="url">关于devfs和sysfs</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>扫盲了，5900上插了两块160G的硬盘，只能找到一块，最后lijian拷了一个sdb设备文件过去搞定了……<br />
 d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这里</a>：
 <code>
@@ -307,9 +303,12 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -321,30 +320,20 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
   
 
 
-<time datetime="2009-09-23T00:00:00+08:00" pubdate data-updated="true">2009-09-23</time></div>
-	
+<time datetime="2009-08-29T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-08-29</time></div>
+		<div class="tags">
 
-<div class="tags">
 
-	<a class='category' href='/blog/categories/opensource/'>opensource</a>
+	<a class='category' href='/blog/categories/misc/'>misc</a>
+
 
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2009/09/23/about-devfs-sysfs//blog/page/9/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2009/08/29/story-many-1/">
+			<span class="comments"><a href="/blog/2009/08/29/story-many-1/#disqus_thread">Comments</a></span>
 		
-			哲学家与渔夫[新篇多则] (Zz)</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/08/29/story-many-1/" itemprop="url">哲学家与渔夫[新篇多则] (Zz)</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>via: <a href="http://godel.blog.sohu.com/130651747.html">http://godel.blog.sohu.com/130651747.html</a>
 [原文]从前有一个哲学家想要过河，搭乘了一个渔夫的小船。路上哲学家问渔夫：“请问你会数学吗？”渔夫说：“不会”。哲学家说：“那么你的人生50％没有价值！”过了一会，哲学家又问：“再请问你会哲学吗？”渔夫说：“也不会”。哲学家说：“那么你的人生80％没有了价值！”正在这时突然来了一阵狂风，渔夫反问了哲学家一句：“请问您会游泳吗？”哲学家说：“不会。”渔夫说：“那么您的人生100％没有价值！”</p>
 
@@ -364,9 +353,12 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -378,30 +370,20 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
   
 
 
-<time datetime="2009-08-29T00:00:00+08:00" pubdate data-updated="true">2009-08-29</time></div>
-	
+<time datetime="2009-08-29T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-08-29</time></div>
+		<div class="tags">
 
-<div class="tags">
 
-	<a class='category' href='/blog/categories/misc/'>misc</a>
+	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
+
 
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2009/08/29/story-many-1//blog/page/9/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2009/08/29/faraway-1/">
+			<span class="comments"><a href="/blog/2009/08/29/faraway-1/#disqus_thread">Comments</a></span>
 		
-			遥远</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/08/29/faraway-1/" itemprop="url">遥远</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>看到很多东西都很遥远<br />
 我重新审视自己时，发现几乎一无所有<br />
 工作了一年多，我问自己有什么进步，我想了很久，还是想不到自己进步的是什么东西，抑或叫所获无几吧<br />
@@ -416,9 +398,12 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -430,39 +415,32 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
   
 
 
-<time datetime="2009-08-29T00:00:00+08:00" pubdate data-updated="true">2009-08-29</time></div>
-	
+<time datetime="2009-08-20T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-08-20</time></div>
+		<div class="tags">
 
-<div class="tags">
 
 	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
 
+
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2009/08/29/faraway-1//blog/page/9/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2009/08/20/so-slow-to-writing/">
+			<span class="comments"><a href="/blog/2009/08/20/so-slow-to-writing/#disqus_thread">Comments</a></span>
 		
-			慢到我不想写文章了</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/08/20/so-slow-to-writing/" itemprop="url">慢到我不想写文章了</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p><p>如题，不爽就是了</p></p>
 
 		
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -474,30 +452,20 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
   
 
 
-<time datetime="2009-08-20T00:00:00+08:00" pubdate data-updated="true">2009-08-20</time></div>
-	
+<time datetime="2009-08-16T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-08-16</time></div>
+		<div class="tags">
 
-<div class="tags">
 
 	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
 
+
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2009/08/20/so-slow-to-writing//blog/page/9/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2009/08/16/beginwin7/">
+			<span class="comments"><a href="/blog/2009/08/16/beginwin7/#disqus_thread">Comments</a></span>
 		
-			用上Win7了</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/08/16/beginwin7/" itemprop="url">用上Win7了</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p><p>跳过Vista，终于用上Win7 RTM，由于内存为4G，为了不浪费，直接上64Bit</p>
 <p>Win7的感觉很好，已经不想用回XP了，不过由于有些东西还是要XP来处理，所以短期内还是双系统</p>
 <p>我是用Windows 7 Toolkit来破解的，暂时来说没有问题，用个一年半载再说</p></p>
@@ -506,9 +474,12 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -520,30 +491,20 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
   
 
 
-<time datetime="2009-08-16T00:00:00+08:00" pubdate data-updated="true">2009-08-16</time></div>
-	
+<time datetime="2009-07-26T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-07-26</time></div>
+		<div class="tags">
 
-<div class="tags">
 
-	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
+	<a class='category' href='/blog/categories/misc/'>misc</a>
+
 
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2009/08/16/beginwin7//blog/page/9/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2009/07/26/zz_1/">
+			<span class="comments"><a href="/blog/2009/07/26/zz_1/#disqus_thread">Comments</a></span>
 		
-			混乱zz(1)</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/07/26/zz_1/" itemprop="url">混乱zz(1)</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p><p>老人言，来自云风blog，有很好的参考价值啊<br />
 <a href="http://blog.codingnow.com/2009/07/the_elements_of_programming_style.html">http://blog.codingnow.com/2009/07/the_elements_of_programming_style.html</a></p>
 <p>追求神乎其技的程式設計之道，个人认为是好文，分享之<br />
@@ -562,9 +523,12 @@ http://cocre.com/wp-content/uploads/2009/07/Internet.jpg</a>&nbsp;</p>
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -576,30 +540,20 @@ http://cocre.com/wp-content/uploads/2009/07/Internet.jpg</a>&nbsp;</p>
   
 
 
-<time datetime="2009-07-26T00:00:00+08:00" pubdate data-updated="true">2009-07-26</time></div>
-	
+<time datetime="2009-07-18T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-07-18</time></div>
+		<div class="tags">
 
-<div class="tags">
 
 	<a class='category' href='/blog/categories/misc/'>misc</a>
 
+
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2009/07/26/zz_1//blog/page/9/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2009/07/18/loser_like_zz/">
+			<span class="comments"><a href="/blog/2009/07/18/loser_like_zz/#disqus_thread">Comments</a></span>
 		
-			Loser们的共同特征(zz)</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/07/18/loser_like_zz/" itemprop="url">Loser们的共同特征(zz)</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p><p>贴切, via:&nbsp;<a href="http://hi.baidu.com/caoz/blog/item/58ee08fab8597c9e59ee9015.html">http://hi.baidu.com/caoz/blog/item/58ee08fab8597c9e59ee9015.html</a></p>
 <p>&nbsp;</p>
 <p style="line-height: normal; "><span style="color: rgb(0, 0, 0); ">互联网提供了一个很好的窗口，使我们可以观察形形色色的人们，那么看到最多的，大概就是loser了。这也符合社会人群构成的分布，失意者往往是大多数，成功者往往是极少数。</span></p>
@@ -637,35 +591,9 @@ http://cocre.com/wp-content/uploads/2009/07/Internet.jpg</a>&nbsp;</p>
 		
 	</div>
 
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-07-18T00:00:00+08:00" pubdate data-updated="true">2009-07-18</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/misc/'>misc</a>
+</article>
 
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2009/07/18/loser_like_zz//blog/page/9/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
 <nav id="pagenavi">
     
         <a href="/blog/page/8/" class="prev">Prev</a>
@@ -673,16 +601,18 @@ http://cocre.com/wp-content/uploads/2009/07/Internet.jpg</a>&nbsp;</p>
     
         <a href="/blog/page/10/" class="next">Next</a>
     
-    <div class="center"><a href="/archives">Blog Archives</a></div>
+    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
 </nav></div>
-	<footer id="footer" class="inner">Copyright &copy; 2013
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2013
 
     imlcl
 
 <br>
 Powered by Octopress.
-</footer>
-	<script src="/javascripts/slash.js"></script>
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+			<script src="/javascripts/slash.js"></script>
 <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
@@ -699,7 +629,7 @@ Powered by Octopress.
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -708,5 +638,7 @@ Powered by Octopress.
 
 
 
+		</div>
+	</div>
 </body>
 </html>

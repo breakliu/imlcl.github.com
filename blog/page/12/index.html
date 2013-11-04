@@ -1,108 +1,124 @@
 
 <!DOCTYPE HTML>
+
 <html>
+
 <head>
-	<script data-cfasync="false" type="text/javascript" src="//use.typekit.net/axj3cfp.js"></script>
-	<script data-cfasync="false" type="text/javascript">try{Typekit.load();}catch(e){}</script>
 	<meta charset="utf-8">
-	<title>A strong man can save himself. A great man can save another.  | 大头龙仔Blog</title>
-
-<meta name="author" content="imlcl"> 
-
-<meta name="description" content="imlcl.com 大头龙仔 blog 随笔感悟 编程技术 it web php ruby rails c linux server slackware"> <meta name="keywords" content="">
-
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
-	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
-	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script type="text/javascript" src="/javascripts/jquery.fancybox.pack.js"></script>
-
-<script language="Javascript" type="text/javascript">
-$(document).ready(
-  function() {
-    (function($) {
-      $(".fancybox[data-content-id]").each(function() {
-        this.href = $(this).data('content-id');
-      });
-      $(".fancybox").fancybox({
-        beforeLoad: function() {
-          var el, 
-              id = $(this.element).data('title-id');
-
-          if (id) {
-            el = $('#' + id);
-
-            if (el.length) {
-              this.title = el.html();
-            }
-          }
-          if ($(this).data('content')) {
-            this.content = $(this).data('content');
-          }
-        },
-        helpers: {
-          title: {
-            type: 'inside'
-          }
-        }
-      });
-    })(jQuery);
-  }
-);
-</script>
+	<title>大头龙仔Blog</title>
+	<meta name="author" content="imlcl">
 
 	
+	<meta name="description" content="2009-02-17 geek Comments 剖析slackware Pkgtools之installpkg篇 作者: slackcode
+pkgtools版本: pkgtools-12.1.0-noarch-7.tgz
+我并不是什么高手牛人，我只是路过，觉得好玩，所以拿出来看看， &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://imlcl.github.io/blog/page/12/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+  
+
 </head>
 
 
 <body>
-	<header id="header" class="inner"><h1><a href="/">大头龙仔Blog</a></h1>
-<h4>A strong man can save himself. A great man can save another.</h4>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("slackcode@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+</div>
+
 <nav id="main-nav"><ul>
 	<li><a href="/">Blog</a></li>
 	<li><a href="/about">About</a></li>
 	<li><a href="/archives">Archive</a></li>
 </ul>
+
 </nav>
-<nav id="mobile-nav">
-	<div class="alignleft menu">
-		<a class="button">Menu</a>
-		<div class="container"><ul>
-	<li><a href="/">Blog</a></li>
-	<li><a href="/about">About</a></li>
-	<li><a href="/archives">Archive</a></li>
-</ul>
+<nav id="sub-nav">
+	<div class="social">
+		
+			<a class="email" href="mailto:slackcode@gmail.com" title="Email">Email</a>
+		
+		
+		
+		
+		
+			<a class="github" href="https://github.com/imlcl" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner">
+<div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-02-17T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-02-17</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/geek/'>geek</a>
+
+
 </div>
-	</div>
-	<div class="alignright search">
-		<a class="button"></a>
-		<div class="container">
-			<form action="http://google.com.au/search" method="get">
-				<input type="text" name="q" results="0">
-				<input type="hidden" name="q" value="site:imlcl.github.io">
-			</form>
-		</div>
-	</div>
-</nav>
-
-
-</header>
-
-	<div id="content" class="inner">
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2009/02/17/installpkg/">
+			<span class="comments"><a href="/blog/2009/02/17/installpkg/#disqus_thread">Comments</a></span>
 		
-			剖析slackware Pkgtools之installpkg篇</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/02/17/installpkg/" itemprop="url">剖析slackware Pkgtools之installpkg篇</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p><span class="content">作者: slackcode</span>
 pkgtools版本: pkgtools-12.1.0-noarch-7.tgz<br />
 我并不是什么高手牛人，我只是路过，觉得好玩，所以拿出来看看，希望与大家分享，共同学习<br />
@@ -155,9 +171,12 @@ if [ ! &#8220;`LC_MESSAGES=C $TAR &#8211;version | head -n 1`&#8221; = &#8220;ta
 		<a href="/blog/2009/02/17/installpkg/" class="more-link">Read on &rarr;</a>
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -169,39 +188,32 @@ if [ ! &#8220;`LC_MESSAGES=C $TAR &#8211;version | head -n 1`&#8221; = &#8220;ta
   
 
 
-<time datetime="2009-02-17T00:00:00+08:00" pubdate data-updated="true">2009-02-17</time></div>
-	
+<time datetime="2009-02-16T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-02-16</time></div>
+		<div class="tags">
 
-<div class="tags">
 
-	<a class='category' href='/blog/categories/geek/'>geek</a>
+	<a class='category' href='/blog/categories/misc/'>misc</a>
+
 
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2009/02/17/installpkg//blog/page/12/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2009/02/16/what-your-choice/">
+			<span class="comments"><a href="/blog/2009/02/16/what-your-choice/#disqus_thread">Comments</a></span>
 		
-			推荐《如果你遇到这种情况，会怎样选择呢？》</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/02/16/what-your-choice/" itemprop="url">推荐《如果你遇到这种情况，会怎样选择呢？》</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p><p>很不错的一个系列，请看<a href="http://www.xiaolai.net/index.php/archives/5556.html">这里</a></p></p>
 
 		
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -213,30 +225,20 @@ if [ ! &#8220;`LC_MESSAGES=C $TAR &#8211;version | head -n 1`&#8221; = &#8220;ta
   
 
 
-<time datetime="2009-02-16T00:00:00+08:00" pubdate data-updated="true">2009-02-16</time></div>
-	
+<time datetime="2009-02-16T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-02-16</time></div>
+		<div class="tags">
 
-<div class="tags">
 
 	<a class='category' href='/blog/categories/misc/'>misc</a>
 
+
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2009/02/16/what-your-choice//blog/page/12/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2009/02/16/review-100-sentences/">
+			<span class="comments"><a href="/blog/2009/02/16/review-100-sentences/#disqus_thread">Comments</a></span>
 		
-			让你回味一生的100句凡人语录(zz)</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/02/16/review-100-sentences/" itemprop="url">让你回味一生的100句凡人语录(zz)</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p><p>via: <a href="http://www.feiniaoji.com/article/1141.shtml">http://www.feiniaoji.com/article/1141.shtml</a></p>
 <p>1、一个人有生就有死，但只要你活着，就要以最好的方式活下去。<br />
 2、当我们失去的时候，才知道自己曾经拥有。<br />
@@ -343,9 +345,12 @@ if [ ! &#8220;`LC_MESSAGES=C $TAR &#8211;version | head -n 1`&#8221; = &#8220;ta
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -357,30 +362,20 @@ if [ ! &#8220;`LC_MESSAGES=C $TAR &#8211;version | head -n 1`&#8221; = &#8220;ta
   
 
 
-<time datetime="2009-02-16T00:00:00+08:00" pubdate data-updated="true">2009-02-16</time></div>
-	
+<time datetime="2009-02-13T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-02-13</time></div>
+		<div class="tags">
 
-<div class="tags">
 
-	<a class='category' href='/blog/categories/misc/'>misc</a>
+	<a class='category' href='/blog/categories/geek/'>geek</a>, <a class='category' href='/blog/categories/web/'>web</a>
+
 
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2009/02/16/review-100-sentences//blog/page/12/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2009/02/13/en-1-2/">
+			<span class="comments"><a href="/blog/2009/02/13/en-1-2/#disqus_thread">Comments</a></span>
 		
-			嗯</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/02/13/en-1-2/" itemprop="url">嗯</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p><p>前几天完成了《剖析slackware pkgtools之installpkg篇》，但还没放上来。原因是发现wp-syntax的高亮有问题，然后搜啊，终于搜到<a href="http://mjxian.cn/wordpress/archives/fckeditor-for-wordpress-wp-syntax.html/comment-page-1#comment-170">这里</a>可以把问题解决，不过lz那段php代码是有问题的，我更正如下解决问题</p>
 <p>$match = str_replace(&quot;&amp;amp;&quot;, &quot;&amp;&quot;, $match);<br />
 $match = str_replace(&quot;&amp;lt&quot;, &quot;&lt;&quot;, $match);<br />
@@ -393,9 +388,12 @@ $match = str_replace(&#8216;&amp;quot&#8217;, &#8216;&quot;&#8217;, $match);&nbs
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -407,30 +405,20 @@ $match = str_replace(&#8216;&amp;quot&#8217;, &#8216;&quot;&#8217;, $match);&nbs
   
 
 
-<time datetime="2009-02-13T00:00:00+08:00" pubdate data-updated="true">2009-02-13</time></div>
-	
+<time datetime="2009-02-09T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-02-09</time></div>
+		<div class="tags">
 
-<div class="tags">
 
-	<a class='category' href='/blog/categories/geek/'>geek</a>, <a class='category' href='/blog/categories/web/'>web</a>
+	<a class='category' href='/blog/categories/misc/'>misc</a>
+
 
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2009/02/13/en-1-2//blog/page/12/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2009/02/09/mba-good-story/">
+			<span class="comments"><a href="/blog/2009/02/09/mba-good-story/#disqus_thread">Comments</a></span>
 		
-			一中大MBA朋友总结的语录(zz)</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/02/09/mba-good-story/" itemprop="url">一中大MBA朋友总结的语录(zz)</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>1．大家的智商都差不多，有区别的只是坚持。——某GG</p>
 
 <p>2、大家都很优秀，就是看谁更能折腾，或是更能忍耐。——某GG</p>
@@ -479,9 +467,12 @@ $match = str_replace(&#8216;&amp;quot&#8217;, &#8216;&quot;&#8217;, $match);&nbs
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -493,30 +484,20 @@ $match = str_replace(&#8216;&amp;quot&#8217;, &#8216;&quot;&#8217;, $match);&nbs
   
 
 
-<time datetime="2009-02-09T00:00:00+08:00" pubdate data-updated="true">2009-02-09</time></div>
-	
+<time datetime="2009-02-06T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-02-06</time></div>
+		<div class="tags">
 
-<div class="tags">
 
 	<a class='category' href='/blog/categories/misc/'>misc</a>
 
+
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2009/02/09/mba-good-story//blog/page/12/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2009/02/06/startup-failure/">
+			<span class="comments"><a href="/blog/2009/02/06/startup-failure/#disqus_thread">Comments</a></span>
 		
-			如何认别注定要失败的startup(zz)</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/02/06/startup-failure/" itemprop="url">如何认别注定要失败的startup(zz)</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>via: <a href="http://groups.google.com/group/pongba/browse_thread/thread/4d1082f5e0256f1d">http://groups.google.com/group/pongba/browse_thread/thread/4d1082f5e0256f1d</a></p>
 
 <p>如何认别注定要失败的startup</p>
@@ -546,9 +527,12 @@ Anti Pattern(<a rel="nofollow" href="http://zh.wikipedia.org/wiki/%E5%8F%8D%E9%9
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -560,30 +544,20 @@ Anti Pattern(<a rel="nofollow" href="http://zh.wikipedia.org/wiki/%E5%8F%8D%E9%9
   
 
 
-<time datetime="2009-02-06T00:00:00+08:00" pubdate data-updated="true">2009-02-06</time></div>
-	
+<time datetime="2009-01-28T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-01-28</time></div>
+		<div class="tags">
 
-<div class="tags">
 
-	<a class='category' href='/blog/categories/misc/'>misc</a>
+	<a class='category' href='/blog/categories/geek/'>geek</a>
+
 
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2009/02/06/startup-failure//blog/page/12/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2009/01/28/slackware-pkgtools-1/">
+			<span class="comments"><a href="/blog/2009/01/28/slackware-pkgtools-1/#disqus_thread">Comments</a></span>
 		
-			剖析slackware Pkgtools之概述篇</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/01/28/slackware-pkgtools-1/" itemprop="url">剖析slackware Pkgtools之概述篇</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>作者: slackcode<br />
 pkgtools版本: pkgtools-12.1.0-noarch-7.tgz<br />
 我并不是什么高手牛人，我只是路过，觉得好玩，所以拿出来看看，希望与大家分享，共同学习<br />
@@ -609,9 +583,12 @@ pkgtools版本: pkgtools-12.1.0-noarch-7.tgz<br />
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -623,30 +600,20 @@ pkgtools版本: pkgtools-12.1.0-noarch-7.tgz<br />
   
 
 
-<time datetime="2009-01-28T00:00:00+08:00" pubdate data-updated="true">2009-01-28</time></div>
-	
+<time datetime="2009-01-27T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-01-27</time></div>
+		<div class="tags">
 
-<div class="tags">
 
-	<a class='category' href='/blog/categories/geek/'>geek</a>
+	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
+
 
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2009/01/28/slackware-pkgtools-1//blog/page/12/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2009/01/27/2009-festival/">
+			<span class="comments"><a href="/blog/2009/01/27/2009-festival/#disqus_thread">Comments</a></span>
 		
-			2009春节</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/01/27/2009-festival/" itemprop="url">2009春节</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>2009的春节很冷，还下着小雨，本来冷清的街道就显得更孤单了。</p>
 
 <p>2009的春节，更多的是伤感，但还是要开心的。</p>
@@ -661,9 +628,12 @@ pkgtools版本: pkgtools-12.1.0-noarch-7.tgz<br />
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -675,39 +645,32 @@ pkgtools版本: pkgtools-12.1.0-noarch-7.tgz<br />
   
 
 
-<time datetime="2009-01-27T00:00:00+08:00" pubdate data-updated="true">2009-01-27</time></div>
-	
+<time datetime="2009-01-21T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-01-21</time></div>
+		<div class="tags">
 
-<div class="tags">
 
 	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
 
+
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2009/01/27/2009-festival//blog/page/12/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2009/01/21/e71-buy/">
+			<span class="comments"><a href="/blog/2009/01/21/e71-buy/#disqus_thread">Comments</a></span>
 		
-			E71入手</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/01/21/e71-buy/" itemprop="url">E71入手</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>考虑很久，最终入手E71，拿在手上，感觉很满足，并且对自己说：以后也不会再买WM的手机</p>
 
 		
 		
 	</div>
 
+</article>
 
-<div class="meta">
-	<div class="date">
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -719,30 +682,20 @@ pkgtools版本: pkgtools-12.1.0-noarch-7.tgz<br />
   
 
 
-<time datetime="2009-01-21T00:00:00+08:00" pubdate data-updated="true">2009-01-21</time></div>
-	
+<time datetime="2009-01-16T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-01-16</time></div>
+		<div class="tags">
 
-<div class="tags">
 
-	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
+	<a class='category' href='/blog/categories/geek/'>geek</a>
+
 
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2009/01/21/e71-buy//blog/page/12/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
 		
-		<a href="/blog/2009/01/16/shell-using-func/">
+			<span class="comments"><a href="/blog/2009/01/16/shell-using-func/#disqus_thread">Comments</a></span>
 		
-			在shell脚本里使用函数</a>
-	</h2>
-	<div class="entry-content">
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/01/16/shell-using-func/" itemprop="url">在shell脚本里使用函数</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>之所以要在shell里使用函数，大多数因为脚本中有大量重复的代码，这些代码可以整理封装为函数使用，使脚本更加易读，维护性也更好，下面就来说说如何在Linux shell脚本里使用函数。</p>
 
 <p>在shell脚本里，定义函数有两种格式：
@@ -775,35 +728,9 @@ chmod 0777 /home/lcl/test.sh;
 		
 	</div>
 
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-01-16T00:00:00+08:00" pubdate data-updated="true">2009-01-16</time></div>
-	
-
-<div class="tags">
-
-	<a class='category' href='/blog/categories/geek/'>geek</a>
+</article>
 
 </div>
-
-
-	
-		<span class="comments"><a href="/blog/2009/01/16/shell-using-func//blog/page/12/index.html#disqus_thread">Comments</a></span>
-	
-</div></article>
-
 <nav id="pagenavi">
     
         <a href="/blog/page/11/" class="prev">Prev</a>
@@ -811,16 +738,18 @@ chmod 0777 /home/lcl/test.sh;
     
         <a href="/blog/page/13/" class="next">Next</a>
     
-    <div class="center"><a href="/archives">Blog Archives</a></div>
+    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
 </nav></div>
-	<footer id="footer" class="inner">Copyright &copy; 2013
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2013
 
     imlcl
 
 <br>
 Powered by Octopress.
-</footer>
-	<script src="/javascripts/slash.js"></script>
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+			<script src="/javascripts/slash.js"></script>
 <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
@@ -837,7 +766,7 @@ Powered by Octopress.
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -846,5 +775,7 @@ Powered by Octopress.
 
 
 
+		</div>
+	</div>
 </body>
 </html>
