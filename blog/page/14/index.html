@@ -1,98 +1,83 @@
 
-<!DOCTYPE HTML>
-
-<html>
-
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
-	<meta charset="utf-8">
-	<title>大头龙仔Blog</title>
-	<meta name="author" content="imlcl">
+  <meta charset="utf-8">
+  <title>大头龙仔Blog</title>
+  <meta name="author" content="imlcl">
 
-	
-	<meta name="description" content="2008-12-15 opensource Comments 关于proftpd开启anonymous访问权限 proftpd是Linux下很常用的一个Ftp服务器，slackware自带vsftpd和proftpd两个ftp服务器。
-vsftpd小巧快速， &hellip;">
-	
+  
+  <meta name="description" content="proftpd是Linux下很常用的一个Ftp服务器，slackware自带vsftpd和proftpd两个ftp服务器。
+vsftpd小巧快速，proftpd在定制性和安全性比vsftpd好。 我打算把proftpd开anonymous（匿名）访问权限，slackware 12.2安装时， &hellip;">
+  
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
-	
-	<link rel="canonical" href="http://imlcl.github.io/blog/page/14/">
-	<link href="/favicon.png" rel="shortcut icon">
-	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	
+  
+  <link rel="canonical" href="http://imlcl.github.io/blog/page/14">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
   
 
 </head>
 
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">大头龙仔Blog</a></h1>
+  
+    <h2>A strong man can save himself. A great man can save another.</h2>
+  
+</hgroup>
 
-<body>
-	<div class="container">
-		<div class="left-col">
-			<div class="intrude-less">
-			<header id="header" class="inner"><div class="profilepic">
-	
-	<script src="/javascripts/md5.js"></script>
-	<script type="text/javascript">
-		$(function(){
-			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("slackcode@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
-		});
-	</script>
-	
-</div>
-
-<nav id="main-nav"><ul>
-	<li><a href="/">Blog</a></li>
-	<li><a href="/archives">Archive</a></li>
-	<li><a href="/about">About</a></li>
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com.au/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:imlcl.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/about">About</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
 </ul>
 
 </nav>
-<nav id="sub-nav">
-	<div class="social">
-		
-			<a class="email" href="mailto:slackcode@gmail.com" title="Email">Email</a>
-		
-		
-		
-		
-		
-			<a class="github" href="https://github.com/imlcl" title="GitHub">GitHub</a>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
-		
-	</div>
-</nav>
-</header>				
-			</div>
-		</div>	
-		<div class="mid-col">
-			
-				
-			
-			<div class="mid-col-container">
-				<div id="content" class="inner">
-<div itemscope itemtype="http://schema.org/Blog">
-
-
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/12/15/proftpd-open-anonymous/">关于proftpd开启anonymous访问权限</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -104,21 +89,17 @@ vsftpd小巧快速， &hellip;">
   
 
 
-<time datetime="2008-12-15T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-12-15</time></div>
-		<div class="tags">
+<time datetime="2008-12-15T00:00:00+08:00" pubdate data-updated="true">2008-12-15</time>
+        
+           | <a href="/blog/2008/12/15/proftpd-open-anonymous/#disqus_thread"
+             data-disqus-identifier="http://imlcl.github.io/blog/2008/12/15/proftpd-open-anonymous/">Comments</a>
+        
+      </p>
+    
+  </header>
 
 
-	<a class='category' href='/blog/categories/opensource/'>opensource</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2008/12/15/proftpd-open-anonymous/#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2008/12/15/proftpd-open-anonymous/" itemprop="url">关于proftpd开启anonymous访问权限</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>proftpd是Linux下很常用的一个Ftp服务器，slackware自带vsftpd和proftpd两个ftp服务器。<br />
+  <div class="entry-content"><p>proftpd是Linux下很常用的一个Ftp服务器，slackware自带vsftpd和proftpd两个ftp服务器。<br />
 vsftpd小巧快速，proftpd在定制性和安全性比vsftpd好。</p>
 
 <p>我打算把proftpd开anonymous（匿名）访问权限，slackware 12.2安装时，proftpd已把/etc/proftpd.conf配置好支持anonymous的，但登录时老出现:<br />
@@ -138,17 +119,23 @@ Login failed.<br />
 1、我想不明白为什么网上没有这个帮助资料，可能我比较菜，也比较粗心；<br />
 2、网上提到开anonymous高频help是加入<pre lang="bash">RequireValidShell off</pre>slackware默认安装已有这个参数；<br />
 3、借此分享给大家</p>
-
-		
-		
-	</div>
-
-</article>
+</div>
+  
+  
 
 
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/12/13/about-slackware-font/">关于slackware的字体美化</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -160,21 +147,17 @@ Login failed.<br />
   
 
 
-<time datetime="2008-12-13T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-12-13</time></div>
-		<div class="tags">
+<time datetime="2008-12-13T00:00:00+08:00" pubdate data-updated="true">2008-12-13</time>
+        
+           | <a href="/blog/2008/12/13/about-slackware-font/#disqus_thread"
+             data-disqus-identifier="http://imlcl.github.io/blog/2008/12/13/about-slackware-font/">Comments</a>
+        
+      </p>
+    
+  </header>
 
 
-	<a class='category' href='/blog/categories/opensource/'>opensource</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2008/12/13/about-slackware-font/#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2008/12/13/about-slackware-font/" itemprop="url">关于slackware的字体美化</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>Linux的美化可谓是个永恒的话题，我记得以前还为美化这个东东搞过几天，还没达到自己的要求（相对XP）。</p>
+  <div class="entry-content"><p>Linux的美化可谓是个永恒的话题，我记得以前还为美化这个东东搞过几天，还没达到自己的要求（相对XP）。</p>
 
 <p>可是呢，人靠衣服，系统也希望弄得好看点，这样心情才好呢，这次来说说slackware的字体美化，也算是Linux的通用方法。</p>
 
@@ -201,17 +184,23 @@ serverargs=&#8221;&#8221;<br />
 <p>至此完成美化了，不同发行版方行都是差不多的。</p>
 
 <p>有些人是看不到漂亮字体就不爽的，估计要花些时间配啦，什么雅黑啊，苹果的字体都可以用上，我以前看过一些图很不错的，想弄可以google之。</p>
-
-		
-		
-	</div>
-
-</article>
+</div>
+  
+  
 
 
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/12/12/handsome-boy/">型男講座(图)(zz)</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -223,32 +212,34 @@ serverargs=&#8221;&#8221;<br />
   
 
 
-<time datetime="2008-12-12T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-12-12</time></div>
-		<div class="tags">
+<time datetime="2008-12-12T00:00:00+08:00" pubdate data-updated="true">2008-12-12</time>
+        
+           | <a href="/blog/2008/12/12/handsome-boy/#disqus_thread"
+             data-disqus-identifier="http://imlcl.github.io/blog/2008/12/12/handsome-boy/">Comments</a>
+        
+      </p>
+    
+  </header>
 
 
-	<a class='category' href='/blog/categories/misc/'>misc</a>
-
-
+  <div class="entry-content"><p>http://blog.yam.com/airsama/article/18503510</p>
 </div>
-		
-			<span class="comments"><a href="/blog/2008/12/12/handsome-boy/#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2008/12/12/handsome-boy/" itemprop="url">型男講座(图)(zz)</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>http://blog.yam.com/airsama/article/18503510</p>
-
-		
-		
-	</div>
-
-</article>
+  
+  
 
 
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/12/11/slackware-122-is-released/">Slackware 12.2 Is Released</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -260,21 +251,17 @@ serverargs=&#8221;&#8221;<br />
   
 
 
-<time datetime="2008-12-11T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-12-11</time></div>
-		<div class="tags">
+<time datetime="2008-12-11T00:00:00+08:00" pubdate data-updated="true">2008-12-11</time>
+        
+           | <a href="/blog/2008/12/11/slackware-122-is-released/#disqus_thread"
+             data-disqus-identifier="http://imlcl.github.io/blog/2008/12/11/slackware-122-is-released/">Comments</a>
+        
+      </p>
+    
+  </header>
 
 
-	<a class='category' href='/blog/categories/opensource/'>opensource</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2008/12/11/slackware-122-is-released/#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2008/12/11/slackware-122-is-released/" itemprop="url">Slackware 12.2 Is Released</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p><a href="http://slackware.com/"> Slackware 12.2发布啦</a></p>
+  <div class="entry-content"><p><a href="http://slackware.com/"> Slackware 12.2发布啦</a></p>
 
 <p>Yes folks, &#8216;tis the season to announce a new release of Slackware.  With a shiny new kernel, many package updates, and the newly added ability to install from a Samba share, we bring to you the latest in the stable Slackware 12.x series.  Slackware 12.2 ships with the 2.6.27.7 Linux kernel, the Xorg 1.4.2 X server (with many driver, library, and application updates), Xfce 4.4.3, KDE 3.5.10, simplified wired and wireless networking with wicd in /extra, package upgrade management with slackpkg moved into the main tree, support for non-usb-storage digital cameras through libgphoto2, pm-utils (tools to support suspend and hibernate through HAL), and much, much more.  This release brings the system up-to-date without compromising stability or compatibility with the 12.x series.</p>
 
@@ -287,17 +274,23 @@ serverargs=&#8221;&#8221;<br />
 <p>As always &#8211; have fun!</p>
 
 <p>Pat and the Slackware crew</p>
-
-		
-		
-	</div>
-
-</article>
+</div>
+  
+  
 
 
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/12/10/java-school-danger/">JAVA语言学校的危险性(zz)</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -309,21 +302,17 @@ serverargs=&#8221;&#8221;<br />
   
 
 
-<time datetime="2008-12-10T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-12-10</time></div>
-		<div class="tags">
+<time datetime="2008-12-10T00:00:00+08:00" pubdate data-updated="true">2008-12-10</time>
+        
+           | <a href="/blog/2008/12/10/java-school-danger/#disqus_thread"
+             data-disqus-identifier="http://imlcl.github.io/blog/2008/12/10/java-school-danger/">Comments</a>
+        
+      </p>
+    
+  </header>
 
 
-	<a class='category' href='/blog/categories/misc/'>misc</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2008/12/10/java-school-danger/#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2008/12/10/java-school-danger/" itemprop="url">JAVA语言学校的危险性(zz)</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>作者：Joel Spolsky</p>
+  <div class="entry-content"><p>作者：Joel Spolsky</p>
 
 <p>译者：阮一峰</p>
 
@@ -444,17 +433,23 @@ serverargs=&#8221;&#8221;<br />
 <p>[16] 在Java语言中，int是一种数据类型，表示整数，而Integer是一个适用于面向对象编程的类，表示整数对象。两者的涵义和性质都不一样。</p>
 
 <p>（完）</p>
-
-		
-		
-	</div>
-
-</article>
+</div>
+  
+  
 
 
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/12/09/sofa-story/">沙发的故事</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -466,34 +461,36 @@ serverargs=&#8221;&#8221;<br />
   
 
 
-<time datetime="2008-12-09T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-12-09</time></div>
-		<div class="tags">
+<time datetime="2008-12-09T00:00:00+08:00" pubdate data-updated="true">2008-12-09</time>
+        
+           | <a href="/blog/2008/12/09/sofa-story/#disqus_thread"
+             data-disqus-identifier="http://imlcl.github.io/blog/2008/12/09/sofa-story/">Comments</a>
+        
+      </p>
+    
+  </header>
 
 
-	<a class='category' href='/blog/categories/misc/'>misc</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2008/12/09/sofa-story/#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2008/12/09/sofa-story/" itemprop="url">沙发的故事</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>今天看到一篇名为<a href="http://blog.csdn.net/lanphaday/archive/2008/01/21/2057417.aspx">沙发的故事——人才的价值在于贡献度？</a>文章后，结合网友的一些评论，貌似若有所思。</p>
+  <div class="entry-content"><p>今天看到一篇名为<a href="http://blog.csdn.net/lanphaday/archive/2008/01/21/2057417.aspx">沙发的故事——人才的价值在于贡献度？</a>文章后，结合网友的一些评论，貌似若有所思。</p>
 
 <p>我在想，什么叫贡献度？看所谓的贡献度如何去定义，如果定义的不好，那当然是不合理的。但事实上我同意以贡献度评价一个人，只要这个贡献度显得合理。但事实上所谓攻克一个难题，需要有机会、把握、能力等储多因素，而往往与贡献度息息相关，就像搞科研的人，如果整天搞科研，那么他必定畸形发展。但这可也是拔尖人才的前提，所以，还是得你怎么去定义自己的生活，还有你活在怎样的公司文化。如果没有士兵，不可能有胜仗。</p>
-
-		
-		
-	</div>
-
-</article>
+</div>
+  
+  
 
 
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/12/08/turn-around-1/">转了一圈</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -505,36 +502,38 @@ serverargs=&#8221;&#8221;<br />
   
 
 
-<time datetime="2008-12-08T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-12-08</time></div>
-		<div class="tags">
+<time datetime="2008-12-08T00:00:00+08:00" pubdate data-updated="true">2008-12-08</time>
+        
+           | <a href="/blog/2008/12/08/turn-around-1/#disqus_thread"
+             data-disqus-identifier="http://imlcl.github.io/blog/2008/12/08/turn-around-1/">Comments</a>
+        
+      </p>
+    
+  </header>
 
 
-	<a class='category' href='/blog/categories/opensource/'>opensource</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2008/12/08/turn-around-1/#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2008/12/08/turn-around-1/" itemprop="url">转了一圈</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>买了新机子，Arch -&gt; Lfs -&gt; Gentoo -&gt; slackware转了一圈，最后还是回到钟爱的slackware</p>
+  <div class="entry-content"><p>买了新机子，Arch -&gt; Lfs -&gt; Gentoo -&gt; slackware转了一圈，最后还是回到钟爱的slackware</p>
 
 <p>LFS没得说，装过一遍我觉得就好，我真的不打算用这个东西，但从这个东西上学到不少知识。以前用过一段时间Arch的，觉得很好，但发现装上去后没以前稳定，不知道是不是和我的4850有关系，老崩。当然最讨厌它的就是包的关联性，个人不太喜欢这一点。再装Gentoo时有新的感觉，第二次玩这个发行版时比上一次理解深刻多了，特别个整个Portage系统的灵活性，我只能说这个版本的创始集体就是牛。</p>
 
 <p>到了最后，回到我用过最长时间的发行版slackware（两年），熟悉的安装过程，简洁快速。我还是比较欣赏PAT等人精选的slackware工具集，基本上满足了几个层次的人的大部分需要，使用时间越长，越加能感受到那种KISS原则的美。有空写个工具集介绍。</p>
-
-		
-		
-	</div>
-
-</article>
+</div>
+  
+  
 
 
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/12/06/hot-pot-haapy/">火锅开心</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -546,38 +545,40 @@ serverargs=&#8221;&#8221;<br />
   
 
 
-<time datetime="2008-12-06T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-12-06</time></div>
-		<div class="tags">
+<time datetime="2008-12-06T00:00:00+08:00" pubdate data-updated="true">2008-12-06</time>
+        
+           | <a href="/blog/2008/12/06/hot-pot-haapy/#disqus_thread"
+             data-disqus-identifier="http://imlcl.github.io/blog/2008/12/06/hot-pot-haapy/">Comments</a>
+        
+      </p>
+    
+  </header>
 
 
-	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2008/12/06/hot-pot-haapy/#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2008/12/06/hot-pot-haapy/" itemprop="url">火锅开心</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>今天去了火锅啦，东来顺，很多肉，很满足，谢谢兄弟们。</p>
+  <div class="entry-content"><p>今天去了火锅啦，东来顺，很多肉，很满足，谢谢兄弟们。</p>
 
 <p>因为英文版，所以看着书写了Python脚本帮助批处理工作，发现实在太方便啦，以后要发掘这东西的用处，真正的用起来。</p>
 
 <p>爸妈明天中午过来，到时一起吃饭，听说还带个折叠床过来。也好，这样我不用去买了，天气冻，背有点凉啊。</p>
 
 <p>希望SoonDo个牙泡快点好</p>
-
-		
-		
-	</div>
-
-</article>
+</div>
+  
+  
 
 
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/12/03/manager-person-1/">管理型人才(zz)</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -589,21 +590,17 @@ serverargs=&#8221;&#8221;<br />
   
 
 
-<time datetime="2008-12-03T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-12-03</time></div>
-		<div class="tags">
+<time datetime="2008-12-03T00:00:00+08:00" pubdate data-updated="true">2008-12-03</time>
+        
+           | <a href="/blog/2008/12/03/manager-person-1/#disqus_thread"
+             data-disqus-identifier="http://imlcl.github.io/blog/2008/12/03/manager-person-1/">Comments</a>
+        
+      </p>
+    
+  </header>
 
 
-	<a class='category' href='/blog/categories/misc/'>misc</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2008/12/03/manager-person-1/#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2008/12/03/manager-person-1/" itemprop="url">管理型人才(zz)</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p>一、思想道德素质：<br />
+  <div class="entry-content"><p>一、思想道德素质：<br />
 诚实守信、忠于职守、遵纪守法、严于律己。<br />
 工作精神是检验一个人品格的重要标准。<br />
 20世纪初美国著名的成功学奠基者之一的马尔腾曾经讲过“测验人的品质有一个标准，就是他工作时所具的精神。假使他对工作，是被动的而非自动的，像奴隶在主人的皮鞭的督促下一样，假使他对工作感觉到厌恶，假使他对于工作没有热忱和爱好之心，不能使工作成为一种喜悦，而只觉得其为一种苦役，那他在世界上，一定不会有大成就的。”<br />
@@ -646,17 +643,23 @@ C 人员管理技能：协调、沟通、说服、考核、团结。<br />
 7、 控制情绪的能力。<br />
 8、 按计划行动的能力。“目标是行动的前提，行动是目标的升华，目标加行动等于成功。<br />
 9、 创新能力。</p>
-
-		
-		
-	</div>
-
-</article>
+</div>
+  
+  
 
 
-    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<div class="date">
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2008/11/30/never-too-later/">Never Too Later</a></h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -668,61 +671,111 @@ C 人员管理技能：协调、沟通、说服、考核、团结。<br />
   
 
 
-<time datetime="2008-11-30T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-11-30</time></div>
-		<div class="tags">
+<time datetime="2008-11-30T00:00:00+08:00" pubdate data-updated="true">2008-11-30</time>
+        
+           | <a href="/blog/2008/11/30/never-too-later/#disqus_thread"
+             data-disqus-identifier="http://imlcl.github.io/blog/2008/11/30/never-too-later/">Comments</a>
+        
+      </p>
+    
+  </header>
 
 
-	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
-
-
-</div>
-		
-			<span class="comments"><a href="/blog/2008/11/30/never-too-later/#disqus_thread">Comments</a></span>
-		
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2008/11/30/never-too-later/" itemprop="url">Never Too Later</a></h1>
-	<div class="entry-content" itemprop="articleBody">
-		<p><a href="http://www.douban.com/subject/1867345/">《遗愿清单》(The Bucket List)</a>里的一句话:<br />
+  <div class="entry-content"><p><a href="http://www.douban.com/subject/1867345/">《遗愿清单》(The Bucket List)</a>里的一句话:<br />
 You&#8217;re the one crying you never took a shot.<br />
 意思是光说不做才会遗憾</p>
 
 <p>生活里，不停地选择与被选择（受到朋友的达尔文主义观影响），但能选择自己喜欢的事情并坚持下去的却很少。这些事不一定困难，只是常常懒得去付诸行动。很多事情马上就可以去做，而不用要等啥时候才可以行动。</p>
 
 <p>Kick the bucket.</p>
-
-		
-		
-	</div>
-
-</article>
-
 </div>
-<nav id="pagenavi">
-    
-        <a href="/blog/page/13/" class="prev">Prev</a>
-    
-    
-        <a href="/blog/page/15/" class="next">Next</a>
-    
-    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
-</nav></div>
-			</div>
-			<footer id="footer" class="inner">Copyright &copy; 2013
+  
+  
 
-    imlcl
 
-<br>
-Powered by Octopress.
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/15/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/13/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/10/26/slackware-to-debian/">Slackware to Debian</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/21/migrate-to-octopress/">Migrate to Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/01/write-to-2013/">写给2013，写给我，写给我们</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/13/git-gitignore/">Git和.gitignore</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/05/slackware-kvm/">服务器基于slackware的KVM布署详解</a>
+      </li>
+    
+  </ul>
+</section>
 
-Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
-			<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-	$('.fancybox').fancybox();
-})(jQuery);
-</script> <!-- Delete or comment this line to disable Fancybox -->
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/imlcl">@imlcl</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
 
+        github.showRepos({
+            user: 'imlcl',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - imlcl -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
 
 <script type="text/javascript">
       var disqus_shortname = 'imlcl';
@@ -732,7 +785,7 @@ Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Sha
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -741,7 +794,11 @@ Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Sha
 
 
 
-		</div>
-	</div>
+
+
+
+
+
+
 </body>
 </html>

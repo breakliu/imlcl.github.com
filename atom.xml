@@ -4,7 +4,7 @@
   <title><![CDATA[大头龙仔Blog]]></title>
   <link href="http://imlcl.github.io/atom.xml" rel="self"/>
   <link href="http://imlcl.github.io/"/>
-  <updated>2013-11-09T22:47:19+08:00</updated>
+  <updated>2013-11-15T12:36:16+08:00</updated>
   <id>http://imlcl.github.io/</id>
   <author>
     <name><![CDATA[imlcl]]></name>
@@ -21,7 +21,7 @@
     <content type="html"><![CDATA[<p><img src="http://slackware.com/grfx/shared/slackware_traditional_website_logo.png">
 <img src="http://www.debian.org/logos/openlogo-100.jpg"></p>
 
-<p>最开始接触Linux是在大一，还记得当时看的一本入门书叫<a href="http://book.douban.com/subject/2143320/">《A STUDENT&#8217;S GUIDE TO UNIX》</a>。然后自己折腾过很多Linux发行版，CentOS，Debian，Slackware，Arch，Gentoo，LFS，还有FreeBSD。后来非常长一段时间都在使用<a href="http://slackware.com/">Slackware</a>，我记得当时用的是Slackware 10.0。</p>
+<p>最开始接触Linux是在大一，还记得当时看的一本入门书叫<a href="http://book.douban.com/subject/2143320/">《A STUDENT&rsquo;S GUIDE TO UNIX》</a>。然后自己折腾过很多Linux发行版，CentOS，Debian，Slackware，Arch，Gentoo，LFS，还有FreeBSD。后来非常长一段时间都在使用<a href="http://slackware.com/">Slackware</a>，我记得当时用的是Slackware 10.0。</p>
 
 <p>至今，手头上还有机子是用Slackware的，包括以前的Linode VPS、现在学校的服务器等等。</p>
 
@@ -104,7 +104,7 @@
 <h3>二、相关准备</h3>
 
 <ul>
-<li>装有slackware的主机一台，内存最好不要太少吧，如果4G或以上的，就装slackware64，当前slackware最新稳定版是13.37（37这个命名方式是和内核2.6.xx一致），因为是做物理主机的系统，所以稳定至上。至于如何安装slackware，可以看<a href="http://www.linuxsir.org/bbs/thread383703.html">slackbook中文译本</a>，反正基本流程是：光碟或U盘启动 -> cfdisk分区 -> setup安装 -> 重启……，下载slackware可以到<a href="http://taper.alienbase.nl/mirrors/slackware/">这里</a></li>
+<li>装有slackware的主机一台，内存最好不要太少吧，如果4G或以上的，就装slackware64，当前slackware最新稳定版是13.37（37这个命名方式是和内核2.6.xx一致），因为是做物理主机的系统，所以稳定至上。至于如何安装slackware，可以看<a href="http://www.linuxsir.org/bbs/thread383703.html">slackbook中文译本</a>，反正基本流程是：光碟或U盘启动 &ndash;> cfdisk分区 &ndash;> setup安装 &ndash;> 重启……，下载slackware可以到<a href="http://taper.alienbase.nl/mirrors/slackware/">这里</a></li>
 <li>KVM是什么，可以了解，随便一搜就有，还要确定你的CPU是否支持虚拟化技术；（<a href="http://baike.baidu.com/view/13605.htm">什么是虚拟化技术？</a>）</li>
 <li>因为我建立两个kvm，一个是slackware-current，一个是windows 2003，所以你也得要有2003的iso，安装2003请选择手动安装，最好是MSDN版本；</li>
 <li>虚拟机访问外网要使用网桥（package bridge-utils），但听说用VDE更方面，老实说，VDE我弄了一下，好像很麻烦就没弄了。</li>
@@ -137,21 +137,22 @@
 
 <p>KVM虚拟机通过tap来访问互联网，那么物理主机得设置好网桥，下面是我/etc/rc.d/rc.local里设置网桥和tap的代码</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># create brige 
-</span><span class='line'>ifconfig eth0 0.0.0.0 
-</span><span class='line'>brctl addbr br0 
-</span><span class='line'>ifconfig br0 x.x.x.x(物理主机IP) netmask 255.255.255.0(物理主机掩码) up 
-</span><span class='line'>route add default gw x.x.x.x(网关) br0 
-</span><span class='line'>brctl addif br0 eth0</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># create brige </span>
+</span><span class='line'>ifconfig eth0 0.0.0.0
+</span><span class='line'>brctl addbr br0
+</span><span class='line'>ifconfig br0 x.x.x.x<span class="o">(</span>物理主机IP<span class="o">)</span> netmask 255.255.255.0<span class="o">(</span>物理主机掩码<span class="o">)</span> up
+</span><span class='line'>route add default gw x.x.x.x<span class="o">(</span>网关<span class="o">)</span> br0
+</span><span class='line'>brctl addif br0 eth0
+</span></code></pre></td></tr></table></div></figure>
 
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -159,14 +160,15 @@
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># create tap0 for windows 2003 
-</span><span class='line'>tunctl -t tap0 
-</span><span class='line'>ifconfig tap0 up 
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># create tap0 for windows 2003 </span>
+</span><span class='line'>tunctl -t tap0
+</span><span class='line'>ifconfig tap0 up
 </span><span class='line'>brctl addif br0 tap0
-</span><span class='line'># create tap1 for slackware-current 
-</span><span class='line'>tunctl -t tap1 
-</span><span class='line'>ifconfig tap1 up 
-</span><span class='line'>brctl addif br0 tap1</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'><span class="c"># create tap1 for slackware-current </span>
+</span><span class='line'>tunctl -t tap1
+</span><span class='line'>ifconfig tap1 up
+</span><span class='line'>brctl addif br0 tap1
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>五、安装windows server 2003</h3>
@@ -176,27 +178,31 @@
 <p>来说明一下，virtio-win-0.1-30.iso里面放有windows的virtio磁盘控制器和网卡的驱动，是安装2003成功后，进入系统后进行相关驱动安装或更新用的。而virtio-win-1.1.16.vfd是一个软盘镜像，是用来安装2003时，通过F6来指定磁盘驱动用的。
 在使用qemu-kvm前，需要载入kvm内核模块：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>modprobe kvm_intel</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>modprobe kvm_intel
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>创建大小为20G的win2003.qcow2磁盘文件：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>qemu-img create -f qcow2 win2003.qcow 20G</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>qemu-img create -f qcow2 win2003.qcow 20G
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>启动KVM进行2003的安装：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>qemu-kvm -m 768 -boot d -drive file=/xxx/win2003.qcow2,cache=writeback,if=virtio -fda /xxx/virtio-win-1.1.16.vfd -cdrom /xxx/Windows.Server.2003.R2.iso -vnc :1 </span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>qemu-kvm -m 768 -boot d -drive <span class="nv">file</span><span class="o">=</span>/xxx/win2003.qcow2,cache<span class="o">=</span>writeback,if<span class="o">=</span>virtio -fda /xxx/virtio-win-1.1.16.vfd -cdrom /xxx/Windows.Server.2003.R2.iso -vnc :1
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>命令运行后，没有提示任何错误就应该是没有问题了，打开tightVNC，登录到该远程桌面进行安装的操作（VNC登录地址是IP1:1）。启动安装是按F6，之后再安“S”，进入后选择“Redhat I/O for windows 2003”相应的驱动，32或64位。之后的安装过程是和平时装2003的过程一样。
 安装成功并启动一次，之后将2003关机，换用另外一条指令来启动虚拟机：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>qemu-kvm -m 768 -net nic,model=virtio -net tap,ifname=tap0,script=no -drive file=/xxx/win2003.qcow2,cache=writeback,if=virtio -cdrom /xxx/virtio-win-0.1-30.iso -vnc :1 </span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>qemu-kvm -m 768 -net nic,model<span class="o">=</span>virtio -net tap,ifname<span class="o">=</span>tap0,script<span class="o">=</span>no -drive <span class="nv">file</span><span class="o">=</span>/xxx/win2003.qcow2,cache<span class="o">=</span>writeback,if<span class="o">=</span>virtio -cdrom /xxx/virtio-win-0.1-30.iso -vnc :1
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>此次启动将载入virtio-win-0.1-30.iso镜像，包含有磁盘控制器和网卡的驱动
@@ -208,21 +214,24 @@
 六、安装slackware-current 另一台虚拟机我装的是slackware-current，安装步骤要比windows 2003简单一些
 创建大小为20G的slackware.qcow2磁盘文件：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>qemu-img create -f qcow2 slackware.qcow 20G</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>qemu-img create -f qcow2 slackware.qcow 20G
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>启动KVM进行slackware的安装：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>qemu-kvm -m 768 -boot d -drive file=/xxx/slackware.qcow2,cache=writeback -cdrom /xxx/slackware-13.37-install-d1.iso -vnc :1</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>qemu-kvm -m 768 -boot d -drive <span class="nv">file</span><span class="o">=</span>/xxx/slackware.qcow2,cache<span class="o">=</span>writeback -cdrom /xxx/slackware-13.37-install-d1.iso -vnc :1
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>用VNC连接，像平时一样来安装，current的安装方法就略去了
 安装成功后就换另外一条指令来启动：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>qemu-kvm -m 768 -net nic -net tap,ifname=tap1,script=no -drive file=/xxx/slackware.qcow2,cache=writeback -vnc :1</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>qemu-kvm -m 768 -net nic -net tap,ifname<span class="o">=</span>tap1,script<span class="o">=</span>no -drive <span class="nv">file</span><span class="o">=</span>/xxx/slackware.qcow2,cache<span class="o">=</span>writeback -vnc :1
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>之后进行一些必要的设定，之后就可以用ssh来连接</p>
@@ -231,7 +240,7 @@
 
 <p>两台KVM虚拟机都安装设置成功了，所以就需要将其加入到rc.local脚本，使两个虚拟机在开机时随系统启动，下面是我的rc.local：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -251,26 +260,27 @@
 <span class='line-number'>18</span>
 <span class='line-number'>19</span>
 <span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># create brige 
-</span><span class='line'>ifconfig eth0 0.0.0.0 
-</span><span class='line'>brctl addbr br0 
-</span><span class='line'>ifconfig br0 x.x.x.x(物理主机IP) netmask 255.255.255.0(物理主机掩码) up 
-</span><span class='line'>route add default gw x.x.x.x(网关) br0 
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># create brige </span>
+</span><span class='line'>ifconfig eth0 0.0.0.0
+</span><span class='line'>brctl addbr br0
+</span><span class='line'>ifconfig br0 x.x.x.x<span class="o">(</span>物理主机IP<span class="o">)</span> netmask 255.255.255.0<span class="o">(</span>物理主机掩码<span class="o">)</span> up
+</span><span class='line'>route add default gw x.x.x.x<span class="o">(</span>网关<span class="o">)</span> br0
 </span><span class='line'>brctl addif br0 eth0
-</span><span class='line'># create tap0 for windows 2003 
-</span><span class='line'>tunctl -t tap0 
-</span><span class='line'>ifconfig tap0 up 
+</span><span class='line'><span class="c"># create tap0 for windows 2003 </span>
+</span><span class='line'>tunctl -t tap0
+</span><span class='line'>ifconfig tap0 up
 </span><span class='line'>brctl addif br0 tap0
-</span><span class='line'># create tap1 for slackware-current 
-</span><span class='line'>tunctl -t tap1 
-</span><span class='line'>ifconfig tap1 up 
+</span><span class='line'><span class="c"># create tap1 for slackware-current </span>
+</span><span class='line'>tunctl -t tap1
+</span><span class='line'>ifconfig tap1 up
 </span><span class='line'>brctl addif br0 tap1
-</span><span class='line'># macaddr 
-</span><span class='line'>macaddr1=`printf ‘DE:AD:BE:EF:%02X:%02X\n’ $((RANDOM%256)) $((RANDOM%256))` 
-</span><span class='line'>macaddr2=`printf ‘DE:AD:BE:EF:%02X:%02X\n’ $((RANDOM%256)) $((RANDOM%256))`
-</span><span class='line'># start kvm
-</span><span class='line'>qemu-kvm -m 768 -drive file=/home/qcow2/win2003.qcow2,cache=writeback,if=virtio -net nic,model=virtio,macaddr=$macaddr1 -net tap,ifname=tap0,script=no -daemonize -nographic -localtime 
-</span><span class='line'>qemu-kvm -m 768 -drive file=/home/qcow2/slackware.qcow2,cache=writeback -net nic,macaddr=$macaddr2 -net tap,ifname=tap1,script=no -daemonize -nographic -localtime </span></code></pre></td></tr></table></div></figure>
+</span><span class='line'><span class="c"># macaddr </span>
+</span><span class='line'><span class="nv">macaddr1</span><span class="o">=</span><span class="sb">`</span><span class="nb">printf</span> ‘DE:AD:BE:EF:%02X:%02X<span class="se">\n</span>’ <span class="k">$((</span>RANDOM%256<span class="k">))</span> <span class="k">$((</span>RANDOM%256<span class="k">))</span><span class="sb">`</span>
+</span><span class='line'><span class="nv">macaddr2</span><span class="o">=</span><span class="sb">`</span><span class="nb">printf</span> ‘DE:AD:BE:EF:%02X:%02X<span class="se">\n</span>’ <span class="k">$((</span>RANDOM%256<span class="k">))</span> <span class="k">$((</span>RANDOM%256<span class="k">))</span><span class="sb">`</span>
+</span><span class='line'><span class="c"># start kvm</span>
+</span><span class='line'>qemu-kvm -m 768 -drive <span class="nv">file</span><span class="o">=</span>/home/qcow2/win2003.qcow2,cache<span class="o">=</span>writeback,if<span class="o">=</span>virtio -net nic,model<span class="o">=</span>virtio,macaddr<span class="o">=</span><span class="nv">$macaddr1</span> -net tap,ifname<span class="o">=</span>tap0,script<span class="o">=</span>no -daemonize -nographic -localtime
+</span><span class='line'>qemu-kvm -m 768 -drive <span class="nv">file</span><span class="o">=</span>/home/qcow2/slackware.qcow2,cache<span class="o">=</span>writeback -net nic,macaddr<span class="o">=</span><span class="nv">$macaddr2</span> -net tap,ifname<span class="o">=</span>tap1,script<span class="o">=</span>no -daemonize -nographic -localtime
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>启动参数多了个mac地址，是用随机数生成的，建议生成mac地址后将其固定，不然每次启动机器都会有不同的mac地址……

@@ -1,93 +1,101 @@
 
-<!DOCTYPE HTML>
-
-<html>
-
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
-	<meta charset="utf-8">
-	<title>服务器基于slackware的KVM布署详解 - 大头龙仔Blog</title>
-	<meta name="author" content="imlcl">
+  <meta charset="utf-8">
+  <title>服务器基于slackware的KVM布署详解 - 大头龙仔Blog</title>
+  <meta name="author" content="imlcl">
 
-	
-	<meta name="description" content="服务器基于slackware的KVM布署详解 一、背景 首先呢，我发现自己有半年时间没有写技术类的文章了，其次，关于这个话题，我一直都想整理一篇比较好的文章出来，一来可以做个备忘，更重要是起到分享交流，共同进步。 之前一直可能都有一些零零散散关于这部分细节的，但我觉得都看得不是很爽。 另外， &hellip;">
-	
+  
+  <meta name="description" content="一、背景 首先呢，我发现自己有半年时间没有写技术类的文章了，其次，关于这个话题，我一直都想整理一篇比较好的文章出来，一来可以做个备忘，更重要是起到分享交流，共同进步。 之前一直可能都有一些零零散散关于这部分细节的，但我觉得都看得不是很爽。 另外， &hellip;">
+  
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
   <meta name="MobileOptimized" content="320">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
-	
-	<link rel="canonical" href="http://imlcl.github.io/blog/2012/08/05/slackware-kvm/">
-	<link href="/favicon.png" rel="shortcut icon">
-	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	
+  
+  <link rel="canonical" href="http://imlcl.github.io/blog/2012/08/05/slackware-kvm">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
   
 
 </head>
 
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">大头龙仔Blog</a></h1>
+  
+    <h2>A strong man can save himself. A great man can save another.</h2>
+  
+</hgroup>
 
-<body>
-	<div class="container">
-		<div class="left-col">
-			<div class="intrude-less">
-			<header id="header" class="inner"><div class="profilepic">
-	
-	<script src="/javascripts/md5.js"></script>
-	<script type="text/javascript">
-		$(function(){
-			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("slackcode@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
-		});
-	</script>
-	
-</div>
-
-<nav id="main-nav"><ul>
-	<li><a href="/">Blog</a></li>
-	<li><a href="/archives">Archive</a></li>
-	<li><a href="/about">About</a></li>
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com.au/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:imlcl.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/about">About</a></li>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
 </ul>
 
 </nav>
-<nav id="sub-nav">
-	<div class="social">
-		
-			<a class="email" href="mailto:slackcode@gmail.com" title="Email">Email</a>
-		
-		
-		
-		
-		
-			<a class="github" href="https://github.com/imlcl" title="GitHub">GitHub</a>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
-		
-	</div>
-</nav>
-</header>				
-			</div>
-		</div>	
-		<div class="mid-col">
-			
-				
-			
-			<div class="mid-col-container">
-				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-	<h1 class="title" itemprop="name">服务器基于slackware的KVM布署详解</h1>
-	<div class="entry-content" itemprop="articleBody"><h3>一、背景</h3>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">服务器基于slackware的KVM布署详解</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-05T00:00:00+08:00" pubdate data-updated="true">2012-08-05</time>
+        
+           | <a href="#disqus_thread"
+             data-disqus-identifier="http://imlcl.github.io">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h3>一、背景</h3>
 
 <p>首先呢，我发现自己有半年时间没有写技术类的文章了，其次，关于这个话题，我一直都想整理一篇比较好的文章出来，一来可以做个备忘，更重要是起到分享交流，共同进步。</p>
 
@@ -98,7 +106,7 @@
 <h3>二、相关准备</h3>
 
 <ul>
-<li>装有slackware的主机一台，内存最好不要太少吧，如果4G或以上的，就装slackware64，当前slackware最新稳定版是13.37（37这个命名方式是和内核2.6.xx一致），因为是做物理主机的系统，所以稳定至上。至于如何安装slackware，可以看<a href="http://www.linuxsir.org/bbs/thread383703.html">slackbook中文译本</a>，反正基本流程是：光碟或U盘启动 -> cfdisk分区 -> setup安装 -> 重启……，下载slackware可以到<a href="http://taper.alienbase.nl/mirrors/slackware/">这里</a></li>
+<li>装有slackware的主机一台，内存最好不要太少吧，如果4G或以上的，就装slackware64，当前slackware最新稳定版是13.37（37这个命名方式是和内核2.6.xx一致），因为是做物理主机的系统，所以稳定至上。至于如何安装slackware，可以看<a href="http://www.linuxsir.org/bbs/thread383703.html">slackbook中文译本</a>，反正基本流程是：光碟或U盘启动 &ndash;> cfdisk分区 &ndash;> setup安装 &ndash;> 重启……，下载slackware可以到<a href="http://taper.alienbase.nl/mirrors/slackware/">这里</a></li>
 <li>KVM是什么，可以了解，随便一搜就有，还要确定你的CPU是否支持虚拟化技术；（<a href="http://baike.baidu.com/view/13605.htm">什么是虚拟化技术？</a>）</li>
 <li>因为我建立两个kvm，一个是slackware-current，一个是windows 2003，所以你也得要有2003的iso，安装2003请选择手动安装，最好是MSDN版本；</li>
 <li>虚拟机访问外网要使用网桥（package bridge-utils），但听说用VDE更方面，老实说，VDE我弄了一下，好像很麻烦就没弄了。</li>
@@ -131,21 +139,22 @@
 
 <p>KVM虚拟机通过tap来访问互联网，那么物理主机得设置好网桥，下面是我/etc/rc.d/rc.local里设置网桥和tap的代码</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># create brige 
-</span><span class='line'>ifconfig eth0 0.0.0.0 
-</span><span class='line'>brctl addbr br0 
-</span><span class='line'>ifconfig br0 x.x.x.x(物理主机IP) netmask 255.255.255.0(物理主机掩码) up 
-</span><span class='line'>route add default gw x.x.x.x(网关) br0 
-</span><span class='line'>brctl addif br0 eth0</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># create brige </span>
+</span><span class='line'>ifconfig eth0 0.0.0.0
+</span><span class='line'>brctl addbr br0
+</span><span class='line'>ifconfig br0 x.x.x.x<span class="o">(</span>物理主机IP<span class="o">)</span> netmask 255.255.255.0<span class="o">(</span>物理主机掩码<span class="o">)</span> up
+</span><span class='line'>route add default gw x.x.x.x<span class="o">(</span>网关<span class="o">)</span> br0
+</span><span class='line'>brctl addif br0 eth0
+</span></code></pre></td></tr></table></div></figure>
 
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -153,14 +162,15 @@
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># create tap0 for windows 2003 
-</span><span class='line'>tunctl -t tap0 
-</span><span class='line'>ifconfig tap0 up 
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># create tap0 for windows 2003 </span>
+</span><span class='line'>tunctl -t tap0
+</span><span class='line'>ifconfig tap0 up
 </span><span class='line'>brctl addif br0 tap0
-</span><span class='line'># create tap1 for slackware-current 
-</span><span class='line'>tunctl -t tap1 
-</span><span class='line'>ifconfig tap1 up 
-</span><span class='line'>brctl addif br0 tap1</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'><span class="c"># create tap1 for slackware-current </span>
+</span><span class='line'>tunctl -t tap1
+</span><span class='line'>ifconfig tap1 up
+</span><span class='line'>brctl addif br0 tap1
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>五、安装windows server 2003</h3>
@@ -170,27 +180,31 @@
 <p>来说明一下，virtio-win-0.1-30.iso里面放有windows的virtio磁盘控制器和网卡的驱动，是安装2003成功后，进入系统后进行相关驱动安装或更新用的。而virtio-win-1.1.16.vfd是一个软盘镜像，是用来安装2003时，通过F6来指定磁盘驱动用的。
 在使用qemu-kvm前，需要载入kvm内核模块：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>modprobe kvm_intel</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>modprobe kvm_intel
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>创建大小为20G的win2003.qcow2磁盘文件：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>qemu-img create -f qcow2 win2003.qcow 20G</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>qemu-img create -f qcow2 win2003.qcow 20G
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>启动KVM进行2003的安装：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>qemu-kvm -m 768 -boot d -drive file=/xxx/win2003.qcow2,cache=writeback,if=virtio -fda /xxx/virtio-win-1.1.16.vfd -cdrom /xxx/Windows.Server.2003.R2.iso -vnc :1 </span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>qemu-kvm -m 768 -boot d -drive <span class="nv">file</span><span class="o">=</span>/xxx/win2003.qcow2,cache<span class="o">=</span>writeback,if<span class="o">=</span>virtio -fda /xxx/virtio-win-1.1.16.vfd -cdrom /xxx/Windows.Server.2003.R2.iso -vnc :1
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>命令运行后，没有提示任何错误就应该是没有问题了，打开tightVNC，登录到该远程桌面进行安装的操作（VNC登录地址是IP1:1）。启动安装是按F6，之后再安“S”，进入后选择“Redhat I/O for windows 2003”相应的驱动，32或64位。之后的安装过程是和平时装2003的过程一样。
 安装成功并启动一次，之后将2003关机，换用另外一条指令来启动虚拟机：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>qemu-kvm -m 768 -net nic,model=virtio -net tap,ifname=tap0,script=no -drive file=/xxx/win2003.qcow2,cache=writeback,if=virtio -cdrom /xxx/virtio-win-0.1-30.iso -vnc :1 </span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>qemu-kvm -m 768 -net nic,model<span class="o">=</span>virtio -net tap,ifname<span class="o">=</span>tap0,script<span class="o">=</span>no -drive <span class="nv">file</span><span class="o">=</span>/xxx/win2003.qcow2,cache<span class="o">=</span>writeback,if<span class="o">=</span>virtio -cdrom /xxx/virtio-win-0.1-30.iso -vnc :1
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>此次启动将载入virtio-win-0.1-30.iso镜像，包含有磁盘控制器和网卡的驱动
@@ -202,21 +216,24 @@
 六、安装slackware-current 另一台虚拟机我装的是slackware-current，安装步骤要比windows 2003简单一些
 创建大小为20G的slackware.qcow2磁盘文件：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>qemu-img create -f qcow2 slackware.qcow 20G</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>qemu-img create -f qcow2 slackware.qcow 20G
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>启动KVM进行slackware的安装：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>qemu-kvm -m 768 -boot d -drive file=/xxx/slackware.qcow2,cache=writeback -cdrom /xxx/slackware-13.37-install-d1.iso -vnc :1</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>qemu-kvm -m 768 -boot d -drive <span class="nv">file</span><span class="o">=</span>/xxx/slackware.qcow2,cache<span class="o">=</span>writeback -cdrom /xxx/slackware-13.37-install-d1.iso -vnc :1
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>用VNC连接，像平时一样来安装，current的安装方法就略去了
 安装成功后就换另外一条指令来启动：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>qemu-kvm -m 768 -net nic -net tap,ifname=tap1,script=no -drive file=/xxx/slackware.qcow2,cache=writeback -vnc :1</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="nv">$ </span>qemu-kvm -m 768 -net nic -net tap,ifname<span class="o">=</span>tap1,script<span class="o">=</span>no -drive <span class="nv">file</span><span class="o">=</span>/xxx/slackware.qcow2,cache<span class="o">=</span>writeback -vnc :1
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>之后进行一些必要的设定，之后就可以用ssh来连接</p>
@@ -225,7 +242,7 @@
 
 <p>两台KVM虚拟机都安装设置成功了，所以就需要将其加入到rc.local脚本，使两个虚拟机在开机时随系统启动，下面是我的rc.local：</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -245,26 +262,27 @@
 <span class='line-number'>18</span>
 <span class='line-number'>19</span>
 <span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># create brige 
-</span><span class='line'>ifconfig eth0 0.0.0.0 
-</span><span class='line'>brctl addbr br0 
-</span><span class='line'>ifconfig br0 x.x.x.x(物理主机IP) netmask 255.255.255.0(物理主机掩码) up 
-</span><span class='line'>route add default gw x.x.x.x(网关) br0 
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># create brige </span>
+</span><span class='line'>ifconfig eth0 0.0.0.0
+</span><span class='line'>brctl addbr br0
+</span><span class='line'>ifconfig br0 x.x.x.x<span class="o">(</span>物理主机IP<span class="o">)</span> netmask 255.255.255.0<span class="o">(</span>物理主机掩码<span class="o">)</span> up
+</span><span class='line'>route add default gw x.x.x.x<span class="o">(</span>网关<span class="o">)</span> br0
 </span><span class='line'>brctl addif br0 eth0
-</span><span class='line'># create tap0 for windows 2003 
-</span><span class='line'>tunctl -t tap0 
-</span><span class='line'>ifconfig tap0 up 
+</span><span class='line'><span class="c"># create tap0 for windows 2003 </span>
+</span><span class='line'>tunctl -t tap0
+</span><span class='line'>ifconfig tap0 up
 </span><span class='line'>brctl addif br0 tap0
-</span><span class='line'># create tap1 for slackware-current 
-</span><span class='line'>tunctl -t tap1 
-</span><span class='line'>ifconfig tap1 up 
+</span><span class='line'><span class="c"># create tap1 for slackware-current </span>
+</span><span class='line'>tunctl -t tap1
+</span><span class='line'>ifconfig tap1 up
 </span><span class='line'>brctl addif br0 tap1
-</span><span class='line'># macaddr 
-</span><span class='line'>macaddr1=`printf ‘DE:AD:BE:EF:%02X:%02X\n’ $((RANDOM%256)) $((RANDOM%256))` 
-</span><span class='line'>macaddr2=`printf ‘DE:AD:BE:EF:%02X:%02X\n’ $((RANDOM%256)) $((RANDOM%256))`
-</span><span class='line'># start kvm
-</span><span class='line'>qemu-kvm -m 768 -drive file=/home/qcow2/win2003.qcow2,cache=writeback,if=virtio -net nic,model=virtio,macaddr=$macaddr1 -net tap,ifname=tap0,script=no -daemonize -nographic -localtime 
-</span><span class='line'>qemu-kvm -m 768 -drive file=/home/qcow2/slackware.qcow2,cache=writeback -net nic,macaddr=$macaddr2 -net tap,ifname=tap1,script=no -daemonize -nographic -localtime </span></code></pre></td></tr></table></div></figure>
+</span><span class='line'><span class="c"># macaddr </span>
+</span><span class='line'><span class="nv">macaddr1</span><span class="o">=</span><span class="sb">`</span><span class="nb">printf</span> ‘DE:AD:BE:EF:%02X:%02X<span class="se">\n</span>’ <span class="k">$((</span>RANDOM%256<span class="k">))</span> <span class="k">$((</span>RANDOM%256<span class="k">))</span><span class="sb">`</span>
+</span><span class='line'><span class="nv">macaddr2</span><span class="o">=</span><span class="sb">`</span><span class="nb">printf</span> ‘DE:AD:BE:EF:%02X:%02X<span class="se">\n</span>’ <span class="k">$((</span>RANDOM%256<span class="k">))</span> <span class="k">$((</span>RANDOM%256<span class="k">))</span><span class="sb">`</span>
+</span><span class='line'><span class="c"># start kvm</span>
+</span><span class='line'>qemu-kvm -m 768 -drive <span class="nv">file</span><span class="o">=</span>/home/qcow2/win2003.qcow2,cache<span class="o">=</span>writeback,if<span class="o">=</span>virtio -net nic,model<span class="o">=</span>virtio,macaddr<span class="o">=</span><span class="nv">$macaddr1</span> -net tap,ifname<span class="o">=</span>tap0,script<span class="o">=</span>no -daemonize -nographic -localtime
+</span><span class='line'>qemu-kvm -m 768 -drive <span class="nv">file</span><span class="o">=</span>/home/qcow2/slackware.qcow2,cache<span class="o">=</span>writeback -net nic,macaddr<span class="o">=</span><span class="nv">$macaddr2</span> -net tap,ifname<span class="o">=</span>tap1,script<span class="o">=</span>no -daemonize -nographic -localtime
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>启动参数多了个mac地址，是用随机数生成的，建议生成mac地址后将其固定，不然每次启动机器都会有不同的mac地址……
@@ -285,43 +303,136 @@
 如果你按照这些步骤进展顺利，那么恭喜你:)</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">imlcl</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-05T00:00:00+08:00" pubdate data-updated="true">2012-08-05</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/server/'>server</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/08/04/code-farmer/" title="Previous Post: 所谓码农（摘自《码农》第1期）">&laquo; 所谓码农（摘自《码农》第1期）</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/09/13/git-gitignore/" title="Next Post: Git和.gitignore">Git和.gitignore &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
-	<div class="share">
-	<div class="addthis_toolbox addthis_default_style ">
-	
-	
-	
-	<a class="addthis_counter addthis_pill_style"></a>
-	</div>
-  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
-</div>
-
-
-
-<section id="comment">
-    <h1 class="title">Comments</h1>
+  <section>
+    <h1>Comments</h1>
     <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-</section>
+  </section>
+
 </div>
-			</div>
-			<footer id="footer" class="inner">Copyright &copy; 2013
 
-    imlcl
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/10/26/slackware-to-debian/">Slackware to Debian</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/08/21/migrate-to-octopress/">Migrate to Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/01/01/write-to-2013/">写给2013，写给我，写给我们</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/09/13/git-gitignore/">Git和.gitignore</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/08/05/slackware-kvm/">服务器基于slackware的KVM布署详解</a>
+      </li>
+    
+  </ul>
+</section>
 
-<br>
-Powered by Octopress.
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/imlcl">@imlcl</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
 
-Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
-			<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-	$('.fancybox').fancybox();
-})(jQuery);
-</script> <!-- Delete or comment this line to disable Fancybox -->
+        github.showRepos({
+            user: 'imlcl',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
 
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - imlcl -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
 
 <script type="text/javascript">
       var disqus_shortname = 'imlcl';
@@ -334,7 +445,7 @@ Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Sha
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
       (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     }());
 </script>
@@ -343,7 +454,11 @@ Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Sha
 
 
 
-		</div>
-	</div>
+
+
+
+
+
+
 </body>
 </html>
