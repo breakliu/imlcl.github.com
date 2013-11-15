@@ -82,103 +82,155 @@
 
 =======
 <!DOCTYPE HTML>
+
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<title>大头龙仔Blog</title>
-    <meta name="author" content="imlcl">
-    
-	<meta name="description" content="Published on: 2008-12-13 Tags: opensource Linux的美化可谓是个永恒的话题，我记得以前还为美化这个东东搞过几天，还没达到自己的要求（相对XP）。 可是呢，人靠衣服，系统也希望弄得好看点，这样心情才好呢，这次来说说slackware的字体美化， &hellip;">
+	<meta name="author" content="imlcl">
+
 	
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="2008-12-15 opensource Comments 关于proftpd开启anonymous访问权限 proftpd是Linux下很常用的一个Ftp服务器，slackware自带vsftpd和proftpd两个ftp服务器。
+vsftpd小巧快速， &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
-	<link rel="canonical" href="">
-	<link href="/favicon.ico" rel="shortcut icon">
-    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-
-    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
-    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
-
-    <!-- remove or comment it to disable ajaxification -->   
-    <script src="/javascripts/ajaxify.js"></script>
-   
-    
-    
+	
+	<link rel="canonical" href="http://imlcl.github.io/blog/page/14/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+  
 
 </head>
 
 
 <body>
-    <div id="wrapper">
-    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
-<h1 class="animated bounceInDown">
-    <div id="headerbg">
-        imlcl
-    </div>
-</h1>
-<br>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("slackcode@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+</div>
 
-<ul id="social-links" style="text-align:center">
-  
-  <!-- GitHub -->
-  <li>
-  <a href="https://github.com/imlcl" class="github" title="Github"></a>
-  </li>
-  
-  
-  
-  
-  
-  
-  
-  
+<nav id="main-nav"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/archives">Archive</a></li>
+	<li><a href="/about">About</a></li>
 </ul>
 
-
-<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
-<ul id="nav">
-	<li id="ajax"><a href="/index.html">Home</a></li>
-    <li id="ajax"><a href="/blog/archives/index.html">Blog</a></li>
-	<li id="ajax"><a href="/about/index.html">About</a></li>
-    <li><a href="/atom.xml">RSS</a></li>
-    
-    <li>
-    <div id="dark">
-        <form method="get" action="/search.html" id="search">
-            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
-        </form>
-    </div>
-    </li>
-        
-</ul>
-
-
-
-
-</header>
-
-<div id="toload">
-<!-- begin toload --> 
-    <div id="content" class="inner">
-        
-
-
-    <article class="post">
-	<h2 class="title">
+</nav>
+<nav id="sub-nav">
+	<div class="social">
 		
-		<a href="/blog/2008/12/13/about-slackware-font/">
+			<a class="email" href="mailto:slackcode@gmail.com" title="Email">Email</a>
 		
-			关于slackware的字体美化</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+		
+		
+		
+		
+			<a class="github" href="https://github.com/imlcl" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner">
+<div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-12-15T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-12-15</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/opensource/'>opensource</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2008/12/15/proftpd-open-anonymous/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2008/12/15/proftpd-open-anonymous/" itemprop="url">关于proftpd开启anonymous访问权限</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>proftpd是Linux下很常用的一个Ftp服务器，slackware自带vsftpd和proftpd两个ftp服务器。<br />
+vsftpd小巧快速，proftpd在定制性和安全性比vsftpd好。</p>
+
+<p>我打算把proftpd开anonymous（匿名）访问权限，slackware 12.2安装时，proftpd已把/etc/proftpd.conf配置好支持anonymous的，但登录时老出现:<br />
+220 ProFTPD 1.3.1 Server (ProFTPD Default Installation) [::ffff:127.0.0.1]<br />
+Name (localhost:root): anonymous<br />
+331 Anonymous login ok, send your complete email address as your password<br />
+Password:<br />
+530 Login incorrect.<br />
+Login failed.<br />
+从而失败。上网查了很多资料，但没找到解决方法。后来发现是自己没有认真阅读proftpd.conf，人家里面就有一句:
+<pre lang="bash"># To enable this, remove the user ftp from /etc/ftpusers.</pre>
+打开/etc/ftpusers，人家里面又有一句:
+<pre lang="bash"># To enable anonymous FTP, remove the "ftp" user:</pre>
+我晕，那只要在ftp前加个#后，<pre lang="bash">/etc/rc.d/rc.inetd restart</pre>就行啦。</p>
+
+<p>总结一下：<br />
+1、我想不明白为什么网上没有这个帮助资料，可能我比较菜，也比较粗心；<br />
+2、网上提到开anonymous高频help是加入<pre lang="bash">RequireValidShell off</pre>slackware默认安装已有这个参数；<br />
+3、借此分享给大家</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 >>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
@@ -230,6 +282,7 @@
   
 
 
+<<<<<<< HEAD
 <time datetime="2008-12-11T00:00:00+08:00" pubdate data-updated="true">2008-12-11</time>
         
          | <a href="/blog/2008/12/11/slackware-122-is-released/#disqus_thread">Comments</a>
@@ -272,13 +325,22 @@ Pat and the Slackware crew
 =======
 <time datetime="2008-12-13T00:00:00+08:00" pubdate data-updated="true">2008-12-13</time></div>
       <div class="tags">Tags: 
+=======
+<time datetime="2008-12-13T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-12-13</time></div>
+		<div class="tags">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2008/12/13/about-slackware-font/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2008/12/13/about-slackware-font/" itemprop="url">关于slackware的字体美化</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>Linux的美化可谓是个永恒的话题，我记得以前还为美化这个东东搞过几天，还没达到自己的要求（相对XP）。</p>
 
 <p>可是呢，人靠衣服，系统也希望弄得好看点，这样心情才好呢，这次来说说slackware的字体美化，也算是Linux的通用方法。</p>
@@ -311,24 +373,12 @@ serverargs=&#8221;&#8221;<br />
 		
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2008/12/13/about-slackware-font//blog/page/14/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
 
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2008/12/12/handsome-boy/">
-		
-			型男講座(图)(zz)</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -340,29 +390,30 @@ serverargs=&#8221;&#8221;<br />
   
 
 
-<time datetime="2008-12-12T00:00:00+08:00" pubdate data-updated="true">2008-12-12</time></div>
-      <div class="tags">Tags: 
+<time datetime="2008-12-12T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-12-12</time></div>
+		<div class="tags">
 
 
 	<a class='category' href='/blog/categories/misc/'>misc</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2008/12/12/handsome-boy/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2008/12/12/handsome-boy/" itemprop="url">型男講座(图)(zz)</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>http://blog.yam.com/airsama/article/18503510</p>
 
 		
 		
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2008/12/12/handsome-boy//blog/page/14/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
 
+<<<<<<< HEAD
     <article class="post">
 	<h2 class="title">
 		
@@ -533,6 +584,11 @@ Java语言学校无法淘汰那些永远也成不了优秀程序员的学生，�
     
       <p class="meta">
         
+=======
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 
@@ -544,6 +600,7 @@ Java语言学校无法淘汰那些永远也成不了优秀程序员的学生，�
   
 
 
+<<<<<<< HEAD
 <time datetime="2008-12-09T00:00:00+08:00" pubdate data-updated="true">2008-12-09</time>
         
          | <a href="/blog/2008/12/09/1/#disqus_thread">Comments</a>
@@ -576,13 +633,22 @@ Java语言学校无法淘汰那些永远也成不了优秀程序员的学生，�
 =======
 <time datetime="2008-12-11T00:00:00+08:00" pubdate data-updated="true">2008-12-11</time></div>
       <div class="tags">Tags: 
+=======
+<time datetime="2008-12-11T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-12-11</time></div>
+		<div class="tags">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2008/12/11/slackware-122-is-released/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2008/12/11/slackware-122-is-released/" itemprop="url">Slackware 12.2 Is Released</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p><a href="http://slackware.com/"> Slackware 12.2发布啦</a></p>
 
 <p>Yes folks, &#8216;tis the season to announce a new release of Slackware.  With a shiny new kernel, many package updates, and the newly added ability to install from a Samba share, we bring to you the latest in the stable Slackware 12.x series.  Slackware 12.2 ships with the 2.6.27.7 Linux kernel, the Xorg 1.4.2 X server (with many driver, library, and application updates), Xfce 4.4.3, KDE 3.5.10, simplified wired and wireless networking with wicd in /extra, package upgrade management with slackpkg moved into the main tree, support for non-usb-storage digital cameras through libgphoto2, pm-utils (tools to support suspend and hibernate through HAL), and much, much more.  This release brings the system up-to-date without compromising stability or compatibility with the 12.x series.</p>
@@ -601,24 +667,12 @@ Java语言学校无法淘汰那些永远也成不了优秀程序员的学生，�
 		
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2008/12/11/slackware-122-is-released//blog/page/14/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
 
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2008/12/10/java-school-danger/">
-		
-			JAVA语言学校的危险性(zz)</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -630,15 +684,20 @@ Java语言学校无法淘汰那些永远也成不了优秀程序员的学生，�
   
 
 
-<time datetime="2008-12-10T00:00:00+08:00" pubdate data-updated="true">2008-12-10</time></div>
-      <div class="tags">Tags: 
+<time datetime="2008-12-10T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-12-10</time></div>
+		<div class="tags">
 
 
 	<a class='category' href='/blog/categories/misc/'>misc</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2008/12/10/java-school-danger/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2008/12/10/java-school-danger/" itemprop="url">JAVA语言学校的危险性(zz)</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>作者：Joel Spolsky</p>
 
 <p>译者：阮一峰</p>
@@ -765,14 +824,10 @@ Java语言学校无法淘汰那些永远也成不了优秀程序员的学生，�
 		
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2008/12/10/java-school-danger//blog/page/14/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
 
+<<<<<<< HEAD
     <article class="post">
 	<h2 class="title">
 		
@@ -788,6 +843,11 @@ Java语言学校无法淘汰那些永远也成不了优秀程序员的学生，�
 
 
 
+=======
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 
@@ -815,6 +875,7 @@ LFS没得说，装过一遍我觉得就好，我真的不打算用这个东西�
   
 
 
+<<<<<<< HEAD
     </article>
   
   
@@ -830,13 +891,22 @@ LFS没得说，装过一遍我觉得就好，我真的不打算用这个东西�
 =======
 <time datetime="2008-12-09T00:00:00+08:00" pubdate data-updated="true">2008-12-09</time></div>
       <div class="tags">Tags: 
+=======
+<time datetime="2008-12-09T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-12-09</time></div>
+		<div class="tags">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 	<a class='category' href='/blog/categories/misc/'>misc</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2008/12/09/sofa-story/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2008/12/09/sofa-story/" itemprop="url">沙发的故事</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>今天看到一篇名为<a href="http://blog.csdn.net/lanphaday/archive/2008/01/21/2057417.aspx">沙发的故事——人才的价值在于贡献度？</a>文章后，结合网友的一些评论，貌似若有所思。</p>
 
 <p>我在想，什么叫贡献度？看所谓的贡献度如何去定义，如果定义的不好，那当然是不合理的。但事实上我同意以贡献度评价一个人，只要这个贡献度显得合理。但事实上所谓攻克一个难题，需要有机会、把握、能力等储多因素，而往往与贡献度息息相关，就像搞科研的人，如果整天搞科研，那么他必定畸形发展。但这可也是拔尖人才的前提，所以，还是得你怎么去定义自己的生活，还有你活在怎样的公司文化。如果没有士兵，不可能有胜仗。</p>
@@ -845,14 +915,10 @@ LFS没得说，装过一遍我觉得就好，我真的不打算用这个东西�
 		
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2008/12/09/sofa-story//blog/page/14/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
 
+<<<<<<< HEAD
     <article class="post">
 	<h2 class="title">
 		
@@ -864,6 +930,11 @@ LFS没得说，装过一遍我觉得就好，我真的不打算用这个东西�
     <div class="meta">
       <div class="date">Published on: 
 >>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
+=======
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 
@@ -875,6 +946,7 @@ LFS没得说，装过一遍我觉得就好，我真的不打算用这个东西�
   
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <time datetime="2008-12-06T00:00:00+08:00" pubdate data-updated="true">2008-12-06</time>
         
@@ -912,13 +984,22 @@ LFS没得说，装过一遍我觉得就好，我真的不打算用这个东西�
 =======
 <time datetime="2008-12-08T00:00:00+08:00" pubdate data-updated="true">2008-12-08</time></div>
       <div class="tags">Tags: 
+=======
+<time datetime="2008-12-08T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-12-08</time></div>
+		<div class="tags">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2008/12/08/turn-around-1/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2008/12/08/turn-around-1/" itemprop="url">转了一圈</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>买了新机子，Arch -&gt; Lfs -&gt; Gentoo -&gt; slackware转了一圈，最后还是回到钟爱的slackware</p>
 
 <p>LFS没得说，装过一遍我觉得就好，我真的不打算用这个东西，但从这个东西上学到不少知识。以前用过一段时间Arch的，觉得很好，但发现装上去后没以前稳定，不知道是不是和我的4850有关系，老崩。当然最讨厌它的就是包的关联性，个人不太喜欢这一点。再装Gentoo时有新的感觉，第二次玩这个发行版时比上一次理解深刻多了，特别个整个Portage系统的灵活性，我只能说这个版本的创始集体就是牛。</p>
@@ -929,14 +1010,10 @@ LFS没得说，装过一遍我觉得就好，我真的不打算用这个东西�
 		
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2008/12/08/turn-around-1//blog/page/14/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
 
+<<<<<<< HEAD
     <article class="post">
 	<h2 class="title">
 		
@@ -949,6 +1026,11 @@ LFS没得说，装过一遍我觉得就好，我真的不打算用这个东西�
       <div class="date">Published on: 
 >>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
 
+=======
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 
@@ -1017,6 +1099,7 @@ C 人员管理技能：协调、沟通、说服、考核、团结。
   
 
 
+<<<<<<< HEAD
     </article>
   
   
@@ -1032,13 +1115,22 @@ C 人员管理技能：协调、沟通、说服、考核、团结。
 =======
 <time datetime="2008-12-06T00:00:00+08:00" pubdate data-updated="true">2008-12-06</time></div>
       <div class="tags">Tags: 
+=======
+<time datetime="2008-12-06T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-12-06</time></div>
+		<div class="tags">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2008/12/06/hot-pot-haapy/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2008/12/06/hot-pot-haapy/" itemprop="url">火锅开心</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>今天去了火锅啦，东来顺，很多肉，很满足，谢谢兄弟们。</p>
 
 <p>因为英文版，所以看着书写了Python脚本帮助批处理工作，发现实在太方便啦，以后要发掘这东西的用处，真正的用起来。</p>
@@ -1051,14 +1143,10 @@ C 人员管理技能：协调、沟通、说服、考核、团结。
 		
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2008/12/06/hot-pot-haapy//blog/page/14/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
 
+<<<<<<< HEAD
     <article class="post">
 	<h2 class="title">
 		
@@ -1070,6 +1158,11 @@ C 人员管理技能：协调、沟通、说服、考核、团结。
     <div class="meta">
       <div class="date">Published on: 
 >>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
+=======
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 
@@ -1081,6 +1174,7 @@ C 人员管理技能：协调、沟通、说服、考核、团结。
   
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <time datetime="2008-11-30T00:00:00+08:00" pubdate data-updated="true">2008-11-30</time>
         
@@ -1118,13 +1212,22 @@ Kick the bucket.
 =======
 <time datetime="2008-12-03T00:00:00+08:00" pubdate data-updated="true">2008-12-03</time></div>
       <div class="tags">Tags: 
+=======
+<time datetime="2008-12-03T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-12-03</time></div>
+		<div class="tags">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 	<a class='category' href='/blog/categories/misc/'>misc</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2008/12/03/manager-person-1/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2008/12/03/manager-person-1/" itemprop="url">管理型人才(zz)</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>一、思想道德素质：<br />
 诚实守信、忠于职守、遵纪守法、严于律己。<br />
 工作精神是检验一个人品格的重要标准。<br />
@@ -1173,14 +1276,10 @@ C 人员管理技能：协调、沟通、说服、考核、团结。<br />
 		
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2008/12/03/manager-person-1//blog/page/14/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
 
+<<<<<<< HEAD
     <article class="post">
 	<h2 class="title">
 		
@@ -1192,6 +1291,11 @@ C 人员管理技能：协调、沟通、说服、考核、团结。<br />
     <div class="meta">
       <div class="date">Published on: 
 >>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
+=======
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 
@@ -1203,6 +1307,7 @@ C 人员管理技能：协调、沟通、说服、考核、团结。<br />
   
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <time datetime="2008-11-29T00:00:00+08:00" pubdate data-updated="true">2008-11-29</time>
         
@@ -1317,13 +1422,22 @@ I may mean nothing to u but u will always be special to me!!
 =======
 <time datetime="2008-11-30T00:00:00+08:00" pubdate data-updated="true">2008-11-30</time></div>
       <div class="tags">Tags: 
+=======
+<time datetime="2008-11-30T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-11-30</time></div>
+		<div class="tags">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2008/11/30/never-too-later/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2008/11/30/never-too-later/" itemprop="url">Never Too Later</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p><a href="http://www.douban.com/subject/1867345/">《遗愿清单》(The Bucket List)</a>里的一句话:<br />
 You&#8217;re the one crying you never took a shot.<br />
 意思是光说不做才会遗憾</p>
@@ -1336,13 +1450,9 @@ You&#8217;re the one crying you never took a shot.<br />
 		
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2008/11/30/never-too-later//blog/page/14/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
+<<<<<<< HEAD
 
     <article class="post">
 	<h2 class="title">
@@ -1567,9 +1677,9 @@ I may mean nothing to u but u will always be special to me!!</p>
 	
 		<span class="comments"><a href="/blog/2008/11/29/drama-someday//blog/page/14/index.html#disqus_thread">Comments</a></span>
 	
+=======
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 </div>
-</article>
-
 <nav id="pagenavi">
     
         <a href="/blog/page/13/" class="prev">Prev</a>
@@ -1578,21 +1688,17 @@ I may mean nothing to u but u will always be special to me!!</p>
         <a href="/blog/page/15/" class="next">Next</a>
     
     <div class="center"><a href="/blog/archives">Blog Archives</a></div>
-</nav>
-
-    </div>
-    <footer id="footer">
-    <div style="display:inline">
-    Copyright &copy; 2013
+</nav></div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2013
 
     imlcl
-. Powered by <a href="http://octopress.org">Octopress</a> | 
-    Theme <a href="http://github.com/panks/fabric">fabric</a> by <a href="http://panks.me">Pankaj Kumar</a>
-</div>
 
+<br>
+Powered by Octopress.
 
-    </footer>
-    <script src="/javascripts/fabric.js"></script>
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+			<script src="/javascripts/slash.js"></script>
 <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
@@ -1620,6 +1726,7 @@ I may mean nothing to u but u will always be special to me!!</p>
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 
@@ -1637,5 +1744,9 @@ I may mean nothing to u but u will always be special to me!!</p>
 /*]]>*/
 </script><!-- remove it to remove the scroll to top button -->
 >>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
+=======
+		</div>
+	</div>
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 </body>
 </html>

@@ -47,7 +47,7 @@ comments: true
 
 ### 四、设置网桥和Tap 
 KVM虚拟机通过tap来访问互联网，那么物理主机得设置好网桥，下面是我/etc/rc.d/rc.local里设置网桥和tap的代码 
-```
+```bash
 # create brige 
 ifconfig eth0 0.0.0.0 
 brctl addbr br0 
@@ -55,7 +55,7 @@ ifconfig br0 x.x.x.x(物理主机IP) netmask 255.255.255.0(物理主机掩码) u
 route add default gw x.x.x.x(网关) br0 
 brctl addif br0 eth0
 ```
-```
+```bash
 # create tap0 for windows 2003 
 tunctl -t tap0 
 ifconfig tap0 up 
@@ -71,20 +71,20 @@ windows方面我们使用virtio来提高磁盘和网络的IO性能，那么这�
 来说明一下，virtio-win-0.1-30.iso里面放有windows的virtio磁盘控制器和网卡的驱动，是安装2003成功后，进入系统后进行相关驱动安装或更新用的。而virtio-win-1.1.16.vfd是一个软盘镜像，是用来安装2003时，通过F6来指定磁盘驱动用的。
 在使用qemu-kvm前，需要载入kvm内核模块： 
 ```
-modprobe kvm_intel
+$ modprobe kvm_intel
 ```
 创建大小为20G的win2003.qcow2磁盘文件： 
 ```
-qemu-img create -f qcow2 win2003.qcow 20G
+$ qemu-img create -f qcow2 win2003.qcow 20G
 ```
 启动KVM进行2003的安装： 
 ```
-qemu-kvm -m 768 -boot d -drive file=/xxx/win2003.qcow2,cache=writeback,if=virtio -fda /xxx/virtio-win-1.1.16.vfd -cdrom /xxx/Windows.Server.2003.R2.iso -vnc :1 
+$ qemu-kvm -m 768 -boot d -drive file=/xxx/win2003.qcow2,cache=writeback,if=virtio -fda /xxx/virtio-win-1.1.16.vfd -cdrom /xxx/Windows.Server.2003.R2.iso -vnc :1 
 ```
 命令运行后，没有提示任何错误就应该是没有问题了，打开tightVNC，登录到该远程桌面进行安装的操作（VNC登录地址是IP1:1）。启动安装是按F6，之后再安“S”，进入后选择“Redhat I/O for windows 2003”相应的驱动，32或64位。之后的安装过程是和平时装2003的过程一样。
 安装成功并启动一次，之后将2003关机，换用另外一条指令来启动虚拟机： 
 ```
-qemu-kvm -m 768 -net nic,model=virtio -net tap,ifname=tap0,script=no -drive file=/xxx/win2003.qcow2,cache=writeback,if=virtio -cdrom /xxx/virtio-win-0.1-30.iso -vnc :1 
+$ qemu-kvm -m 768 -net nic,model=virtio -net tap,ifname=tap0,script=no -drive file=/xxx/win2003.qcow2,cache=writeback,if=virtio -cdrom /xxx/virtio-win-0.1-30.iso -vnc :1 
 ```
 此次启动将载入virtio-win-0.1-30.iso镜像，包含有磁盘控制器和网卡的驱动
 启动后，同样使用VNC远程接入，把2003里的网卡安装好，也可以把磁盘控制器也升级一下，因为之前软盘镜像带的是2010年的，现在iso里包含的是最新的驱动
@@ -95,22 +95,22 @@ qemu-kvm -m 768 -net nic,model=virtio -net tap,ifname=tap0,script=no -drive file
 六、安装slackware-current 另一台虚拟机我装的是slackware-current，安装步骤要比windows 2003简单一些
 创建大小为20G的slackware.qcow2磁盘文件： 
 ```
-qemu-img create -f qcow2 slackware.qcow 20G
+$ qemu-img create -f qcow2 slackware.qcow 20G
 ```
 启动KVM进行slackware的安装： 
 ```
-qemu-kvm -m 768 -boot d -drive file=/xxx/slackware.qcow2,cache=writeback -cdrom /xxx/slackware-13.37-install-d1.iso -vnc :1
+$ qemu-kvm -m 768 -boot d -drive file=/xxx/slackware.qcow2,cache=writeback -cdrom /xxx/slackware-13.37-install-d1.iso -vnc :1
 ```
 用VNC连接，像平时一样来安装，current的安装方法就略去了
 安装成功后就换另外一条指令来启动： 
 ```
-qemu-kvm -m 768 -net nic -net tap,ifname=tap1,script=no -drive file=/xxx/slackware.qcow2,cache=writeback -vnc :1
+$ qemu-kvm -m 768 -net nic -net tap,ifname=tap1,script=no -drive file=/xxx/slackware.qcow2,cache=writeback -vnc :1
 ```
 之后进行一些必要的设定，之后就可以用ssh来连接
 
 ### 六、加入rc.local
 两台KVM虚拟机都安装设置成功了，所以就需要将其加入到rc.local脚本，使两个虚拟机在开机时随系统启动，下面是我的rc.local： 
-```
+```bash
 # create brige 
 ifconfig eth0 0.0.0.0 
 brctl addbr br0 

@@ -10,12 +10,12 @@
 =======
   <link href="http://imlcl.github.io/blog/categories/misc/atom.xml" rel="self"/>
   <link href="http://imlcl.github.io/"/>
-  <updated>2013-09-23T12:16:25+08:00</updated>
+  <updated>2013-11-09T22:47:19+08:00</updated>
   <id>http://imlcl.github.io/</id>
 >>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
   <author>
     <name><![CDATA[imlcl]]></name>
-    
+    <email><![CDATA[slackcode@gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 

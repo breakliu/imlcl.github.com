@@ -83,99 +83,124 @@ if ( isset( $ &hellip;">
         
 =======
 <!DOCTYPE HTML>
+
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<title>大头龙仔Blog</title>
-    <meta name="author" content="imlcl">
-    
-	<meta name="description" content="Published on: 2009-10-17 Tags: geek 觉得很快会用到，先转到这里，备一下忘
-&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&# &hellip;">
+	<meta name="author" content="imlcl">
+
 	
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="2009-11-19 geek Comments Shell脚本也能用函数别名 实际看来，应该叫函数别名比函数指针恰当吧，但我之前还不知道可以这么弄。
+只是今天看回自己一年前写的一个脚本程序，发现很多冗余代码，于是就重写了。
+重写后发现只要50%的代码，很简洁，得益于这个函数别名了。
+fun1 &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
-	<link rel="canonical" href="">
-	<link href="/favicon.ico" rel="shortcut icon">
-    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-
-    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
-    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
-
-    <!-- remove or comment it to disable ajaxification -->   
-    <script src="/javascripts/ajaxify.js"></script>
-   
-    
-    
+	
+	<link rel="canonical" href="http://imlcl.github.io/blog/page/9/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+  
 
 </head>
 
 
 <body>
-    <div id="wrapper">
-    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
-<h1 class="animated bounceInDown">
-    <div id="headerbg">
-        imlcl
-    </div>
-</h1>
-<br>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("slackcode@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+</div>
 
-<ul id="social-links" style="text-align:center">
-  
-  <!-- GitHub -->
-  <li>
-  <a href="https://github.com/imlcl" class="github" title="Github"></a>
-  </li>
-  
-  
-  
-  
-  
-  
-  
-  
+<nav id="main-nav"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/archives">Archive</a></li>
+	<li><a href="/about">About</a></li>
 </ul>
 
-
-<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
-<ul id="nav">
-	<li id="ajax"><a href="/index.html">Home</a></li>
-    <li id="ajax"><a href="/blog/archives/index.html">Blog</a></li>
-	<li id="ajax"><a href="/about/index.html">About</a></li>
-    <li><a href="/atom.xml">RSS</a></li>
-    
-    <li>
-    <div id="dark">
-        <form method="get" action="/search.html" id="search">
-            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
-        </form>
-    </div>
-    </li>
-        
-</ul>
-
-
-
-
-</header>
-
-<div id="toload">
-<!-- begin toload --> 
-    <div id="content" class="inner">
-        
-
-
-    <article class="post">
-	<h2 class="title">
+</nav>
+<nav id="sub-nav">
+	<div class="social">
 		
-		<a href="/blog/2009/10/17/10-hack-tools/">
+			<a class="email" href="mailto:slackcode@gmail.com" title="Email">Email</a>
 		
+		
+		
+		
+		
+			<a class="github" href="https://github.com/imlcl" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner">
+<div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-19T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-11-19</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/geek/'>geek</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2009/11/19/shell-func/#disqus_thread">Comments</a></span>
+		
+<<<<<<< HEAD
 			十大hack工具(zz)</a>
 	</h2>
     <div class="entry-content">
@@ -185,6 +210,50 @@ if ( isset( $ &hellip;">
 
 
 
+=======
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/11/19/shell-func/" itemprop="url">Shell脚本也能用函数别名</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>实际看来，应该叫函数别名比函数指针恰当吧，但我之前还不知道可以这么弄。<br />
+只是今天看回自己一年前写的一个脚本程序，发现很多冗余代码，于是就重写了。<br />
+重写后发现只要50%的代码，很简洁，得益于这个函数别名了。
+<pre>fun1( )
+{
+    echo "I am fun1!"
+}</pre></p>
+
+<p>fun2( )<br />
+{
+    echo &#8220;I am fun2!&#8221;<br />
+}</p>
+
+<p>fun1<br />
+fun2<br />
+fun3=fun1<br />
+$fun3
+结果是：
+<pre>I am fun1!
+I am fun2!
+I am fun1!</pre>
+其实就这么回事了</p>
+
+<p>然后，你还可以这样
+<pre>idx=1
+fun$idx</pre>
+结果是：
+<pre>I am fun1!</pre></p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 
@@ -216,6 +285,7 @@ if ( isset( $hashTmp["item"] ) )</pre>
   
 
 
+<<<<<<< HEAD
     </article>
   
   
@@ -231,13 +301,22 @@ if ( isset( $hashTmp["item"] ) )</pre>
 =======
 <time datetime="2009-10-17T00:00:00+08:00" pubdate data-updated="true">2009-10-17</time></div>
       <div class="tags">Tags: 
+=======
+<time datetime="2009-10-17T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-10-17</time></div>
+		<div class="tags">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 	<a class='category' href='/blog/categories/geek/'>geek</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2009/10/17/10-hack-tools/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/10/17/10-hack-tools/" itemprop="url">十大hack工具(zz)</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>觉得很快会用到，先转到这里，备一下忘<br />
 &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
 via:http://roclinux.cn/?p=1645</p>
@@ -267,24 +346,12 @@ via:http://roclinux.cn/?p=1645</p>
 		
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2009/10/17/10-hack-tools//blog/page/9/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
 
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2009/10/12/careful-php-in_array/">
-		
-			慎用PHP的in_array</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -296,15 +363,20 @@ via:http://roclinux.cn/?p=1645</p>
   
 
 
-<time datetime="2009-10-12T00:00:00+08:00" pubdate data-updated="true">2009-10-12</time></div>
-      <div class="tags">Tags: 
+<time datetime="2009-10-12T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-10-12</time></div>
+		<div class="tags">
 
 
 	<a class='category' href='/blog/categories/web/'>web</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2009/10/12/careful-php-in_array/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/10/12/careful-php-in_array/" itemprop="url">慎用PHP的in_array</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>从使用经验得知，in_array是线性查找，当数据量多一些时，就会巨慢<br />
 如果要提速，请使用hash数组进行保存，以协助查找
 <pre> # 这样太慢了
@@ -318,14 +390,10 @@ if ( isset( $hashTmp[&#8220;item&#8221;] ) )</p>
 		
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2009/10/12/careful-php-in_array//blog/page/9/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
 
+<<<<<<< HEAD
     <article class="post">
 	<h2 class="title">
 		
@@ -337,6 +405,11 @@ if ( isset( $hashTmp[&#8220;item&#8221;] ) )</p>
     <div class="meta">
       <div class="date">Published on: 
 >>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
+=======
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 
@@ -348,6 +421,7 @@ if ( isset( $hashTmp[&#8220;item&#8221;] ) )</p>
   
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <time datetime="2009-09-23T00:00:00+08:00" pubdate data-updated="true">2009-09-23</time>
         
@@ -387,13 +461,22 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
 =======
 <time datetime="2009-09-23T00:00:00+08:00" pubdate data-updated="true">2009-09-23</time></div>
       <div class="tags">Tags: 
+=======
+<time datetime="2009-09-23T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-09-23</time></div>
+		<div class="tags">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2009/09/23/about-devfs-sysfs/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/09/23/about-devfs-sysfs/" itemprop="url">关于devfs和sysfs</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>扫盲了，5900上插了两块160G的硬盘，只能找到一块，最后lijian拷了一个sdb设备文件过去搞定了……<br />
 d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这里</a>：
 <code>
@@ -409,14 +492,10 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
 		
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2009/09/23/about-devfs-sysfs//blog/page/9/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
 
+<<<<<<< HEAD
     <article class="post">
 	<h2 class="title">
 		
@@ -475,6 +554,11 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
     
       <p class="meta">
         
+=======
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 
@@ -486,6 +570,7 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
   
 
 
+<<<<<<< HEAD
 <time datetime="2009-08-29T00:00:00+08:00" pubdate data-updated="true">2009-08-29</time>
         
          | <a href="/blog/2009/08/29/1/#disqus_thread">Comments</a>
@@ -529,13 +614,22 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
 =======
 <time datetime="2009-08-29T00:00:00+08:00" pubdate data-updated="true">2009-08-29</time></div>
       <div class="tags">Tags: 
+=======
+<time datetime="2009-08-29T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-08-29</time></div>
+		<div class="tags">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 	<a class='category' href='/blog/categories/misc/'>misc</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2009/08/29/story-many-1/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/08/29/story-many-1/" itemprop="url">哲学家与渔夫[新篇多则] (Zz)</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>via: <a href="http://godel.blog.sohu.com/130651747.html">http://godel.blog.sohu.com/130651747.html</a>
 [原文]从前有一个哲学家想要过河，搭乘了一个渔夫的小船。路上哲学家问渔夫：“请问你会数学吗？”渔夫说：“不会”。哲学家说：“那么你的人生50％没有价值！”过了一会，哲学家又问：“再请问你会哲学吗？”渔夫说：“也不会”。哲学家说：“那么你的人生80％没有了价值！”正在这时突然来了一阵狂风，渔夫反问了哲学家一句：“请问您会游泳吗？”哲学家说：“不会。”渔夫说：“那么您的人生100％没有价值！”</p>
 
@@ -555,24 +649,12 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
 		
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2009/08/29/story-many-1//blog/page/9/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
 
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2009/08/29/faraway-1/">
-		
-			遥远</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -584,15 +666,20 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
   
 
 
-<time datetime="2009-08-29T00:00:00+08:00" pubdate data-updated="true">2009-08-29</time></div>
-      <div class="tags">Tags: 
+<time datetime="2009-08-29T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-08-29</time></div>
+		<div class="tags">
 
 
 	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2009/08/29/faraway-1/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/08/29/faraway-1/" itemprop="url">遥远</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>看到很多东西都很遥远<br />
 我重新审视自己时，发现几乎一无所有<br />
 工作了一年多，我问自己有什么进步，我想了很久，还是想不到自己进步的是什么东西，抑或叫所获无几吧<br />
@@ -607,14 +694,10 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
 		
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2009/08/29/faraway-1//blog/page/9/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
 
+<<<<<<< HEAD
     <article class="post">
 	<h2 class="title">
 		
@@ -628,6 +711,11 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
 >>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
 
 
+=======
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 
@@ -653,6 +741,7 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
   
 
 
+<<<<<<< HEAD
     </article>
   
   
@@ -668,27 +757,32 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
 =======
 <time datetime="2009-08-20T00:00:00+08:00" pubdate data-updated="true">2009-08-20</time></div>
       <div class="tags">Tags: 
+=======
+<time datetime="2009-08-20T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-08-20</time></div>
+		<div class="tags">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2009/08/20/so-slow-to-writing/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/08/20/so-slow-to-writing/" itemprop="url">慢到我不想写文章了</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p><p>如题，不爽就是了</p></p>
 
 		
 		
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2009/08/20/so-slow-to-writing//blog/page/9/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
 
+<<<<<<< HEAD
     <article class="post">
 	<h2 class="title">
 		
@@ -700,6 +794,11 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
     <div class="meta">
       <div class="date">Published on: 
 >>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
+=======
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 
@@ -711,6 +810,7 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
   
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <time datetime="2009-08-16T00:00:00+08:00" pubdate data-updated="true">2009-08-16</time>
         
@@ -744,13 +844,22 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
 =======
 <time datetime="2009-08-16T00:00:00+08:00" pubdate data-updated="true">2009-08-16</time></div>
       <div class="tags">Tags: 
+=======
+<time datetime="2009-08-16T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-08-16</time></div>
+		<div class="tags">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2009/08/16/beginwin7/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/08/16/beginwin7/" itemprop="url">用上Win7了</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p><p>跳过Vista，终于用上Win7 RTM，由于内存为4G，为了不浪费，直接上64Bit</p>
 <p>Win7的感觉很好，已经不想用回XP了，不过由于有些东西还是要XP来处理，所以短期内还是双系统</p>
 <p>我是用Windows 7 Toolkit来破解的，暂时来说没有问题，用个一年半载再说</p></p>
@@ -759,14 +868,10 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
 		
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2009/08/16/beginwin7//blog/page/9/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
 
+<<<<<<< HEAD
     <article class="post">
 	<h2 class="title">
 		
@@ -778,6 +883,11 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
     <div class="meta">
       <div class="date">Published on: 
 >>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
+=======
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 
@@ -789,6 +899,7 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
   
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <time datetime="2009-07-26T00:00:00+08:00" pubdate data-updated="true">2009-07-26</time>
         
@@ -803,13 +914,22 @@ d00m3d老大的回答在<a href="http://linuxsir.org/bbs/thread357084.html">这�
 =======
 <time datetime="2009-07-26T00:00:00+08:00" pubdate data-updated="true">2009-07-26</time></div>
       <div class="tags">Tags: 
+=======
+<time datetime="2009-07-26T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-07-26</time></div>
+		<div class="tags">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 	<a class='category' href='/blog/categories/misc/'>misc</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2009/07/26/zz_1/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/07/26/zz_1/" itemprop="url">混乱zz(1)</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p><p>老人言，来自云风blog，有很好的参考价值啊<br />
 >>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
 <a href="http://blog.codingnow.com/2009/07/the_elements_of_programming_style.html">http://blog.codingnow.com/2009/07/the_elements_of_programming_style.html</a></p>
@@ -849,14 +969,10 @@ http://cocre.com/wp-content/uploads/2009/07/Internet.jpg</a>&nbsp;</p>
 		
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2009/07/26/zz_1//blog/page/9/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
 
+<<<<<<< HEAD
     <article class="post">
 	<h2 class="title">
 		
@@ -868,6 +984,11 @@ http://cocre.com/wp-content/uploads/2009/07/Internet.jpg</a>&nbsp;</p>
     <div class="meta">
       <div class="date">Published on: 
 >>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
+=======
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 
@@ -879,6 +1000,7 @@ http://cocre.com/wp-content/uploads/2009/07/Internet.jpg</a>&nbsp;</p>
   
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <time datetime="2009-07-18T00:00:00+08:00" pubdate data-updated="true">2009-07-18</time>
         
@@ -893,13 +1015,22 @@ http://cocre.com/wp-content/uploads/2009/07/Internet.jpg</a>&nbsp;</p>
 =======
 <time datetime="2009-07-18T00:00:00+08:00" pubdate data-updated="true">2009-07-18</time></div>
       <div class="tags">Tags: 
+=======
+<time datetime="2009-07-18T00:00:00+08:00" data-updated="true" itemprop="datePublished">2009-07-18</time></div>
+		<div class="tags">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 	<a class='category' href='/blog/categories/misc/'>misc</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2009/07/18/loser_like_zz/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2009/07/18/loser_like_zz/" itemprop="url">Loser们的共同特征(zz)</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p><p>贴切, via:&nbsp;<a href="http://hi.baidu.com/caoz/blog/item/58ee08fab8597c9e59ee9015.html">http://hi.baidu.com/caoz/blog/item/58ee08fab8597c9e59ee9015.html</a></p>
 >>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
 <p>&nbsp;</p>
@@ -1107,58 +1238,9 @@ http://cocre.com/wp-content/uploads/2009/07/Internet.jpg</a>&nbsp;</p>
 		
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2009/07/18/loser_like_zz//blog/page/9/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2009/07/18/joel_soft_tr_cn_1/">
-		
-			飙高音(zz)</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-07-18T00:00:00+08:00" pubdate data-updated="true">2009-07-18</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='/blog/categories/misc/'>misc</a>
-
-
 </div>
-    </div>
-		<p><p><a href="http://www.ruanyifeng.com/blog/2009/07/hitting_the_high_notes.html">http://www.ruanyifeng.com/blog/2009/07/hitting_the_high_notes.html</a></p>
-<p>另有<a href="http://www.ruanyifeng.com/blog/it/mjos/">joel谈软件译文</a></p></p>
-
-		
-		
-	</div>
-
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2009/07/18/joel_soft_tr_cn_1//blog/page/9/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
 <nav id="pagenavi">
     
         <a href="/blog/page/8/" class="prev">Prev</a>
@@ -1167,21 +1249,17 @@ http://cocre.com/wp-content/uploads/2009/07/Internet.jpg</a>&nbsp;</p>
         <a href="/blog/page/10/" class="next">Next</a>
     
     <div class="center"><a href="/blog/archives">Blog Archives</a></div>
-</nav>
-
-    </div>
-    <footer id="footer">
-    <div style="display:inline">
-    Copyright &copy; 2013
+</nav></div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2013
 
     imlcl
-. Powered by <a href="http://octopress.org">Octopress</a> | 
-    Theme <a href="http://github.com/panks/fabric">fabric</a> by <a href="http://panks.me">Pankaj Kumar</a>
-</div>
 
+<br>
+Powered by Octopress.
 
-    </footer>
-    <script src="/javascripts/fabric.js"></script>
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+			<script src="/javascripts/slash.js"></script>
 <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
@@ -1209,6 +1287,7 @@ http://cocre.com/wp-content/uploads/2009/07/Internet.jpg</a>&nbsp;</p>
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 
@@ -1226,5 +1305,9 @@ http://cocre.com/wp-content/uploads/2009/07/Internet.jpg</a>&nbsp;</p>
 /*]]>*/
 </script><!-- remove it to remove the scroll to top button -->
 >>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
+=======
+		</div>
+	</div>
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 </body>
 </html>

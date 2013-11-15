@@ -7,7 +7,7 @@ title: 大头龙仔Blog
 subtitle: A strong man can save himself. A great man can save another.
 author: imlcl
 simple_search: http://google.com.au/search
-description: #imlcl.com 大头龙仔 blog 随笔感悟 编程技术 it web php ruby rails c linux server slackware
+description: imlcl.com 大头龙仔 blog 随笔感悟 编程技术 it web php ruby rails c linux server slackware
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -34,11 +34,11 @@ plugins: plugins
 code_dir: downloads/code
 category_dir: blog/categories
 markdown: rdiscount
-# rdiscount:
-#   extensions:
-#     - autolink
-#     - footnotes
-#     - smart
+rdiscount:
+ extensions:
+   - autolink
+   - footnotes
+   - smart
 pygments: false # default python pygments have been replaced by pygments.rb
 
 paginate: 10          # Posts per page on the blog index

@@ -81,104 +81,173 @@
         
 =======
 <!DOCTYPE HTML>
+
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<title>大头龙仔Blog</title>
-    <meta name="author" content="imlcl">
-    
-	<meta name="description" content="Published on: 2008-02-25 Tags: geek 感觉经常要测程序的性能，就写了个简单的结构体，方便自己以后调用。简单起见，没有处理QueryPerformanceCounter与QueryPerformanceFrequency调用失败的情况。 Read on &rarr &hellip;">
+	<meta name="author" content="imlcl">
+
 	
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="description" content="2008-02-28 opensource Comments FreeBSD 7.0-RELEASE 正式发布了 FreeBSD 7.0-RELEASE 正式发布了，这是 7-STABLE 分支的第一个正式的发行版本，同时也是目前第一个以计划而非功能作为优先考虑的奇数版本。这一版本的主要亮点包括 &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link href="/atom.xml" rel="alternate" title="大头龙仔Blog" type="application/atom+xml">
-	<link rel="canonical" href="">
-	<link href="/favicon.ico" rel="shortcut icon">
-    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-
-    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-
-    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
-
-    <!-- remove or comment it to disable ajaxification -->   
-    <script src="/javascripts/ajaxify.js"></script>
-   
-    
-    
+	
+	<link rel="canonical" href="http://imlcl.github.io/blog/page/27/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+  
 
 </head>
 
 
 <body>
-    <div id="wrapper">
-    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
-<h1 class="animated bounceInDown">
-    <div id="headerbg">
-        imlcl
-    </div>
-</h1>
-<br>
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<script src="/javascripts/md5.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.profilepic').append("<img src='http://www.gravatar.com/avatar/" + MD5("slackcode@gmail.com") + "?s=160' alt='Profile Picture' style='width: 160px;' />");
+		});
+	</script>
+	
+</div>
 
-<ul id="social-links" style="text-align:center">
-  
-  <!-- GitHub -->
-  <li>
-  <a href="https://github.com/imlcl" class="github" title="Github"></a>
-  </li>
-  
-  
-  
-  
-  
-  
-  
-  
+<nav id="main-nav"><ul>
+	<li><a href="/">Blog</a></li>
+	<li><a href="/archives">Archive</a></li>
+	<li><a href="/about">About</a></li>
 </ul>
 
-
-<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
-<ul id="nav">
-	<li id="ajax"><a href="/index.html">Home</a></li>
-    <li id="ajax"><a href="/blog/archives/index.html">Blog</a></li>
-	<li id="ajax"><a href="/about/index.html">About</a></li>
-    <li><a href="/atom.xml">RSS</a></li>
-    
-    <li>
-    <div id="dark">
-        <form method="get" action="/search.html" id="search">
-            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
-        </form>
-    </div>
-    </li>
-        
-</ul>
-
-
-
-
-</header>
-
-<div id="toload">
-<!-- begin toload --> 
-    <div id="content" class="inner">
-        
-
-
-    <article class="post">
-	<h2 class="title">
+</nav>
+<nav id="sub-nav">
+	<div class="social">
 		
-		<a href="/blog/2008/02/25/high-tick-clock-struct/">
+			<a class="email" href="mailto:slackcode@gmail.com" title="Email">Email</a>
 		
+		
+		
+		
+		
+			<a class="github" href="https://github.com/imlcl" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner">
+<div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2008-02-28T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-02-28</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/opensource/'>opensource</a>
+
+
+</div>
+		
+			<span class="comments"><a href="/blog/2008/02/28/freebsd-70-release-2/#disqus_thread">Comments</a></span>
+		
+<<<<<<< HEAD
 			写了个高精度时间计算器的struct</a>
 	</h2>
     <div class="entry-content">
     <div class="meta">
       <div class="date">Published on: 
 >>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
+=======
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2008/02/28/freebsd-70-release-2/" itemprop="url">FreeBSD 7.0-RELEASE 正式发布了</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>FreeBSD 7.0-RELEASE 正式发布了，这是 7-STABLE 分支的第一个正式的发行版本，同时也是目前第一个以计划而非功能作为优先考虑的奇数版本。这一版本的主要亮点包括：<br />
+<br /> - 对于 SMP 环境下的数据库以及许多其他性能测试中暴露的可伸缩性问题进行了大幅度的改善。FreeBSD 7.0<br />
+在一些用例中，普通负载时性能比 FreeBSD 6.X 提高了 350%，高负载条件下性能提高达 1500％。与目前为止 Linux<br />
+内核的最佳性能（2.6.22 和 2.6.24版本）相比，性能高<br />
+15%。这些性能改善的结果来自于用于分析和改进系统性能的性能评估用例，对于您具体的工作负载，可能会有所不同。性能方面的改善主要源自以下方面的改<br />
+进：<br />
+　　* 默认采用 1:1 线程模型的 libthr 线程库。<br />
+　　* 对于进程间通讯（IPC）、网络和调度器上锁方面的改进。<br />
+　　* 对 5.x 和 6.x 分支所引入的 SMP 架构的优化。<br />
+<br />
+一些性能测试显示，这一版本的 FreeBSD 对于至多 8 颗 CPU 的情形，其性能随 CPU 个数线性增加。许多工作负载在多核系统中均呈现了显著的性能提升。<br />
+<br />
+- 对 ULE 调度器进行了大幅度的改进，包括性能和交互式应用响应方面的改良 （4BSD 调度器在 7.0 中仍是默认调度器，但我们有可能在 7.1 中将 ULE 更换为默认调度器）<br />
+- 增加了对于 Sun 的 ZFS 文件系统的试验性支持。<br />
+- 增加了可用于为文件系统增加数据日志的 gjournal 和用于虚拟化存储的 gvirstor。<br />
+- 增加了对 XFS 文件系统的只读支持。<br />
+- 对 unionfs 文件系统进行了重写。<br />
+- 新增了 iSCSI 发起端（客户端）。<br />
+- 针对一些网卡驱动增加了 TSO 和 LRO 支持。<br />
+- 新增了对于试验性的 SCTP （流控制传输协议） 的支持（FreeBSD 成为了这一协议的参考实现）。<br />
+- 对无线网络 (802.11) 支持进行了大幅度的改进。<br />
+- 从 OpenBSD 引入了网络链路聚合/trunking (lagg(4))。<br />
+- 为 BPF 增加了即时编译为本地代码的能力，改善了捕捉包的性能。<br />
+- 对基于 ARM 架构的嵌入式系统开发板的支持进行了大幅度的改善。<br />
+- 引入了新的、具有高可伸缩性的用户态内存分配器 jemalloc。<br />
+- 在原先的安装同一版本的安全和可靠性更新的基础上， freebsd-update(8) 正式提供了对于在不同发行版本之间进行二进制升级的支持。<br />
+- X.Org 7.3, KDE 3.5.8, GNOME 2.20.2.<br />
+- GCC 4.2.1.<br />
+- BIND 9.4.2.<br />
+<br />详情看：http://www.freebsdchina.org/document_28_40247.html<br /><br /></p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 
@@ -190,6 +259,7 @@
   
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <time datetime="2008-02-24T00:00:00+08:00" pubdate data-updated="true">2008-02-24</time>
         
@@ -247,13 +317,22 @@ Difference 也就是我可以為這個世界創造一些價值的意思她處處
 =======
 <time datetime="2008-02-25T00:00:00+08:00" pubdate data-updated="true">2008-02-25</time></div>
       <div class="tags">Tags: 
+=======
+<time datetime="2008-02-25T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-02-25</time></div>
+		<div class="tags">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 	<a class='category' href='/blog/categories/geek/'>geek</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2008/02/25/high-tick-clock-struct/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2008/02/25/high-tick-clock-struct/" itemprop="url">写了个高精度时间计算器的struct</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p><p align="left">感觉经常要测程序的性能，就写了个简单的结构体，方便自己以后调用。简单起见，没有处理QueryPerformanceCounter与QueryPerformanceFrequency调用失败的情况。</p></p>
 
 <p>
@@ -261,14 +340,10 @@ Difference 也就是我可以為這個世界創造一些價值的意思她處處
 		<a href="/blog/2008/02/25/high-tick-clock-struct/" class="more-link">Read on &rarr;</a>
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2008/02/25/high-tick-clock-struct//blog/page/27/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
 
+<<<<<<< HEAD
     <article class="post">
 	<h2 class="title">
 		
@@ -283,6 +358,11 @@ Difference 也就是我可以為這個世界創造一些價值的意思她處處
 
 
 
+=======
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 
@@ -307,6 +387,7 @@ Difference 也就是我可以為這個世界創造一些價值的意思她處處
   
 
 
+<<<<<<< HEAD
     </article>
   
   
@@ -322,13 +403,22 @@ Difference 也就是我可以為這個世界創造一些價值的意思她處處
 =======
 <time datetime="2008-02-24T00:00:00+08:00" pubdate data-updated="true">2008-02-24</time></div>
       <div class="tags">Tags: 
+=======
+<time datetime="2008-02-24T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-02-24</time></div>
+		<div class="tags">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 	<a class='category' href='/blog/categories/misc/'>misc</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2008/02/24/five-balls-rounding-1/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2008/02/24/five-balls-rounding-1/" itemprop="url">五個球(转)</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p><p>我們很容易看到別人的優點. 像是某人很漂亮啦, 工作能力很強啦, 人緣很好啦, 但我們很少能看到自己的長處及自己的價值.<br />
 這也許是一種傳統教育下過度謙虛的表現, 因為要嚴以律己, 所以對自己的要求與批評就很多, 期望也就過高, 常常造成否定自己的心態;<br />
 認為自己很多地方都不夠好, 久而久之, 就產生了自卑感, 失去了自信心, 認為自己的存在沒什麼價值, 因而活得非常消沉, 甚至厭世.</p></p>
@@ -361,14 +451,10 @@ Difference 也就是我可以為這個世界創造一些價值的意思她處處
 		
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2008/02/24/five-balls-rounding-1//blog/page/27/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
 
+<<<<<<< HEAD
     <article class="post">
 	<h2 class="title">
 		
@@ -381,6 +467,11 @@ Difference 也就是我可以為這個世界創造一些價值的意思她處處
       <div class="date">Published on: 
 >>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
 
+=======
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 
@@ -408,6 +499,7 @@ Difference 也就是我可以為這個世界創造一些價值的意思她處處
   
 
 
+<<<<<<< HEAD
     </article>
   
   
@@ -423,13 +515,22 @@ Difference 也就是我可以為這個世界創造一些價值的意思她處處
 =======
 <time datetime="2008-02-22T00:00:00+08:00" pubdate data-updated="true">2008-02-22</time></div>
       <div class="tags">Tags: 
+=======
+<time datetime="2008-02-22T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-02-22</time></div>
+		<div class="tags">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 	<a class='category' href='/blog/categories/geek/'>geek</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2008/02/22/about-windows-func-multi-process/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2008/02/22/about-windows-func-multi-process/" itemprop="url">关于Windows平台下多线程创建函数</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p><p>在Windows下面，比较常见的多线程创建函数是CreateThread(Windows自带的)和_beginthread、_beginthreadex（C运行库的）。<br /><br />强烈推荐只用_beginthreadex，参数上面与CreateThread基本一样，比CreateThread好的就是，它给每个线程维护一个tiddata数据块，这对于多线程环境非常重要。《Windows核心编程》里也是这么说的。</p>
 <p>用_beginthreadex还有个好处是，线程结束后，不会自己执行CloseHandle函数，这样的话，对于WaitFor系列函数的调用就比较方便了。_beginthread在线程结束的时候是会自己CloseHandle。</p></p>
 
@@ -437,14 +538,10 @@ Difference 也就是我可以為這個世界創造一些價值的意思她處處
 		
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2008/02/22/about-windows-func-multi-process//blog/page/27/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
 
+<<<<<<< HEAD
     <article class="post">
 	<h2 class="title">
 		
@@ -552,6 +649,11 @@ compatible with them.
     
       <p class="meta">
         
+=======
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 
@@ -563,6 +665,7 @@ compatible with them.
   
 
 
+<<<<<<< HEAD
 <time datetime="2008-02-15T00:00:00+08:00" pubdate data-updated="true">2008-02-15</time>
         
          | <a href="/blog/2008/02/15/1/#disqus_thread">Comments</a>
@@ -666,37 +769,34 @@ compatible with them.
 =======
 <time datetime="2008-02-22T00:00:00+08:00" pubdate data-updated="true">2008-02-22</time></div>
       <div class="tags">Tags: 
+=======
+<time datetime="2008-02-22T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-02-22</time></div>
+		<div class="tags">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 	<a class='category' href='/blog/categories/misc/'>misc</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2008/02/22/7-steps-to-get-money-1/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2008/02/22/7-steps-to-get-money-1/" itemprop="url">赚钱大师博恩崔西七步成功赚钱公式(转)</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p><table style="" border="0" height="220" width="100%"><tbody><tr><td style="" valign="top"><dd>第一步：稍早一点起床，每早用30-60分钟阅读启发性或激励性的材料。仅此一步即可以让你在10年内增加1000%的收入。</dd><dd>第二步：每天都在笔记本上重新写一遍你的主要目标，就好像这些目标已经实现。注意力原理。</dd><dd>第三步：提前为每一天做好计划，最好是在前一天晚上，尤其是睡觉前（潜意识会帮助你）。</dd><dd>第四步：为你的任务列表设定优先级，并一心一意地把时间和注意力集中在最有价值的事情上。仅此一步即可以让你在10年内将你的生产力提高1000%。</dd><dd>第五步：在开车时听广播节目，把你的汽车变成一个&#8221;车轮上的大学&#8221;。</dd><dd>第六步：每一次经历后（不论是否成功），都要思考两个重要问题：</dd><dd>1、我的哪些做法是正确的？以便在下次遇到类似情况时能够做得更好。</dd><dd>2、 我可以在哪些方面改进？</dd><dd>仅凭思考这两个问题，就能够使你在10年内增加1000%的收入。</dd><dd>第七步：对待你遇到的每一个人，都要像对待有100万美元业务的客户一样，你从的家庭成员开始。</dd></td></tr></tbody></table></p>
 
 		
 		
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2008/02/22/7-steps-to-get-money-1//blog/page/27/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
 
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2008/02/15/the-most-popular-operating-systems%E8%BD%AC/">
-		
-			The Most Popular Operating Systems(转)</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -708,15 +808,20 @@ compatible with them.
   
 
 
-<time datetime="2008-02-15T00:00:00+08:00" pubdate data-updated="true">2008-02-15</time></div>
-      <div class="tags">Tags: 
+<time datetime="2008-02-15T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-02-15</time></div>
+		<div class="tags">
 
 
 	<a class='category' href='/blog/categories/opensource/'>opensource</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2008/02/15/the-most-popular-operating-systems%E8%BD%AC/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2008/02/15/the-most-popular-operating-systems%E8%BD%AC/" itemprop="url">The Most Popular Operating Systems(转)</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p><br /></p>
 
 <p><p>
@@ -767,24 +872,12 @@ compatible with them.
 		<a href="/blog/2008/02/15/the-most-popular-operating-systems%E8%BD%AC/" class="more-link">Read on &rarr;</a>
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2008/02/15/the-most-popular-operating-systems%E8%BD%AC//blog/page/27/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
 
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2008/02/15/string-oper-sum-1/">
-		
-			字符串操作总结(转)</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -796,15 +889,20 @@ compatible with them.
   
 
 
-<time datetime="2008-02-15T00:00:00+08:00" pubdate data-updated="true">2008-02-15</time></div>
-      <div class="tags">Tags: 
+<time datetime="2008-02-15T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-02-15</time></div>
+		<div class="tags">
 
 
 	<a class='category' href='/blog/categories/geek/'>geek</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2008/02/15/string-oper-sum-1/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2008/02/15/string-oper-sum-1/" itemprop="url">字符串操作总结(转)</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p><h1><span style="font-family: 宋体;">概述</span></h1></p>
 
 <p><p class="MsoNormal"><span style="font-family: 宋体;">对个字符串的函数的解释根据的是</span><span lang="EN-US">C</span><span style="font-family: 宋体;">语言标准文档</span><span lang="EN-US">
@@ -815,24 +913,12 @@ compatible with them.
 		<a href="/blog/2008/02/15/string-oper-sum-1/" class="more-link">Read on &rarr;</a>
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2008/02/15/string-oper-sum-1//blog/page/27/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
 
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2008/02/14/give-money-in-wedding-1/">
-		
-			参加婚礼该送多少钱（转）</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
 
 
 
@@ -844,15 +930,20 @@ compatible with them.
   
 
 
-<time datetime="2008-02-14T00:00:00+08:00" pubdate data-updated="true">2008-02-14</time></div>
-      <div class="tags">Tags: 
+<time datetime="2008-02-14T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-02-14</time></div>
+		<div class="tags">
 
 
 	<a class='category' href='/blog/categories/misc/'>misc</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2008/02/14/give-money-in-wedding-1/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2008/02/14/give-money-in-wedding-1/" itemprop="url">参加婚礼该送多少钱（转）</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p><div class="asset-body">
 <p><a href="http://www.wuxinan.net/">A董</a> 网站上 <a href="http://blog.wuxinan.net/archives/286">看到</a> 的，抄录一下：</p></div></p>
 
@@ -865,14 +956,10 @@ compatible with them.
 		
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2008/02/14/give-money-in-wedding-1//blog/page/27/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
 
+<<<<<<< HEAD
     <article class="post">
 	<h2 class="title">
 		
@@ -884,6 +971,11 @@ compatible with them.
     <div class="meta">
       <div class="date">Published on: 
 >>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
+=======
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 
@@ -895,6 +987,7 @@ compatible with them.
   
 
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <time datetime="2008-02-14T00:00:00+08:00" pubdate data-updated="true">2008-02-14</time>
         
@@ -932,27 +1025,32 @@ compatible with them.
 =======
 <time datetime="2008-02-14T00:00:00+08:00" pubdate data-updated="true">2008-02-14</time></div>
       <div class="tags">Tags: 
+=======
+<time datetime="2008-02-14T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-02-14</time></div>
+		<div class="tags">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 	<a class='category' href='/blog/categories/sunshine/'>sunshine</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2008/02/14/come-to-sinfor-today-1/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2008/02/14/come-to-sinfor-today-1/" itemprop="url">今天来到深信服</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p>今天是情人节，我来到了深信服，进入试用期考核。<br />感觉这里的人很好，希望新的一年，能顺顺利利啦~<br /></p>
 
 		
 		
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2008/02/14/come-to-sinfor-today-1//blog/page/27/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
 
+<<<<<<< HEAD
     <article class="post">
 	<h2 class="title">
 		
@@ -1005,6 +1103,11 @@ compatible with them.
         
 
 
+=======
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 
@@ -1035,6 +1138,7 @@ compatible with them.
   
 
 
+<<<<<<< HEAD
     </article>
   
   
@@ -1050,13 +1154,22 @@ compatible with them.
 =======
 <time datetime="2008-02-14T00:00:00+08:00" pubdate data-updated="true">2008-02-14</time></div>
       <div class="tags">Tags: 
+=======
+<time datetime="2008-02-14T00:00:00+08:00" data-updated="true" itemprop="datePublished">2008-02-14</time></div>
+		<div class="tags">
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 
 
 	<a class='category' href='/blog/categories/misc/'>misc</a>
 
 
 </div>
-    </div>
+		
+			<span class="comments"><a href="/blog/2008/02/14/china-is-cool-2/#disqus_thread">Comments</a></span>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2008/02/14/china-is-cool-2/" itemprop="url">如果没有丘处机 中国将是最发达的国家（转）</a></h1>
+	<div class="entry-content" itemprop="articleBody">
 		<p><div class="asset-body">
 <p>转载自 <a href="http://www.freebsdchina.org/forum/viewtopic.php?t=40068">FreeBSDChina</a>。</p></div></p>
 
@@ -1087,13 +1200,9 @@ compatible with them.
 		
 	</div>
 
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2008/02/14/china-is-cool-2//blog/page/27/index.html#disqus_thread">Comments</a></span>
-	
-</div>
 </article>
 
+<<<<<<< HEAD
 
     <article class="post">
 	<h2 class="title">
@@ -1243,9 +1352,9 @@ compatible with them.
 	
 		<span class="comments"><a href="/blog/2008/02/09/2006-100-opensource-tools//blog/page/27/index.html#disqus_thread">Comments</a></span>
 	
+=======
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 </div>
-</article>
-
 <nav id="pagenavi">
     
         <a href="/blog/page/26/" class="prev">Prev</a>
@@ -1254,21 +1363,17 @@ compatible with them.
         <a href="/blog/page/28/" class="next">Next</a>
     
     <div class="center"><a href="/blog/archives">Blog Archives</a></div>
-</nav>
-
-    </div>
-    <footer id="footer">
-    <div style="display:inline">
-    Copyright &copy; 2013
+</nav></div>
+			</div>
+			<footer id="footer" class="inner">Copyright &copy; 2013
 
     imlcl
-. Powered by <a href="http://octopress.org">Octopress</a> | 
-    Theme <a href="http://github.com/panks/fabric">fabric</a> by <a href="http://panks.me">Pankaj Kumar</a>
-</div>
 
+<br>
+Powered by Octopress.
 
-    </footer>
-    <script src="/javascripts/fabric.js"></script>
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+			<script src="/javascripts/slash.js"></script>
 <script src="/javascripts/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
 (function($){
@@ -1296,6 +1401,7 @@ compatible with them.
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 
@@ -1313,5 +1419,9 @@ compatible with them.
 /*]]>*/
 </script><!-- remove it to remove the scroll to top button -->
 >>>>>>> b84a4414592d2b640e4a83b98074d058d0c819b4
+=======
+		</div>
+	</div>
+>>>>>>> 864193dcf3b2e93d2f0085116435067f0333a6fc
 </body>
 </html>
