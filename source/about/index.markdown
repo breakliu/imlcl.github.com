@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "About"
-date: 2013-08-21 23:20
+date: 2014-01-19 22:41
 comments: false
 sharing: false
 footer: true
@@ -32,3 +32,4 @@ footer: true
 * 2008 年借助本人开发的简单Web服务器, 毕业前拿到了深信服的 offer, 就职于移动应用部, 负责 SSLVPN 的应用后台开发;
 * 2010 年离职, 回东莞当计算机教师兼学校网管, 同时使用PHP开发校园数字化环境, 并整合了腾讯通 RTX;
 * 2011 年爱上了 Ruby On Rails, 于是把学校所有主要的平台系统重写成 Rails, 效果非常好;
+* 2013 年通过了[Tealeaf](http://www.gotealeaf.com)的中级(一个简单的类Blog网站)和高级课程(使用Stripe进行支付的视频网站)，重新认识了程序员写测试的重要性，开始习惯TDD
