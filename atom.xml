@@ -4,7 +4,7 @@
   <title><![CDATA[大头龙仔Blog]]></title>
   <link href="http://imlcl.github.io/atom.xml" rel="self"/>
   <link href="http://imlcl.github.io/"/>
-  <updated>2013-11-15T12:36:16+08:00</updated>
+  <updated>2014-01-21T22:49:32+08:00</updated>
   <id>http://imlcl.github.io/</id>
   <author>
     <name><![CDATA[imlcl]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[slackware to debian]]></title>
+    <title type="html"><![CDATA[Slackware to Debian]]></title>
     <link href="http://imlcl.github.io/blog/2013/10/26/slackware-to-debian/"/>
     <updated>2013-10-26T23:12:00+08:00</updated>
     <id>http://imlcl.github.io/blog/2013/10/26/slackware-to-debian</id>
@@ -354,7 +354,7 @@ WinZip 9.0对压缩格式的支持并没有什么增加，支持原有的18种�
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[[转]10 Things You Didn't Know Rails Could do]]></title>
+    <title type="html"><![CDATA[[转]10 Things You Didn't Know Rails Could Do]]></title>
     <link href="http://imlcl.github.io/blog/2012/04/27/10-things-you-didnt-know-rails-could-do/"/>
     <updated>2012-04-27T00:00:00+08:00</updated>
     <id>http://imlcl.github.io/blog/2012/04/27/10-things-you-didnt-know-rails-could-do</id>
